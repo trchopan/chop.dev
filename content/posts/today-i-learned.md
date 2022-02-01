@@ -10,6 +10,11 @@ draft = false
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I think I should begin the habbit to write things down. Hopefully it will improve my workflow and help me into a more organised mode.
 
 
+## Day 5 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-01 Tue&gt;</span></span> {#day-5}
+
+Spend the morning to find out the syntax highlight of the theme I'm using actually handled by PrismJS. Which does not have the syntax for `emacs-lisp` scripts. So I disabled it, Looks like Hugo already handled the syntax highlight 👍
+
+
 ## Day 4 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-31 Mon&gt;</span></span> {#day-4}
 
 Today is a good day. With a lot of things todo, I still managed to purchage the new domain and spin up the website at <https://chop.ink> . It will be my site to dump all these writing to.

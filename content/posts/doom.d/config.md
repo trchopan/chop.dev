@@ -20,6 +20,7 @@ draft = false
 - [Treemacs](#treemacs)
 - [Avy - Jump mode](#avy-jump-mode)
 - [Org mode](#org-mode)
+- [Centaur tab](#centaur-tab)
 - [Personal Keymaps](#personal-keymaps)
 - [Font display](#font-display)
 - [Zen mode](#zen-mode)
@@ -438,7 +439,7 @@ Six styles are currently available:
 At first it seems that pre and post are advantageous over at and at-full, since you can still see the original text with them. However, they make the text shift a bit. If you don’t like that, use either at or at-full.
 
 ```emacs-lisp
-(setq avy-style 'at-full)
+(setq avy-style 'de-bruijn)
 ```
 
 
@@ -455,6 +456,14 @@ At first it seems that pre and post are advantageous over at and at-full, since 
   (insert "#+attr_html: :width 720px\n")
   (insert (concat "[[" filename "]]"))
   (org-display-inline-images))
+```
+
+
+## Centaur tab {#centaur-tab}
+
+```emacs-lisp
+(with-eval-after-load 'centaur-tabs
+  (centaur-tabs-group-by-projectile-project))
 ```
 
 

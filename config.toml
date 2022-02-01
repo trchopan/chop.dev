@@ -5,6 +5,9 @@ title = 'Welcome to Chop Ink'
 googleAnalytics = 'G-00XY762Y0W'
 
 
+[markup.highlight]
+  codeFences = true
+
 [markup.goldmark.renderer]
   unsafe = true
 
