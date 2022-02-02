@@ -11,16 +11,6 @@
     {{ $PageContext := . }}
     {{ if .IsHome }}
       {{ $PageContext = .Site }}
-    <div style="text-align: center;">
-      <figure class="center">
-        <img src="./choptr-avatar.jpg" />
-      </figure>
-      <div>
-        Hi, the name is Quang Tran
-        <span style="white-space: nowrap">aka Chop Tr.</span>
-      </div>
-      <div>Welcome to my site / blogs / porfolio.</div>
-    </div>
     {{ end }}
     {{ $paginator := .Paginate (where $PageContext.RegularPages "Type" $contentTypeName) }}
 
