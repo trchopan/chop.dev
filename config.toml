@@ -7,6 +7,8 @@ googleAnalytics = 'G-00XY762Y0W'
 
 [markup.highlight]
   codeFences = true
+  style = 'dracula'
+
 
 [markup.goldmark.renderer]
   unsafe = true
