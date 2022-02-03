@@ -10,11 +10,11 @@ cover = "/ox-hugo/howto-build-website_20220203_134312.png"
 
 🎉 Chúc mừng năm mới 🎉
 
-I'm from Vietnam so Luna New Year is a big holiday. I and my family, we had a lot of fun gathering together. This is the first year Lina is growed up enough for me and my wife to take her travel (last year she was only 1 month old so we have to stay home). We spent the holiday with my parents in an AirBnB at the heart of Ho Chi Minh City, Landmark 81.
+I'm from Vietnam so Luna New Year is a big holiday. I and my family, we had a lot of fun gathering together. This is the first year Lina had growed up enough for me and my wife to take her travel (last year Tet holiday she was only 1 month old so we had to stay home). This year, we spent the holiday with my parents in an AirBnB at the heart of Ho Chi Minh City, Landmark 81.
 
-A long holiday also means I have some time to do what like most = learning new things. And man, do I enjoy what I found, `emacs`, `org mode`, `hugo`, `literate configuration`. I was having a great time.
+A long holiday also means I had some time to do what like most = learning new things. And man, did I enjoy what I found, `emacs`, `org mode`, `hugo`, `literate configuration`. I was having a great time.
 
-The personal website I had was a bit old. 2 years now I think. So It's the right time to improve it. I determined and set out about 2 hours a day whenever I can to build a new website during the holiday. And here are my notes on it:
+The personal website was a bit old. 2 years now I think. So It was the right time to improve it. I determined and set out about 2 hours a day whenever I can to build a new website during the holiday. And here are my notes on it:
 
 
 ## Hugo {#hugo}
@@ -30,14 +30,14 @@ Yes. All of the quote from their website is true. It was speedy, it was fun ⚡
 
 I went through the [Quick Start](https://gohugo.io/getting-started/quick-start/) with ease and got the site runing.
 
-Then I replace the Anake theme with [Terminal](https://themes.gohugo.io/themes/hugo-theme-terminal/) by [panr](https://twitter.com/panr).
+Then I replaced the Anake theme with [Terminal](https://themes.gohugo.io/themes/hugo-theme-terminal/) by [panr](https://twitter.com/panr).
 
 And voilà, A cool looking website with a look and feel of my usual working environment as a software engineer.
 
 
 ### Go module or Git clone {#go-module-or-git-clone}
 
-I was toying arround with `Go Module` at the start for the theme. But try my hand on editting the theme, `Git clone` is better solution. It let me manage and current theme implementation and keep track of my changes.
+I was toying arround with `Go Module` at the start. But when try my hand on editting the theme, `Git clone` method was the better solution. It let me manage the theme implementation and kept track of my changes.
 
 {{< figure src="/ox-hugo/hugo-partial_20220203_154732.png" alt="Hugo folder tree" width="300" >}}
 
