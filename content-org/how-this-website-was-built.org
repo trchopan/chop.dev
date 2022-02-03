@@ -12,9 +12,10 @@
 
 I'm from Vietnam so Luna New Year is a big holiday. I and my family, we had a lot of fun gathering together. This is the first year Lina is growed up enough for me and my wife to take her travel (last year she was only 1 month old so we have to stay home). We spent the holiday with my parents in an AirBnB at the heart of Ho Chi Minh City, Landmark 81.
 
-A long holiday also means I have some time to do things that I like "learning new things". And man, do I enjoy what I found, ~emacs~, ~org mode~, ~hugo~, ~literate configuration~. I was having a great time.
+A long holiday also means I have some time to do what like most = learning new things. And man, do I enjoy what I found, ~emacs~, ~org mode~, ~hugo~, ~literate configuration~. I was having a great time.
 
-The personal website I had was a bit old. 2 years now I think. So It's the right time to improve it. I determined and set out about 2 hours a day when ever I can to build it during the holiday. And here is my note on it:
+The personal website I had was a bit old. 2 years now I think. So It's the right time to improve it. I determined and set out about 2 hours a day whenever I can to build a new website during the holiday. And here are my notes on it:
+
 
 *  Hugo
 
