@@ -17,9 +17,23 @@
       </figure>
       <div>
         Hi, the name is Quang Tran
-        <span style="white-space: nowrap">aka Chop Tr.</span>
+        <code style="white-space: nowrap;">aka Chop Tr.</code>
       </div>
       <div>Welcome to my site / blogs / porfolio.</div>
+      <div class="center my-links">
+        <a href="https://github.com/trchopan/">
+          <span class="mdi mdi-github"></span>
+        </a>
+        <a href="mailto:chop@chop.ink">
+          <span class="mdi mdi-email"></span>
+        </a>
+        <a href="https://twitter.com/choptr">
+          <span class="mdi mdi-twitter"></span>
+        </a>
+        <a href="https://t.me/choptran">
+          <span class="mdi mdi-send"></span>
+        </a>
+      </div>
     </div>
     {{ end }}
     {{ $paginator := .Paginate (where $PageContext.RegularPages "Type" $contentTypeName) }}

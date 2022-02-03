@@ -3,11 +3,12 @@ title = "About Me"
 author = ["Chop Tr (chop.ink)"]
 tags = ["about", "me"]
 draft = false
+cover = "/choptr-avatar.jpg"
 +++
 
 Hi, Nice to meet you.
 
-The name is Quang Tran aka Chop Tr.
+The name is Quang Tran `aka Chop Tr`.
 
 I am a full-stack software engineer based in Ho Chi Minh City, Vietnam.
 
@@ -34,7 +35,7 @@ I am a full-stack software engineer based in Ho Chi Minh City, Vietnam.
 
 -   Hugo site builder
 
--   Emacs writer / Vim typer
+-   Emacs / Vim (I love both)
 
 
 ## Personal life {#personal-life}

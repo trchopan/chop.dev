@@ -1,0 +1,11 @@
+#+hugo_base_dir: ~/Documents/chop-ink/
+#+hugo_tags: how howto build website
+
+#+TITLE: How This Website Was Built
+#+AUTHOR: Chop Tr (chop.ink)
+#+DATE: <2022-02-02 Wed>
+#+DESCRIPTION: New year. New website. New journey.
+
+* The tools
+
+- Hugo static site generator

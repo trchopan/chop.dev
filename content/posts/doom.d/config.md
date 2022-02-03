@@ -5,6 +5,7 @@ description = "My config and note during the awesome journey of getting to know 
 date = 2022-01-26T00:00:00+07:00
 tags = ["doom", "emacs", "config"]
 draft = false
+cover = "/ox-hugo/demo-doom_20220131_154814.png"
 +++
 
 <div class="ox-hugo-toc toc">
@@ -12,7 +13,6 @@ draft = false
 
 <div class="heading">Table of Contents</div>
 
-- [Screenshot](#screenshot)
 - [Init.el](#init-dot-el)
 - [Default doom setup](#default-doom-setup)
 - [Automations](#automations)
@@ -29,11 +29,6 @@ draft = false
 </div>
 <!--endtoc-->
 
-
-
-## Screenshot {#screenshot}
-
-{{< figure src="/ox-hugo/demo-doom_20220131_154814.png" width="720px" >}}
 
 
 ## Init.el {#init-dot-el}
@@ -347,7 +342,7 @@ The command format-all-ensure-formatter will ensure that a default formatter is 
 #### Package {#package}
 
 ```emacs-lisp
-(package! ob-typescript)
+(package! ob-ts-node :recipe (:host github :repo "tmythicator/ob-ts-node"))
 ```
 
 
@@ -359,24 +354,6 @@ The command format-all-ensure-formatter will ensure that a default formatter is 
 Projects are beautifully managed. Can be added with `<C-p><C-p>a`.
 
 Edit workspaces by `treemacs-edit-workspaces`
-
-
-### Follow-mode {#follow-mode}
-
-`treemacs-follow-mode` is a global minor mode which allows the treemacs view to always move its focus to the currently selected file. This mode runs on an idle timer - the exact duration of inactivity (in seconds) before a move is called is determined by treemacs-tag-follow-delay.
-
-
-### Tag-follow-mode {#tag-follow-mode}
-
-`treemacs-tag-follow-mode` is a global minor mode which extends and effectively replaces treemacs-follow-mode. When activated it follows not just the current file, but also the current tag. This works alongside treemacs’ integration with imenu, so all file types providing an imenu implementation are compatible.
-
-This mode, like `follow-mode`, runs on an idle timer - the exact duration of inactivity (in seconds) before a move is called is determined by treemacs-tag-follow-delay.
-
-Note that in order to move to a tag in treemacs the treemacs buffer’s window needs to be temporarily selected, which will reset ~blink-cursor-mode~’s timer if it is enabled. This will result in the cursor blinking seemingly pausing for a short time and giving the appearance of the tag follow action lasting much longer than it really does.
-
-```emacs-lisp
-(setq treemacs-follow-mode t)
-```
 
 
 ### Additional keymaps {#additional-keymaps}

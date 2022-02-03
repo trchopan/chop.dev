@@ -1,13 +1,14 @@
 #+hugo_base_dir: ~/Documents/chop-ink/
 #+hugo_section: .
 #+hugo_tags: about me
+#+hugo_custom_front_matter: :cover /choptr-avatar.jpg
 
 #+TITLE: About Me
 #+AUTHOR: Chop Tr (chop.ink)
 
 Hi, Nice to meet you.
 
-The name is Quang Tran aka Chop Tr.
+The name is Quang Tran ~aka Chop Tr~.
 
 I am a full-stack software engineer based in Ho Chi Minh City, Vietnam.
 
@@ -34,7 +35,7 @@ I am a full-stack software engineer based in Ho Chi Minh City, Vietnam.
 
 - Hugo site builder
 
-- Emacs writer / Vim typer
+- Emacs / Vim (I love both)
 
 
 * Personal life

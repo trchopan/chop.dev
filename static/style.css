@@ -1,0 +1,27 @@
+:root {
+  --secondary: #eaf388;
+}
+h1,
+h2 {
+  color: var(--accent);
+}
+
+h3 {
+  color: var(--secondary);
+}
+
+.my-links {
+  font-size: 1.9rem;
+}
+
+.my-links a {
+  text-decoration: none;
+}
+
+figcaption {
+  font-size: 14px;
+  padding: 5px 10px;
+  margin-top: 5px;
+  background: none !important;
+  color: var(--color) !important;
+}
