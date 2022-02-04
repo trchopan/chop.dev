@@ -11,12 +11,28 @@ cover = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Day 8 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-04 Fri&gt;</span></span> {#day-8}
+
+
+### Back to PrismJS {#back-to-prismjs}
+
+I figure out how to configurate PrismJS for the Hugo theme. It actually a static files that I can replace with the PrismJS downloadable configuration.
+
+Just need to go to this pre-selected link:
+
+[https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard](https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard)
+
+Download the minified version and place it in the script tag to load PrismJS. Then let the theme handle the syntax highlight. Now my code block color is synced up with the theme color. Nice!
+
+
 ## Day 7 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-03 Thu&gt;</span></span> {#day-7}
 
 
 ### Improvement of my English {#improvement-of-my-english}
 
-I'm in the of the process of writing about the making my new website. It make me realize my English is a bit confusing (after post and reread). I know there is a tool call [Hemingway App](https://hemingwayapp.com/) named after Ernest Hemingway. Which will grade your writing 'Readability'. I use it detect a lot of bad points in my writing.
+I'm in the of the process of writing about the making my new website. It make me realize my English is... bad.
+
+There is a tool call [Hemingway App](https://hemingwayapp.com/) (named after Ernest Hemingway). Which will grade your writing 'Readability'. I'd use it from now to improve my writing.
 
 
 ## Day 6 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-02 Wed&gt;</span></span> {#day-6}
