@@ -10,7 +10,7 @@ cover = "/ox-hugo/howto-build-website_20220203_134312.png"
 
 🎉 Chúc mừng năm mới 🎉
 
-I'm from Vietnam so Luna New Year is a big holiday. I and my family, we had a lot of fun gathering together. This is the first year Lina had growed up enough for me and my wife to take her travel (last year Tet holiday she was only 1 month old so we had to stay home). This year, we spent the holiday with my parents in an AirBnB at the heart of Ho Chi Minh City, Landmark 81.
+I'm from Vietnam so Tet is a big holiday. I and my family, we had a lot of fun gathering together. This is the first year Lina had growed up enough for me and my wife to take her travel (last year Tet holiday she was only 1 month old so we had to stay home). This year, we spent the holiday with my parents in an AirBnB at the heart of Ho Chi Minh City, Landmark 81.
 
 A long holiday also means I had some time to do what like most = learning new things. And man, did I enjoy what I found, `emacs`, `org mode`, `hugo`, `literate configuration`. I was having a great time.
 
