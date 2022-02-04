@@ -1,5 +1,5 @@
 +++
-title = "Doom Emacs config file"
+title = "Doom Emacs configuration"
 author = ["Chop Tr (chop.ink)"]
 description = "My config and note during the awesome journey of getting to know Emacs and Doom Emacs"
 date = 2022-01-26T00:00:00+07:00
@@ -14,6 +14,7 @@ cover = "/ox-hugo/demo-doom_20220131_154814.png"
 <div class="heading">Table of Contents</div>
 
 - [Init.el](#init-dot-el)
+- [The configuration](#the-configuration)
 - [Default doom setup](#default-doom-setup)
 - [Automations](#automations)
 - [LSP](#lsp)
@@ -38,10 +39,12 @@ cover = "/ox-hugo/demo-doom_20220131_154814.png"
 
 This is kinda personal preference but it will effect the whole setup. I used to be a vim typer. I use `\` as keyleader instead of `Space`.
 
-{{< figure src="/ox-hugo/leader-key_20220131_213628.png" class="center" width="720px" >}}
+{{< figure src="/ox-hugo/leader-key_20220131_213628.png" width="300" >}}
+
+
+### .doom.d/init.el {#dot-doom-dot-d-init-dot-el}
 
 ```emacs-lisp
-;; .doom.d/init.el
 (add-hook 'org-mode-hook #'+org-pretty-mode)
 (setq doom-leader-key "\\"
       doom-leader-alt-key "M-\\"
@@ -225,6 +228,11 @@ This is kinda personal preference but it will effect the whole setup. I used to 
        ;;literate
        (default +bindings +smartparens))
 ```
+
+
+## The configuration {#the-configuration}
+
+Everything from this point on is either in `~/.doom.d/config.el` for configuration and in `~/.doom.d/packages.el` for package installation.
 
 
 ## Default doom setup {#default-doom-setup}
@@ -430,7 +438,7 @@ At first it seems that pre and post are advantageous over at and at-full, since 
   (interactive "F")
   (setq filename (concat file (format-time-string "_%Y%m%d_%H%M%S") ".png") )
   (shell-command (concat "pngpaste " filename))
-  (insert "#+attr_html: :width 720px\n")
+  (insert "#+attr_html: :width 720\n")
   (insert (concat "[[" filename "]]"))
   (org-display-inline-images))
 ```
