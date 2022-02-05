@@ -9,6 +9,20 @@
 
 I started using Emacs about a week ago <2022-01-24 Mon> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
+
+* Day 9 <2022-02-05 Sat>
+
+** DevDocs https://devdocs.io/
+
+This tool is awesome!!!
+
+#+begin_quote
+DevDocs combines multiple developer documentations in a clean and organized web UI with instant search, offline support, mobile version, dark theme, keyboard shortcuts, and more.
+
+DevDocs is free and open source. It was created by Thibaut Courouble and is operated by freeCodeCamp.
+#+end_quote
+
+
 * Day 8 <2022-02-04 Fri>
 
 ** Back to PrismJS
@@ -20,6 +34,11 @@ Just need to go to this pre-selected link:
 [[https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard][https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard]]
 
 Download the minified version and place it in the script tag to load PrismJS. Then let the theme handle the syntax highlight. Now my code block color is synced up with the theme color. Nice!
+
+
+** Haskell Concurrency
+
+I begin to study about Haskell Concurrency. It feels a lot like Go, but much safer. Loving the experience.
 
 
 * Day 7 <2022-02-03 Thu>
@@ -98,6 +117,7 @@ I have the most awesome settings for avy-jumping keys. Most of the keys should b
 
 #+attr_html: :width 720px
 [[./images/avy-keys_20220131_203804.png]]
+
 
 ** Block schedule should be calculate with the new epoch snapshot
 

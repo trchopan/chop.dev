@@ -11,6 +11,18 @@ cover = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Day 9 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-05 Sat&gt;</span></span> {#day-9}
+
+
+### DevDocs <https://devdocs.io/> {#devdocs-https-devdocs-dot-io}
+
+This tool is awesome!!!
+
+> DevDocs combines multiple developer documentations in a clean and organized web UI with instant search, offline support, mobile version, dark theme, keyboard shortcuts, and more.
+>
+> DevDocs is free and open source. It was created by Thibaut Courouble and is operated by freeCodeCamp.
+
+
 ## Day 8 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-04 Fri&gt;</span></span> {#day-8}
 
 
@@ -23,6 +35,11 @@ Just need to go to this pre-selected link:
 [https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard](https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard)
 
 Download the minified version and place it in the script tag to load PrismJS. Then let the theme handle the syntax highlight. Now my code block color is synced up with the theme color. Nice!
+
+
+### Haskell Concurrency {#haskell-concurrency}
+
+I begin to study about Haskell Concurrency. It feels a lot like Go, but much safer. Loving the experience.
 
 
 ## Day 7 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-03 Thu&gt;</span></span> {#day-7}
