@@ -11,7 +11,9 @@ draft = false
 
 This is a blog post on [FPComplete.com](https://www.fpcomplete.com/) and I found it increadibly useful so I need to convert it to Emacs Org-mode to try out interactively
 
-(original: <https://www.fpcomplete.com/blog/2016/11/comparative-concurrency-with-haskell/>)
+Org file: <https://github.com/trchopan/chop.ink/blob/main/content-org/posts/concurrency-with-haskell.org>
+
+Original: <https://www.fpcomplete.com/blog/2016/11/comparative-concurrency-with-haskell/>
 
 
 ## > {#}
