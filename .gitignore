@@ -47,6 +47,7 @@ tags
 
 # Firebase
 .firebase
+.firebaserc
 
 # Emacs
 .dir-locals.el
