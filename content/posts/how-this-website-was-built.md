@@ -6,6 +6,7 @@ date = 2022-02-02T00:00:00+07:00
 tags = ["how", "howto", "build", "website"]
 draft = false
 cover = "/ox-hugo/howto-build-website_20220203_134312.png"
+images = "/ox-hugo/howto-build-website_20220203_134312.png"
 +++
 
 🎉 Chúc mừng năm mới 🎉

@@ -2,6 +2,7 @@
 #+hugo_section: .
 #+hugo_tags: about me
 #+hugo_custom_front_matter: :cover /choptr-avatar.jpg
+#+hugo_custom_front_matter: :images /choptr-avatar.jpg
 
 #+TITLE: About Me
 #+AUTHOR: Chop Tr (chop.ink)

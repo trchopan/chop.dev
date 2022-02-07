@@ -161,7 +161,6 @@ worker requestsRef responseChan workerId = forkIO $ do
         -- give it a reference, and a function that works on the
         -- contained value. That function returns a pair of the
         -- new value for the reference, and a return value.
-        -- Let's see if we have anything to work with...
         mint <- atomicModifyIORef requestsRef $ \requests -> case requests of
           -- Empty list, so no requests! Put an empty list
           -- back in and return Nothing
@@ -207,9 +206,11 @@ Compare-and-swap operations can be significantly more efficient than using true 
 Compared to our channels example, there are some differences in behavior:
 
 - In the channels example, our workers looped forever, whereas here they have an explicit stop condition. In reality, the Haskell runtime will automatically kill worker threads that are blocked on a channel without any writer. However, we'll see how to use closable channels in a later example.
+
 - The channels example would only allow one request on the request channel at a time. This is similar to some of the examples from other languages, but defeats the whole purpose of concurrency: only one worker will be occupied at any given time. This =IORef= approach allows multiple workers to have work items at once. (Again, we'll see how to achieve this with channels in a bit.)
 
 You may be concerned about memory usage: won't holding that massive list of integers in memory all at once be expensive? Not at all: Haskell is a lazy language, meaning that the list will be constructed on demand. Each time a new element is asked for, it will be allocated, and then can be immediately garbage collected.
+
 
 * Software Transactional Memory
 
@@ -263,10 +264,10 @@ worker requestChan responseChan workerId = forkIO $ do
 
         -- Interact with the STM channels atomically
         toContinue <- atomically $ do
-            -- Get the next request, if the channel is open
+          -- Get the next request, if the channel is open
           mint <- readTBMChan requestChan
           case mint of
-              -- Channel is closed, do not continue
+            -- Channel is closed, do not continue
             Nothing  -> return False
             -- Channel is open and we have a request
             Just int -> do

@@ -6,6 +6,7 @@ date = 2022-01-26T00:00:00+07:00
 tags = ["doom", "emacs", "config"]
 draft = false
 cover = "/ox-hugo/demo-doom_20220131_154814.png"
+images = "/ox-hugo/demo-doom_20220131_154814.png"
 +++
 
 <div class="ox-hugo-toc toc">

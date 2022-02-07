@@ -6,9 +6,23 @@ date = 2022-02-03T00:00:00+07:00
 tags = ["today", "i", "learned"]
 draft = false
 cover = "/ox-hugo/today-i-learned_20220203_111606.png"
+images = "/ox-hugo/today-i-learned_20220203_111606.png"
 +++
 
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
+
+
+## Day 10 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-08 Tue&gt;</span></span> {#day-10}
+
+
+### Inquirer {#inquirer}
+
+Today I begin work on the Cardano Commands project. A tool to help me and the pool owner setup the pool securely by separate the authority into 2 part:
+
+-   Pool Operator: manage the setup and health of the pool. Example: cardano-cli, cardano-node version, Monitor Graphana, Calculate Block schedule, etc.
+-   Pool Owner: only one has access to the wallet key with the pledged ADA.
+
+During the development, I found out [Inquirer](https://github.com/SBoudrias/Inquirer.js) . Very nice tool to make interactive console UX/UI.
 
 
 ## Day 9 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-05 Sat&gt;</span></span> {#day-9}
@@ -32,7 +46,7 @@ I figure out how to configurate PrismJS for the Hugo theme. It actually a static
 
 Just need to go to this pre-selected link:
 
-[https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard](https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard)
+[https://prismjs.com/download.html#themes=prism-tomorrow&amp;languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&amp;plugins=show-language+toolbar+copy-to-clipboard](https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard)
 
 Download the minified version and place it in the script tag to load PrismJS. Then let the theme handle the syntax highlight. Now my code block color is synced up with the theme color. Nice!
 
@@ -166,6 +180,6 @@ All battery included. Tempting to do an Emacs from Scratch but it must comes lat
 
 ### Setting up Vue - conflict and old package {#setting-up-vue-conflict-and-old-package}
 
-Setting up Vue was a pain because the old package [vue-mode](https://github.com/AdamNiederer/vue-mode) <= DO NOT USE this.
+Setting up Vue was a pain because the old package [vue-mode](https://github.com/AdamNiederer/vue-mode) &lt;= DO NOT USE this.
 
-Vue has a new language server named [Volar](https://github.com/jadestrong/lsp-volar) <= Use this instead.
+Vue has a new language server named [Volar](https://github.com/jadestrong/lsp-volar) &lt;= Use this instead.

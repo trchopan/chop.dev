@@ -4,6 +4,7 @@ author = ["Chop Tr (chop.ink)"]
 tags = ["about", "me"]
 draft = false
 cover = "/choptr-avatar.jpg"
+images = "/choptr-avatar.jpg"
 +++
 
 Hi, Nice to meet you.

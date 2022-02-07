@@ -1,6 +1,7 @@
 #+hugo_base_dir: ~/Documents/chop-ink/
 #+hugo_tags: today i learned
 #+hugo_custom_front_matter: :cover /ox-hugo/today-i-learned_20220203_111606.png
+#+hugo_custom_front_matter: :images /ox-hugo/today-i-learned_20220203_111606.png
 
 #+TITLE: Today I Learned
 #+AUTHOR: Chop Tr (chop.ink)
@@ -8,6 +9,18 @@
 #+DESCRIPTION: It is good to keep a note of things I learned during the day
 
 I started using Emacs about a week ago <2022-01-24 Mon> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
+
+
+* Day 10 <2022-02-08 Tue>
+
+** Inquirer
+
+Today I begin work on the Cardano Commands project. A tool to help me and the pool owner setup the pool securely by separate the authority into 2 part:
+
+- Pool Operator: manage the setup and health of the pool. Example: cardano-cli, cardano-node version, Monitor Graphana, Calculate Block schedule, etc.
+- Pool Owner: only one has access to the wallet key with the pledged ADA.
+
+During the development, I found out [[https://github.com/SBoudrias/Inquirer.js][Inquirer]] . Very nice tool to make interactive console UX/UI.
 
 
 * Day 9 <2022-02-05 Sat>
