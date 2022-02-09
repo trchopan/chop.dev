@@ -1,7 +1,7 @@
 +++
 title = "Doom Emacs configuration"
 author = ["Chop Tr (chop.ink)"]
-description = "My config and note during the awesome journey of getting to know Emacs and Doom Emacs"
+description = "My configuration and note during the awesome journey of getting to know Emacs and Doom Emacs"
 date = 2022-01-26T00:00:00+07:00
 tags = ["doom", "emacs", "config"]
 draft = false
@@ -10,7 +10,6 @@ images = "/ox-hugo/demo-doom_20220131_154814.png"
 +++
 
 <div class="ox-hugo-toc toc">
-<div></div>
 
 <div class="heading">Table of Contents</div>
 
@@ -101,7 +100,7 @@ This is kinda personal preference but it will effect the whole setup. I used to 
        ;;parinfer          ; turn lisp into python, sort of
        ;;rotate-text       ; cycle region at point between text candidates
        snippets          ; my elves. They type so I don't have to
-       ;;word-wrap         ; soft wrapping with language-aware indent
+       word-wrap         ; soft wrapping with language-aware indent
        format
 
        :emacs
@@ -119,8 +118,8 @@ This is kinda personal preference but it will effect the whole setup. I used to 
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
-       ;;(spell +flyspell) ; tasing you for misspelling mispelling
-       ;;grammar           ; tasing grammar mistake every you make
+       ;(spell +flyspell) ; tasing you for misspelling mispelling
+       ;grammar           ; tasing grammar mistake every you make
 
        :tools
        ;;ansible
@@ -143,7 +142,7 @@ This is kinda personal preference but it will effect the whole setup. I used to 
        ;;taskrunner        ; taskrunner for all your projects
        ;;terraform         ; infrastructure as code
        ;;tmux              ; an API for interacting with tmux
-       upload            ; map local to remote projects via ssh/ftp
+       ;;upload            ; map local to remote projects via ssh/ftp
 
        :os
        (:if IS-MAC macos)  ; improve compatibility with macOS
@@ -287,15 +286,22 @@ To get information about any of these functions/macros, move the cursor over the
 You can also try `gd` (or `C-c c d`) to jump to their definition and see how they are implemented.
 
 
+### Indentation {#indentation}
+
+My screen is small. I Prefer 2 space indentation:
+
+```emacs-lisp
+(setq standard-indent 2)
+```
+
+
 ## Automations {#automations}
 
 Automatic tangle on save
 
 ```emacs-lisp
 (add-hook 'org-mode-hook
-          (lambda () (add-hook 'after-save-hook #'org-babel-tangle :append :local))
-          ;; (setq-default line-spacing 6)
-          )
+          (lambda () (add-hook 'after-save-hook #'org-babel-tangle :append :local)))
 ```
 
 Maximize the window upon startup. (May need to edit below depends on the monitor size)
@@ -355,6 +361,18 @@ The command format-all-ensure-formatter will ensure that a default formatter is 
 ```
 
 
+### Per language part-of-word {#per-language-part-of-word}
+
+```emacs-lisp
+(setq-default evil-symbol-word-search t)
+
+;; For all programming modes
+(add-hook 'prog-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+;; For all modes
+(add-hook 'after-change-major-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+```
+
+
 ## Treemacs {#treemacs}
 
 
@@ -370,6 +388,11 @@ Edit workspaces by `treemacs-edit-workspaces`
 ```emacs-lisp
 (with-eval-after-load 'treemacs
   (define-key evil-treemacs-state-map "s" 'treemacs-visit-node-horizontal-split))
+(defun treemacs-find-and-goto-treemacs ()
+  (interactive)
+  (treemacs-find-file)
+  (treemacs-select-window))
+(map! :n "`h" #'treemacs-find-and-goto-treemacs)
 ```
 
 
@@ -432,16 +455,51 @@ At first it seems that pre and post are advantageous over at and at-full, since 
 ## Org mode {#org-mode}
 
 
-### Insert clipboard image into org {#insert-clipboard-image-into-org}
+### Insert clipboard image into org file {#insert-clipboard-image-into-org-file}
+
+Require: `vips`, `vipsthumbnail`, `pngpaste`
+
+```bash
+#!/bin/bash
+
+# Location: ~/bin/clipboard-image-paste
+# Should be avaiable in PATH
+
+function help() {
+  echo "$0 <size> <output_file> <format>"
+  echo "Example: $0 1280 example.png \"png[Q=85]\""
+  echo "Note: The last argument need to have double quote"
+}
+
+if [[ -z $2 ]]; then
+  help
+  exit 1
+fi
+
+if [[ -z $3 ]]; then
+  format="png[Q=85]"
+else
+  format=$3
+fi
+
+pngpaste "/tmp/pngpaste.png"
+
+# Resize the image if greater than $1 with given $format
+output=$(echo "out_pngpaste.$format"| sed -E 's/(out_.*\.)(png|jpg|jpeg|webp).*/\1\2/g')
+vipsthumbnail -s "$1x$1>" -o "out_%s.$format" "/tmp/pngpaste.png"
+
+rm /tmp/pngpaste.png
+mv "/tmp/$output" $2
+
+```
 
 ```emacs-lisp
 (defun org-insert-clipboard-image (&optional file)
   (interactive "F")
-  (setq filename (concat file (format-time-string "_%Y%m%d_%H%M%S") ".png") )
-  (shell-command (concat "pngpaste " filename))
+  (setq filename (concat file (format-time-string "_%Y%m%d_%H%M%S") ".png"))
+  (shell-command (concat "clipboard-image-paste 1280 " filename " \"png[Q=85]\""))
   (insert "#+attr_html: :width 720\n")
-  (insert (concat "[[" filename "]]"))
-  (org-display-inline-images))
+  (insert (concat "[[" filename "]]")))
 ```
 
 
@@ -458,23 +516,20 @@ At first it seems that pre and post are advantageous over at and at-full, since 
 
 ### Tab moving and reordering {#tab-moving-and-reordering}
 
+Note: In Doom emacs `s` key is `cmd` key, aka `⌘,` on macOS.
+
 ```emacs-lisp
 (map! :n "H" #'+tabs:previous-or-goto)
 (map! :n "L" #'+tabs:next-or-goto)
-(map! :n "`h" #'treemacs-find-file)
-```
-
-For centaur tabs
-
-```emacs-lisp
-(map! :n "C-f h" #'centaur-tabs-move-current-tab-to-left)
-(map! :n "C-f l" #'centaur-tabs-move-current-tab-to-right)
+(map! :n "M-s-{" #'centaur-tabs-move-current-tab-to-left)
+(map! :n "M-s-}" #'centaur-tabs-move-current-tab-to-right)
+(map! :n "X" #'kill-current-buffer)
 ```
 
 
-#### Combo key `n.` {#combo-key-n-dot}
+#### Combo search replace with `n.` {#combo-search-replace-with-n-dot}
 
-Search current work > Jump back to it > Change it. After that you can redo the change by pressing `n.`
+Search current work &gt; Jump back to it &gt; Change it. After that you can redo the change by pressing `n.`
 
 ```emacs-lisp
 (define-key evil-motion-state-map "C-f" nil)
@@ -602,8 +657,11 @@ of the block."
 ### Font face {#font-face}
 
 ```emacs-lisp
-(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 13)
-      doom-variable-pitch-font (font-spec :family "Source Serif 4" :size 13))
+(if (string= (getenv "USER") "lw70868")
+    (setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 14)
+          doom-variable-pitch-font (font-spec :family "Source Serif 4" :size 14))
+  (setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 13)
+        doom-variable-pitch-font (font-spec :family "Source Serif 4" :size 13)))
 ```
 
 
