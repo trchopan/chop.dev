@@ -11,6 +11,17 @@
 I started using Emacs about a week ago <2022-01-24 Mon> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+* Day 11 <2022-02-09 Wed>
+
+** Yew
+
+https://github.com/yewstack/yew
+
+Frontend built with Rust + WebAssembly.
+
+Yew is a good play tool for me to learn Rust. I will allocate some time to make a project with it.
+
+
 * Day 10 <2022-02-08 Tue>
 
 ** Inquirer

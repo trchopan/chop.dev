@@ -12,6 +12,18 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Day 11 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-09 Wed&gt;</span></span> {#day-11}
+
+
+### Yew {#yew}
+
+<https://github.com/yewstack/yew>
+
+Frontend built with Rust + WebAssembly.
+
+Yew is a good play tool for me to learn Rust. I will allocate some time to make a project with it.
+
+
 ## Day 10 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-08 Tue&gt;</span></span> {#day-10}
 
 
