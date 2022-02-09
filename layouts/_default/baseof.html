@@ -6,7 +6,10 @@
   {{ end }}
   {{ partial "head.html" . }}
     <style type="text/css" src="style.css"></style>
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.css"
+          integrity="sha256-UKnpt7BTJ/EMgHTkcLW/43fpSTX2Qkb1Wgq+bbM8Gys=" crossorigin="anonymous">
+
     <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72x72.png">
@@ -26,7 +29,7 @@
     <meta name="theme-color" content="#FF6266">
 
     <meta http-equiv="Content-Security-Policy"
-          content="default-src 'self'; img-src https://*; child-src 'none';">
+          content="default-src 'self' cdn.jsdelivr.net; style-src 'unsafe-inline'">
 </head>
 <body class="{{- ( or .Params.color $.Site.Params.ThemeColor ) -}}">
 {{ $container := cond ($.Site.Params.FullWidthTheme | default false) "container full" (cond ($.Site.Params.CenterTheme | default false) "container center" "container") }}
