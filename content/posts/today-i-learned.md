@@ -12,6 +12,16 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Day 12 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-10 Thu&gt;</span></span> {#day-12}
+
+
+### Dired {#dired}
+
+Amazing experience with editable buffer using `C-x` `C-q`. When done just press `Z` `Z` to confirm or `Z` `Q` to discard the changes.
+
+{{< figure src="/ox-hugo/dired-editable-buffer_20220210_194540.png" width="720" >}}
+
+
 ## Day 11 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-09 Wed&gt;</span></span> {#day-11}
 
 
