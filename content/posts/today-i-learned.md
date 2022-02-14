@@ -12,6 +12,42 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Day 14 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-13 Sun&gt;</span></span> {#day-14}
+
+
+### Emacs terminals {#emacs-terminals}
+
+I tried the emacs terminals into my workflow but both the `eshell` and `vterm` did not work out for me.
+
+They feel very strange when using in combination with the evil mode. At first I was curious of editing the command by using normal vim keys, but there was a lot of bug while navigating between lines.
+
+=&gt; Switch back to the terminal app instead of Emacs.
+
+
+### Npm install from personal repo {#npm-install-from-personal-repo}
+
+I'm using a public repo that ease the use of `cardano-cli` with Javascript but it has some bugs as the maintainer not update so often.
+
+I need to forked it and provide my own fix and learn to use my own version instead of the npm package.
+
+This stackoverflow answer was the my solution:
+
+<https://stackoverflow.com/questions/40528053/npm-install-and-build-of-forked-github-repo>
+
+
+## Day 13 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-12 Sat&gt;</span></span> {#day-13}
+
+
+### Cardano TraceBlockFetchDecisions {#cardano-traceblockfetchdecisions}
+
+One of my Cardano node missing the `cardano_node_metrics_connectedPeers_int` . The culprit was the config `TraceBlockFetchDecisions`.
+
+```js
+// mainnet-config.json
+"TraceBlockFetchDecisions": true
+```
+
+
 ## Day 12 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-10 Thu&gt;</span></span> {#day-12}
 
 
@@ -178,7 +214,7 @@ I'm setting up the Cardano testnet on my Raspberry Pi to debug the setup script 
 
 Update <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-31 Mon&gt;</span></span>
 
-I knew why, need to check it out though. Must be because the version of `cardano-cli` / `cardano-node` I'm using on the node was old, I have not updated it for 5 months now.
+I knew why, need to check it out though. Must be because the version of `cardano-cli` / `cardano-node` I'm using on the secret node was old, I have not updated it for 5 months now.
 
 
 ### Emacs {#emacs}
