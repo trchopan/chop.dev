@@ -19,6 +19,8 @@ images = "/ox-hugo/demo-doom_20220131_154814.png"
 - [Automations](#automations)
 - [LSP](#lsp)
 - [Treemacs](#treemacs)
+- [Projectile](#projectile)
+- [Gitgutter](#gitgutter)
 - [Avy - Jump mode](#avy-jump-mode)
 - [Org mode](#org-mode)
 - [Centaur tab](#centaur-tab)
@@ -307,7 +309,10 @@ Automatic tangle on save
 Maximize the window upon startup. (May need to edit below depends on the monitor size)
 
 ```emacs-lisp
-(setq initial-frame-alist '((top . 1) (left . 1) (width . 177) (height . 60)))
+
+(if (string= (getenv "USER") "lw70868")
+    (setq initial-frame-alist '((top . 1) (left . 1) (width . 185) (height . 68)))
+  (setq initial-frame-alist '((top . 1) (left . 1) (width . 177) (height . 60))))
 ```
 
 
@@ -386,13 +391,36 @@ Edit workspaces by `treemacs-edit-workspaces`
 ### Additional keymaps {#additional-keymaps}
 
 ```emacs-lisp
-(with-eval-after-load 'treemacs
-  (define-key evil-treemacs-state-map "s" 'treemacs-visit-node-horizontal-split))
 (defun treemacs-find-and-goto-treemacs ()
   (interactive)
   (treemacs-find-file)
   (treemacs-select-window))
 (map! :n "`h" #'treemacs-find-and-goto-treemacs)
+
+(with-eval-after-load 'treemacs
+  (define-key evil-treemacs-state-map "s" 'treemacs-visit-node-horizontal-split))
+
+(with-eval-after-load 'treemacs
+  (define-key evil-treemacs-state-map (kbd "<SPC>") #'avy-goto-line))
+
+(with-eval-after-load 'treemacs
+  (define-key evil-treemacs-state-map (kbd "\\\\") #'+treemacs/toggle))
+
+(map! :n "\\\\" #'+treemacs/toggle)
+```
+
+
+## Projectile {#projectile}
+
+Trick:
+
+-   Use `projectile-invalidate-cache` to cleanup trash files in current project. I have typescript project that builded `js` files next to the source by accident and didn't know how to clean it up from the `find file` list. Took me good 30 minutes to find this command 🤦
+
+
+## Gitgutter {#gitgutter}
+
+```emacs-lisp
+(map! :leader :n "g p" #'git-gutter:popup-hunk)
 ```
 
 
@@ -404,7 +432,7 @@ avy is a GNU Emacs package for jumping to visible text using a char-based decisi
 ### Package {#package}
 
 ```emacs-lisp
-(package! avy)
+;; (package! avy)
 ```
 
 
@@ -505,18 +533,18 @@ mv "/tmp/$output" $2
 
 ## Centaur tab {#centaur-tab}
 
+
+### Turn on the tabs by projects instead of file type {#turn-on-the-tabs-by-projects-instead-of-file-type}
+
 ```emacs-lisp
 (with-eval-after-load 'centaur-tabs
   (centaur-tabs-group-by-projectile-project))
 ```
 
 
-## Personal Keymaps {#personal-keymaps}
-
-
 ### Tab moving and reordering {#tab-moving-and-reordering}
 
-Note: In Doom emacs `s` key is `cmd` key, aka `⌘,` on macOS.
+Note: In Doom emacs `s` key is `super key`, aka `⌘` on MacOS, `Windows` key on Windows.
 
 ```emacs-lisp
 (map! :n "H" #'+tabs:previous-or-goto)
@@ -527,7 +555,23 @@ Note: In Doom emacs `s` key is `cmd` key, aka `⌘,` on macOS.
 ```
 
 
-#### Combo search replace with `n.` {#combo-search-replace-with-n-dot}
+### Tab numbers {#tab-numbers}
+
+```emacs-lisp
+(map! :desc "Goto Tab 1" :n "s-1" (cmd! (+tabs:next-or-goto 1))
+      :desc "Goto Tab 2" :n "s-2" (cmd! (+tabs:next-or-goto 2))
+      :desc "Goto Tab 3" :n "s-3" (cmd! (+tabs:next-or-goto 3))
+      :desc "Goto Tab 4" :n "s-4" (cmd! (+tabs:next-or-goto 4))
+      :desc "Goto Tab 5" :n "s-5" (cmd! (+tabs:next-or-goto 5))
+      :desc "Goto Tab 6" :n "s-6" (cmd! (+tabs:next-or-goto 6))
+      )
+```
+
+
+## Personal Keymaps {#personal-keymaps}
+
+
+### Combo search replace with `n.` {#combo-search-replace-with-n-dot}
 
 Search current work &gt; Jump back to it &gt; Change it. After that you can redo the change by pressing `n.`
 
@@ -537,7 +581,7 @@ Search current work &gt; Jump back to it &gt; Change it. After that you can redo
 ```
 
 
-#### Change or subtitute should not replace the registers {#change-or-subtitute-should-not-replace-the-registers}
+### Change or subtitute should not replace the registers {#change-or-subtitute-should-not-replace-the-registers}
 
 ```emacs-lisp
 (evil-define-operator evil-change-without-register (beg end type _ yank-handler)
@@ -643,7 +687,7 @@ of the block."
 ```
 
 
-#### Map the `s` key to change {#map-the-s-key-to-change}
+### Map the `s` key to change {#map-the-s-key-to-change}
 
 ```emacs-lisp
 (define-key evil-motion-state-map "s" 'evil-substitute)
