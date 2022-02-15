@@ -12,6 +12,44 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Day 15 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-15 Tue&gt;</span></span> {#day-15}
+
+
+### Syncthing {#syncthing}
+
+<https://docs.syncthing.net/>
+
+Found out this tool. It's awesome to sync up multiple machine. Opensource and developer friendly, You can ignores files just like `.gitignore`
+
+
+### Seach and replace {#seach-and-replace}
+
+<https://hungyi.net/posts/doom-emacs-search-replace-project/>
+
+Awesome post, Now my search and replace workflow is just a string replace.
+
+{{< figure src="/ox-hugo/search-replace_20220215_125502.png" width="720" >}}
+
+Below is a copy of the original post.
+
+
+#### > {#}
+
+TL;DR:
+
+<!--list-separator-->
+
+-  for ivy module users
+
+    `SPC s p foo C-c C-e :%s/foo/bar/g RET Z Z`
+
+<!--list-separator-->
+
+-  for vertico module users
+
+    `SPC s p foo C-; E C-c C-p :%s/foo/bar/g RET Z Z`
+
+
 ## Day 14 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-13 Sun&gt;</span></span> {#day-14}
 
 
@@ -21,7 +59,7 @@ I tried the emacs terminals into my workflow but both the `eshell` and `vterm` d
 
 They feel very strange when using in combination with the evil mode. At first I was curious of editing the command by using normal vim keys, but there was a lot of bug while navigating between lines.
 
-=&gt; Switch back to the terminal app instead of Emacs.
+=> Switch back to the terminal app instead of Emacs.
 
 
 ### Npm install from personal repo {#npm-install-from-personal-repo}
@@ -104,7 +142,7 @@ I figure out how to configurate PrismJS for the Hugo theme. It actually a static
 
 Just need to go to this pre-selected link:
 
-[https://prismjs.com/download.html#themes=prism-tomorrow&amp;languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&amp;plugins=show-language+toolbar+copy-to-clipboard](https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard)
+[https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard](https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard)
 
 Download the minified version and place it in the script tag to load PrismJS. Then let the theme handle the syntax highlight. Now my code block color is synced up with the theme color. Nice!
 
@@ -238,6 +276,6 @@ All battery included. Tempting to do an Emacs from Scratch but it must comes lat
 
 ### Setting up Vue - conflict and old package {#setting-up-vue-conflict-and-old-package}
 
-Setting up Vue was a pain because the old package [vue-mode](https://github.com/AdamNiederer/vue-mode) &lt;= DO NOT USE this.
+Setting up Vue was a pain because the old package [vue-mode](https://github.com/AdamNiederer/vue-mode) <= DO NOT USE this.
 
-Vue has a new language server named [Volar](https://github.com/jadestrong/lsp-volar) &lt;= Use this instead.
+Vue has a new language server named [Volar](https://github.com/jadestrong/lsp-volar) <= Use this instead.
