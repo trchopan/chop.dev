@@ -258,13 +258,13 @@ They all accept either a font-spec, font string ("Input Mono-12"), or xlfd font 
 There are two ways to load a theme. Both assume the theme is installed and available. You can either set `doom-theme` or manually load a theme with the `load-theme` function. This is the default:
 
 ```emacs-lisp
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-tokyo-night)
 ```
 
 If you use `org` and don't want your org files in the default location below, change `org-directory`. It must be set before org loads!
 
 ```emacs-lisp
-(setq org-directory "~/org/")
+(setq org-directory "~/Sync/org")
 ```
 
 This determines the style of line numbers in effect. If set to `nil`, line numbers are disabled. For relative line numbers, set this to `relative`.
@@ -294,6 +294,37 @@ My screen is small. I Prefer 2 space indentation:
 
 ```emacs-lisp
 (setq standard-indent 2)
+```
+
+
+### Doom splash screen {#doom-splash-screen}
+
+```emacs-lisp
+(defun doom-dashboard-draw-ascii-emacs-banner-fn ()
+  (let* ((banner
+          '("      __                          __                             "
+            "     /\\ \\                        /\\ \\__                          "
+            "  ___\\ \\ \\___     ___   _____    \\ \\ ,_\\  _ __    __      ___    "
+            " /'___\\ \\  _ `\\  / __`\\/\\ '__`\\   \\ \\ \\/ /\\`'__\\/'__`\\  /' _ `\\  "
+            "/\\ \\__/\\ \\ \\ \\ \\/\\ \\L\\ \\ \\ \\L\\ \\   \\ \\ \\_\\ \\ \\//\\ \\L\\.\\_/\\ \\/\\ \\ "
+            "\\ \\____\\\\ \\_\\ \\_\\ \\____/\\ \\ ,__/    \\ \\__\\\\ \\_\\\\ \\__/.\\_\\ \\_\\ \\_\\"
+            " \\/____/ \\/_/\\/_/\\/___/  \\ \\ \\/      \\/__/ \\/_/ \\/__/\\/_/\\/_/\\/_/"
+            "                          \\ \\_\\                                  "
+            "                           \\/_/                                  "
+            "                                                                 "))
+         (longest-line (apply #'max (mapcar #'length banner))))
+    (put-text-property
+     (point)
+     (dolist (line banner (point))
+       (insert (+doom-dashboard--center
+                +doom-dashboard--width
+                (concat
+                 line (make-string (max 0 (- longest-line (length line)))
+                                   32)))
+               "\n"))
+     'face 'doom-dashboard-banner)))
+
+(setq +doom-dashboard-ascii-banner-fn #'doom-dashboard-draw-ascii-emacs-banner-fn)
 ```
 
 
@@ -427,13 +458,6 @@ Trick:
 ## Avy - Jump mode {#avy-jump-mode}
 
 avy is a GNU Emacs package for jumping to visible text using a char-based decision tree. See also ace-jump-mode and vim-easymotion - avy uses the same idea.
-
-
-### Package {#package}
-
-```emacs-lisp
-;; (package! avy)
-```
 
 
 ### Keymaps {#keymaps}

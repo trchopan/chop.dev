@@ -1,4 +1,5 @@
 {{ if .Get "src" }}
+<a class="my-figure" href="{{ .Get "src" | safeURL }}">
 <figure class="{{ with .Get "position"}}{{ . }}{{ else -}} center {{- end }}"
         {{ if .Get "width" }}
         style="max-width: {{ .Get "width" }}px"
@@ -12,5 +13,6 @@
       {{ .Get "alt" | safeHTML }}
     </figcaption>
     {{ end }}
-  </figure>
+</figure>
+</a>
 {{ end }}
