@@ -33,7 +33,7 @@ Awesome post, Now my search and replace workflow is just a string replace.
 Below is a copy of the original post.
 
 
-#### > {#}
+#### &gt; {#cedf8d}
 
 TL;DR:
 
@@ -59,7 +59,7 @@ I tried the emacs terminals into my workflow but both the `eshell` and `vterm` d
 
 They feel very strange when using in combination with the evil mode. At first I was curious of editing the command by using normal vim keys, but there was a lot of bug while navigating between lines.
 
-=> Switch back to the terminal app instead of Emacs.
+=&gt; Switch back to the terminal app instead of Emacs.
 
 
 ### Npm install from personal repo {#npm-install-from-personal-repo}
@@ -68,9 +68,7 @@ I'm using a public repo that ease the use of `cardano-cli` with Javascript but i
 
 I need to forked it and provide my own fix and learn to use my own version instead of the npm package.
 
-This stackoverflow answer was the my solution:
-
-<https://stackoverflow.com/questions/40528053/npm-install-and-build-of-forked-github-repo>
+This stackoverflow answer was the my solution: [LINK](https://stackoverflow.com/questions/40528053/npm-install-and-build-of-forked-github-repo)
 
 
 ## Day 13 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-12 Sat&gt;</span></span> {#day-13}
@@ -140,9 +138,14 @@ This tool is awesome!!!
 
 I figure out how to configurate PrismJS for the Hugo theme. It actually a static files that I can replace with the PrismJS downloadable configuration.
 
-Just need to go to this pre-selected link:
+Just need to go to this pre-selected &gt;&gt; [Example](https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard) &lt;&lt;
 
-[https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard](https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard)
+```nil
+https://prismjs.com/download.html#
+themes=prism-tomorrow&
+languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&
+plugins=show-language+toolbar+copy-to-clipboard
+```
 
 Download the minified version and place it in the script tag to load PrismJS. Then let the theme handle the syntax highlight. Now my code block color is synced up with the theme color. Nice!
 
@@ -276,6 +279,6 @@ All battery included. Tempting to do an Emacs from Scratch but it must comes lat
 
 ### Setting up Vue - conflict and old package {#setting-up-vue-conflict-and-old-package}
 
-Setting up Vue was a pain because the old package [vue-mode](https://github.com/AdamNiederer/vue-mode) <= DO NOT USE this.
+Setting up Vue was a pain because the old package [vue-mode](https://github.com/AdamNiederer/vue-mode) &lt;= DO NOT USE this.
 
-Vue has a new language server named [Volar](https://github.com/jadestrong/lsp-volar) <= Use this instead.
+Vue has a new language server named [Volar](https://github.com/jadestrong/lsp-volar) &lt;= Use this instead.

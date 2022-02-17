@@ -61,9 +61,7 @@ I'm using a public repo that ease the use of =cardano-cli= with Javascript but i
 
 I need to forked it and provide my own fix and learn to use my own version instead of the npm package.
 
-This stackoverflow answer was the my solution:
-
-https://stackoverflow.com/questions/40528053/npm-install-and-build-of-forked-github-repo
+This stackoverflow answer was the my solution: [[https://stackoverflow.com/questions/40528053/npm-install-and-build-of-forked-github-repo][LINK]]
 
 
 * Day 13 <2022-02-12 Sat>
@@ -130,9 +128,14 @@ DevDocs is free and open source. It was created by Thibaut Courouble and is oper
 
 I figure out how to configurate PrismJS for the Hugo theme. It actually a static files that I can replace with the PrismJS downloadable configuration.
 
-Just need to go to this pre-selected link:
+Just need to go to this pre-selected >> [[https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard][Example]] <<
 
-[[https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard][https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&plugins=show-language+toolbar+copy-to-clipboard]]
+#+begin_src
+https://prismjs.com/download.html#
+themes=prism-tomorrow&
+languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&
+plugins=show-language+toolbar+copy-to-clipboard
+#+end_src
 
 Download the minified version and place it in the script tag to load PrismJS. Then let the theme handle the syntax highlight. Now my code block color is synced up with the theme color. Nice!
 

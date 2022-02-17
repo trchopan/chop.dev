@@ -11,16 +11,16 @@ draft = false
 
 This is a blog post on [FPComplete.com](https://www.fpcomplete.com/) and I found it increadibly useful so I need to convert it to Emacs Org-mode to try out interactively
 
-Org file: <https://github.com/trchopan/chop.ink/blob/main/content-org/posts/concurrency-with-haskell.org>
+[Org file](https://github.com/trchopan/chop.ink/blob/main/content-org/posts/concurrency-with-haskell.org)
 
-Original: <https://www.fpcomplete.com/blog/2016/11/comparative-concurrency-with-haskell/>
+[Original](https://www.fpcomplete.com/blog/2016/11/comparative-concurrency-with-haskell/)
 
 
-## > {#}
+## &gt; {#cedf8d}
 
 Last week, I was at DevConTLV X and attended a workshop by Aaron Cruz. While the title was a bit of a lie (it wasn't four hours, and we didn't do a chat app), it was a great way to see some basics of concurrency in different languages. Of course, that made me all the more curious to add Haskell to the mix.
 
-I've provided multiple different implementations of this program in Haskell, focusing on different approaches (matching the approaches of the other languages, highly composable code, and raw efficiency). These examples are intended to be run and experimented with. The only requirement is that you install [the Haskell build tool Stack](https://haskell-lang.org/get-started). You can download a [Windows installer](https://www.stackage.org/stack/windows-x86%5F64-installer), or on OS X and Linux run:
+I've provided multiple different implementations of this program in Haskell, focusing on different approaches (matching the approaches of the other languages, highly composable code, and raw efficiency). These examples are intended to be run and experimented with. The only requirement is that you install [the Haskell build tool Stack](https://haskell-lang.org/get-started). You can download a [Windows installer](https://www.stackage.org/stack/windows-x86_64-installer), or on OS X and Linux run:
 
 ```bash
 curl -sSL https://get.haskellstack.org/ | sh
