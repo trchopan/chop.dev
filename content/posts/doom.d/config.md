@@ -258,7 +258,7 @@ They all accept either a font-spec, font string ("Input Mono-12"), or xlfd font 
 There are two ways to load a theme. Both assume the theme is installed and available. You can either set `doom-theme` or manually load a theme with the `load-theme` function. This is the default:
 
 ```emacs-lisp
-(setq doom-theme 'doom-tokyo-night)
+(setq doom-theme 'doom-vibrant)
 ```
 
 If you use `org` and don't want your org files in the default location below, change `org-directory`. It must be set before org loads!
@@ -440,6 +440,12 @@ Edit workspaces by `treemacs-edit-workspaces`
 (map! :n "\\\\" #'+treemacs/toggle)
 ```
 
+```emacs-lisp
+(after! doom-themes
+  (setq doom-themes-treemacs-theme "doom-colors") ; use "doom-colors" for less minimal icon theme
+  (doom-themes-treemacs-config))
+```
+
 
 ## Projectile {#projectile}
 
@@ -505,6 +511,13 @@ At first it seems that pre and post are advantageous over at and at-full, since 
 
 
 ## Org mode {#org-mode}
+
+
+### Change the ellipsis {#change-the-ellipsis}
+
+```emacs-lisp
+(setq org-ellipsis " [+]")
+```
 
 
 ### Insert clipboard image into org file {#insert-clipboard-image-into-org-file}
