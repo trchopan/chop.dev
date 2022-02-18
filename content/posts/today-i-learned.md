@@ -12,6 +12,14 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Day 16 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-18 Fri&gt;</span></span> {#day-16}
+
+
+### Mark jumping in emacs {#mark-jumping-in-emacs}
+
+In `vim`, I was used to the marking jumping with `` ` `` (backtick) key. It awesome to jumping around marks in a buffer it help a lot during my workflow. But in Emacs - evil mode, it use `'` (single tick) key.
+
+
 ## Day 15 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-15 Tue&gt;</span></span> {#day-15}
 
 
