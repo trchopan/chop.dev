@@ -11,6 +11,53 @@
 I started using Emacs about a week ago <2022-01-24 Mon> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+* Day 17 <2022-02-20 Sun>
+
+** Haskell and a smile
+
+I've been working on the [[https://github.com/trchopan/scheduled-blocks][scheduled-block]] on and off for a week now. I even take off sometime at work (don't tell my boss) to tinker on it. The last couple of days, I've been struggle with the conversion of the seed function for verifing Cardano Slot Leader. Where we need 2 set of seed bytes, one from the Neutral Nonce and one from the Epoch Nonce, then combine them to make the seed.
+
+The Python looks like this
+
+#+begin_src python
+def mkSeed(slot, eta0):
+    h = hashlib.blake2b(digest_size=32)
+    h.update(bytearray([0, 0, 0, 0, 0, 0, 0, 1]))  # neutral nonce
+    seedLbytes = h.digest()
+
+    h = hashlib.blake2b(digest_size=32)
+    h.update(slot.to_bytes(8, byteorder="big") + binascii.unhexlify(eta0))
+    slotToSeedBytes = h.digest()
+
+    seed = [x ^ slotToSeedBytes[i] for i, x in enumerate(seedLbytes)]
+    return bytes(seed)
+#+end_src
+
+I've been working hard on learning Haskell and the solution at the end was so elegant I was in awe when I have it.
+
+#+begin_src haskell
+hashBlake2b :: BS.ByteString -> Digest Blake2b_256
+hashBlake2b = hash
+
+seedLBytes :: Digest Blake2b_256
+seedLBytes = hashBlake2b neutral
+  where neutral = BA.pack [0, 0, 0, 0, 0, 0, 0, 1] :: ByteString
+
+slotToSeedBytes :: Int64 -> ByteString -> Digest Blake2b_256
+slotToSeedBytes slot nonce = hashBlake2b $ BS.append encodedSlot nonce
+  where encodedSlot = LBS.toStrict $ Binary.encode slot
+
+-- For every seedLBytes xor it with the slotSeedBytes
+mkSeed :: Digest Blake2b_256 -> Digest Blake2b_256 -> [Word8]
+mkSeed seedLBytes slotToSeedBytes = zipWith xor arrSeedLBytes arrSlotToSeedBytes
+ where
+  arrSeedLBytes      = B.unpack seedLBytes
+  arrSlotToSeedBytes = B.unpack slotToSeedBytes
+#+end_src
+
+Loving the Haskell journey even more <3
+
+
 * Day 16 <2022-02-18 Fri>
 
 ** Mark jumping in emacs
