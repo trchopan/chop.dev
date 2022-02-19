@@ -27,7 +27,7 @@ The personal website was a bit old. 2 years now I think. So It was the right tim
 
 Yes. All of the quote from their website is true. It was speedy, it was fun ⚡
 
-{{< figure src="/ox-hugo/quick-started_20220203_153847.png" alt="Hugo quick start" caption="Figure 1: quick start" width="720" >}}
+{{< figure src="/ox-hugo/quick-started_20220203_153847.png" alt="Hugo quick start" caption="<span class=\"figure-number\">Figure 1: </span>quick start" width="720" >}}
 
 I went through the [Quick Start](https://gohugo.io/getting-started/quick-start/) with ease and got the site runing.
 
@@ -57,10 +57,47 @@ Hugo is the build tool that is very well documented, has incredible performance 
 ## Emacs and Org mode {#emacs-and-org-mode}
 
 
-### Doom emacs {#doom-emacs}
+### Doom Emacs {#doom-emacs}
 
-I got hooked on emacs for about a month now.
+I got hooked on emacs by watching Distro Tube video [What Are The Benefits Of Emacs Over Vim?](https://www.youtube.com/watch?v=kRkp-uJTK7s) . Just a few demo of org-mode and I got down to my Macbook Air to it out. It was great experience: great help from the document from both Emacs GNU and Doom Emacs. Other than that, everytime I need something just need to ask Emacs it self by pressing `<leader>h`. Awesome!!!
 
-It was a great tool and environment to explore. I am a Vim user, in other words, I used to configure my own tool and tinker around all the internal parts and customization.
+I am a Vim user so I used to configure my own tool and tinker around all the internal parts and customization. The setup was not taking long, just a few days and I got the environment for typescript, vue and ready to spin up the website.
+
+
+### Org mode {#org-mode}
+
+One of the great feature of Emacs is `org-mode` I write all of my post in it.
+
+As Emacs is a Graphical Editor it has the ability to display multiple font face, font type and even pictures. Editing in `org-mode` is a blast for me.
+
+
+## The features {#the-features}
+
+I'd like my personal website to be simple
+
+
+### Posts {#posts}
+
+Ofcouse, it should contains all my writings and posts are must have.
+
+{{< figure src="/ox-hugo/post-in-dir_20220218_203256.png" width="300" >}}
+
+I have all my post in org files and put in `/content-org/` folder. Every time I save, I have a script to automatically export to markdown for Hugo to consume. Using [ox-hugo](https://ox-hugo.scripter.co/).
+
+Below is my example setup for a post
+
+```nil
+#+hugo_base_dir: ~/Sync/chop-ink/
+#+hugo_tags: how howto build website
+#+hugo_custom_front_matter: :cover /ox-hugo/howto-build-website_20220203_134312.png
+#+hugo_custom_front_matter: :images /ox-hugo/howto-build-website_20220203_134312.png
+
+#+TITLE: How This Website Was Built
+#+AUTHOR: Chop Tr (chop.ink)
+#+DATE: <2022-02-02 Wed>
+#+DESCRIPTION: New year. New website. New journey.
+```
+
+Then everytime I need to export the post just press `C-c C-e H h`.I know, it's a long keybind, I used to the acronyms method to remember so it comes very easy for me: Control &gt; Export &gt; Hugo -&gt; hugo away!!!
 
 TOBE CONTINUE
