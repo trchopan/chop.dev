@@ -12,12 +12,26 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Day 18 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-21 Mon&gt;</span></span> {#day-18}
+
+
+### Haskell Cabal external-libraries {#haskell-cabal-external-libraries}
+
+I have been scratching my head all days for the cabal tool to work with the `external-libraries` flag as I need to connect `libsodium` to my current project (`scheduled-blocks`).
+
+Gone through a dozen of Stackoverflow questions but not thing works. I tried `LD_LIBRARY_PATH`, `LDFLAGS`, etc. Turn out for MacOs on M1 and homebrew, it is
+
+```bash
+export LIBRARY_PATH="/opt/homebrew/lib"
+```
+
+
 ## Day 17 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-20 Sun&gt;</span></span> {#day-17}
 
 
-### Haskell and a smile {#haskell-and-a-smile}
+### Haskell beauty of Functional {#haskell-beauty-of-functional}
 
-I've been working on the [scheduled-block](https://github.com/trchopan/scheduled-blocks) on and off for a week now. I even take off sometime at work (don't tell my boss) to tinker on it. The last couple of days, I've been struggle with the conversion of the seed function for verifing Cardano Slot Leader. Where we need 2 set of seed bytes, one from the Neutral Nonce and one from the Epoch Nonce, then combine them to make the seed.
+I've been working on the [scheduled-block](https://github.com/trchopan/scheduled-blocks) on and off for a week now. I even take sometime off work (don't tell my boss) to tinker on it. The last couple of days, I've been struggle with the conversion of the seed function for verifing Cardano Slot Leader. Where we need 2 set of seed bytes, one from the Neutral Nonce and one from the Epoch Nonce, then combine them to make the seed.
 
 The Python looks like this
 
