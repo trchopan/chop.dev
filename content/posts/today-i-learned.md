@@ -12,6 +12,16 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Day 19 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-25 Fri&gt;</span></span> {#day-19}
+
+
+### Haskell import must be first {#haskell-import-must-be-first}
+
+The haskell build tool - `cabal` - has a requirement to put the `import` as the first item. I've been struggle to understand why my build keep complaining package not found when I reorder the items 😓
+
+{{< figure src="/ox-hugo/cabal-import_20220225_113837.png" width="350" >}}
+
+
 ## Day 18 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-21 Mon&gt;</span></span> {#day-18}
 
 
