@@ -12,6 +12,30 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Day 20 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-26 Sat&gt;</span></span> {#day-20}
+
+
+### Haskell refactor {#haskell-refactor}
+
+Today I refactor a bunch of http request code for the [scheduled-blocks](https://github.com/trchopan/scheduled-blocks) project. Haskell continue to amaze me with such easy to read and clean looking code.
+
+```haskell
+handleEitherFailOrResult :: Either String p -> p
+handleEitherFailOrResult e = do
+  case e of
+    Left  err -> error $ printf "Failed to handle result. Error: %s\n" err
+    Right v   -> v
+
+requestAndDecode :: (MonadIO m, FromJSON a) => Request -> m a
+requestAndDecode request =
+  httpLBS request
+    >>= return
+    .   handleEitherFailOrResult
+    .   eitherDecode
+    .   getResponseBody
+```
+
+
 ## Day 19 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-25 Fri&gt;</span></span> {#day-19}
 
 
@@ -29,7 +53,7 @@ The haskell build tool - `cabal` - has a requirement to put the `import` as the 
 
 I have been scratching my head all days for the cabal tool to work with the `external-libraries` flag as I need to connect `libsodium` to my current project (`scheduled-blocks`).
 
-Gone through a dozen of Stackoverflow questions but not thing works. I tried `LD_LIBRARY_PATH`, `LDFLAGS`, etc. Turn out for MacOs on M1 and homebrew, it is
+Gone through a dozen of Stackoverflow questions but not thing works. I tried `LD_LIBRARY_PATH`, `LDFLAGS`, etc. Turn out for `MacOs` on M1 and `homebrew`, it is
 
 ```bash
 export LIBRARY_PATH="/opt/homebrew/lib"
