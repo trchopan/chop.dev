@@ -11,9 +11,12 @@ images = "/ox-hugo/scheduled-block-script_20220301_234604.png"
 
 ## Mục đích của dự án {#mục-đích-của-dự-án}
 
+
+### Intro {#intro}
+
 Haskell là một ngôn ngữ rất khó, một thế giới mới đối với bất kỳ kỹ sư lập trình nào đã làm việc quá lâu với OOP hay thế giới imperative programing (tạm gọi lập trình mệnh lệnh).
 
-Có 2 mô hình lập trình (hay còn gọi là paradigms) là imperative (mệnh lệnh) và functional (chức năng).
+Có 2 mô hình lập trình (hay còn gọi là paradigms) là `imperative` (mệnh lệnh) và `functional` (chức năng).
 
 ```java
 int total = 0;
@@ -33,7 +36,29 @@ sum (n:ns) = n + sum ns
 
 Link: <https://www.youtube.com/watch?v=sqV3pL5x8PI>
 
-2 ví dụ điển hình nhất của 2 paradigms này là Java - imperative và Haskell - functional. Ở đây không phải là so sánh tốt xấu, tất cả paradigms đều là 1 nguyên tác và lý luận để giải quyết vấn đề. Chỉ là người sử dụng hiểu mình muốn gì và áp dụng như thế nào. Các bạn có thể hiểu nhg paradigms này như Đạo, có đạo Phật, đạo Chúa, v.v thì trong lập trình cũng vậy.
+2 ví dụ điển hình nhất của 2 paradigms này là `Java` - imperative và `Haskell` - functional.
+
+
+### Imperative {#imperative}
+
+Lập trình imperative hay có các biến global và cách xử lý một tác vụ nào đó thường là làm việc xong, ghi kết quả lên biến đó để sử dụng tiếp. Điều này có điểm hay là khá dễ hiểu như các bạn xem code Java ở trên. Nó gần hơn với lối suy nghĩ muốn làm việc A thì bạn có các bước sau: 1, 2, 3. Lập trình theo paradigm này mình có cảm giác như lập một `"Cuốn sách hướng dẫn"`.
+
+Các bạn sẽ thấy khá nhiều các vòng lặp như `for-loop`, `while-loop` hay các conditionals như `if-else`.
+
+
+### Functional {#functional}
+
+Functional thì tập trung giải quyết cách xử lý đầu vào và đầu ra. Khi nhận đc A thì sẽ cho kết quả B. Và cách thực hiện chức năng của nó sẽ chia thành tình huống xử lý như ví dụ trên. Điểm hay của nó là khi lập trình các bạn sẽ phát triển 1 trực giác là suy nghĩ ngay đến các tình huống có thể sảy xa để xử lý. Lập trình theo paradigm này mình có cảm giác như lập một cái `"Hợp đồng"`.
+
+Các bạn sẽ thấy khá nhiều chức năng như `map`, `filter`, hay kiểu dòng chảy logic như `Maybe`, `Either`. (đào sâu hơn thì các bạn sẽ gặp `Monad` :D)
+
+
+### &gt; {#cedf8d}
+
+Ở đây không phải là so sánh tốt xấu, tất cả paradigms đều là những nguyên tác và lý luận để giải quyết vấn đề. Các bạn có thể hiểu nhg paradigms này như Đạo, có đạo Phật, đạo Chúa, v.v thì trong lập trình cũng vậy. Chỉ là người sử dụng hiểu mình muốn gì và áp dụng như thế nào.
+
+
+### Mục đích dự án {#mục-đích-dự-án}
 
 Đối với kinh nghiệm của mình thì không có gì hiệu quả bằng tự đặt ra 1 mục đích cho bản thân. Một cái gì đó mà mình có thể đạt đc để tập trung hết tất cả sức lực để tiến tới. Thông qua đó nhg thứ trên quãng đường sẽ trở thành kiến thức và kinh nghiệm.
 
@@ -45,7 +70,7 @@ Giới thiệu sơ thì mình là một Stake Pool opperator. Là một người
 
 Thì việc staking và vận hành hồ Cardano khác với các hệ blockchain khác là nó có thể tính trước được block đến hồ chính xác vào lúc nào. Công thức tính thì dựa trên khoá VRF Sign key (Verifiable Random Function).
 
-Đây là một chương trình viết lại của một repo khác cũng đã thực hiện việc tính toán này, source kia thì viết bằng Python. Mình quyết định mục tiêu sẽ là convert hết các Chức năng và Công thức của repo đó thành Haskell, phục vụ việc học ngôn ngữ này.
+Mục tiêu của mình viết lại của một repo khác cũng đã thực hiện việc tính toán này, source kia thì viết bằng Python. Mình sẽ convert hết các Chức năng và Công thức của repo đó thành Haskell, phục vụ việc học ngôn ngữ mới.
 
 
 ## Con đường {#con-đường}
@@ -99,11 +124,9 @@ Mình sẽ đi qua tài liệu mà mình viết khi chuẩn bị các thông s�
 
 ### Viết test case {#viết-test-case}
 
-Thói quen khi lập trình của mình. Các bạn lập trình lâu năm sẽ hiểu đc thói quen này đáng giá như thế nào. Vì các chương trình của các bạn khá là đồ sộ, không dễ dàng để spin up (khởi động) chương trình lên và test nhanh đc.
+là một thói quen khi lập trình của mình. Các bạn lập trình lâu năm sẽ hiểu đc thói quen này đáng giá như thế nào. Vì các chương trình của các bạn khá là đồ sộ, không dễ dàng để spin up (khởi động) chương trình lên và test nhanh đc.
 
-Lưu ý là điều trên đúng với các bạn lập trình Backend. Bên frontend có các công cụ để hot-reload để phục vụ công việc này.
-
-Nên khi nhảy vào làm project một trong những thứ mình học trước tiên là cách viết test case.
+Nên khi nhảy vào làm project một trong những thứ mình học là cách viết test case.
 
 
 #### Demo {#demo}
@@ -121,8 +144,14 @@ Nên khi nhảy vào làm project một trong những thứ mình học trước
 
 Qua trải nghiệm thì chương trình này cũng không quá khó. Nhg nó thể hiện được khá nhiều các chức năng của một chương trình viết trên Haskell.
 
-Ở đây mình chưa có nhiều kiến thức sâu về Haskell vì mới học đc vài tháng. Nên chưa xử lý đc các kiểu dữ liệu, xử lý cấu trúc thư mục hay cũng như chưa nắm đc các cách lập trình chạy concurrency. Nghiên cứu tham khảo thì Haskell khá mạnh với Software Transactional Memory mechanism (STM) - Cơ chế bộ nhớ giao dịch phần mềm. Vì nó tính chất thuần functional, Haskell có khả năng đảm bảo các biến STM không đc sửa đổi bên ngoài các monad STM.
+Ở đây mình chưa có nhiều kiến thức sâu về Haskell vì mới học đc vài tháng. Nên chưa xử lý hợp lý đc các tình huống như kiểu dữ liệu, xử lý cấu trúc thư mục hay cũng như chưa nắm đc các cách lập trình chạy concurrency.
+
+Nghiên cứu tham khảo thì Haskell khá mạnh với `Software Transactional Memory mechanism (STM)` - Cơ chế bộ nhớ giao dịch phần mềm. Vì nó tính chất thuần functional, Haskell có khả năng đảm bảo các biến STM không đc sửa đổi bên ngoài các monad STM.
 
 Chương trình của mình cũng có thể đc cải tiến hơn nếu chạy concurrent các API query thông số. Mình cũng đã chạy thử concurrent các phép tính slot leader nhưng kết quả hoàn toàn không tốt hơn do các phép tính đều là pure function nên cũng đc Haskell tự tối ưu sẵn trong quá trình thực thi (execution).
 
-Có một điểm trong quá trình thực hiện dự án là việc làm quen với các tài liệu và hỏi đáp trên StackOverflow. Lúc đầu chắc các bạn nào mới tiếp cận sẽ thấy hơi bỡ ngỡ vì các tài liệu khá là khó theo. Điều này đúng với các thư viện cũ hay thư viện cốt lõi của Haskell, có vẻ như các bác maintainer cũng lười viết chi tiết mô tả hướng dẫn vì mặc nhiên đây là các kiến thức cơ bản. Với các thư viện nổi tiếng và nhiều người sử dụng cũng như nhiều người maintain thì đc viết khá rõ ràng và đầy đủ.
+Có một điểm trong quá trình thực hiện dự án là việc làm quen với các tài liệu và hỏi đáp trên `StackOverflow`. Lúc đầu chắc các bạn nào mới tiếp cận sẽ thấy hơi rối vì các tài liệu khá là khó theo. Điều này đúng với các thư viện cũ hay thư viện cốt lõi của Haskell, có vẻ như các bác maintainer cũng lười viết chi tiết mô tả hướng dẫn vì mặc nhiên đây là các kiến thức cơ bản. Với các thư viện popular hơn, nhiều người sử dụng cũng như nhiều người maintain thì đc viết khá rõ ràng và đầy đủ.
+
+Nhìn chung thì qua trải nghiệm project nhỏ trên mình cảm thấy môi trường code (Dev Experience) với Haskell khá là thú vị và là một công cụ tốt trong túi lập trình của mình. Sẽ sử dụng nhiều hơn trong tương lai. Project tiếp theo chắc là sẽ sử dụng Haskell với Tensorflow. Là một tech nữa mà mình đã lâu rồi muốn dành thời gian để trải nghiệm thử.
+
+Cảm ơn các bạn đã theo dõi tới đây. Xin chào.
