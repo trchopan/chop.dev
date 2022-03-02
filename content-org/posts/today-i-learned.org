@@ -23,6 +23,14 @@ https://wiki.haskell.org/All_About_Monads
 #+end_quote
 
 
+** Haskell and Tensorflow
+
+2 things in my learning list. Must have time to try my hands on.
+
+https://mmhaskell.com/machine-learning
+
+
+
 * Day 20 <2022-02-26 Sat>
 
 ** Haskell refactor

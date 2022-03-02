@@ -24,6 +24,13 @@ I found a great article that I keeps reference to while studying Haskell. Everyt
 > "Monad" enters English from ancient Greek philosophy, where it could mean "almost everything". But then it comes in again later from the philosopher Leibniz, for whom it meant "almost nothing" -- an irreducible particle of perceptual reality. Can't philosophy make up its mind? (No. Has it ever?) Neither philosophical sense will help you understand the role of monads in Haskell. Nor are mathematicians riding to your rescue. Consider the introduction to the definition of "monad" in category theory. It could pound the last nail in the coffin of your ambitions to understand what "monad" means in Haskell. A monad is "an endofunctor (a functor mapping a category to itself), together with two natural transformations required to fulfill certain coherence conditions." (Wikipedia) Admit it: unless you're fresh from studying abstract algebra, you just died a little inside.
 
 
+### Haskell and Tensorflow {#haskell-and-tensorflow}
+
+2 things in my learning list. Must have time to try my hands on.
+
+<https://mmhaskell.com/machine-learning>
+
+
 ## Day 20 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-26 Sat&gt;</span></span> {#day-20}
 
 
