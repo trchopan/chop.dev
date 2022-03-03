@@ -10,7 +10,7 @@ h3 {
   color: var(--secondary);
 }
 
-a {
+.post-content a {
   word-break: break-all;
 }
 
