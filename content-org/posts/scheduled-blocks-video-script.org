@@ -78,6 +78,14 @@ Mục tiêu của mình viết lại của một repo khác cũng đã thực hi
 
 Video này mình đang không nhắm tới việc học Haskell từ căn bản. Mà chỉ muốn đi qua các giai đoạn mà mình trải qua trong quá trình thực hiện dự án. Nên sẽ đi khá nhanh qua các bước, hy vọng qua chia sẽ có thể làm cơ sở demo để các bạn thấy sự hứng thú trong quá trình làm việc với Haskell.
 
+Tài liệu này đc viết bằng =org-mode= trên =Emacs=. Nếu các bạn sử dụng Emacs có thể tạo 1 project Haskell và dùng chức năng tangle để thử các đoạn code mẫu ở bên dưới.
+
+Lưu ý là nhớ sửa lại cái ~tangle path~ cho đúng với máy của các bạn. Mẫu như sau:
+
+#+begin_src
+:tangle ~/Sync/learn-haskell/demo/app/Main.hs
+#+end_src
+
 
 ** Chạy chương trình với args
 
@@ -93,6 +101,48 @@ scheduled-blocks history --epoch 321
 
 https://hackage.haskell.org/package/optparse-applicative
 
+#+begin_src haskell
+{-# LANGUAGE OverloadedStrings #-}
+module Main
+
+import Options.Applicative
+import Data.Semigroup ((<>))
+
+data Sample = Sample
+  { hello      :: String
+  , quiet      :: Bool
+  , enthusiasm :: Int }
+
+sample :: Parser Sample
+sample = Sample
+      <$> strOption
+          ( long "hello"
+         <> metavar "TARGET"
+         <> help "Target for the greeting" )
+      <*> switch
+          ( long "quiet"
+         <> short 'q'
+         <> help "Whether to be quiet" )
+      <*> option auto
+          ( long "enthusiasm"
+         <> help "How enthusiastically to greet"
+         <> showDefault
+         <> value 1
+         <> metavar "INT" )
+
+main :: IO ()
+main = greet =<< execParser opts
+  where
+    opts = info (sample <**> helper)
+      ( fullDesc
+     <> progDesc "Print a greeting for TARGET"
+     <> header "hello - a test for optparse-applicative" )
+
+greet :: Sample -> IO ()
+greet (Sample h False n) = putStrLn $ "Hello, " ++ h ++ replicate n '!'
+greet _ = return ()
+#+end_src
+
 
 ** Query API
 
@@ -106,16 +156,53 @@ Nên khi query API, bắt buộc các bạn phải có kiểu Data để map ho�
 
 https://hackage.haskell.org/package/aeson
 
+https://hackage.haskell.org/package/http-conduit-2.2.3.1
+
 https://app.quicktype.io/
 
+#+begin_src haskell
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE DeriveGeneric #-}
+module Main where
 
-** Chuẩn bị kết quả mẫu - Test Samples
+import           Data.Aeson
+import           Data.Text                      ( Text )
+import           GHC.Generics                   ( Generic )
+import           Network.HTTP.Client.Conduit
+import           Network.HTTP.Simple
 
-Đây là một dự án viết dựa trên công thức đã có sẵn nên mình cần chuẩn bị một loạt các kết quả mong muốn để thực hiện việc so sánh kết quả trong lúc thực hiện - implement.
+data ArmadaNonce = ArmadaNonce
+  { epochArmadaNonce :: Int
+  , nonceArmadaNonce :: Text
+  }
+  deriving (Show, Generic)
 
-Mình sẽ đi qua tài liệu mà mình viết khi chuẩn bị các thông số. (Tài liệu này đc viết bằng tiếng Anh để bất kỳ ai cũng có thể tái thực hiện các bước nếu muốn).
+instance ToJSON ArmadaNonce where
+  toJSON p =
+    object ["epoch" .= epochArmadaNonce p, "nonce" .= nonceArmadaNonce p]
 
-https://chop.ink/posts/test-procedure-for-scheduled-blocks/
+instance FromJSON ArmadaNonce where
+  parseJSON = withObject "ArmadaNonce"
+    $ \v -> ArmadaNonce <$> v .: "epoch" <*> v .: "nonce"
+
+
+main :: IO ()
+main = do
+  let request =
+        setRequestMethod "GET"
+          $ setRequestHost "nonce.armada-alliance.io"
+          $ setRequestPath "/current"
+          $ setRequestResponseTimeout (responseTimeoutMicro (10 * 1000 * 1000))
+          $ setRequestHeader "Content-Type" ["application/json"] defaultRequest
+
+  response <- httpLBS request
+
+  let eitherResult =
+        (decode . getResponseBody) response :: Maybe ArmadaNonce
+
+  print eitherResult
+
+#+end_src
 
 
 ** Viết test case
@@ -127,6 +214,42 @@ Nên khi nhảy vào làm project một trong những thứ mình học là các
 *** Demo
 
 https://hspec.github.io/
+
+Thêm phần config sau vào ~cabal~ file
+
+#+begin_src
+test-suite test
+  main-is:        Spec.hs
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: test
+  build-depends:
+    , base   ^>=4.14.3.0
+    , hspec
+#+end_src
+
+#+begin_src haskell
+module Main where
+
+import           Test.Hspec
+
+main :: IO ()
+main = hspec $ do
+  describe "Prelude.read" $ do
+    it "can parse integers" $ do
+      read "10" `shouldBe` (10 :: Int)
+
+    it "can parse floating-point numbers" $ do
+      read "2.5" `shouldBe` (2.5 :: Float)
+#+end_src
+
+
+** Chuẩn bị kết quả mẫu - Test Samples
+
+Đây là một dự án viết dựa trên công thức đã có sẵn nên mình cần chuẩn bị một loạt các kết quả mong muốn để thực hiện việc so sánh kết quả trong lúc thực hiện - implement.
+
+Mình sẽ đi qua tài liệu mà mình viết khi chuẩn bị các thông số. (Tài liệu này đc viết bằng tiếng Anh để bất kỳ ai cũng có thể tái thực hiện các bước nếu muốn).
+
+https://chop.ink/posts/test-procedure-for-scheduled-blocks/
 
 
 * Nối tất cả lại với nhau
