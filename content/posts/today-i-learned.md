@@ -12,6 +12,14 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Day 22 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-03-04 Fri&gt;</span></span> {#day-22}
+
+
+### Begin of the functional journey {#begin-of-the-functional-journey}
+
+I decided to convert parts of the `mini-view-trader` app to functional. Also I will use `zod` for parsing. Let's make some results 💪
+
+
 ## Day 21 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-03-02 Wed&gt;</span></span> {#day-21}
 
 
