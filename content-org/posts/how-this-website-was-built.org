@@ -99,8 +99,214 @@ Below is my example setup for a post
 #+AUTHOR: Chop Tr (chop.ink)
 #+DATE: <2022-02-02 Wed>
 #+DESCRIPTION: New year. New website. New journey.
+
+...Page content...
 #+end_src
 
 Then everytime I need to export the post just press =C-c C-e H h=.I know, it's a long keybind, I used to the acronyms method to remember so it comes very easy for me: Control > Export > Hugo -> hugo away!!!
 
-TOBE CONTINUE
+
+** Images
+
+I have a small script to copy and paste image into the content of a post.
+
+Require: ~vips~, ~vipsthumbnail~, ~pngpaste~
+
+#+begin_src bash
+#!/bin/bash
+
+# Location: ~/bin/clipboard-image-paste
+# Should be avaiable in PATH
+
+function help() {
+  echo "$0 <size> <output_file> <format>"
+  echo "Example: $0 1280 example.png \"png[Q=85]\""
+  echo "Note: The last argument need to have double quote"
+}
+
+if [[ -z $2 ]]; then
+  help
+  exit 1
+fi
+
+if [[ -z $3 ]]; then
+  format="png[Q=85]"
+else
+  format=$3
+fi
+
+pngpaste "/tmp/pngpaste.png"
+
+# Resize the image if greater than $1 with given $format
+output=$(echo "out_pngpaste.$format"| sed -E 's/(out_.*\.)(png|jpg|jpeg|webp).*/\1\2/g')
+vipsthumbnail -s "$1x$1>" -o "out_%s.$format" "/tmp/pngpaste.png"
+
+rm /tmp/pngpaste.png
+mv "/tmp/$output" $2
+
+#+end_src
+
+#+begin_src emacs-lisp
+(defun org-insert-clipboard-image (&optional file)
+  (interactive "F")
+  (setq filename (concat file (format-time-string "_%Y%m%d_%H%M%S") ".png"))
+  (shell-command (concat "clipboard-image-paste 1280 " filename " \"png[Q=85]\""))
+  (insert "#+attr_html: :width 720\n")
+  (insert (concat "[[" filename "]]")))
+#+end_src
+
+Everytime I need to insert a image I just have to copy the image or screen select it. The image is temporary saved in the clipboard. Then I call the command ~org-insert-clipboard-image~ to save it to selected directory and paste the path to current position of the cursor.
+
+My config for emacs for this feature is eplained more here: https://chop.ink/posts/doom.d/config/#insert-clipboard-image-into-org-file
+
+
+** Source code highlight
+
+My current theme is =terminal= by =panr= and it use ~PrismJS~ to hightlight the source code block.
+
+A little edit and configuration from the PrisimJS site to choose the optimized features for my site then I replace the static file.
+
+#+begin_src
+https://prismjs.com/download.html#
+themes=prism-tomorrow&
+languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&
+plugins=show-language+toolbar+copy-to-clipboard
+#+end_src
+
+#+attr_html: :width 350
+[[~/Sync/chop-ink/content-org/posts/images/prism-static-file_20220314_155217.png]]
+
+
+** Comments
+
+I was choosing between [[https://disqus.com][Disqus]] , [[https://utteranc.es/][Utterances]]. And settle on the later as it use Github issue to manage the comment which is great for developer as all the information I get is in one place. I can check it more regularly than more social oriented solution like Disqus.
+
+Setting it up is in the =/layouts/partials/comments.html= file
+
+#+begin_src html
+<script src="https://utteranc.es/client.js"
+        repo="trchopan/chop.ink"
+        issue-term="pathname"
+        theme="gruvbox-dark"
+        crossorigin="chop.ink"
+        async>
+</script>
+<style type="text/css"></style>
+#+end_src
+
+Then viewer of the site will have a nice window to leave comments like this
+
+#+attr_html: :width 720
+[[~/Sync/chop-ink/content-org/posts/images/utterances-comment_20220314_155945.png]]
+
+
+** Image viewer
+
+This bit is a bit more tricky. I found a minimal library https://adrianklimek.github.io/views/ which is just 5.4k and not depends on jquery.
+
+I had to make 2 edits:
+
+*** Wrap my image (figues) in <a> tag
+
+=/layouts/shortcodes/figure.html=
+
+#+begin_src html
+{{ if .Get "src" }}
+<a class="my-figure" href="{{ .Get "src" | safeURL }}">
+<figure class="{{ with .Get "position"}}{{ . }}{{ else -}} center {{- end }}"
+        {{ if .Get "width" }}
+        style="max-width: {{ .Get "width" }}px"
+        {{ end }}
+>
+  <img src="{{ .Get "src" | safeURL }}"
+       {{ with .Get "alt" }} alt="{{ . | plainify }}" {{ end }}
+       {{ with .Get "style" }} style="{{ . | safeCSS }}" {{ end }} />
+    {{ if .Get "alt" }}
+    <figcaption class="{{ with .Get "captionPosition"}}{{ . }}{{ else -}} center {{- end }}" {{ with .Get "captionStyle" }} style="{{ . | safeCSS }}" {{ end }}>
+      {{ .Get "alt" | safeHTML }}
+    </figcaption>
+    {{ end }}
+</figure>
+</a>
+{{ end }}
+#+end_src
+
+This will wrap all my images in a ~<a>~ tags and give it a class ~my-figure~.
+
+*** Script to activate the images viewer
+
+Then in the footer of the site I need to add in a small script so the library can find the images I want to show a nice looking image viewer.
+
+=/layouts/partials/extended_footer.html=
+
+#+begin_src html
+<script src="{{ "/views.min.js" | absURL }}"></script>
+<script defer type="text/javascript">
+const figures = document.querySelectorAll('.my-figure');
+figures.forEach(f => {
+   new Views(f);
+ })
+</script>
+#+end_src
+
+* Hosting
+
+I use firebase hosting to host my site. It's a convinient and easy to use option with very low cost.
+
+I have an existing firebase project that I used for my old website. I use the same project so I don't need to create one.
+
+If you don't have one, It can be created by following this console page: https://console.firebase.google.com/
+
+
+** Config and Deploy folder
+
+With the ~firebase cli~ and ~firebase project~ setup I just need to edit the =firebase.json= file to deploy the build directory from hugo.
+
+=firebase.json=
+
+#+begin_src json
+{
+  "hosting": {
+    "site": "chop-ink",
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "headers": [
+      {
+        "source": "**/*.@(json|ico|css|jpg|jpeg|gif|png)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=86400"
+          }
+        ]
+      },
+      {
+        "source": "/prism.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=2592000"
+          }
+        ]
+      }
+    ]
+  }
+}
+#+end_src
+
+Above, I have config for the cache time of =images= and the =prism.js= files which will almost never change.
+
+Then everytime I like to make a new publish to my website I just need to run the commands:
+
+#+begin_src bash
+hugo && firebase deploy
+#+end_src
+
+
+* Conclusion
+
+The couple of weeks I spend on renewing my website was a great time. I learned a lot of new architecture and have a totally awesome new tool ~Emacs~ in my arsenal.
+
+I think this year will be the year I focus on content creating and this website will be the place I put all my writting to.
+
+Chào 🖖
