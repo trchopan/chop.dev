@@ -12,7 +12,25 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
-## Day 22 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-03-04 Fri&gt;</span></span> {#day-22}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-03-14 Mon&gt;</span></span> {#entry}
+
+
+### Problem with Bluetooth {#problem-with-bluetooth}
+
+Today my MacOS got bugged out of the Bluetooth. I cannot connect to any device. A quick search solve ti problem by reseting the settings. 2 files needs to be delete:
+
+```nil
+/Library/Preferences/com.apple.Bluetooth.plist
+
+~/Library/Preferences/ByHost/com.apple.Bluetooth.(uuid).plist
+```
+
+Restart MacOS and let it regenerate the Bluetooth settings.
+
+Then I need to re-pair all my devices but not many.
+
+
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-03-04 Fri&gt;</span></span> {#entry}
 
 
 ### Begin of the functional journey {#begin-of-the-functional-journey}
@@ -20,7 +38,7 @@ I started using Emacs about a week ago <span class="timestamp-wrapper"><span cla
 I decided to convert parts of the `mini-view-trader` app to functional. Also I will use `zod` for parsing. Let's make some results 💪
 
 
-## Day 21 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-03-02 Wed&gt;</span></span> {#day-21}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-03-02 Wed&gt;</span></span> {#entry}
 
 
 ### It's All about Monads {#it-s-all-about-monads}
@@ -39,7 +57,7 @@ I found a great article that I keeps reference to while studying Haskell. Everyt
 <https://mmhaskell.com/machine-learning>
 
 
-## Day 20 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-26 Sat&gt;</span></span> {#day-20}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-26 Sat&gt;</span></span> {#entry}
 
 
 ### Haskell refactor {#haskell-refactor}
@@ -63,7 +81,7 @@ requestAndDecode request =
 ```
 
 
-## Day 19 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-25 Fri&gt;</span></span> {#day-19}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-25 Fri&gt;</span></span> {#entry}
 
 
 ### Haskell import must be first {#haskell-import-must-be-first}
@@ -73,7 +91,7 @@ The haskell build tool - `cabal` - has a requirement to put the `import` as the 
 {{< figure src="/ox-hugo/cabal-import_20220225_113837.png" width="350" >}}
 
 
-## Day 18 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-21 Mon&gt;</span></span> {#day-18}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-21 Mon&gt;</span></span> {#entry}
 
 
 ### Haskell Cabal external-libraries {#haskell-cabal-external-libraries}
@@ -87,7 +105,7 @@ export LIBRARY_PATH="/opt/homebrew/lib"
 ```
 
 
-## Day 17 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-20 Sun&gt;</span></span> {#day-17}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-20 Sun&gt;</span></span> {#entry}
 
 
 ### Haskell beauty of Functional {#haskell-beauty-of-functional}
@@ -135,7 +153,7 @@ mkSeed seedLBytes slotToSeedBytes = zipWith xor arrSeedLBytes arrSlotToSeedBytes
 Loving the Haskell journey even more &lt;3
 
 
-## Day 16 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-18 Fri&gt;</span></span> {#day-16}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-18 Fri&gt;</span></span> {#entry}
 
 
 ### Mark jumping in emacs {#mark-jumping-in-emacs}
@@ -143,7 +161,7 @@ Loving the Haskell journey even more &lt;3
 In `vim`, I was used to the marking jumping with `` ` `` (backtick) key. It awesome to jumping around marks in a buffer it help a lot during my workflow. But in Emacs - evil mode, it use `'` (single tick) key.
 
 
-## Day 15 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-15 Tue&gt;</span></span> {#day-15}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-15 Tue&gt;</span></span> {#entry}
 
 
 ### Syncthing {#syncthing}
@@ -181,7 +199,7 @@ TL;DR:
     `SPC s p foo C-; E C-c C-p :%s/foo/bar/g RET Z Z`
 
 
-## Day 14 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-13 Sun&gt;</span></span> {#day-14}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-13 Sun&gt;</span></span> {#entry}
 
 
 ### Emacs terminals {#emacs-terminals}
@@ -202,7 +220,7 @@ I need to forked it and provide my own fix and learn to use my own version inste
 This stackoverflow answer was the my solution: [LINK](https://stackoverflow.com/questions/40528053/npm-install-and-build-of-forked-github-repo)
 
 
-## Day 13 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-12 Sat&gt;</span></span> {#day-13}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-12 Sat&gt;</span></span> {#entry}
 
 
 ### Cardano TraceBlockFetchDecisions {#cardano-traceblockfetchdecisions}
@@ -215,7 +233,7 @@ One of my Cardano node missing the `cardano_node_metrics_connectedPeers_int` . T
 ```
 
 
-## Day 12 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-10 Thu&gt;</span></span> {#day-12}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-10 Thu&gt;</span></span> {#entry}
 
 
 ### Dired {#dired}
@@ -225,7 +243,7 @@ Amazing experience with editable buffer using `C-x` `C-q`. When done just press 
 {{< figure src="/ox-hugo/dired-editable-buffer_20220210_194540.png" width="720" >}}
 
 
-## Day 11 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-09 Wed&gt;</span></span> {#day-11}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-09 Wed&gt;</span></span> {#entry}
 
 
 ### Yew {#yew}
@@ -237,7 +255,7 @@ Frontend built with Rust + WebAssembly.
 Yew is a good play tool for me to learn Rust. I will allocate some time to make a project with it.
 
 
-## Day 10 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-08 Tue&gt;</span></span> {#day-10}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-08 Tue&gt;</span></span> {#entry}
 
 
 ### Inquirer {#inquirer}
@@ -250,7 +268,7 @@ Today I begin work on the Cardano Commands project. A tool to help me and the po
 During the development, I found out [Inquirer](https://github.com/SBoudrias/Inquirer.js) . Very nice tool to make interactive console UX/UI.
 
 
-## Day 9 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-05 Sat&gt;</span></span> {#day-9}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-05 Sat&gt;</span></span> {#entry}
 
 
 ### DevDocs <https://devdocs.io/> {#devdocs-https-devdocs-dot-io}
@@ -262,7 +280,7 @@ This tool is awesome!!!
 > DevDocs is free and open source. It was created by Thibaut Courouble and is operated by freeCodeCamp.
 
 
-## Day 8 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-04 Fri&gt;</span></span> {#day-8}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-04 Fri&gt;</span></span> {#entry}
 
 
 ### Back to PrismJS {#back-to-prismjs}
@@ -286,7 +304,7 @@ Download the minified version and place it in the script tag to load PrismJS. Th
 I begin to study about Haskell Concurrency. It feels a lot like Go, but much safer. Loving the experience.
 
 
-## Day 7 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-03 Thu&gt;</span></span> {#day-7}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-03 Thu&gt;</span></span> {#entry}
 
 
 ### Improvement of my English {#improvement-of-my-english}
@@ -296,7 +314,7 @@ I'm in the of the process of writing about the making my new website. It make me
 There is a tool call [Hemingway App](https://hemingwayapp.com/) (named after Ernest Hemingway). Which will grade your writing 'Readability'. I'd use it from now to improve my writing.
 
 
-## Day 6 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-02 Wed&gt;</span></span> {#day-6}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-02 Wed&gt;</span></span> {#entry}
 
 
 ### Disqus vs Utterances {#disqus-vs-utterances}
@@ -306,7 +324,7 @@ I got the comment section to work on [chop.ink](https://chop.ink). I setup [Disq
 I may use Disqus for my customers who would like some fine control over their site comments.
 
 
-## Day 5 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-01 Tue&gt;</span></span> {#day-5}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-01 Tue&gt;</span></span> {#entry}
 
 
 ### Remove PrismJS - no support for emacs-lisp {#remove-prismjs-no-support-for-emacs-lisp}
@@ -344,7 +362,7 @@ const getTechnicals = (data: {close: number}[]) => {
 ```
 
 
-## Day 4 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-31 Mon&gt;</span></span> {#day-4}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-31 Mon&gt;</span></span> {#entry}
 
 Today is a good day. With a lot of things todo, I still managed to buy the new domain and spin up the website at <https://chop.ink> . It will be my site to dump all these writing to.
 
@@ -353,7 +371,7 @@ I started to learn Hugo. This tool is fast. I mean really really fast!!!
 A side note, tonight is Luna New year eve. Happy New Year, may luck and health come to all.
 
 
-## Day 3 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-30 Sun&gt;</span></span> {#day-3}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-30 Sun&gt;</span></span> {#entry}
 
 
 ### Mix pitch and Zen mode {#mix-pitch-and-zen-mode}
@@ -373,7 +391,7 @@ I have the most awesome settings for avy-jumping keys. Most of the keys should b
 After chatting with Felix about his pool missing a block he had calculated. We realized that he used the old epoch sigma and stake to calculate the scheduled. Which make me nervous about the Cardano block scheduled for ARMADA pool at 18:20 next day. Luckily, after double checked using the `ScheduledBlocks` tool, I confirmed that it was correct and we did received the block.
 
 
-## Day 2 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-29 Sat&gt;</span></span> {#day-2}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-29 Sat&gt;</span></span> {#entry}
 
 
 ### What I working on {#what-i-working-on}
@@ -396,7 +414,7 @@ I knew why, need to check it out though. Must be because the version of `cardano
 Remember to `zz` to center the screen when writing. Otherwise the word suggestion will go crazy.
 
 
-## Day 1 <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-27 Thu&gt;</span></span> {#day-1}
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-27 Thu&gt;</span></span> {#entry}
 
 My first day of writing in org mode
 

@@ -10,14 +10,31 @@
 
 I started using Emacs about a week ago <2022-01-24 Mon> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
-* Day 22 <2022-03-04 Fri>
+* Entry <2022-03-14 Mon>
+
+** Problem with Bluetooth
+
+Today my MacOS got bugged out of the Bluetooth. I cannot connect to any device. A quick search solve ti problem by reseting the settings. 2 files needs to be delete:
+
+#+begin_src
+/Library/Preferences/com.apple.Bluetooth.plist
+
+~/Library/Preferences/ByHost/com.apple.Bluetooth.(uuid).plist
+#+end_src
+
+Restart MacOS and let it regenerate the Bluetooth settings.
+
+Then I need to re-pair all my devices but not many.
+
+
+* Entry <2022-03-04 Fri>
 
 ** Begin of the functional journey
 
 I decided to convert parts of the ~mini-view-trader~ app to functional. Also I will use ~zod~ for parsing. Let's make some results 💪
 
 
-* Day 21 <2022-03-02 Wed>
+* Entry <2022-03-02 Wed>
 
 ** It's All about Monads
 
@@ -38,7 +55,7 @@ https://mmhaskell.com/machine-learning
 
 
 
-* Day 20 <2022-02-26 Sat>
+* Entry <2022-02-26 Sat>
 
 ** Haskell refactor
 
@@ -61,7 +78,7 @@ requestAndDecode request =
 #+end_src
 
 
-* Day 19 <2022-02-25 Fri>
+* Entry <2022-02-25 Fri>
 
 ** Haskell import must be first
 
@@ -71,7 +88,7 @@ The haskell build tool - =cabal= - has a requirement to put the ~import~ as the 
 [[~/Sync/chop-ink/content-org/posts/images/cabal-import_20220225_113837.png]]
 
 
-* Day 18 <2022-02-21 Mon>
+* Entry <2022-02-21 Mon>
 
 ** Haskell Cabal external-libraries
 
@@ -84,7 +101,7 @@ export LIBRARY_PATH="/opt/homebrew/lib"
 #+end_src
 
 
-* Day 17 <2022-02-20 Sun>
+* Entry <2022-02-20 Sun>
 
 ** Haskell beauty of Functional
 
@@ -131,14 +148,14 @@ mkSeed seedLBytes slotToSeedBytes = zipWith xor arrSeedLBytes arrSlotToSeedBytes
 Loving the Haskell journey even more <3
 
 
-* Day 16 <2022-02-18 Fri>
+* Entry <2022-02-18 Fri>
 
 ** Mark jumping in emacs
 
 In =vim=, I was used to the marking jumping with ~`~ (backtick) key. It awesome to jumping around marks in a buffer it help a lot during my workflow. But in Emacs - evil mode, it use ~'~ (single tick) key.
 
 
-* Day 15 <2022-02-15 Tue>
+* Entry <2022-02-15 Tue>
 
 ** Syncthing
 
@@ -172,7 +189,7 @@ TL;DR:
 =SPC s p foo C-; E C-c C-p :%s/foo/bar/g RET Z Z=
 
 
-* Day 14 <2022-02-13 Sun>
+* Entry <2022-02-13 Sun>
 
 ** Emacs terminals
 
@@ -192,7 +209,7 @@ I need to forked it and provide my own fix and learn to use my own version inste
 This stackoverflow answer was the my solution: [[https://stackoverflow.com/questions/40528053/npm-install-and-build-of-forked-github-repo][LINK]]
 
 
-* Day 13 <2022-02-12 Sat>
+* Entry <2022-02-12 Sat>
 
 ** Cardano TraceBlockFetchDecisions
 
@@ -204,7 +221,7 @@ One of my Cardano node missing the ~cardano_node_metrics_connectedPeers_int~ . T
 #+end_src
 
 
-* Day 12 <2022-02-10 Thu>
+* Entry <2022-02-10 Thu>
 
 ** Dired
 
@@ -214,7 +231,7 @@ Amazing experience with editable buffer using =C-x= =C-q=. When done just press 
 [[~/Sync/chop-ink/content-org/posts/images/dired-editable-buffer_20220210_194540.png]]
 
 
-* Day 11 <2022-02-09 Wed>
+* Entry <2022-02-09 Wed>
 
 ** Yew
 
@@ -225,7 +242,7 @@ Frontend built with Rust + WebAssembly.
 Yew is a good play tool for me to learn Rust. I will allocate some time to make a project with it.
 
 
-* Day 10 <2022-02-08 Tue>
+* Entry <2022-02-08 Tue>
 
 ** Inquirer
 
@@ -237,7 +254,7 @@ Today I begin work on the Cardano Commands project. A tool to help me and the po
 During the development, I found out [[https://github.com/SBoudrias/Inquirer.js][Inquirer]] . Very nice tool to make interactive console UX/UI.
 
 
-* Day 9 <2022-02-05 Sat>
+* Entry <2022-02-05 Sat>
 
 ** DevDocs https://devdocs.io/
 
@@ -250,7 +267,7 @@ DevDocs is free and open source. It was created by Thibaut Courouble and is oper
 #+end_quote
 
 
-* Day 8 <2022-02-04 Fri>
+* Entry <2022-02-04 Fri>
 
 ** Back to PrismJS
 
@@ -273,7 +290,7 @@ Download the minified version and place it in the script tag to load PrismJS. Th
 I begin to study about Haskell Concurrency. It feels a lot like Go, but much safer. Loving the experience.
 
 
-* Day 7 <2022-02-03 Thu>
+* Entry <2022-02-03 Thu>
 
 ** Improvement of my English
 
@@ -282,7 +299,7 @@ I'm in the of the process of writing about the making my new website. It make me
 There is a tool call [[https://hemingwayapp.com/][Hemingway App]] (named after Ernest Hemingway). Which will grade your writing 'Readability'. I'd use it from now to improve my writing.
 
 
-* Day 6 <2022-02-02 Wed>
+* Entry <2022-02-02 Wed>
 
 ** Disqus vs Utterances
 
@@ -291,7 +308,7 @@ I got the comment section to work on [[https://chop.ink][chop.ink]]. I setup [[h
 I may use Disqus for my customers who would like some fine control over their site comments.
 
 
-* Day 5 <2022-02-01 Tue>
+* Entry <2022-02-01 Tue>
 
 ** Remove PrismJS - no support for emacs-lisp
 
@@ -327,7 +344,7 @@ const getTechnicals = (data: {close: number}[]) => {
 #+end_src
 
 
-* Day 4 <2022-01-31 Mon>
+* Entry <2022-01-31 Mon>
 
 Today is a good day. With a lot of things todo, I still managed to buy the new domain and spin up the website at https://chop.ink . It will be my site to dump all these writing to.
 
@@ -336,7 +353,7 @@ I started to learn Hugo. This tool is fast. I mean really really fast!!!
 A side note, tonight is Luna New year eve. Happy New Year, may luck and health come to all.
 
 
-* Day 3 <2022-01-30 Sun>
+* Entry <2022-01-30 Sun>
 
 ** Mix pitch and Zen mode
 
@@ -356,7 +373,7 @@ I have the most awesome settings for avy-jumping keys. Most of the keys should b
 After chatting with Felix about his pool missing a block he had calculated. We realized that he used the old epoch sigma and stake to calculate the scheduled. Which make me nervous about the Cardano block scheduled for ARMADA pool at 18:20 next day. Luckily, after double checked using the ~ScheduledBlocks~ tool, I confirmed that it was correct and we did received the block.
 
 
-* Day 2 <2022-01-29 Sat>
+* Entry <2022-01-29 Sat>
 
 
 ** What I working on
@@ -379,7 +396,7 @@ I knew why, need to check it out though. Must be because the version of ~cardano
 Remember to =zz= to center the screen when writing. Otherwise the word suggestion will go crazy.
 
 
-* Day 1 <2022-01-27 Thu>
+* Entry <2022-01-27 Thu>
 
 My first day of writing in org mode
 
