@@ -6,16 +6,21 @@
 #+TITLE: scheduled-blocks video script
 #+AUTHOR: Chop Tr (chop.ink)
 #+DATE: <2022-03-01 Tue>
-#+DESCRIPTION: Đây là một chương trình viết lại của một repo khác cũng đã thực hiện việc tính toán block slot leader trên blockchain Cardano. Source kia thì viết bằng Python. Mình quyết định mục tiêu sẽ là convert hết các Chức năng và Công thức của repo đó thành Haskell, phục vụ việc học ngôn ngữ này.
+#+DESCRIPTION: Đây là một chương trình viết lại của một repo khác cũng đã thực hiện việc tính toán block slot leader trên blockchain Cardano. Source gốc viết bằng Python. Mình quyết định mục tiêu sẽ là convert hết các Chức năng và Công thức của repo đó thành Haskell, phục vụ việc học ngôn ngữ này.
 
 
-* Mục đích của dự án
+* Giới thiệu
 
-** Intro
-
-Haskell là một ngôn ngữ rất khó, một thế giới mới đối với bất kỳ kỹ sư lập trình nào đã làm việc quá lâu với OOP hay thế giới imperative programing (tạm gọi lập trình mệnh lệnh).
+Haskell là một ngôn ngữ thú vị, một thế giới mới đối với bất kỳ kỹ sư lập trình nào đã làm việc quá lâu với OOP - lập trình hướng đối tượng hay thế giới imperative programing (tạm gọi lập trình mệnh lệnh).
 
 Có 2 mô hình lập trình (hay còn gọi là paradigms) là =imperative= (mệnh lệnh) và =functional= (chức năng).
+
+2 ví dụ điển hình nhất của 2 paradigms này là =Java= - imperative và =Haskell= - functional.
+
+Dưới đây là cùng 1 tác vụ là tính tổng các số từ ~1~ đến ~10~. Mính sẽ sử dụng 2 paradigms lập trình để xử lý.
+
+
+** Imperative
 
 #+begin_src java
 int total = 0;
@@ -25,39 +30,35 @@ for (int i = 0; i < 10; i++) {
 }
 #+end_src
 
-#+begin_src haskell
-sum [1 .. 10]
-
-sum :: [Int] -> Int
-sum [n]    = n
-sum (n:ns) = n + sum ns
-#+end_src
-
-Link: https://www.youtube.com/watch?v=sqV3pL5x8PI
-
-2 ví dụ điển hình nhất của 2 paradigms này là =Java= - imperative và =Haskell= - functional.
-
-
-** Imperative
-
-Lập trình imperative hay có các biến global và cách xử lý một tác vụ nào đó thường là làm việc xong, ghi kết quả lên biến đó để sử dụng tiếp. Điều này có điểm hay là khá dễ hiểu như các bạn xem code Java ở trên. Nó gần hơn với lối suy nghĩ muốn làm việc A thì bạn có các bước sau: 1, 2, 3. Lập trình theo paradigm này mình có cảm giác như lập một ="Cuốn sách hướng dẫn"=.
+Lập trình imperative hay có các biến global và cách xử lý tác vụ thường là làm việc theo bước, ghi kết quả lên biến đó để sử dụng tiếp, trao đổi giữa các bước qua biến. Điều này có điểm hay là khá dễ hiểu như các bạn xem code Java ở trên. Nó gần hơn với lối suy nghĩ muốn làm việc A thì bạn có các bước sau: 1, 2, 3. Lập trình theo paradigm này mình có cảm giác như lập một ="Sách hướng dẫn"=.
 
 Các bạn sẽ thấy khá nhiều các vòng lặp như ~for-loop~, ~while-loop~ hay các conditionals như ~if-else~.
 
 
 ** Functional
 
-Functional thì tập trung giải quyết cách xử lý đầu vào và đầu ra. Khi nhận đc A thì sẽ cho kết quả B. Và cách thực hiện chức năng của nó sẽ chia thành tình huống xử lý như ví dụ trên. Điểm hay của nó là khi lập trình các bạn sẽ phát triển 1 trực giác là suy nghĩ ngay đến các tình huống có thể sảy xa để xử lý. Lập trình theo paradigm này mình có cảm giác như lập một cái ="Hợp đồng"=.
+#+begin_src haskell
+sum [1 .. 10]
 
-Các bạn sẽ thấy khá nhiều chức năng như ~map~, ~filter~, hay kiểu dòng chảy logic như ~Maybe~, ~Either~. (đào sâu hơn thì các bạn sẽ gặp ~Monad~ :D)
+sum :: [Int] -> Int
+sum []     = 0
+sum [n]    = n
+sum (n:ns) = n + sum ns
+#+end_src
+
+Functional thì tập trung giải quyết cách xử lý đầu vào và đầu ra. Khi nhận đc A thì sẽ cho kết quả B. Và cách thực hiện tác vụ của nó sẽ chia thành tình huống xử lý như ví dụ trên. Trao đổi giữa code dựa trên kết quả trả về. Điểm hay của nó là khi lập trình các bạn sẽ phát triển 1 trực giác là suy nghĩ ngay đến các tình huống có thể sảy xa để xử lý. Lập trình theo paradigm này mình có cảm giác như lập một cái ="Hợp đồng"=.
+
+Các bạn sẽ thấy khá nhiều chức năng như ~map~, ~filter~, hay kiểu dòng chảy logic như ~Maybe~, ~Either~. (đào sâu hơn thì các bạn sẽ đc gặp ~Monad~, ~Applicative~, etc.)
 
 
-** >
+** Kết
 
-Ở đây không phải là so sánh tốt xấu, tất cả paradigms đều là những nguyên tác và lý luận để giải quyết vấn đề. Các bạn có thể hiểu nhg paradigms này như Đạo, có đạo Phật, đạo Chúa, v.v thì trong lập trình cũng vậy. Chỉ là người sử dụng hiểu mình muốn gì và áp dụng như thế nào.
+Xem thêm: https://www.youtube.com/watch?v=sqV3pL5x8PI
+
+Ở đây không phải là so sánh tốt xấu, tất cả paradigms đều là những nguyên tác và lý luận để giải quyết vấn đề. Các bạn có thể hình dung nhg paradigms này như Đạo, có đạo Phật, đạo Chúa, v.v thì trong lập trình cũng vậy. Chỉ là người sử dụng hiểu mình muốn gì và áp dụng như thế nào.
 
 
-** Mục đích dự án
+* Mục đích dự án
 
 Đối với kinh nghiệm của mình thì không có gì hiệu quả bằng tự đặt ra 1 mục đích cho bản thân. Một cái gì đó mà mình có thể đạt đc để tập trung hết tất cả sức lực để tiến tới. Thông qua đó nhg thứ trên quãng đường sẽ trở thành kiến thức và kinh nghiệm.
 
@@ -80,12 +81,6 @@ Video này mình đang không nhắm tới việc học Haskell từ căn bản.
 
 Tài liệu này đc viết bằng =org-mode= trên =Emacs=. Nếu các bạn sử dụng Emacs có thể tạo 1 project Haskell và dùng chức năng tangle để thử các đoạn code mẫu ở bên dưới.
 
-Lưu ý là nhớ sửa lại cái ~tangle path~ cho đúng với máy của các bạn. Mẫu như sau:
-
-#+begin_src
-:tangle ~/Sync/learn-haskell/demo/app/Main.hs
-#+end_src
-
 
 ** Chạy chương trình với args
 
@@ -103,7 +98,7 @@ https://hackage.haskell.org/package/optparse-applicative
 
 #+begin_src haskell
 {-# LANGUAGE OverloadedStrings #-}
-module Main
+module Main where
 
 import Options.Applicative
 import Data.Semigroup ((<>))
