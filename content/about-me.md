@@ -32,7 +32,7 @@ I am a full-stack software engineer based in Ho Chi Minh City, Vietnam.
 
 -   Python scriptor
 
--   Haskell/Rust learner
+-   Haskell / Rust learner
 
 -   Hugo site builder
 
