@@ -12,6 +12,14 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-03-15 Tue&gt;</span></span> {#entry}
+
+
+### Good source of data for economy by country {#good-source-of-data-for-economy-by-country}
+
+<https://atlas.cid.harvard.edu/explore/?year=2014&country=246&redirected=true>
+
+
 ## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-03-14 Mon&gt;</span></span> {#entry}
 
 

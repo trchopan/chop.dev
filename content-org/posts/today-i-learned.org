@@ -10,6 +10,13 @@
 
 I started using Emacs about a week ago <2022-01-24 Mon> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
+* Entry <2022-03-15 Tue>
+
+** Good source of data for economy by country
+
+https://atlas.cid.harvard.edu/explore/?year=2014&country=246&redirected=true
+
+
 * Entry <2022-03-14 Mon>
 
 ** Problem with Bluetooth
