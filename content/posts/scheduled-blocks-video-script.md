@@ -1,9 +1,9 @@
 +++
-title = "scheduled-blocks video script"
+title = "Học haskell qua code scheduled-blocks video script"
 author = ["Chop Tr (chop.ink)"]
 description = "Đây là một chương trình viết lại của một repo khác cũng đã thực hiện việc tính toán block slot leader trên blockchain Cardano. Source gốc viết bằng Python. Mình quyết định mục tiêu sẽ là convert hết các Chức năng và Công thức của repo đó thành Haskell, phục vụ việc học ngôn ngữ này."
 date = 2022-03-01T00:00:00+07:00
-tags = ["scheduled", "blocks", "video", "script"]
+tags = ["scheduled", "blocks", "learning", "haskell"]
 draft = false
 cover = "/ox-hugo/scheduled-block-script_20220301_234604.png"
 images = "/ox-hugo/scheduled-block-script_20220301_234604.png"
@@ -51,7 +51,7 @@ Functional thì tập trung giải quyết cách xử lý đầu vào và đầu
 Các bạn sẽ thấy khá nhiều chức năng như `map`, `filter`, hay kiểu dòng chảy logic như `Maybe`, `Either`. (đào sâu hơn thì các bạn sẽ đc gặp `Monad`, `Applicative`, etc.)
 
 
-### Kết {#kết}
+### - {#336d5e}
 
 Xem thêm: <https://www.youtube.com/watch?v=sqV3pL5x8PI>
 
@@ -269,6 +269,6 @@ Chương trình của mình cũng có thể đc cải tiến hơn nếu chạy c
 
 Có một điểm trong quá trình thực hiện dự án là việc làm quen với các tài liệu và hỏi đáp trên `StackOverflow`. Lúc đầu chắc các bạn nào mới tiếp cận sẽ thấy hơi rối vì các tài liệu khá là khó theo. Điều này đúng với các thư viện cũ hay thư viện cốt lõi của Haskell, có vẻ như các bác maintainer cũng lười viết chi tiết mô tả hướng dẫn vì mặc nhiên đây là các kiến thức cơ bản. Với các thư viện popular hơn, nhiều người sử dụng cũng như nhiều người maintain thì đc viết khá rõ ràng và đầy đủ.
 
-Nhìn chung thì qua trải nghiệm project nhỏ trên mình cảm thấy môi trường code (Dev Experience) với Haskell khá là thú vị và là một công cụ tốt trong túi lập trình của mình. Sẽ sử dụng nhiều hơn trong tương lai. Project tiếp theo chắc là sẽ sử dụng Haskell với Tensorflow. Là một tech nữa mà mình đã lâu rồi muốn dành thời gian để trải nghiệm thử.
+Nhìn chung thì qua trải nghiệm project nhỏ trên mình cảm thấy môi trường và trải nghiệm code (Dev Experience) với Haskell khá là thú vị và là một công cụ tốt trong túi đồ lập trình của mình. Sẽ sử dụng nhiều hơn trong tương lai.
 
 Cảm ơn các bạn đã theo dõi tới đây. Xin chào.
