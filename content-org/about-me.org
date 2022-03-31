@@ -22,21 +22,21 @@ I am a full-stack software engineer based in Ho Chi Minh City, Vietnam.
 
 * Skills
 
-- Javascript and Front-end Frameworks master (Vue, React, Angular)
-
-- Firebase and Go lang lover
-
-- GCP and Kubernetes sailor
+- Typescript/Javascript and Front-end Frameworks master (Vue, React, Angular)
 
 - Functional Programing and Domain-Driven Design practitioner
 
-- Python scriptor
+- Cardano Stakepool operator
+
+- Firebase and Google Cloud customer
 
 - Haskell / Rust learner
 
-- Hugo site builder
+- Python scriptor
 
-- Emacs / Vim hacker (I love both)
+- Hugo site user
+
+- Emacs / Vim hacker
 
 
 * Personal life
