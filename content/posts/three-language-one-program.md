@@ -17,13 +17,11 @@ Since last year, I have put on my TODO list to learn `Haskell` and `Rust` along 
 
 It was a wonderful journey with both.
 
-`Haskell` functional programing is a new world with a lot new concepts. I learn to love the logic behind the language, the reasoning in the design and the intuition to think in term of how to explain to other programer with code rather than tell the computer what to do.
+`Haskell` functional programing is a new world with a lot new concepts. I learn to love the logic behind the language, the reasoning in the design and the intuition to think in term of use my code to explain the business logic to other programer rather than tell the computer what to do.
 
-`Rust` has great idea with ownership and borrowing reference, which solve a lot of problem in system programing. And their document is super great the best in all the document / tutorial I've ever read. They say it is a scary and difficult language and you should avoid when starting your software development career but my oppinion is the opposite, with such well written book and tutorial, only me stopping myself from learning it.
+`Rust` has great idea with ownership and borrowing reference, which solve a lot of problem in system programing. And their document is super great the best in all the document / tutorial I've ever read. They say it is a scary and difficult language and you should avoid when starting your software development career but my oppinion is the opposite. With so well written book and tutorial, only myself stopping me from learning it.
 
 In this article, I would like to express the beauty of all 3 language (and 3 developing environments) I use most by implement the same program program `MineSweeper`.
-
-{{< figure src="/ox-hugo/one-program-three-language_20220324_215135.png" width="720" >}}
 
 
 ## The program - Minesweeper {#the-program-minesweeper}
