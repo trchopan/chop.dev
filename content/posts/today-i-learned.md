@@ -12,6 +12,18 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-04-06 Wed&gt;</span></span> {#entry}
+
+
+### Bug in rust-mode {#bug-in-rust-mode}
+
+In Doom Emacs, the config for rust has the option for `+lsp` for using `rust-analyzer`. Without, it will use racer which currently has some bugs of finding the correct tool and path for rust toolchain.
+
+```emacs-lisp
+:lang (rust +lsp)
+```
+
+
 ## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-03-15 Tue&gt;</span></span> {#entry}
 
 
