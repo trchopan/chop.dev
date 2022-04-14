@@ -28,11 +28,9 @@ We'll start with approaches very similar to other languages like Go and Rust, an
 
 Unfortunately I don't have access to the source code for the other languages right now, so I can't provide a link to it. If anyone has such code (or wants to write up some examples for other lanugages), please [[https://twitter.com/snoyberg][let me know]] so I can add a link.
 
-
 * The problem
 
 We want to spawn a number of worker threads which will each sleep for a random period of time, grab an integer off of a shared work queue, square it, and put the result back on a result queue. Meanwhile, a master thread will fill up the work queue with integers, and read and print results.
-
 
 * Running the examples
 
@@ -117,7 +115,6 @@ main = do
 This is a pretty direct translation of how you would do things in a language like Go or Erlang/Elixir. We've replaced =for=-loops with =map= s, but otherwise things are pretty similar.
 
 There's a major limitation in this implementation, unfortunately. In the master thread, our =perInteger= function is responsible for providing requests to the workers. However, it will only provide one work item at a time and then block for a response. This means that we are effectively limiting ourselves to one concurrent request. We'll address this in various ways in the next few examples.
-
 
 * Compare-and-swap
 
@@ -210,7 +207,6 @@ Compared to our channels example, there are some differences in behavior:
 - The channels example would only allow one request on the request channel at a time. This is similar to some of the examples from other languages, but defeats the whole purpose of concurrency: only one worker will be occupied at any given time. This =IORef= approach allows multiple workers to have work items at once. (Again, we'll see how to achieve this with channels in a bit.)
 
 You may be concerned about memory usage: won't holding that massive list of integers in memory all at once be expensive? Not at all: Haskell is a lazy language, meaning that the list will be constructed on demand. Each time a new element is asked for, it will be allocated, and then can be immediately garbage collected.
-
 
 * Software Transactional Memory
 

@@ -12,6 +12,41 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-04-13 Wed&gt;</span></span> {#entry}
+
+
+### Build Emacs on MacOS with M1 {#build-emacs-on-macos-with-m1}
+
+Good news, now emacs 28.1 with `native-comp` can be run on Macbook with M1 chips. It needs to be built from source, I was able to build it using this repo <https://github.com/d12frosted/homebrew-emacs-plus>. One bug took me an hour is the `gcc` and `libgccjit` test fail during build.
+
+If you see this smoke test fail
+
+```nil
+configure: error: Installed libgccjit has failed passing the smoke test.
+You can verify it yourself compiling:
+<https://gcc.gnu.org/onlinedocs/jit/intro/tutorial01.html>.
+Please report the issue to your distribution.
+Here instructions on how to compile and install libgccjit from source:
+<https://gcc.gnu.org/wiki/JIT>.
+```
+
+It is because the MacOS was updated to new major version. While `gcc` and `libgccjit` was install by `homebrew` in previous MacOS version. An easy fix is to reinstall both of theem.
+
+```bash
+brew reinstall gcc libgccjit
+```
+
+
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-04-10 Sun&gt;</span></span> {#entry}
+
+
+### Tree-sitter setup {#tree-sitter-setup}
+
+First time success setup tree-sitter. Now my code looks much better.
+
+<https://hungyi.net/posts/use-emacs-tree-sitter-doom-emacs/>
+
+
 ## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-04-06 Wed&gt;</span></span> {#entry}
 
 
