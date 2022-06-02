@@ -18,6 +18,8 @@ images = "/ox-hugo/demo-doom_20220131_154814.png"
 - [Default doom setup](#default-doom-setup)
 - [Automations](#automations)
 - [LSP](#lsp)
+- [Tree-sitter](#tree-sitter)
+- [Company](#company)
 - [Treemacs](#treemacs)
 - [Projectile](#projectile)
 - [Gitgutter](#gitgutter)
@@ -43,16 +45,17 @@ This is kinda personal preference but it will effect the whole setup. I used to 
 
 {{< figure src="/ox-hugo/leader-key_20220131_213628.png" width="300" >}}
 
-
-### .doom.d/init.el {#dot-doom-dot-d-init-dot-el}
-
 ```emacs-lisp
-(add-hook 'org-mode-hook #'+org-pretty-mode)
 (setq doom-leader-key "\\"
       doom-leader-alt-key "M-\\"
       doom-localleader-key "M-,"
       doom-localleader-alt-key "M-,")
+```
 
+
+### .doom.d/init.el {#dot-doom-dot-d-init-dot-el}
+
+```emacs-lisp
 (doom! :input
        ;;chinese
        ;;japanese
@@ -95,15 +98,15 @@ This is kinda personal preference but it will effect the whole setup. I used to 
        file-templates    ; auto-snippets for empty files
        fold              ; (nigh) universal code folding
        ;;(format +onsave)  ; automated prettiness
+       format
        ;;god               ; run Emacs commands without modifier keys
        ;;lispy             ; vim for lisp, for people who don't like vim
-       ;;multiple-cursors  ; editing in many places at once
+       multiple-cursors  ; editing in many places at once
        ;;objed             ; text object editing for the innocent
        ;;parinfer          ; turn lisp into python, sort of
        ;;rotate-text       ; cycle region at point between text candidates
        snippets          ; my elves. They type so I don't have to
        word-wrap         ; soft wrapping with language-aware indent
-       format
 
        :emacs
        dired             ; making dired pretty [functional]
@@ -133,8 +136,8 @@ This is kinda personal preference but it will effect the whole setup. I used to 
        ;;ein               ; tame Jupyter notebooks with emacs
        (eval +overlay)     ; run code, run (also, repls)
        ;;gist              ; interacting with github gists
-       lookup              ; navigate your code and its documentation
-       lsp               ; M-x vscode
+       (lookup +dictionary)              ; navigate your code and its documentation
+       (lsp +peek)               ; M-x vscode
        magit             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
@@ -201,7 +204,7 @@ This is kinda personal preference but it will effect the whole setup. I used to 
        rest              ; Emacs as a REST client
        ;;rst               ; ReST in peace
        ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-       rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       (rust +lsp)              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
        ;;(scheme +guile)   ; a fully conniving family of lisps
        (sh +lsp)                ; she sells {ba,z,fi}sh shells on the C xor
@@ -264,7 +267,7 @@ There are two ways to load a theme. Both assume the theme is installed and avail
 If you use `org` and don't want your org files in the default location below, change `org-directory`. It must be set before org loads!
 
 ```emacs-lisp
-(setq org-directory "~/Sync/org")
+(setq org-directory "~/org")
 ```
 
 This determines the style of line numbers in effect. If set to `nil`, line numbers are disabled. For relative line numbers, set this to `relative`.
@@ -340,10 +343,9 @@ Automatic tangle on save
 Maximize the window upon startup. (May need to edit below depends on the monitor size)
 
 ```emacs-lisp
-
 (if (string= (getenv "USER") "lw70868")
-    (setq initial-frame-alist '((top . 1) (left . 1) (width . 185) (height . 68)))
-  (setq initial-frame-alist '((top . 1) (left . 1) (width . 177) (height . 60))))
+    (setq initial-frame-alist '((top . 1) (left . 1) (width . 190) (height . 65)))
+  (setq initial-frame-alist '((top . 1) (left . 1) (width . 177) (height . 55))))
 ```
 
 
@@ -397,15 +399,66 @@ The command format-all-ensure-formatter will ensure that a default formatter is 
 ```
 
 
-### Per language part-of-word {#per-language-part-of-word}
+### Peek definition {#peek-definition}
 
 ```emacs-lisp
-(setq-default evil-symbol-word-search t)
+(map! :n "K" 'lsp-ui-doc-show)
+(map! :n "C-K" '+lookup/documentation)
+```
 
-;; For all programming modes
-(add-hook 'prog-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
-;; For all modes
-(add-hook 'after-change-major-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+
+### Signature auto-activate {#signature-auto-activate}
+
+```emacs-lisp
+(setq lsp-signature-auto-activate nil)
+```
+
+
+## Tree-sitter {#tree-sitter}
+
+
+### Package {#package}
+
+```emacs-lisp
+(package! tree-sitter)
+(package! tree-sitter-langs)
+```
+
+
+### Config {#config}
+
+```emacs-lisp
+(use-package! tree-sitter
+  :config
+  (require 'tree-sitter-langs)
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+  (pushnew! tree-sitter-major-mode-language-alist
+          '(scss-mode . css))
+  (pushnew! tree-sitter-major-mode-language-alist
+          '(haskell-mode . haskell)))
+```
+
+
+## Company {#company}
+
+
+### Disable yasnipet global mode {#disable-yasnipet-global-mode}
+
+It disturb the typing as it auto-select the first hint
+
+```emacs-lisp
+(after! yasnippet
+  (yas-global-mode -1))
+```
+
+
+### Use &lt;C-n&gt; during insert mode to invoke company {#use-c-n-during-insert-mode-to-invoke-company}
+
+```emacs-lisp
+;; (map! :i "<C-n>" #'+company-complete)
+(map! (:when (featurep! :completion company) ; Conditional loading
+       :i "C-n" #'+company/complete))
 ```
 
 
@@ -444,6 +497,14 @@ Edit workspaces by `treemacs-edit-workspaces`
 (after! doom-themes
   (setq doom-themes-treemacs-theme "doom-colors") ; use "doom-colors" for less minimal icon theme
   (doom-themes-treemacs-config))
+```
+
+
+### Doom theme {#doom-theme}
+
+```emacs-lisp
+(after! lsp-treemacs
+  (load-library "doom-themes-ext-treemacs"))
 ```
 
 
@@ -511,6 +572,13 @@ At first it seems that pre and post are advantageous over at and at-full, since 
 
 
 ## Org mode {#org-mode}
+
+
+### Pretty-mode {#pretty-mode}
+
+```emacs-lisp
+(add-hook 'org-mode-hook #'+org-pretty-mode)
+```
 
 
 ### Change the ellipsis {#change-the-ellipsis}
@@ -586,9 +654,15 @@ Note: In Doom emacs `s` key is `super key`, aka `⌘` on MacOS, `Windows` key on
 ```emacs-lisp
 (map! :n "H" #'+tabs:previous-or-goto)
 (map! :n "L" #'+tabs:next-or-goto)
-(map! :n "M-s-{" #'centaur-tabs-move-current-tab-to-left)
-(map! :n "M-s-}" #'centaur-tabs-move-current-tab-to-right)
+(map! :n "C-M-{" #'centaur-tabs-move-current-tab-to-left)
+(map! :n "C-M-}" #'centaur-tabs-move-current-tab-to-right)
 (map! :n "X" #'kill-current-buffer)
+```
+
+```emacs-lisp
+;; Need to unbind this for org-mode
+(with-eval-after-load 'evil-org
+  (define-key evil-org-mode-map (kbd "<normal-state> X") nil))
 ```
 
 
@@ -600,8 +674,7 @@ Note: In Doom emacs `s` key is `super key`, aka `⌘` on MacOS, `Windows` key on
       :desc "Goto Tab 3" :n "s-3" (cmd! (+tabs:next-or-goto 3))
       :desc "Goto Tab 4" :n "s-4" (cmd! (+tabs:next-or-goto 4))
       :desc "Goto Tab 5" :n "s-5" (cmd! (+tabs:next-or-goto 5))
-      :desc "Goto Tab 6" :n "s-6" (cmd! (+tabs:next-or-goto 6))
-      )
+      :desc "Goto Tab 6" :n "s-6" (cmd! (+tabs:next-or-goto 6)))
 ```
 
 
@@ -702,6 +775,7 @@ If TYPE is `line', insertion starts on an empty line.
 If TYPE is `block', the inserted text in inserted at each line
 of the block."
     (interactive "<R><x><y>")
+    ;; (let ((delete-func (or delete-func #'evil-delete))
     (let ((delete-func (or delete-func #'evil-delete-without-register))
           (nlines (1+ (evil-count-lines beg end)))
           (opoint (save-excursion
@@ -732,6 +806,24 @@ of the block."
 ```
 
 
+### Use symbol to moving instead of word {#use-symbol-to-moving-instead-of-word}
+
+```emacs-lisp
+(with-eval-after-load 'evil
+    (defalias #'forward-evil-word #'forward-evil-symbol)
+    ;; make evil-search-word look for symbol rather than word boundaries
+    (setq-default evil-symbol-word-search t))
+```
+
+
+### Move parentheses {#move-parentheses}
+
+```emacs-lisp
+(map! :ni "C-)" #'sp-forward-slurp-sexp)
+(map! :ni "C-(" #'sp-backward-slurp-sexp)
+```
+
+
 ## Font display {#font-display}
 
 
@@ -740,9 +832,9 @@ of the block."
 ```emacs-lisp
 (if (string= (getenv "USER") "lw70868")
     (setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 14)
-          doom-variable-pitch-font (font-spec :family "Source Serif 4" :size 14))
+          doom-variable-pitch-font (font-spec :family "Source Serif Pro" :size 14))
   (setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 13)
-        doom-variable-pitch-font (font-spec :family "Source Serif 4" :size 13)))
+        doom-variable-pitch-font (font-spec :family "Source Serif Pro" :size 13)))
 ```
 
 
@@ -780,7 +872,8 @@ Hide emhasis marker and toggles pretty entities.
 
 ## Zen mode {#zen-mode}
 
-Reduce zen mode zoom
+
+### Reduce zen mode zoom {#reduce-zen-mode-zoom}
 
 ```emacs-lisp
 (setq +zen-text-scale 1.396)

@@ -11,6 +11,15 @@
 I started using Emacs about a week ago <2022-01-24 Mon> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+* Entry <2022-06-02 Thu>
+
+** Pi-hole and Cloudflare handshake invalid
+
+Today I had a weird bug in ~scheduledblocks~ . Turn out some how Cloudflare reject the TSL connection from my Pi-Hole.
+
+Temporary disable Pi-hole and everything good. I need to investigation more.
+
+
 * Entry <2022-04-13 Wed>
 
 ** Build Emacs on MacOS with M1

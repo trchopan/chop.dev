@@ -1,5 +1,5 @@
 #+hugo_base_dir: ~/Sync/chop-ink/
-#+hugo_tags: how howto build website
+#+hugo_tags: howto build website
 #+hugo_custom_front_matter: :cover /ox-hugo/howto-build-website_20220203_134312.png
 #+hugo_custom_front_matter: :images /ox-hugo/howto-build-website_20220203_134312.png
 

@@ -12,6 +12,16 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-06-02 Thu&gt;</span></span> {#entry}
+
+
+### Pi-hole and Cloudflare handshake invalid {#pi-hole-and-cloudflare-handshake-invalid}
+
+Today I had a weird bug in `scheduledblocks` . Turn out some how Cloudflare reject the TSL connection from my Pi-Hole.
+
+Temporary disable Pi-hole and everything good. I need to investigation more.
+
+
 ## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-04-13 Wed&gt;</span></span> {#entry}
 
 
