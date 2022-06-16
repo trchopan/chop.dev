@@ -74,12 +74,12 @@ Trong nhg năm gần đây, `VS Code` hiện tại có vẻ là lựa chọn m�
 
 #### Extension {#extension}
 
-Sau khi cài xong `VS Code` thành công. Thì để lập trình Rust các bạn nên cài thêm plugin:
+Sau khi cài xong `VS Code` thành công. Thì để lập trình Rust các bạn cần cài thêm plugins:
 
 -   Rust
 -   rust-analyzer
 
-Là 2 plugins hỗ trợ đầy đủ cho các tác vụ của các bạn lúc lập trình như: code highlight, linting/diagnose, run/compile, refactor, document, suggestion, etc.
+Là 2 plugins hỗ trợ đầy đủ cho các tác vụ của các bạn lúc lập trình như: code highlight, linting, diagnose, run, compile, refactor, document, suggestion, etc.
 
 
 #### Emacs {#emacs}

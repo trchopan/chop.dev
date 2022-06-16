@@ -119,7 +119,7 @@ This is kinda personal preference but it will effect the whole setup. I used to 
        ;;eshell            ; the elisp shell that works everywhere
        ;;shell             ; simple shell REPL for Emacs
        ;;term              ; basic terminal emulator for Emacs
-       ;;vterm             ; the best terminal emulation in Emacs
+       vterm             ; the best terminal emulation in Emacs
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
@@ -372,23 +372,6 @@ The command format-all-ensure-formatter will ensure that a default formatter is 
 ```
 
 
-### Vue {#vue}
-
-
-#### Package {#package}
-
-```emacs-lisp
-(package! lsp-volar :recipe (:host github :repo "jadestrong/lsp-volar"))
-```
-
-
-#### Config {#config}
-
-```emacs-lisp
-(use-package! lsp-volar)
-```
-
-
 ### Typescript {#typescript}
 
 
@@ -457,8 +440,8 @@ It disturb the typing as it auto-select the first hint
 
 ```emacs-lisp
 ;; (map! :i "<C-n>" #'+company-complete)
-(map! (:when (featurep! :completion company) ; Conditional loading
-       :i "C-n" #'+company/complete))
+;; (map! (:when (featurep! :completion company) ; Conditional loading
+;;        :i "C-n" #'+company/complete))
 ```
 
 

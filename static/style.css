@@ -14,6 +14,11 @@ h3 {
   word-break: break-all;
 }
 
+.post-content > div > ul > li > ul > li::before {
+  content: '·' !important;
+  color: #ffa86a !important;
+}
+
 .my-links {
   font-size: 1.9rem;
 }
@@ -28,4 +33,25 @@ figcaption {
   margin-top: 5px;
   background: none !important;
   color: var(--color) !important;
+}
+
+.ox-hugo-toc.toc a {
+  text-decoration: none;
+}
+
+.ox-hugo-toc.toc > ul > li {
+  margin-top: 0.3rem;
+}
+
+.ox-hugo-toc.toc > ul > li > ul > li {
+  margin-top: 0.1rem;
+}
+
+.ox-hugo-toc.toc > ul > li::before {
+  content: '+';
+}
+
+.ox-hugo-toc.toc > ul > li > ul > li::before {
+  content: '·';
+  color: #ffa86a;
 }

@@ -91,6 +91,6 @@ googleAnalytics = 'G-00XY762Y0W'
         name = "Doom Emacs config"
         url = "/posts/doom.d/config/"
       [[languages.en.menu.main]]
-        identifier = "nvim-config"
+        identifier = "about-me"
         name = "About Me"
         url = "/about-me"
