@@ -9,6 +9,10 @@
 #+DESCRIPTION: New year. New website. New journey.
 
 
+#+attr_html: :width 600
+[[~/Sync/chop-ink/content-org/posts/images/howto-build-website_20220203_134312.png]]
+
+
 🎉 Chúc mừng năm mới 🎉
 
 I'm from Vietnam so Tet is a big holiday. I and my family, we had a lot of fun gathering together. This is the first year Lina had growed up enough for me and my wife to take her travel (last year Tet holiday she was only 1 month old so we had to stay home). This year, we spent the holiday with my parents in an AirBnB at the heart of Ho Chi Minh City, Landmark 81.

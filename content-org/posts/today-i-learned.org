@@ -5,10 +5,14 @@
 
 #+TITLE: Today I Learned
 #+AUTHOR: Chop Tr (chop.ink)
-#+DATE: <2022-02-03 Thu>
+#+DATE: <2022-06-30 Thu>
 #+DESCRIPTION: It is good to keep a note of things I learned during the day
 
+#+attr_html: :width 200
+[[~/Sync/chop-ink/content-org/posts/images/today-i-learned_20220203_111606.png]]
+
 I started using Emacs about a week ago <2022-01-24 Mon> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
+
 
 * Entry <2022-06-30 Thu>
 

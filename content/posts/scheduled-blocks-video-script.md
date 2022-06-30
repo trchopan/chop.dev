@@ -9,6 +9,9 @@ cover = "/ox-hugo/scheduled-block-script_20220301_234604.png"
 images = "/ox-hugo/scheduled-block-script_20220301_234604.png"
 +++
 
+{{< figure src="/ox-hugo/scheduled-block-script_20220301_234604.png" width="600" >}}
+
+
 ## Giới thiệu {#giới-thiệu}
 
 Haskell là một ngôn ngữ thú vị, một thế giới mới đối với bất kỳ kỹ sư lập trình nào đã làm việc quá lâu với OOP - lập trình hướng đối tượng hay thế giới imperative programing (tạm gọi lập trình mệnh lệnh).

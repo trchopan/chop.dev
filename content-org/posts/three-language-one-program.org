@@ -8,6 +8,10 @@
 #+DATE: <2022-03-22 Tue>
 #+DESCRIPTION: Same program written in 3 programming languages: Typescript, Haskell, Rust. Thereby experiencing environment and gaining new knowledge.
 
+#+attr_html: :width 600
+[[~/Sync/chop-ink/content-org/posts/images/one-program-three-language_20220324_215135.png]]
+
+
 * Introduction
 
 Learning programing is a journey. Everyday I learned new things and experience new wonder. And by keep exploring new places, new corner of the landscape, I rediscover many things that I didn't know before.

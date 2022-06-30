@@ -2,12 +2,14 @@
 title = "Today I Learned"
 author = ["Chop Tr (chop.ink)"]
 description = "It is good to keep a note of things I learned during the day"
-date = 2022-02-03T00:00:00+07:00
+date = 2022-06-30T00:00:00+07:00
 tags = ["today", "i", "learned"]
 draft = false
 cover = "/ox-hugo/today-i-learned_20220203_111606.png"
 images = "/ox-hugo/today-i-learned_20220203_111606.png"
 +++
+
+{{< figure src="/ox-hugo/today-i-learned_20220203_111606.png" width="200" >}}
 
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 

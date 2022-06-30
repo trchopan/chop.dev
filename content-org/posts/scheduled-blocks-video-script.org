@@ -8,6 +8,9 @@
 #+DATE: <2022-03-01 Tue>
 #+DESCRIPTION: Đây là một chương trình viết lại của một repo khác cũng đã thực hiện việc tính toán block slot leader trên blockchain Cardano. Source gốc viết bằng Python. Mình quyết định mục tiêu sẽ là convert hết các Chức năng và Công thức của repo đó thành Haskell, phục vụ việc học ngôn ngữ này.
 
+#+attr_html: :width 600
+[[~/Sync/chop-ink/content-org/posts/images/scheduled-block-script_20220301_234604.png]]
+
 
 * Giới thiệu
 
