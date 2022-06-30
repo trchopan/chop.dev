@@ -19,7 +19,6 @@ images = "/ox-hugo/demo-doom_20220131_154814.png"
 - [Automations](#automations)
 - [LSP](#lsp)
 - [Tree-sitter](#tree-sitter)
-- [Company](#company)
 - [Treemacs](#treemacs)
 - [Projectile](#projectile)
 - [Gitgutter](#gitgutter)
@@ -34,6 +33,7 @@ images = "/ox-hugo/demo-doom_20220131_154814.png"
 </div>
 <!--endtoc-->
 
+{{< figure src="/ox-hugo/demo-doom_20220131_154814.png" width="600" >}}
 
 
 ## Init.el {#init-dot-el}
@@ -123,8 +123,8 @@ This is kinda personal preference but it will effect the whole setup. I used to 
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
-       ;(spell +flyspell) ; tasing you for misspelling mispelling
-       ;grammar           ; tasing grammar mistake every you make
+                                        ;(spell +flyspell) ; tasing you for misspelling mispelling
+                                        ;grammar           ; tasing grammar mistake every you make
 
        :tools
        ;;ansible
@@ -166,7 +166,7 @@ This is kinda personal preference but it will effect the whole setup. I used to 
        ;;(dart +flutter)   ; paint ui and not much else
        ;;dhall
        ;;elixir            ; erlang done right
-       ;;elm               ; care for a cup of TEA?
+       (elm +lsp)               ; care for a cup of TEA?
        emacs-lisp        ; drown in parentheses
        ;;erlang            ; an elegant language for a more civilized age
        ;;ess               ; emacs speaks statistics
@@ -261,7 +261,7 @@ They all accept either a font-spec, font string ("Input Mono-12"), or xlfd font 
 There are two ways to load a theme. Both assume the theme is installed and available. You can either set `doom-theme` or manually load a theme with the `load-theme` function. This is the default:
 
 ```emacs-lisp
-(setq doom-theme 'doom-vibrant)
+(setq doom-theme 'doom-tomorrow-night)
 ```
 
 If you use `org` and don't want your org files in the default location below, change `org-directory`. It must be set before org loads!
@@ -340,7 +340,7 @@ Automatic tangle on save
           (lambda () (add-hook 'after-save-hook #'org-babel-tangle :append :local)))
 ```
 
-Maximize the window upon startup. (May need to edit below depends on the monitor size)
+Set the window size upon startup. (May need to edit below depends on the monitor size)
 
 ```emacs-lisp
 (if (string= (getenv "USER") "lw70868")
@@ -372,6 +372,13 @@ The command format-all-ensure-formatter will ensure that a default formatter is 
 ```
 
 
+### Signature auto-activate {#signature-auto-activate}
+
+```emacs-lisp
+(setq lsp-signature-auto-activate nil)
+```
+
+
 ### Typescript {#typescript}
 
 
@@ -379,21 +386,6 @@ The command format-all-ensure-formatter will ensure that a default formatter is 
 
 ```emacs-lisp
 (package! ob-ts-node :recipe (:host github :repo "tmythicator/ob-ts-node"))
-```
-
-
-### Peek definition {#peek-definition}
-
-```emacs-lisp
-(map! :n "K" 'lsp-ui-doc-show)
-(map! :n "C-K" '+lookup/documentation)
-```
-
-
-### Signature auto-activate {#signature-auto-activate}
-
-```emacs-lisp
-(setq lsp-signature-auto-activate nil)
 ```
 
 
@@ -420,28 +412,6 @@ The command format-all-ensure-formatter will ensure that a default formatter is 
           '(scss-mode . css))
   (pushnew! tree-sitter-major-mode-language-alist
           '(haskell-mode . haskell)))
-```
-
-
-## Company {#company}
-
-
-### Disable yasnipet global mode {#disable-yasnipet-global-mode}
-
-It disturb the typing as it auto-select the first hint
-
-```emacs-lisp
-(after! yasnippet
-  (yas-global-mode -1))
-```
-
-
-### Use &lt;C-n&gt; during insert mode to invoke company {#use-c-n-during-insert-mode-to-invoke-company}
-
-```emacs-lisp
-;; (map! :i "<C-n>" #'+company-complete)
-;; (map! (:when (featurep! :completion company) ; Conditional loading
-;;        :i "C-n" #'+company/complete))
 ```
 
 
@@ -528,7 +498,7 @@ The list of the default decision chars.
 (setq avy-keys '(?q ?t ?e ?r ?y ?u ?o ?p
                     ?a ?s ?d ?w ?b ?n ?v
                     ?k ?l ?z ?x ?c ?j ?g
-                    ?h ?f ?i ))
+                    ?h ?f ?i ?m))
 ```
 
 
