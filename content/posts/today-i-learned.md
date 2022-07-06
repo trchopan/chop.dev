@@ -14,6 +14,20 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-06 Wed&gt;</span></span> {#entry}
+
+
+### Yarn SELF_SIGNED_CERT_IN_CHAIN {#yarn-self-signed-cert-in-chain}
+
+<https://github.com/yarnpkg/yarn/issues/892>
+
+This is because Yarn reject invalid SSL certificate. Can be bypass by
+
+```bash
+NODE_TLS_REJECT_UNAUTHORIZED=0 yarn install
+```
+
+
 ## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-06-30 Thu&gt;</span></span> {#entry}
 
 
