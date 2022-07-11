@@ -51,9 +51,6 @@ use std::fs;
 
 use clap::Parser;
 
-extern crate ed25519_dalek;
-extern crate rand;
-
 use ed25519_dalek::Keypair;
 use ed25519_dalek::Verifier;
 use ed25519_dalek::{PublicKey, SecretKey};
