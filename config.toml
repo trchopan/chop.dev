@@ -2,7 +2,7 @@ languageCode = 'en-us'
 theme = "terminal"
 baseURL = 'https://chop.ink/'
 title = 'Welcome to Chop Ink'
-googleAnalytics = 'G-00XY762Y0W'
+googleAnalytics = 'G-XVVD1P3SQ0'
 
 
 [markup.highlight]
