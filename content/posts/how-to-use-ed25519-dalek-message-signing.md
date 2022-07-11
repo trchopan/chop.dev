@@ -17,15 +17,15 @@ The UX flow is as follow:
 
 {{< figure src="/ox-hugo/connect-auth-ux_20220711_113755.png" width="700" >}}
 
-This user flow need away to:
+This user flow need to:
 
 -   Produce a Signature Proof that the message is valid
 -   Verify the Signature Proof using the message + public key
 
-=&gt; A good use case for Elliptic curve application. I choose edward 25519 as it has a pure implementation in Rust which can be compiled into wasm. Other implementations has dependency on third party library such as openssl and rust still has trouble compile those into wasm for some blockchain smart contract.
+Therefore, a good use case for `elliptic curve` application. I choose edward 25519 as it has a pure implementation in Rust which can be compiled into wasm. Other implementations has dependency on third party library such as `openssl` and rust still has trouble compile those into wasm for some blockchain smart contract.
 
 
-## The draft drawing of the steps {#the-draft-drawing-of-the-steps}
+## Keygen, Proof and Verify {#keygen-proof-and-verify}
 
 {{< figure src="/ox-hugo/connect-auth-proof-and-verify_20220711_114210.png" width="700" >}}
 
