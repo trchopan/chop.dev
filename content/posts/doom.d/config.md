@@ -163,7 +163,7 @@ This is kinda personal preference but it will effect the whole setup. I used to 
        ;;crystal           ; ruby at the speed of c
        ;;csharp            ; unity, .NET, and mono shenanigans
        ;;data              ; config/data formats
-       ;;(dart +flutter)   ; paint ui and not much else
+       (dart +flutter +lsp)   ; paint ui and not much else
        ;;dhall
        ;;elixir            ; erlang done right
        (elm +lsp)               ; care for a cup of TEA?
@@ -253,8 +253,7 @@ Doom exposes five (optional) variables for controlling fonts in Doom. Here are t
 
 -   `doom-font`
 -   `doom-variable-pitch-font`
--   `doom-big-font` -- used for `doom-big-font-mode`; use this for
-    presentations or streaming.
+-   `doom-big-font` -- used for `doom-big-font-mode`; use this for presentations or streaming.
 
 They all accept either a font-spec, font string ("Input Mono-12"), or xlfd font string. You generally only need these two: (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light) doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
@@ -297,6 +296,13 @@ My screen is small. I Prefer 2 space indentation:
 
 ```emacs-lisp
 (setq standard-indent 2)
+```
+
+
+### Search wrapping {#search-wrapping}
+
+```emacs-lisp
+(setq evil-search-wrap t)
 ```
 
 
@@ -362,13 +368,13 @@ If you are in a buffer with lsp-mode enabled and a server that supports textDocu
 <!--listend-->
 
 ```emacs-lisp
-(setq +format-with-lsp nil)
+(setq-hook! 'haskell-mode-hook +format-with-lsp nil)
 ```
 
 The command format-all-ensure-formatter will ensure that a default formatter is selected in case you don't have one set; you can customize the default formatter for each language. To ensure a formatter is set whenever you enable format-all-mode, you can use: (add-hook format-all-mode-hook 'format-all-ensure-formatter).
 
 ```emacs-lisp
-(add-hook 'format-all-mode-hook 'format-all-ensure-formatter)
+;; (add-hook 'format-all-mode-hook 'format-all-ensure-formatter)
 ```
 
 
@@ -785,9 +791,11 @@ of the block."
 ```emacs-lisp
 (if (string= (getenv "USER") "lw70868")
     (setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 14)
-          doom-variable-pitch-font (font-spec :family "Source Serif Pro" :size 14))
+          doom-variable-pitch-font (font-spec :family "Source Serif Pro" :size 16)
+          doom-big-font (font-spec :family "FiraCode Nerd Font Mono" :size 18))
   (setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 13)
-        doom-variable-pitch-font (font-spec :family "Source Serif Pro" :size 13)))
+        doom-variable-pitch-font (font-spec :family "Source Serif Pro" :size 15)
+        doom-big-font (font-spec :family "FiraCode Nerd Font Mono" :size 17)))
 ```
 
 

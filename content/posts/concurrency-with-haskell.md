@@ -16,7 +16,7 @@ This is a blog post on [FPComplete.com](https://www.fpcomplete.com/) and I found
 [Original](https://www.fpcomplete.com/blog/2016/11/comparative-concurrency-with-haskell/)
 
 
-## &gt; {#cedf8d}
+## Introduction {#introduction}
 
 Last week, I was at DevConTLV X and attended a workshop by Aaron Cruz. While the title was a bit of a lie (it wasn't four hours, and we didn't do a chat app), it was a great way to see some basics of concurrency in different languages. Of course, that made me all the more curious to add Haskell to the mix.
 

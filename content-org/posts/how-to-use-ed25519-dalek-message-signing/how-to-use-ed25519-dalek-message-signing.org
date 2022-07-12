@@ -16,7 +16,7 @@ I use a smart contract to keep a map between the User Id and the wallet address.
 The UX flow is as follow:
 
 #+attr_html: :width 700
-[[~/Sync/chop-ink/content-org/posts/images/connect-auth-ux_20220711_113755.png]]
+[[~/Sync/chop-ink/content-org/posts/how-to-use-ed25519-dalek-message-signing/connect-auth-ux_20220711_113755.png]]
 
 This user flow need to:
 - Produce a Signature Proof that the message is valid
@@ -27,7 +27,7 @@ Therefore, a good use case for =elliptic curve= application. I choose edward 255
 * Keygen, Proof and Verify
 
 #+attr_html: :width 700
-[[~/Sync/chop-ink/content-org/posts/images/connect-auth-proof-and-verify_20220711_114210.png]]
+[[~/Sync/chop-ink/content-org/posts/how-to-use-ed25519-dalek-message-signing/connect-auth-proof-and-verify_20220711_114210.png]]
 
 
 * Example Rust code

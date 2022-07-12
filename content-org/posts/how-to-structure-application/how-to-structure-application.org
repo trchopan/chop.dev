@@ -40,13 +40,13 @@ TODO Insert github link
 So first let go through the App that we going to build. This will be the example for us to understand how I implement and the desion I make during my designing process for the architecture of the app.
 
 #+attr_html: :width 400
-[[~/Sync/chop-ink/content-org/posts/images/ddd-demo-1_20220608_112530.png]]
+[[~/Sync/chop-ink/content-org/posts/how-to-structure-application/ddd-demo-1_20220608_112530.png]]
 
 #+attr_html: :width 400
-[[~/Sync/chop-ink/content-org/posts/images/ddd-demo-2_20220608_112616.png]]
+[[~/Sync/chop-ink/content-org/posts/how-to-structure-application/ddd-demo-2_20220608_112616.png]]
 
 #+attr_html: :width 400
-[[~/Sync/chop-ink/content-org/posts/images/ddd-demo-3_20220608_112635.png]]
+[[~/Sync/chop-ink/content-org/posts/how-to-structure-application/ddd-demo-3_20220608_112635.png]]
 
 - User can login by Line Front End framework (LIFF)
 
@@ -119,7 +119,7 @@ How the software works
       Structure
 
 #+attr_html: :width 300
-[[~/Sync/chop-ink/content-org/posts/images/holy-grail_20220424_214545.png]]
+[[~/Sync/chop-ink/content-org/posts/how-to-structure-application/holy-grail_20220424_214545.png]]
 
 I present to you the Holy Grail of software architecture design. As a software developer learning about architecture design, this has blown my mind away. The idea of really closely follow the design with the stucture of your software as the basic.
 
@@ -135,7 +135,7 @@ Now let me introduce the work of Mr Eric Evan and a great book on this topic by 
 Popularized by Vaughn Vernon - Implement Domain-Driven Design. Foreword by Eric Evans.
 
 #+attr_html: :width 300
-[[~/Sync/chop-ink/content-org/posts/images/implement-ddd-vernon_20220420_143420.png]]
+[[~/Sync/chop-ink/content-org/posts/how-to-structure-application/implement-ddd-vernon_20220420_143420.png]]
 
 
 ** The idea
@@ -181,7 +181,7 @@ Before explaining about the Entities and VOs. We need to briefly defind the Cont
 DDD can be divided into Strategic and Tactical Design where the Tactical Design is about the building blocks of DDD. The basic building blocks of DDD are Entities and Value Objects (VOs) besides Services and Domain Events.
 
 #+attr_html: :width 650
-[[~/Sync/chop-ink/content-org/posts/images/entities-valueobjects_20220501_130750.png]]
+[[~/Sync/chop-ink/content-org/posts/how-to-structure-application/entities-valueobjects_20220501_130750.png]]
 
 *** Entities
 
@@ -416,7 +416,7 @@ Furthermore, you can be sure what to look for when there something wrong or unex
 - If you suspect it something with the events or layout code, Look into the Application or Presentation layers.
 
 #+attr_html: :width 400
-[[~/Sync/chop-ink/content-org/posts/images/charlie-chaplin-factory_20220608_172218.png]]
+[[~/Sync/chop-ink/content-org/posts/how-to-structure-application/charlie-chaplin-factory_20220608_172218.png]]
 
 
 * Hexagonal Architecture
@@ -424,14 +424,14 @@ Furthermore, you can be sure what to look for when there something wrong or unex
 The introduction of layers brings us to the next topic of how this example designed. I based it on the =Hexagonal Architecture=.
 
 #+attr_html: :width 720
-[[~/Sync/chop-ink/content-org/posts/images/hexagonal-architecture_20220420_153150.png]]
+[[~/Sync/chop-ink/content-org/posts/how-to-structure-application/hexagonal-architecture_20220420_153150.png]]
 
 The idea of Hexagonal Architechure is everything communicate through =Ports= and =Adapters=. First introduced by Alistair Cockburn to avoid some ~undesired dependencies~ between layers and ~contamination~ of UI and business logic.
 
 The priciple of this is to heavily favor the concept of loosely-couple. You can imagine them like Lego blocks.
 
 #+attr_html: :width 400
-[[~/Sync/chop-ink/content-org/posts/images/ddd-lego-blocks_20220611_111605.png]]
+[[~/Sync/chop-ink/content-org/posts/how-to-structure-application/ddd-lego-blocks_20220611_111605.png]]
 
 Each components of a layer should be connected thorough a number of exposed "ports" (it can be plug and unplug easily). Perfect for testing or changing.
 
@@ -441,7 +441,7 @@ Each components of a layer should be connected thorough a number of exposed "por
 In this example I'm using a simple 4 layers architecture to demonstrate how they "snap" together. Those are: =Domain=, =Infrastructure=, =Application= and =Presentation=.
 
 #+attr_html: :width 600
-[[~/Sync/chop-ink/content-org/posts/images/ddd-layers_20220503_145857.jpg_20220614_145655.jpeg]]
+[[~/Sync/chop-ink/content-org/posts/how-to-structure-application/ddd-layers_20220503_145857.jpg_20220614_145655.jpeg]]
 
 *** Domain
 
@@ -535,7 +535,7 @@ Depends on the situation each tool will shine their brightest.
 ** Object-oriented Programing
 
 #+attr_html: :width 700
-[[~/Sync/chop-ink/content-org/posts/images/DDD-data-stream-OOP.jpg]]
+[[~/Sync/chop-ink/content-org/posts/how-to-structure-application/DDD-data-stream-OOP.jpg]]
 
 The encapsulation of the data and domain logic is a great usecase for =OOP=. Where I make the base classes of =Entity= and =ValueObject= then extends those with ease. The interface of the =Repositories= in the =Infrastructure layer= is another example of OOP usage where the interface is an abstraction and the real implementation is coded elsewhere with really nice flexibility to ~plug and play~ those classes.
 
@@ -543,7 +543,7 @@ The encapsulation of the data and domain logic is a great usecase for =OOP=. Whe
 ** Functional Programing
 
 #+attr_html: :width 700
-[[~/Sync/chop-ink/content-org/posts/images/DDD-data-stream-Functional.jpg]]
+[[~/Sync/chop-ink/content-org/posts/how-to-structure-application/DDD-data-stream-Functional.jpg]]
 
 On the other hand, =Functional Programing= serves as the connection between the components. Where the data is transformed and moving around as a stream. Here the ability to ~pipe~, ~chain~, ~fold~, ~map~, etc. is great way to work with your data.
 
@@ -564,7 +564,7 @@ Back to the questions above. Like everything in life, the answer is ="it depends
 
 
 #+attr_html: :width 450
-[[~/Sync/chop-ink/content-org/posts/images/albert-einstein_20220420_160854.png]]
+[[~/Sync/chop-ink/content-org/posts/how-to-structure-application/albert-einstein_20220420_160854.png]]
 
 #+begin_quote
 "As simple as possible, but no simpler." - Albert Einstein

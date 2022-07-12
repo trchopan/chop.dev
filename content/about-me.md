@@ -1,6 +1,7 @@
 +++
 title = "About Me"
 author = ["Chop Tr (chop.ink)"]
+description = "Short introduction"
 tags = ["about", "me"]
 draft = false
 cover = "/choptr-avatar.jpg"

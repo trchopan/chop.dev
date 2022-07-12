@@ -1,5 +1,4 @@
 #+hugo_base_dir: ~/Sync/chop-ink/
-#+hugo_section: posts/rust
 #+hugo_tags: learning rust hello world
 #+hugo_draft: true
 

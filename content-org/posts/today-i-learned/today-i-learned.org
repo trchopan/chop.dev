@@ -9,7 +9,7 @@
 #+DESCRIPTION: It is good to keep a note of things I learned during the day
 
 #+attr_html: :width 200
-[[~/Sync/chop-ink/content-org/posts/images/today-i-learned_20220203_111606.png]]
+[[~/Sync/chop-ink/content-org/posts/today-i-learned/today-i-learned_20220203_111606.png]]
 
 I started using Emacs about a week ago <2022-01-24 Mon> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
@@ -206,7 +206,7 @@ requestAndDecode request =
 The haskell build tool - =cabal= - has a requirement to put the ~import~ as the first item. I've been struggle to understand why my build keep complaining package not found when I reorder the items 😓
 
 #+attr_html: :width 350
-[[~/Sync/chop-ink/content-org/posts/images/cabal-import_20220225_113837.png]]
+[[~/Sync/chop-ink/content-org/posts/today-i-learned/cabal-import_20220225_113837.png]]
 
 
 * Entry <2022-02-21 Mon>
@@ -292,7 +292,7 @@ https://hungyi.net/posts/doom-emacs-search-replace-project/
 Awesome post, Now my search and replace workflow is just a string replace.
 
 #+attr_html: :width 720
-[[~/Sync/chop-ink/content-org/posts/images/search-replace_20220215_125502.png]]
+[[~/Sync/chop-ink/content-org/posts/today-i-learned/search-replace_20220215_125502.png]]
 
 Below is a copy of the original post.
 
@@ -349,7 +349,7 @@ One of my Cardano node missing the ~cardano_node_metrics_connectedPeers_int~ . T
 Amazing experience with editable buffer using =C-x= =C-q=. When done just press =Z= =Z= to confirm or =Z= =Q= to discard the changes.
 
 #+attr_html: :width 720
-[[~/Sync/chop-ink/content-org/posts/images/dired-editable-buffer_20220210_194540.png]]
+[[~/Sync/chop-ink/content-org/posts/today-i-learned/dired-editable-buffer_20220210_194540.png]]
 
 
 * Entry <2022-02-09 Wed>
@@ -486,7 +486,7 @@ Morning was more emacs setup. I solved the problem with ~mix pitch mode~ and  fo
 I have the most awesome settings for avy-jumping keys. Most of the keys should be in the middle of key board, the difficult to reach should be the outer area.
 
 #+attr_html: :width 720px
-[[./images/avy-keys_20220131_203804.png]]
+[[~/Sync/chop-ink/content-org/posts/today-i-learned/avy-keys_20220131_203804.png]]
 
 
 ** Block schedule should be calculate with the new epoch snapshot

@@ -9,7 +9,7 @@
 #+DESCRIPTION: Same program written in 3 programming languages: Typescript, Haskell, Rust. Thereby experiencing environment and gaining new knowledge.
 
 #+attr_html: :width 600
-[[~/Sync/chop-ink/content-org/posts/images/one-program-three-language_20220324_215135.png]]
+[[~/Sync/chop-ink/content-org/posts/three-language-one-program/one-program-three-language_20220324_215135.png]]
 
 
 * Introduction
@@ -32,7 +32,7 @@ In this article, I would like to express the beauty of all 3 language (and 3 dev
 This picture will be very familiar with anyone who has a computer in the 90s.
 
 #+attr_html: :width 380
-[[~/Sync/chop-ink/content-org/posts/images/minesweeper_20220323_132137.png]]
+[[~/Sync/chop-ink/content-org/posts/three-language-one-program/minesweeper_20220323_132137.png]]
 
 In this game you try to guess where the mines are given the number as ~hint~. The goal is to identify all the mines without triggering them.
 
