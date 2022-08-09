@@ -8,37 +8,29 @@
 
 * Giới thiệu
 
-Xin chào mọi người, Chop trở lại với một video mới. Lần này là 1 chuỗi video về lập trình.
+Xin chào mọi người, Chop trở lại với một video mới. Lần này là 1 chuỗi video về lập trình Rust.
 
 Sau một thời gian học và tiềm hiểu về lập trình Rust mình quyết định thực hiện chuỗi video này. Một phần là mình tự tạo động lực để tiềm hiểu sâu hơn và một phần để chia sẽ nhg kiến thức mà mình học đc.
 
-Hy vọng Chuỗi video này chắc sẽ hữu ích cho các bạn thích xem video để học thay vì đọc sách hoặc tài liệu (giống mình).
+Hy vọng Chuỗi video này sẽ hữu ích cho các bạn thích xem video để học thay vì đọc sách hoặc tài liệu.
 
 
-* Ngôn ngữ Rust
-
-Rust: Ngôn ngữ lập trình biên dịch có tính Memory safe (tạm dịch là bộ nhớ an toàn). Cho phép lập trình cấp cao (high-level language), giữ tính đơn giản, nhưng có hiệu xuất tốc độ của ngôn ngữ lập trình cấp thấp (low-level).
-
-Lúc đầu Rust đc tạo ra để xây dựng hệ thống nền (system code) như Game Engine, Database hay Hệ điều hành (Operating System). Nhg sau dần đc sử dụng rộng rải hơn, mạnh lên sau khi là ngôn ngữ phổ biến để xây app bằng Web Assembly.
-
-Feature chính của Rust chính là Memory safe (bộ nhớ an toàn). Thường thì các ngôn ngữ cấp cao (high-level programming language) như Go, Python có hệ thống quản lý bộ nhớ tự động bằng Garbage Collection. Và các ngôn ngữ cấp thấp (low-level programming language) quản lý bộ nhớ thủ công bằng các hàm allocate (cấp phát) hay giải phóng (free) bộ nhớ như C hay C++. Rust nằm ngay giữa, nó hok có Garbage Collector, cũng ko có hàm allocate hay free bộ nhớ. Mà nó sử dụng khái niệm mới là =Ownership= và =Borrowing= để quản lý các biến và con trỏ trong lúc viết chương trình.
-
-Công ty tài trợ cho Rust là Mozzila, công ty tạo ra trình duyệt web Firefox.
-
-
-* Cấu trúc
+* Cấu trúc của series video này
 
 Cấu trúc của các video phần lớn sẽ dựa trên cuốn sách ~The Rust Programming Language~ viết bởi Steve Klabnik and Carol Nichols. Cuốn này có phiên bản mở miễn phí online trên trang web offical =doc.rust-lang.org= . Các bạn có thể nhấn vào đường dẫn trong description của video để xem thêm.
 
 Ngoài các thông tin và kiến thức trong cuốn sách trên thì mình cũng sẽ thực hiện những video xoay quanh các khái niệm về lập trình khác không chỉ trong Rust mà ở nhg ngôn ngữ khác nữa để so sánh và mở rộng kiến thức.
 
 
-* Đọc song ngữ
+* Ngôn ngữ Rust
 
-Ok, ngoài ra thì cuốn sách đó bằng tiếng Anh nên để hỗ trợ cái rào cản ngôn ngữ thì mình cũng demo cái cách mà dịch toàn bộ cái website / sách đó bằng Google Translate cho các bạn nào chưa biết.
+Rust: Ngôn ngữ lập trình biên dịch (compiled) có tính Memory safe  - tạm dịch là An toàn xử lý bộ nhớ. Cho phép lập trình cấp cao (high-level language), giữ tính đơn giản, nhưng có hiệu xuất tốc độ của ngôn ngữ lập trình cấp thấp (low-level) như C và C++.
 
-- Vào website https://translate.google.com/ Chuyến sang tab =Websites=
-- Copy đường dẫn của trang web muốn dịch. Ở đây là https://doc.rust-lang.org/book/ và dán vào ô input Website và nhấn =Tiếp theo=
+Lúc đầu Rust đc tạo ra để xây dựng hệ thống nền (system code) như Game Engine, Database hay Hệ điều hành (Operating System). Nhg sau dần đc sử dụng rộng rải hơn, mạnh lên sau khi là ngôn ngữ phổ biến xây app bằng Web Assembly.
+
+Feature chính của Rust chính là Memory safe (An toàn xử lý bộ nhớ). Thường thì các ngôn ngữ cấp cao (high-level programming language) như Go, Python, Javascript có hệ thống quản lý bộ nhớ tự động bằng Garbage Collection. Và các ngôn ngữ cấp thấp (low-level programming language) quản lý bộ nhớ thủ công bằng các hàm cấp phát (allocate) hay giải phóng (free) bộ nhớ như C hay C++. Rust nằm ngay giữa, nó hok có Garbage Collector, cũng ko có hàm allocate hay free bộ nhớ. Mà nó sử dụng khái niệm là =Ownership= và =Borrowing= để quản lý các biến và con trỏ trong lúc viết chương trình.
+
+Công ty tạo ra ~Rust~ là ~Mozzila~, công ty tạo ra trình duyệt web Firefox. Và Rust cũng đc các ông lớn backup cho như Amazon, Google, Microft, và gần đây nhất là Meta - Facebook cũng đã có 1 bài blog khuyên các công cụ hệ thống nên sử dụng Rust để lập trình. Cho thấy sự phát triển rất mạnh của ngôn ngữ này.
 
 
 * Thiết lập công cụ và môi trường lập trình
@@ -79,9 +71,11 @@ Sau khi cài xong =VS Code= thành công. Thì để lập trình Rust các bạ
 Là 2 plugins hỗ trợ đầy đủ cho các tác vụ của các bạn lúc lập trình như: code highlight, linting, diagnose, run, compile, refactor, document, suggestion, etc.
 
 
-*** Emacs
+** Emacs / Vim
 
-Các video sau mình sẽ sử dụng =Emacs= để viết chương trình vì đó là môi trường làm việc quen thuộc của mình. Nhg các công cụ trên đều sẽ vận hành tương tự như trong VS Code.
+Cũng như VSCode, =Emacs= và =Vim= sử dụng ~LSP - Language Server Protocol~ để xử lý việc highlight code với analyze code, v.v.
+
+Các video sau mình sẽ sử dụng =Emacs= hoặc =Vim= để viết chương trình vì đó là môi trường làm việc quen thuộc của mình. Các dòng lệnh đều sẽ vận hành tương tự như trong VS Code.
 
 
 * Hello, World

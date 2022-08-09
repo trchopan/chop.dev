@@ -1,0 +1,387 @@
++++
+title = "Near Line Connect Script"
+author = ["Chop Tr (chop.ink)"]
+description = "Preparation for Line Presentation Workshop Talk script"
+date = 2022-08-09T00:00:00+07:00
+tags = ["near", "line", "connect"]
+draft = false
++++
+
+## Line-Near Connect {#line-near-connect}
+
+Thank you Khoa for a great overview on Blockchain and Near Protocol.
+
+I will continue with the topic of LINE-Near Connect.
+
+(change slide - Slide 15 - Line-Near diagram)
+
+So I hope everyone here already know that Line is a global chat app
+
+that continuously growing along side with other tech giants like
+
+Google, Facebook, Twitter to build kind of social networks
+
+to connect many people over the internet.
+
+And in this talk we would like to connect LINE with blockchain,
+
+to expand it's value and give our user all the benefit of a new type
+
+of market, the decentralized market. Where you can buy and sell digital assets
+
+such as NFT, Tokens without any central authority.
+
+This diagram is taken from one of LINE blockchain website that
+
+I think it shows exactly what I mean, The connection between Blockchain &lt;-&gt; Line.
+
+And our application serve like a proof of concept for this connection.
+
+(change slide - Slide 16 - 2 Collumn describe difference between Line Profile and Blockchain Wallet)
+
+
+## The two worlds {#the-two-worlds}
+
+So when we talk entity and identity. There are 2 separate concept that I need to
+
+distinguish. It is the Line Profile and the Near Wallet.
+
+(point to the left side picture)
+
+Line Profile is a identification of a user that is kept in our database.
+
+The user provide LINE this data as a source of information about his or her
+
+activities and interactions. He/She can then build and expand
+
+the connections with friends and business contracts in LINE platform.
+
+This type of information is very easy to modify and operate price is cheap
+
+as it is centralized in our server. And the user normally would like this
+
+kind of exposal and fast interaction normally through chat or simple messages.
+
+Examples of this side is LINE, Facebook Twitter, etc.
+
+But when you think about it, not all actions on the internet would suite
+
+for this high through-put stream of data. Some time you need to finalize information
+
+in a way that is permanant and secure. And uncontrollable by any authority.
+
+Then we need the solution of Blockhchain.
+
+(point to the right side picture)
+
+In this world, the user is identified by a Wallet. Which is a keypair (secret and public)
+
+keys that can be used to operate on the blockchain. By operate I mean making transactions.
+
+User can use this keypair together with his/her Wallet software to send and verify transactions
+
+on the blockchain. Essentially permanantly record his/her action the the decentralized world.
+
+These transactions on the blockchain is costly as it need the collaborative work
+
+of the whole network, therefore normally it would be a bit costly and difficult to perform.
+
+But what you get back is a very strong proof that your actions are valid and acknowledged.
+
+The examples for this are many public blockchains such as Ethereum, Binance Smart Chain, Solana, etc.
+
+For today application, we choose to build on Near but it should be the same with others.
+
+(point to the &lt;-&gt; arrow)
+
+So. How to verify these Identities. How do we connect the Social / Traditional world to
+
+the blockchain wallet? It is the question that my team has been trying to solve for the last
+
+few of months during our research about blockchain technology.
+
+Keep in mind that we are 3 front-ends engineers that dive head first into this topic so
+
+our solution may not be the best or standard of the industry but instead please look that it
+
+as a Proof of Concept.
+
+
+## The methods that we tried {#the-methods-that-we-tried}
+
+(change slide - Slide 17 - 3 methods that we tried)
+
+
+### Create Smart Contract to Connect {#create-smart-contract-to-connect}
+
+{{< figure src="/ox-hugo/near-line-connect-script-method-1.org_20220809_192052.png" width="720" >}}
+
+The first attemp was to create a Smart Contract with a simple KeyMap storage that user
+
+can update by making a transaction into this smart contract.
+
+```json
+{
+//  LINE ID     :  Wallet ID
+    "U1a2b3c4de": "0x5b7d134df00..."
+    "U542fdf34d": "0x34db3c8fcc4d..."
+    ...
+}
+```
+
+The problem with this attemp is anyone can send transation to record a LINE id.
+
+We can restrict that only the owner of the wallet can create a record but we
+
+have no control over the validity of the LINE id and the authenticity of it.
+
+
+### Verify by Traditional Backend {#verify-by-traditional-backend}
+
+{{< figure src="/ox-hugo/near-line-connect-script-method-2.org_20220809_192228.png" width="450" >}}
+
+This solve the problem of verify the LINE user. As we do with any other LINE service
+
+by normal login flow using the SDK or LINE app.
+
+The problem of this method is that it is against what we aim for as it is centralized
+
+in our server and does not give the user the benefit of storing this record onto
+
+Near blockchain and provide the strong proof of his/her identity and transactions.
+
+
+### Backend Verify and make transaction to record {#backend-verify-and-make-transaction-to-record}
+
+{{< figure src="/ox-hugo/near-line-connect-script-method-3.org_20220809_192614.png" width="720" >}}
+
+For this attempt, we make a Smart Contract as a KeyMap value like in method 1.
+
+But restrict only the Backend can send the transaction to record. This solve the problem
+
+of making the data avaiable onto Near blockchain. And also allow us to verify
+
+the authenticity of the login from LINE. But it comes with a big cost, yes, literally
+
+big "cost". You see, as I mention above making records on smart contract require
+
+verification from the network and everytime we make a record, we need to pay a small
+
+fee to the network. This's normally called gas fee. Therefore, for this method
+
+we subjectible to Spam attach. Imagine there is a mallicious party that want to
+
+hurt us, they can sent multiple request for record, which then incur us a big cost
+
+in term of transaction fee.
+
+
+## Message Signing {#message-signing}
+
+(change slide - Slide 18 - Message Signing)
+
+Which bring us to the solution we feel most comfortable with `Message Signing`.
+
+So Why do we need message siging or in other word,
+
+How it helps us solve the above problems?
+
+First It is a way to produce a message or any kind of data to be transfered
+
+together with some sort of Signature. These can ensure that we can prevent
+
+data modification during transfer. Because only the author of the message
+
+can produce the Signature.
+
+It also allow us to make sure it comes from the right source. Ie, it should
+
+come from the LINE authentication service.
+
+Then the best part is we can delegate the transaction finalizing to the user.
+
+He/She will be the one to send the transaction to NEAR blockchain and pay
+
+the gas fee. Completely avoid the flow that will subjectable to spaming.
+
+(change slide - Slide 19 - How we apply)
+
+So first, of couse, user need to sign in LINE and also sign in to NEAR wallet
+
+to give the credential. In this case for LINE is the access token that we need.
+
+Then he/she can request the credentials from our server which will have the ability
+
+to sign a message that contain very basic data to be sent to the smart contract
+
+and that in turn ensure that the data cannot be tampered with.
+
+In our case for the data we put in the LINE ID and Wallet ID pair together with
+
+expiration time which set to reasonably short time (3 minutes) so the user cannot
+
+use this certificate indefinitely. We use Edward 25519 eliptic curve to sign it
+
+as it is quite the industry standard and proven to be very strong cryptographic algorithm.
+
+The signature together with the message then sent back to the user and he has upto
+
+the expiration time to complete the transaction to record the data into the NEAR
+
+blockchain.
+
+Once the message sent to the Smart Contract, it is then exectute the verification for
+
+the validity of the message. And if it is valid, it is record to the Smart Contract.
+
+Here the Smart Contract also act as the record for the LINE-Near Connect key-value map.
+
+After that anyone can verify the connection of the Line ID and Wallet ID.
+
+
+### How message Signing work {#how-message-signing-work}
+
+(change slide - Slide 20 - How message signing work)
+
+Ok. So this is a quick slide to further describe how message signing work under.
+
+This is very brief overview but I hope you get the picture of the process.
+
+So the server is the one keeping the keys.
+
+These should be created before hand. Includes a Private Key and a Public Key.
+
+Like the name imply, the Private Key can only be known by the server and
+
+the Public key is the one can can verify the Signature.
+
+Ok so, First step is the server use both the keys (also known as keypairs) to sign
+
+the message and produce a Signature.
+
+As describe above, the signature and the message will be sent together to the Smart Contract
+
+by the user.
+
+In side the smart we have the Public Key, it will use the key to first hash the Message
+
+to produce a hash string. Then will descrypt  the Signature using the same key. It also produce
+
+a hash string. And finally, it compare the Hash strings together, if they are the same
+
+the message is valid and untampred.
+
+
+## Application Features {#application-features}
+
+(change slide - Slide 21 - Application fetures)
+
+Ok. So after bridging the gap between LINE and NEAR blockchain, we go full application.
+
+We spend about 3 weeks develop a working Demo app and publish live.
+
+You can use the link here to visit our app
+
+(point to link)
+
+As Khoa mention above NEAR provide us very great Developer experience with the NEAR SDK and
+
+very friendly tutorials and documents.
+
+Their toolchain is a absolute best in class to work with compare to other blockchains.
+
+They also have a bunch of standards Smart Contract that developed by the core team themself
+
+so we can quarantee correctness and safety when using them.
+
+We use some of those Smart Contract to implement the full features for our app includes:
+
+-   Publish fungible tokens. we call it LINE obviously :D
+
+-   Then we provide the distribution service like Faucet and financial service like Staking.
+
+-   We also create a NFT shop in the NEAR blockchain to test out our concept Authentic verification for the NFT
+
+    So the owner of the NFT collection (in this case imagine it is the LINE offical giftshop).
+
+    That owner can mint the NFT given the metadata and product images and some description. Then price it
+
+    for example: 1,500 LINE.
+
+    Then the user that has LINE account and NEAR wallet can purchase those NFT using the LINE tokens.
+
+
+## Demo {#demo}
+
+So this is the part where I give you the demo of our app. Hope the demo god is with me today.
+
+(Open the browser to demo the app)
+
+First I will sign in using my LINE account.
+
+Then I will sign in using my NEAR wallet.
+
+Ok so the sign in preparation is finish.
+
+And then I will request the Signature to make my Certification valid.
+
+And then sent to the blockchain.
+
+Here it will navigate me to the NEAR wallet for me to send the transaction.
+
+With this transaction it also prepared the certificate for me to connect LINE and NEAR.
+
+Ok. so everything is complete.
+
+We can enjoy the features of our app.
+
+First this is the Faucet tab where LINE tokens are distributed. You can request upto 10,000 LINE tokens
+
+per wallet.
+
+And here is the Staking tab, where you can stake your LINE token and enjoy the high interest rate
+
+that we have here.
+
+And here comes to the NFT shop. You can browse the collection using this "All tokens" tab.
+
+If you click on one it will navigate you to the detail page.
+
+Notice that the you can share this page you your friends or to LINE chat. Anyone who visite this link,
+
+can check the authenticity of the NFT. Even find out who is the owner to contact and if they interest
+
+can request for a re-purchase as these NFT are resell-able.
+
+Theses are the 2 button to share the this NFT or to view it on the NEAR blockchain explorer.
+
+So this NFT already has an owner, let's go back and visit an NFT that we can purchase.
+
+If the NFT not yet sold, we can can make a purchase using this button.
+
+(Click purchase button)
+
+And here it navigate me to the NEAR wallet to finish the transaction.
+
+So I just paid about 3,000 LINE to buy a NFT from the LINE shop.
+
+And this should give the Authentic Check to show that it's now belong to me.
+
+
+## Conclusion {#conclusion}
+
+(Change back to the slides - Slide 23)
+
+Ok, so I think that's it. Those were the features of our Concept App that we developed
+
+in the last few months during our time learning about blockchain technology and how to
+
+connect it with LINE.
+
+It was very fun experience and very exciting journey. We glad that we can share it with
+
+you today. I hope that we will have many more oppotunities to learn more about this technology
+
+and apply our knowledge.
+
+Thank you for listening and thank you for having us today.
