@@ -1,21 +1,21 @@
 #+hugo_base_dir: ~/Sync/chop-ink/
-#+hugo_tags: typescript monad
+#+hugo_tags: typescript monad programing design pattern
 
 #+title: Typescript Monad
 #+AUTHOR: Chop Tr (chop.ink)
 #+DATE: <2022-08-15 Mon>
-#+DESCRIPTION: Hiểu về monad qua Typescript
+#+DESCRIPTION: Tìm hiểu về monad qua Typescript
 
 
 * Intro
 
 Nếu tui phải chọn một thứ khó tiếp cận nhất trong việc học Lập trình thì =Monad= sẽ là một ứng cử viên nặng ký cho vị trí đầu tiên.
 
-Nghe mấy cụm từuyên khoa hoành tá tráng như endofunctor và monoid nghe mà phát ớn muốn chạy đi luôn.
+Nghe mấy cụm từ chuyên khoa hoành tá tráng như _endofunctor_ và _monoid_ nghe mà phát ớn muốn chạy đi luôn.
 
-Nhg mà chậm lại chút để nhìn thì monads là pattern lập trình cực kỳ hữu ích có thể được áp dụng dễ dàng mà không cần bất kỳ kiến thức toán học nào.
+Nhg mà chậm lại chút để nhìn thì Monads là pattern lập trình cực kỳ hữu ích có thể được áp dụng dễ dàng mà không cần bất kỳ kiến thức toán học nào.
 
-Trong video này, chúng ta sẽ tìm hiểu monad là gì và chúng hữu ích như thế nào. Rồi xem một số ví dụ monads phổ biến.
+Trong video này, chúng ta sẽ tìm hiểu monad là gì và chúng hữu ích như thế nào. Rồi xem một số ví dụ các Monads phổ biến.
 
 
 ** Basic code
@@ -44,11 +44,13 @@ addOne(square(2)) // 5
 
 ** NumberWithLogs
 
-Giờ mình thử log ra kết quả của mấy cái hàm này theo thứ tự diễn ra.
+Đề bài trên khá đơn giản. Bây giờ mình extends nó, mở rộng yêu cầu ra thêm.
 
-Là mình muốn xem theo từng bước mỗi hàm diễn ra, bắt đầu từ 2 kết thúc kết quả là 5.
+Giờ mình muốn log ra kết quả của mấy cái hàm này theo thứ tự mà tụi nó diễn ra.
 
-Kết quả ví dụ có thể là như vầy.
+Là mình muốn xem theo từng bước và kế quả của mỗi hàm.
+
+Ví dụ ở trên khi mà addOne cho square của 2 thì sẽ là như vầy.
 
 #+begin_src json
 {
@@ -60,38 +62,25 @@ Kết quả ví dụ có thể là như vầy.
 }
 #+end_src
 
-you can see that alongside the result there's a logs array and each operation along the way has added an element to it to show us how the item got there.
 
-in real life, this might be useful for an audit trail to show the operations that were carried out in code but for this toy example we're just manipulating numbers.
+Như các bạn thấy cái kết quả =result= là 5 là kết quả cuối của phép tính.
 
-how should we code this new feature?
+Cùng với nó là 1 cái mảng =logs= mà mỗi phép tính sẽ thêm vào 1 chuỗi, diễn tả ra cái hành động của từng bước.
 
-Như các bạn thấy kế bên cái kết quả =result= là 1 cái mảng =logs= mà mỗi phép tính sẽ thêm vào 1 chuỗi, diễn tả ra cái hành động của từng bước.
+Tình huống thực tế thì việc log ra như vầy gặp khá nhiều trong các hệ thống mà mỗi bước của đều phải ghi lại hành động của nó để sau này truy lại debug hoặc phân tích (analytic).
 
-Tình huống thực tế thì việc log ra như vầy gặp khá nhiều trong các hệ thống mà mỗi bước của đều phải ghi lại. Bạn nào xài linux systemd journal đồ sẽ hiểu, nhg đó là 1 câu chuyện khác.
+Ở đây thì bạn nào xài linux systemd và journal đồ sẽ hiểu, nhg đó là 1 câu chuyện khác.
 
 Ok. và chúng ta sẽ thực hiện code cái này như thế nào đây.
 
 
 ** Implement
 
-well first we want to define a struct to capture the return type.
+Đầu tiên chúng ta sẽ định nghĩa 1 cái cấu trúc để return ha.
 
-which we'll call number with logs.
+Như mẫu json trên thôi.
 
-it has the result and the logs array.
-
-second we'll make the square function return a number with logs and return the expected shape.
-
-third we'll change add one to take a number with logs and perform the expected operation.
-
-since it's taking a number with logs as the argument we need to combine whatever logs came in with the new logs by appending the new entry at the end.
-
-looking good.
-
-Đầu tiên chúng ta sẽ định nghĩa 1 cái cấu trúc để return ha. Như trên thôi.
-
-Chúng ta gọi nó là NumberWithLogs. Nó có key result và mảng logs.
+Chúng ta gọi nó là ~NumberWithLogs~. Nó có trường - key - result có kiểu number và key logs có kiểu mảng string.
 
 #+begin_src typescript
 interface NumberWithLogs {
@@ -118,9 +107,11 @@ function addOne(x: NumberWithLogs): NumberWithLogs {
 }
 #+end_src
 
+Hàm string thì nhận vào number và trả về NumberWithLogs.
+
 Hàm addOne chúng ta nhận vào thay vì 1 số thì là 1 cái NumberWithLogs để kết hợp với cái log của square bằng cách concat tụi nó lại với nhau.
 
-Ok. Vấn đề đc giải quyết.
+Ok. Vấn đề đc giải quyết. =addOne(square(2))= sẽ trả về 1 cái NumberWithLogs đẹp đẽ eazi pi zì ha.
 
 
 ** Improve
@@ -129,16 +120,19 @@ Tuy là chương trình chạy đó, nhưng mà có một vài vấn đề với
 
 Thử nghĩ rộng ra, vấn đề thay đổi một chút, bạn muốn bình phương 2 lần 1 số thì sao, ví dụ square của square của 2.
 
+#+begin_src typescript
+square(square(2)) // Error: Argument of type 'NumberWithLogs' is not assignable to parameter of type 'number'
+#+end_src
+
 Nó sẽ hok ra kết quả mong muốn vì cái hàm square đầu tiên nó trả về 1 cái NumberWithLogs nhưng mà cái square thứ 2 thì cần nhận vào 1 cái nunmber.
 
 Hay mình muốn cộng 1 với số 5, cũng hok chạy vì hàm addOne nhận vào 1 cái NumberWithLogs chứ hok phải 1 con số number.
 
 #+begin_src typescript
-square(square(2))
-addOne(5)
+addOne(5) // Error: Argument of type 'number' is not assignable to parameter of type 'NumberWithLogs'
 #+end_src
 
-Chúng ta sẽ cải tiến chương trình 1 chút bằng 1 cái hàm mới gọi là wrapWithLogs, nhận vào 1 con số number và trả về 1 cục NumberWithLogs.
+Chúng ta sẽ cải tiến chương trình 1 chút bằng 1 cái hàm mới gọi là ~wrapWithLogs~, nhận vào 1 con số number và trả về 1 cục NumberWithLogs.
 
 Các bạn có thể hiểu kiểu kiểu như 1 cái constructor.
 
@@ -153,11 +147,11 @@ function wrapWithLogs(x: number): NumberWithLogs {
 
 Nó có tác dụng đưa cái input dạng number vô cái hệ thống NumberWithLogs. Chuyển hoá cho các hàm xử lý với môi trường NumberWithLogs.
 
-Trong này mình để cái mảng logs là 1 mảng rỗng vì chưa phải xử lý tới.
+Trong này mình để cái mảng logs là 1 mảng rỗng để concat log tiếp theo.
 
 Bây giờ chúng ta có thể tiếp tục xử lý việc cải tiến 2 hàm trên.
 
-Đầu tiên là xử lý hàm square để nó nhận vào NumberWithLogs. Để mà có thể gọi square của square 2 lần và log ra.
+Đầu tiên là xử lý hàm square để nó nhận vào NumberWithLogs.
 
 Đối với addOne thì chúng ta có thể giữ như cũ và dùng hàm wrapWithLogs để đưa 1 con số number nhận vào.
 
@@ -175,9 +169,14 @@ function addOne(x: NumberWithLogs): NumberWithLogs {
     logs: x.logs.concat([`Add 1 to ${x.result} => ${x.result + 1}`]),
   }
 }
+#+end_src
 
+Ok. Chúng ta đã có thể gọi square cho square cho 2 đc rồi.
+
+Và addOne cũng chạy luôn với việc wrap con số nhận vào lại bằng hàm wrapWithLogs như sau.
+
+#+begin_src typescript
 square(square(wrapWithLogs(2)))
-
 addOne(wrapWithLogs(4))
 #+end_src
 
@@ -186,7 +185,7 @@ addOne(wrapWithLogs(4))
 
 Nhìn tới đây thì các bạn lập trình có kinh nghiệm sẽ thấy ngứa. Có 1 vài logic bị trùng lặp giữa square và addOne.
 
-Ở chỗ là cả 2 đều xử lý logs.concat. Chúng ta hãy refactor chỗ này ra một chút.
+Ở chỗ là cả 2 đều xử lý =logs.concat=. Chúng ta hãy refactor chỗ này ra một chút.
 
 Đầu tiên là sắp sếp code lại ha.
 
@@ -205,9 +204,11 @@ function square(x: NumberWithLogs): NumberWithLogs {
 
 Đây là chung 1 logic thôi mình chỉ sắp sếp lại đưa phần tạo 1 cái NumberWithLogs ra ngoài.
 
-Mục đích là để xử lý bằng một hàm mới mà mình sẽ viết tiếp theo đây. Là hàm runWithLogs.
+Mục đích là để xử lý bằng một hàm mới mà mình sẽ viết tiếp theo đây. Là hàm =runWithLogs=.
 
-Nó sẽ xử lý việc nối logs - là cái logs.concat - cho chúng ta thay vì kiểu cũ. Chúng ta sẽ xài nó như vầy.
+Nó sẽ xử lý việc nối logs - là cái logs.concat - cho chúng ta thay vì cách xử lý cũ.
+
+Chúng ta sẽ xài nó như vầy.
 
 #+begin_src typescript
 // OLD
@@ -233,13 +234,17 @@ function runWithLogs(
 #+end_src
 
 
-Cái hàm transform nhận vào ko phải là giá trị nữa mà là 1 cái hàm luôn. Hàm này có nhiện vụ tạo ra cái newNumberWithLogs mà chúng ta sẽ trả về.
+Cái hàm transform nhận vào ko phải là giá trị nữa mà là 1 cái hàm luôn.
+
+Hàm này có nhiện vụ tạo ra cái =newNumberWithLogs= mà chúng ta sẽ trả về.
 
 Cái khúc logic return ở đây các bạn để ý là y hệt cái logic đc sắp sếp lại ở trên.
 
-Như các bạn cũng thấy transform có dạng (input: number) => trả về NumberWithLogs.
+Như các bạn cũng thấy transform có dạng =(_input: number) ==> NumberWithLogs=.
 
-Chúng ta sẽ viết lại 2 hàm square và addOne ở dạng này như sau. Thực ra đây là dạng đơn giản cũ của square lúc đầu.
+Chúng ta sẽ viết lại 2 hàm square và addOne ở dạng này như sau.
+
+Thực ra đây là dạng đơn giản cũ lúc đầu.
 
 #+begin_src typescript
 function square(x: number): NumberWithLogs {
@@ -252,10 +257,16 @@ function square(x: number): NumberWithLogs {
 function addOne(x: number): NumberWithLogs {
   return {
     result: x + 1,
-    logs: [`Add 1 to ${x.result} => ${x.result + 1}`],
+    logs: [`Add 1 to ${x} => ${x + 1}`],
   }
 }
 #+end_src
+
+Cả 2 hàm square và addOne đều nhận vào 1 number x và trả về NumberWithLogs.
+
+Bên trong nó thì thực hiện việc tính toán như bình phương hay cộng 1 đối với result.
+
+Còn logs thì là 1 cái mảng 1 phần tử chứa cái string mà mình cần.
 
 Dòm thì nhiều code cho cái việc đơn giản là log ra thôi ha.
 
@@ -268,11 +279,20 @@ Chương trình trở nên đơn giản hơn và linh hoạt hơn.
 square và addOne ko còn cần phải concat logs nữa và giá trị nhận vào ở dạng đơn giản 1 con số number thôi.
 
 
-** Everything together
+** Conclusion
 
 Ok. refactor 1 hồi thì code ngon rồi. Chúng ta có thể tuỳ biến sử dụng các phép tính theo thứ tự nào cũng đc.
 
-Hay cả khi thêm phép tính multiplyThree. Chỉ cần viến thêm 1 hàm đơn giản như trên, và nó sẽ chạy với runWithLogs.
+Hay cả khi thêm phép tính khác, ví dụ nhân 3 đi - multiplyThree. Chỉ cần viến thêm 1 hàm đơn giản như trên, và nó sẽ chạy với runWithLogs.
+
+#+begin_src typescript
+function multiplyThree(x: number): NumberWithLogs {
+  return {
+    result: x * 3,
+    logs: [`Multiply ${x} with 3 => ${x * 1}`],
+  }
+}
+#+end_src
 
 Và những thứ ma thuật phía trong như log.concat đc chạy trong 1 chỗ thôi.
 
@@ -345,13 +365,15 @@ Chúng ta sẽ đi qua 3 cái components cho monad này.
 
 *** Wrapper Type
 
-Cái wrapper thực ra thường là Generic. Có nghĩa là nó có thể wrap nhiều loại kiểu chứ ko bắt buộc phải là number.
+Cái wrapper thực ra thường là =Generic=. Có nghĩa là nó có thể wrap nhiều loại - Type - kiểu chứ ko bắt buộc phải là number.
 
-Kiểu string cũng đc, Date cũng đc, v.v
+Kiểu string cũng đc, number cũng đc, Date cũng đc, v.v
 
 Chúng ta dùng <T> để diễn đạt rằng nó là Generic.
 
-Thực ra hầu hết các Monad đều Generic. Mà trong cái ví dụ NumberWithLogs mình muốn xử lý đơn giản cho dễ hiểu.
+Thực ra hầu hết các Monad đều Generic.
+
+Mà trong cái ví dụ NumberWithLogs mình muốn xử lý đơn giản cho dễ hiểu nên xử lý trên number nên cái tên NumberWithLogs.
 
 Chúng ta có thể đổi lại thành ThingWithLogs<T> và chuyển cái result thành kiểu T thì nó sẽ Generic.
 
@@ -374,7 +396,7 @@ Với ko có gì 'nothing' thì nó là =none=.
 
 *** Run Function
 
-Cuối cùng là 1 cái hàm để chạy, run function, nhận vào 1 cái Option và 1 cái hàm transform để chạy như chúng ta đã tìm hiểu ở trên.
+Cuối cùng là 1 cái hàm để chạy, =run function=, nhận vào 1 cái Option và 1 cái hàm transform để chạy như chúng ta đã tìm hiểu ở trên.
 
 #+begin_src typescript
 function run<T>(input: Option<T>, transform: (_input: T) => Option<T>): Option<T> {
@@ -385,7 +407,9 @@ function run<T>(input: Option<T>, transform: (_input: T) => Option<T>): Option<T
 }
 #+end_src
 
-Hàm này chạy như sau, nếu nhận vào giá trị là none thì nó sẽ trả về none luôn. Còn nếu nhận vào giá trị gì đó thì nó sẽ chạy tiếp băng hàm transform.
+Hàm này chạy như sau, nếu nhận vào giá trị là none thì nó sẽ trả về none luôn.
+
+Còn nếu nhận vào giá trị gì đó ko phải none (là some cái gì đó) thì nó sẽ chạy tiếp băng hàm transform.
 
 Cho phép bạn xâu chuỗi các operations lại mà ko cần phải lo lắn về các giá trị none.
 
@@ -394,7 +418,9 @@ Chúng ta sẽ đi qua 1 cái ví dụ dụ để xẹm sự hữu dụng của 
 
 *** Example
 
-Ví dụ trường hợp chúng ta muốn fetch về 1 user và lấy ra object con pet (vật nuôi) và sau đó lấy ra tên con vật nuôi đó. Ở đây các trường đều có thể bị thiếu, ko tồn tại.
+Ví dụ trường hợp chúng ta muốn fetch về 1 user và lấy ra object con pet (vật nuôi) và sau đó lấy ra tên con vật nuôi đó.
+
+Ở đây các trường đều có thể bị thiếu, ko tồn tại.
 
 Đây là code mà ko sử dụng monad Option.
 
@@ -415,9 +441,21 @@ function getPetNickname(): string | undefined {
 }
 #+end_src
 
-Mỗi lần chúng ta chạy qua 1 cái operation chúng ta đều phải kiểm tra xem là cái kết quả nó có undefined hay ko và, short circut, ngắt ngay chỗ đó và return.
+Chúng ta đầu tiên sẽ fetch user về bằng hàm getUser. Nó trả về kiểu User hoặc undefined.
 
-Cái syntax check undefined này khá phổ biến trong typescript vì giá trị bị thiếu hay ko tồn tại thường được diễn đạt dưới dạng undefined.
+Rồi check undefined nếu đúng thì sẽ ngưng và trả về undefined luôn.
+
+Chúng ta sẽ làm như vậy với user Pet.
+
+Cuối cùng thì userPetName có dạng string hoặc undefined thì đc trả về luôn.
+
+Như các bạn thấy.
+
+Mỗi lần chúng ta chạy qua 1 cái operation chúng ta đều phải kiểm tra xem là cái kết quả nó có undefined hay ko và ngắt ngay chỗ đó return ra.
+
+Một dạng short circuit (bạn nào học điện tử sẽ hiểu :D).
+
+Cái syntax check undefined này khá phổ biến trong typescript vì giá trị bị thiếu hay ko tồn tại thường được diễn đạt dưới dạng undefined hoặc null.
 
 Thử xem code sử dụng monad Option sẽ như thế nào.
 
@@ -432,22 +470,35 @@ function getPetNickname(): Option<string> {
 
 Code này đơn giản hơn nhiều so với kiểu check undefined trên.
 
-Trong code này cái value cần đc trả về được diễn đạt ra rõ. Và việc kiểm tra undefined xảy ra tự động. Ko cần phải xử lý thủ công như trên. Các ma thuật đc xử lý trong hàm run.
+Trong code này cái value cần đc trả về được diễn đạt ra rõ. Và việc kiểm tra undefined xảy ra tự động. Ko cần phải xử lý thủ công như trên.
 
-Ở đây các bạn cũng lưu ý là khi user hoặc userPet là none thì các hàm getPet hay getNickName đều sẽ ko chạy. Giống với cái implement trên.
+Các ma thuật đc xử lý trong hàm run.
+
+Ở đây các bạn cũng lưu ý là khi user hoặc userPet là none thì các hàm getPet hay getNickName đều sẽ ko chạy.
+
+Cũng giống với cái implement trên thôi.
 
 Một vài ngôn ngữ khác cho phép việc xâu chuỗi các monad lại với nhau code còn trở nên gọn và đơn giản hơn như vầy nữa.
+
+Ví dụ như haskell chúng ta có dấu ~>>~ để xử lý việc xâu chuỗi này lại.
+
+Cái function trên chỉ còn 1 dòng.
+
+#+begin_src haskell
+getPetNickname :: Maybe String
+getPetNickname = getUser >> getPet >> getPetName
+#+end_src
 
 
 * Monad land
 
 ** Design Pattern
 
-Như các bạn thấy, monad là một cái design pattern, cho phép chúng ta xâu chuỗi các logic operation của chương trình với nhau.
+Như các bạn thấy, monad là một cái =design pattern=, cho phép chúng ta xâu chuỗi các logic operation của chương trình với nhau.
 
 Các logic như getUserName, getPetName, addOne, square, v.v.
 
-Còn monads sẽ xử lý các công việc xung quanh tự động, hơi magic, ma thuật ảo diệu một chút.
+Còn monads sẽ xử lý các công việc xung quanh tự động - hơi magic, ma thuật, ảo diệu một chút - ở bên dưới.
 
 Trong trường hợp NumberWithLogs thì là xử lý in các dòng log ra console.
 
@@ -455,15 +506,15 @@ Trong trường hợp Option là xử lý các giá trị bị thiếu hay ko t�
 
 Còn kha khá nhiều monads hữu dụng khác nữa mà các bạn có thể tìm hiểu thêm.
 
-Sau đây thì mình đào sâu thêm tí về cái ma thuật đằng sau của monad.
-
 
 ** The Magic
 
-Nói chung thì cái dòng chảy của chương trình xử dụng monad nó diễn ra như sau.
+Hình vẽ này thì mình đào sâu thêm tí về cái ma thuật đằng sau của monad.
 
 #+attr_html: :width 600
 [[~/Sync/chop-ink/content-org/posts/typescript-monad/typescript-monad-monad-land.org_20220815_204234.png]]
+
+Nói chung thì cái dòng chảy của chương trình xử dụng monad nó diễn ra như sau.
 
 Chúng ta bắt đầu bằng một giá trị căn bản chưa wrap lại.
 
@@ -476,13 +527,15 @@ Xong gói lại và trả về Monad Land.
 Cứ vậy dữ liệu đc xử lý và chuyển đổi qua lại giữa môi trường căn bản và môi trường Monad.
 
 
-* In conclusion
+* Conclusion
 
 Ok. Túm lại thì qua video này chúng ta đã hiểu thêm đc gì?
 
 Đầu tiên, Monad là một design pattern rất hữu dụng trong lập trình.
 
-Vì chúng cho phép chúng ta xâu chuỗi các operations xử lý logic lại với nhau. Trong lúc đó chúng thực hiện các thủ tục ma thuật liên quan hoặc các xử lý phức tạp lặp đi lặp lại khác.
+Vì chúng cho phép chúng ta xâu chuỗi các operations xử lý logic lại với nhau.
+
+Trong lúc đó chúng thực hiện các thủ tục ma thuật liên quan hoặc các xử lý phức tạp lặp đi lặp lại khác.
 
 Khi xử lý monad, flow của kiểu dữ liệu bắt đầu từ thể căn bản - unwrapped - sau đc đc gói lại đưa vào thế giới Monad.
 
@@ -494,4 +547,8 @@ Và các monad thường đc implement generic, có thể gói bất kỳ kiểu
 
 Ví dụ điển hình của monad là Option<T>.
 
-Hy vọng video này bổ ích cho các bạn trong việc tìm hiểu lập trình. Xin chào và hẹn gặp lại trong video sau. Chop out.
+Hy vọng video này bổ ích cho các bạn trong việc tìm hiểu lập trình.
+
+Xin chào và hẹn gặp lại trong video sau.
+
+Chop out.
