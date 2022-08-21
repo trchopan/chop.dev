@@ -1,0 +1,39 @@
+
+
+
+* Introduction
+
+Xin chào mình tên là Chop.
+
+Hôm nay tập tành lên Youtube làm video lập trình.
+
+Mình học Rust cũng đc mấy tháng nay và khá là thích cái ngôn ngữ này.
+
+Thế là quyết định luôn. Bắt đầu 1 series về Lập trình Rust.
+
+Video này mình vừa học vừa làm nên chắc sẽ đi từ đơn giản đến phức tạp ha.
+
+Đi từ từ, từ các khái niệm căng bản rồi nâng cao lên dần.
+
+Mình sẽ đi qua các ví dụ khác nhau để hiểu rõ hơn trong lúc áp dụng.
+
+Sẽ có nhiều thứ để thử làm lắm ha.
+
+Mình định làm HTTP server, Web Scrapper, Chat app đồ.
+
+Kế hoạch sẽ là làm 1 cái video khoản 10 ~ 15p mỗi tuần hoặc mỗi 2 tuần cho 1 chủ đề.
+
+Mặc dù nghe có vẻ ít nhg mà vì mình còn phải làm việc chính nữa nên ko thể dành nhiều thời gian cho làm video đc :D
+
+Nếu các bạn cũng đang quan tâm tìm hiểu về Rust hay cũng đang bắt đầu học nó, thì hãy đồng hành với series này.
+
+Trong 1 tới 2 tuần tới mình sẽ đưa ra danh sách cụ thể các topic mà sẽ thực hiện
+
+để project này có 1 cái plan bám theo.
+
+Mình sẽ link cái Plan này trong description bên dưới sau.
+
+Hy vọng giúp ích cho nhg bạn lập trình viên cùng đam mê.
+
+Xin chào và hẹn gặp lại.
+

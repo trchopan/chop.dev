@@ -2,7 +2,7 @@
 title = "Today I Learned"
 author = ["Chop Tr (chop.ink)"]
 description = "It is good to keep a note of things I learned during the day"
-date = 2022-06-30T00:00:00+07:00
+date = 2022-08-21T00:00:00+07:00
 tags = ["today", "i", "learned"]
 draft = false
 cover = "/ox-hugo/today-i-learned_20220203_111606.png"
@@ -12,6 +12,33 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 {{< figure src="/ox-hugo/today-i-learned_20220203_111606.png" width="200" >}}
 
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
+
+
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-08-21 Sun&gt;</span></span> {#entry}
+
+
+### Haskell groupByKey {#haskell-groupbykey}
+
+Haskell groupBy is not what I expected for `groupBy` that I normally use in `lodash`.
+
+It is actually scan the list and group when the predicate evaluate to `True`.
+
+So I google stackoverflow a bit to come up with the `lodash` version:
+
+```haskell
+import qualified Data.Map as Map
+
+groupByKey :: Ord k => (v -> k) -> [v] -> Map.Map k [v]
+groupByKey key as = Map.fromListWith (++) as'
+  where as' = map ((,) <$> key <*> (: [])) as
+
+main :: IO ()
+main = do
+  print $ groupByKey fst [(1, "hi"), (2, "ho"), (1, "hey"), (1, "yo")]
+
+
+-- OUTPUT: fromList [(1,[(1,"yo"),(1,"hey"),(1,"hi")]),(2,[(2,"lo")])]
+```
 
 
 ## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-06 Wed&gt;</span></span> {#entry}

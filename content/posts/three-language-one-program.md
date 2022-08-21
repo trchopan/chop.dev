@@ -12,6 +12,11 @@ images = "/ox-hugo/one-program-three-language_20220324_215135.png"
 {{< figure src="/ox-hugo/one-program-three-language_20220324_215135.png" width="600" >}}
 
 
+## Youtube Video {#youtube-video}
+
+<https://www.youtube.com/watch?v=jl_mMBn7oJ8&t=1059s>
+
+
 ## Introduction {#introduction}
 
 Learning programing is a journey. Everyday I learned new things and experience new wonder. And by keep exploring new places, new corner of the landscape, I rediscover many things that I didn't know before.

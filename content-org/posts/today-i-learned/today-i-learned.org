@@ -5,13 +5,39 @@
 
 #+TITLE: Today I Learned
 #+AUTHOR: Chop Tr (chop.ink)
-#+DATE: <2022-06-30 Thu>
+#+DATE: <2022-08-21 Sun>
 #+DESCRIPTION: It is good to keep a note of things I learned during the day
 
 #+attr_html: :width 200
 [[~/Sync/chop-ink/content-org/posts/today-i-learned/today-i-learned_20220203_111606.png]]
 
 I started using Emacs about a week ago <2022-01-24 Mon> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
+
+
+* Entry <2022-08-21 Sun>
+
+** Haskell groupByKey
+
+Haskell groupBy is not what I expected for ~groupBy~ that I normally use in =lodash=.
+
+It is actually scan the list and group when the predicate evaluate to ~True~.
+
+So I google stackoverflow a bit to come up with the =lodash= version:
+
+#+begin_src haskell
+import qualified Data.Map as Map
+
+groupByKey :: Ord k => (v -> k) -> [v] -> Map.Map k [v]
+groupByKey key as = Map.fromListWith (++) as'
+  where as' = map ((,) <$> key <*> (: [])) as
+
+main :: IO ()
+main = do
+  print $ groupByKey fst [(1, "hi"), (2, "ho"), (1, "hey"), (1, "yo")]
+
+
+-- OUTPUT: fromList [(1,[(1,"yo"),(1,"hey"),(1,"hi")]),(2,[(2,"lo")])]
+#+end_src
 
 
 * Entry <2022-07-06 Wed>

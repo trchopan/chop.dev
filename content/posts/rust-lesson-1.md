@@ -1,141 +1,278 @@
 +++
 title = "Rust - 01 - Hello World"
 author = ["Chop Tr (chop.ink)"]
-description = "Giới thiệu chương trình học Rust. Mục tiêu và Cấu trúc bài học."
+description = "Hello world"
 tags = ["learning", "rust", "hello", "world"]
 draft = true
 +++
 
-## Giới thiệu {#giới-thiệu}
+## Intro {#intro}
 
-Xin chào mọi người, Chop trở lại với một video mới. Lần này là 1 chuỗi video về lập trình.
+Chào các bạn trở lại với lập trình Rust cùng Chop.
 
-Sau một thời gian học và tiềm hiểu về lập trình Rust mình quyết định thực hiện chuỗi video này. Một phần là mình tự tạo động lực để tiềm hiểu sâu hơn và một phần để chia sẽ nhg kiến thức mà mình học đc.
+Video về ngôn ngữ lập trình Rust và các công nghệ lập trình.
 
-Hy vọng Chuỗi video này chắc sẽ hữu ích cho các bạn thích xem video để học thay vì đọc sách hoặc tài liệu (giống mình).
-
-
-## Ngôn ngữ Rust {#ngôn-ngữ-rust}
-
-Rust: Ngôn ngữ lập trình biên dịch có tính Memory safe (tạm dịch là bộ nhớ an toàn). Cho phép lập trình cấp cao (high-level language), giữ tính đơn giản, nhưng có hiệu xuất tốc độ của ngôn ngữ lập trình cấp thấp (low-level).
-
-Lúc đầu Rust đc tạo ra để xây dựng hệ thống nền (system code) như Game Engine, Database hay Hệ điều hành (Operating System). Nhg sau dần đc sử dụng rộng rải hơn, mạnh lên sau khi là ngôn ngữ phổ biến để xây app bằng Web Assembly.
-
-Feature chính của Rust chính là Memory safe (bộ nhớ an toàn). Thường thì các ngôn ngữ cấp cao (high-level programming language) như Go, Python có hệ thống quản lý bộ nhớ tự động bằng Garbage Collection. Và các ngôn ngữ cấp thấp (low-level programming language) quản lý bộ nhớ thủ công bằng các hàm allocate (cấp phát) hay giải phóng (free) bộ nhớ như C hay C++. Rust nằm ngay giữa, nó hok có Garbage Collector, cũng ko có hàm allocate hay free bộ nhớ. Mà nó sử dụng khái niệm mới là `Ownership` và `Borrowing` để quản lý các biến và con trỏ trong lúc viết chương trình.
-
-Công ty tài trợ cho Rust là Mozzila, công ty tạo ra trình duyệt web Firefox.
+Nếu các bạn thấy video hay và bổ ích hãy cho 1 like và sub ha.
 
 
-## Cấu trúc {#cấu-trúc}
+## The book {#the-book}
 
-Cấu trúc của các video phần lớn sẽ dựa trên cuốn sách `The Rust Programming Language` viết bởi Steve Klabnik and Carol Nichols. Cuốn này có phiên bản mở miễn phí online trên trang web offical `doc.rust-lang.org` . Các bạn có thể nhấn vào đường dẫn trong description của video để xem thêm.
+Hôm nay chúng ta sẽ bắt đầu bằng việc tìm hiểu môi trường code Rust.
 
-Ngoài các thông tin và kiến thức trong cuốn sách trên thì mình cũng sẽ thực hiện những video xoay quanh các khái niệm về lập trình khác không chỉ trong Rust mà ở nhg ngôn ngữ khác nữa để so sánh và mở rộng kiến thức.
+Các phương tiện để học và các đường dẫn thông tin bổ ích.
 
+Đầu tiên học Rust thì phải xem cuốn sách Rust Programing Language Book.
 
-## Đọc song ngữ {#đọc-song-ngữ}
+Cuốn này miễn phí và ai cũng có thể vào đọc nó qua đường dẫn này ha.
 
-Ok, ngoài ra thì cuốn sách đó bằng tiếng Anh nên để hỗ trợ cái rào cản ngôn ngữ thì mình cũng demo cái cách mà dịch toàn bộ cái website / sách đó bằng Google Translate cho các bạn nào chưa biết.
+<https://doc.rust-lang.org/book/>
 
--   Vào website <https://translate.google.com/> Chuyến sang tab `Websites`
--   Copy đường dẫn của trang web muốn dịch. Ở đây là <https://doc.rust-lang.org/book/> và dán vào ô input Website và nhấn `Tiếp theo`
+Quyển này là official của core team lập trình Rust đc viết bởi Steve Klabnik và Carol Nichols.
 
+Hy vọng mình đọc đúng tên 2 anh chị này.
 
-## Thiết lập công cụ và môi trường lập trình {#thiết-lập-công-cụ-và-môi-trường-lập-trình}
+Nhân đây cũng xin cảm ơn 2 anh chị đã viết quyển sách tuyệt vời như vậy.
 
+Và nếu các bạn xem review về ngôn ngữ Rust ở nhg trang web hay video khác
 
-### Linux hoặc MacOS {#linux-hoặc-macos}
+thì chắc cũng đã biết Rust nổi tiến và được yêu thích như hiện tại một phần cũng là nhờ quyển sách này.
 
-```bash
-curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-```
+Các video của mình sẽ hầu hết dựa trên nội dung của quyển sách này thôi.
 
+Nếu các bạn cần có thể đọc thêm để hiểu sâu hơn.
 
-#### MacOS xcode {#macos-xcode}
-
-Trên MacOS bạn cần cài đặt thêm xcode bằng lệnh sau:
-
-```bash
-xcode-select --install
-```
+Video của mình này sẽ đóng vai trò diễn đạt trực quan bên cạnh nhg thông tin của sách.
 
 
-### Windows {#windows}
+## Installation {#installation}
 
-<https://doc.rust-lang.org/book/ch01-01-installation.html#installing-rustup-on-windows>
+Oki. Từ đây mình sẽ gọi quyển sách này là Rust Book ha.
 
+Và bước đầu tiên là cài đặt Rust ha.
 
-### VS Code {#vs-code}
+Trong Rust book, thì các bạn có thể vào phần Installation.
 
-Trong nhg năm gần đây, `VS Code` hiện tại có vẻ là lựa chọn mặc định khi các bạn bắt đầu học lập trình. Các bạn có thể tải VS Code tại
+Sẽ có hướng dẫn chi tiết cụ thể để cài đặt.
 
-<https://code.visualstudio.com/>
-
-
-#### Extension {#extension}
-
-Sau khi cài xong `VS Code` thành công. Thì để lập trình Rust các bạn cần cài thêm plugins:
-
--   Rust
--   rust-analyzer
-
-Là 2 plugins hỗ trợ đầy đủ cho các tác vụ của các bạn lúc lập trình như: code highlight, linting, diagnose, run, compile, refactor, document, suggestion, etc.
-
-
-#### Emacs {#emacs}
-
-Các video sau mình sẽ sử dụng `Emacs` để viết chương trình vì đó là môi trường làm việc quen thuộc của mình. Nhg các công cụ trên đều sẽ vận hành tương tự như trong VS Code.
-
-
-## Hello, World {#hello-world}
-
-
-### Chương trình cơ bản {#chương-trình-cơ-bản}
+Đối với Linux hay MacOS. Đơn giản chỉ cần mở Terminal ra và dán dòng lệnh này vô thôi.
 
 ```bash
-mkdir ~/projects
-cd ~/projects
-mkdir hello_world
-cd hello_world
+$ curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
 ```
 
-```rust
-fn main() {
-    println!("Hello, world!");
-}
-```
+Lệnh này sẽ cài bảng stable của Rust lên trên máy bạn.
+
+Tạo cái thư mục .cargo để chứa các file repository source code cũng như cache các file build
+
+của Rust toolchain đồ.
+
+Các bạn trên MacOS sẽ cần linker nữa là công cụ để nối các code compiled vào thành 1 file.
+
+Hầu hết các bạn đã có sẵn linker nhg mà nếu các bạn gặp lỗi về linker thì sẽ phải cài đặt.
+
+Các bạn sẽ phải cài qua 1 cái C compliler.
+
+Trên máy MacOS, các bạn chạy lệnh sau:
 
 ```bash
-rustc main.rs
-./main
+$ xcode-select --install
 ```
 
-```nil
-Hello, world!
-```
+Trên Linux thì thường là các package gcc hay Clang tuỳ vào distribution.
+
+Ví dụ như trên Ubuntu thì là build-essential.
 
 
-### Chương trình đc quản lý với Cargo {#chương-trình-đc-quản-lý-với-cargo}
+### Trên Windows {#trên-windows}
+
+Trên Windows thì các bạn có thể download 1 file exe để chạy việc cài đặt này gọn gàng luôn.
+
+Nhg mà như Rust book đề cập bạn cũng có thể phải cài thêm Visual Studio 2022 nếu chưa cài.
+
+
+### Check {#check}
+
+Oki. Cài xong Rust rồi thì các bạn có thể sử dụng lệnh sau để kiểm tra việc cài đặt thành công.
 
 ```bash
-cargo --version
+$ rustc --version
 ```
+
+nó sẽ hiện ra version của Rust đc cài như sau.
+
+Của mình là: Rust 1.59.0
+
+Oki ngon cơm ha giờ là tới phần thú vị hơn ha.
+
+
+### Language server {#language-server}
+
+Để lập trình hiệu quả và dễ dàng chúng ta còn cần cài thêm Language Server nữa.
+
+Nó sẽ cho chúng ta nhg công cụ hỗ trợ như Code completion - là Tự động hoàn thành code.
+
+Definition - là các định nghĩa hàm.
+
+Refactoring - là khi các bạn cần tái cấu trúc chương trình, ở đây là khi các bạn cần đặt tên lại biến hay dời file dời biến sang chỗ khác.
+
+Ở đây mình sẽ demo thử các công cụng và extension trên VSCode.
+
+Đầu tiên là bật VSCode lên. Rồi vào tab Extensions.
+
+Sau đó search rust trên Marketplace.
+
+2 cái extension đầu tiên sẽ là Rust và rust-analyzer.
+
+Cái đầu tiên là cái công cụ đã bị deprecated, là sẽ ko còn đc support nữa.
+
+Nên các bạn sẽ cài đặt cái thứ 2 này nhe là rust-analyzer.
+
+Ok và nhấn nút cài đặt và chờ thôi.
+
+VSCode là tôn phổ biến nhất hiện tại đối với các bạn lập trình viên nên mình demo trên này.
+
+Các video lần sau mình sẽ sử dụng công cụ thân thuộc với mình khi lập trình là Emacs hoặc Vim chứ ko sử dụng VSCode.
+
+Nhg mà các bước hay chức năng sẽ y hệt thôi ha. Các bạn có thể đối chiếu tương đương với môi trường VSCode.
+
+
+## Hello World {#hello-world}
+
+Ok. Tiếp theo thì chúng ta code thôi. Viết 1 chương trình hello world ha.
+
+Chúng ta sẽ tạo 1 cái thư mục mới. Tên là hello-world.
+
+Rồi cd vào nó. Dùng vscode mở nó ra.
+
+Mình sẽ tạo 1 cái file tên là main.rs
+
+Nếu các bạn thấy cái pop-up kêu install language server cho Rust thì cứ install ha.
+
+Có thể các bạn sẽ gặp lỗi "rust-analyzer failed to discover workspace"
+
+là tại vì chúng ta đang xử lý trên 1 file main.rs thôi chứ đang ko sử dụng cargo để quản lý workspace.
+
+Ok giờ thì mình sẽ code cái chương trình đầu tiên dùng Rust ha.
+
+Đầu tiên là khai báo 1 cái hàm - function. Viết tắt là fn. Và tên của nó là main.
+
+Hàm này là hàm sẽ đc chạy đầu tiên khi chương trình bắt đầu chạy.
+
+Chúng ta sẽ print ra 1 dòng chữ - hay còn gọi là String hay Text.
+
+Dùng println! làm công cụ để in ra, truyền vào String "Hello world".
+
+Ở đây println! là một cái macro chứ ko phải function như ngôn ngữ khác.
+
+Chúng ta sẽ tìm hiểu về macro ở video khác.
+
+Kết thúc là 1 cái chấm phẩy, semi-colon.
+
+Rồi, lưu file lại.
+
+Và vào terminal rồi gõ
 
 ```bash
-cargo new hello_cargo
-cd hello_cargo
+$ rustc main.rs
 ```
 
-```yaml
-[package]
-name = "hello_cargo"
-version = "0.1.0"
-edition = "2021"
+Lệnh này sẽ compile code trên.
 
-[dependencies]
-```
+Ok và main.rs đã đc compiled.
+
+chúng ta sẽ có 1 cái file main mới kế bên.
+
+Đây là 1 file dạng executable - có nghĩa là chạy đc.
+
+Chạy file này sẽ in ra "Hello World" như code lúc nãy.
+
+Horray, thành công rồi.
+
+Ui cảm giác chương trình Rust đầu tiên chạy đc. Tuyệt vời!
+
+
+## Cargo {#cargo}
+
+Hehe. Nhg đó là baby step thôi các bạn.
+
+Quãn đường còn dài và chông gai lắm chứ ko phải chỉ 3 dòng lệnh vầy đâu.
+
+Ok. Chúng ta đã thành công xử lý chương trình nhỏ tí tẹo trong 1 cái file main.rs đó.
+
+Nhg mà đời ko như mơ đâu.
+
+Chương trình thật chắc chắn phải làm việc với hàng chục file.
+
+Xử lý hàng trăm tác vụ.
+
+Chúng ta cần 1 công cụ để quản lý dự án ha.
+
+1 package manager.
+
+Giới thiệu "cargo".
+
+Chương trình này đc cài đặt chung với bộ công cụ chúng ta cài lúc nãy.
+
+Các bạn có thể kiểm tra bằng lệnh
 
 ```bash
-cargo build
-cargo run
+$ cargo --version
 ```
+
+Trên máy của mình là version 1.59.0
+
+Ok. Chúng ta sẽ dùng cargo để tạo package hay tạm dịch là gói dự án ha.
+
+Chạy lệnh
+
+```bash
+$ cargo new hello_world
+```
+
+Lưu ý ở đây phải là dấu gạch dưới ha.
+
+Rust ko cho sử dụng dấu gạch ngang trong tên.
+
+Oki. Cargo đã tạo ra package cho chúng ta với một vài file để setup.
+
+Bắt đầu từ Cargo.toml.
+
+Đây là 1 file configuration, nó sẽ là chỗ để chúng ta khai báo các thông tin liên quan đến package này.
+
+Như tên - hello_world, version, v.v
+
+Dưới này là để khai bao dependancies.
+
+Hiện chúng ta ko có dependencies nào nhg các bạn có thể tưởng tượng trong dự án thực tế chúng ta sẽ ko tự viết các dòng code.
+
+Mà sẽ sử dụng nhiều code các lập trình viên khác đã viết và chia sẽ open source ở đây.
+
+File này nếu các bạn là lập trình viên Frontend làm Typescript Javasript như mình thì đây giống như file package.json ha.
+
+Chúng ta cũng có một số file khác như gitignore để tạo 1 repository quản lý source code trên git.
+
+Ok. Và chúng ta cũng có 1 main.rs file nằm trong thư mục src.
+
+File này cũng là file "hello world" như lúc nãy.
+
+Rồi giờ sẽ thử build cái cargo project này ha.
+
+Mình sẽ chạy cargo run ở trong thư mục này.
+
+Và như các bạn thấy Hello World cũng đc in ra như chương trình kia cùng với một vài thông compiling tin khác.
+
+Nó cũng tạo ra 1 cái file Cargo.lock.
+
+File này đóng neo các cái dependancy cho cái package này. Tương tự package-lock.json.
+
+Oki. Và chúng ta đã hoàn thành Chapter đầu tiên của quyển Rust Book.
+
+Phew. Ko quá khó đúng hok.
+
+Nếu các bạn thấy video này bổ ích hãy cho mình 1 like động viên ha.
+
+Hẹn gặp lại trong các video tiếp theo.
+
+Chop Out!
+
+Bye.

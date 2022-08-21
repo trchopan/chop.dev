@@ -6,6 +6,10 @@
 #+DATE: <2022-08-15 Mon>
 #+DESCRIPTION: Tìm hiểu về monad qua Typescript
 
+* Youtube Video
+
+https://www.youtube.com/watch?v=h4GZkJsRySg
+
 
 * Intro
 

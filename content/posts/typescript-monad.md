@@ -7,6 +7,11 @@ tags = ["typescript", "monad", "programing", "design", "pattern"]
 draft = false
 +++
 
+## Youtube Video {#youtube-video}
+
+<https://www.youtube.com/watch?v=h4GZkJsRySg>
+
+
 ## Intro {#intro}
 
 Nếu tui phải chọn một thứ khó tiếp cận nhất trong việc học Lập trình thì `Monad` sẽ là một ứng cử viên nặng ký cho vị trí đầu tiên.

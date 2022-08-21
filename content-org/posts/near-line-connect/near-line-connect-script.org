@@ -317,7 +317,7 @@ We use some of those Smart Contract to implement the full features for our app i
 
 * Demo
 
-So this is the part where I give you the demo of our app. Hope the demo god is with me today.
+So this is the part where I give you the demo of our app.
 
 (Open the browser to demo the app)
 
