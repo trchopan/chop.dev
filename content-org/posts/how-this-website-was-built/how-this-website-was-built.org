@@ -107,7 +107,9 @@ Below is my example setup for a post
 ...Page content...
 #+end_src
 
-Then everytime I need to export the post just press =C-c C-e H h=.I know, it's a long keybind, I used to the acronyms method to remember so it comes very easy for me: Control > Export > Hugo -> hugo away!!!
+Then everytime I need to export the post just press =C-c C-e H h=.
+
+I know, it's a long keybind, I used to the acronyms method to remember so it comes very easy for me: Control > Export > Hugo -> hugo away!!!
 
 
 ** Images

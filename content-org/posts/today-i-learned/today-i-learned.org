@@ -14,6 +14,46 @@
 I started using Emacs about a week ago <2022-01-24 Mon> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+* Entry <2022-09-08 Thu>
+
+** Ungreedy Regex match
+
+Today I learned about regex Ungreedy match while dealing with a buggy parser.
+
+I had a org link parser for links
+
+#+begin_src
+INPUT:
+This is a link [[https://example.com] [Example]] and [[https://another.com] [Another]]
+
+EXPECT OUTPUT:
+This is a link <a>Example</a> and <a>Another</a>
+#+end_src
+
+*** With greedy match
+
+#+begin_src regex
+\[\[(.*)\] \[(.*)\]\]
+#+end_src
+
+I keep getting
+
+#+begin_src
+This is a link Another
+#+end_src
+
+Tryout: https://regex101.com/r/7sQcoR/1
+
+
+*** Turn out I need to implement the ungreedy match to get the expected output.
+
+#+begin_src regex
+\[\[(.*?)\] \[(.*?)\]\]
+#+end_src
+
+Tryout: https://regex101.com/r/fvx6fF/1
+
+
 * Entry <2022-08-21 Sun>
 
 ** Haskell groupByKey

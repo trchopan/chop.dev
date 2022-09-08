@@ -14,6 +14,48 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-08 Thu&gt;</span></span> {#entry}
+
+
+### Ungreedy Regex match {#ungreedy-regex-match}
+
+Today I learned about regex Ungreedy match while dealing with a buggy parser.
+
+I had a org link parser for links
+
+```nil
+INPUT:
+This is a link [[https://example.com] [Example]] and [[https://another.com] [Another]]
+
+EXPECT OUTPUT:
+This is a link <a>Example</a> and <a>Another</a>
+```
+
+
+#### With greedy match {#with-greedy-match}
+
+```regex
+\[\[(.*)\] \[(.*)\]\]
+```
+
+I keep getting
+
+```nil
+This is a link Another
+```
+
+Tryout: <https://regex101.com/r/7sQcoR/1>
+
+
+#### Turn out I need to implement the ungreedy match to get the expected output. {#turn-out-i-need-to-implement-the-ungreedy-match-to-get-the-expected-output-dot}
+
+```regex
+\[\[(.*?)\] \[(.*?)\]\]
+```
+
+Tryout: <https://regex101.com/r/fvx6fF/1>
+
+
 ## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-08-21 Sun&gt;</span></span> {#entry}
 
 

@@ -102,7 +102,9 @@ Below is my example setup for a post
 ...Page content...
 ```
 
-Then everytime I need to export the post just press `C-c C-e H h`.I know, it's a long keybind, I used to the acronyms method to remember so it comes very easy for me: Control &gt; Export &gt; Hugo -&gt; hugo away!!!
+Then everytime I need to export the post just press `C-c C-e H h`.
+
+I know, it's a long keybind, I used to the acronyms method to remember so it comes very easy for me: Control &gt; Export &gt; Hugo -&gt; hugo away!!!
 
 
 ### Images {#images}
