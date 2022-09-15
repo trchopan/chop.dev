@@ -14,6 +14,28 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-15 Thu&gt;</span></span> {#entry}
+
+
+### Xcode macOS upgrade {#xcode-macos-upgrade}
+
+After upgrade to the new version, most my binary got broken, unable to start due to linking.
+
+Includes: git, neovim, etc.
+
+Pretty much anything install by brew.
+
+The solution is I need to reinstall xcode and agree to the new Agreement for the new OS version.
+
+Using following commands:
+
+```bash
+xcode-select --install
+
+sudo xcode-select -switch /Library/Developer/CommandLineTools
+```
+
+
 ## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-08 Thu&gt;</span></span> {#entry}
 
 

@@ -13,6 +13,26 @@
 
 I started using Emacs about a week ago <2022-01-24 Mon> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
+* Entry <2022-09-15 Thu>
+
+** Xcode macOS upgrade
+
+After upgrade to the new version, most my binary got broken, unable to start due to linking.
+
+Includes: git, neovim, etc.
+
+Pretty much anything install by brew.
+
+The solution is I need to reinstall xcode and agree to the new Agreement for the new OS version.
+
+Using following commands:
+
+#+begin_src bash
+xcode-select --install
+
+sudo xcode-select -switch /Library/Developer/CommandLineTools
+#+end_src
+
 
 * Entry <2022-09-08 Thu>
 
