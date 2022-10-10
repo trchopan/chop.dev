@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.Language }}">
+
 <head>
   {{ block "title" . }}
-    <title>{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }} :: {{ $.Site.Title }}{{ end }}</title>
+  <title>{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }} :: {{ $.Site.Title }}{{ end }}</title>
   {{ end }}
   {{ partial "head.html" . }}
-    <style type="text/css" src="style.css"></style>
+  <style type="text/css" src="style.css"></style>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.css"
-          integrity="sha256-UKnpt7BTJ/EMgHTkcLW/43fpSTX2Qkb1Wgq+bbM8Gys=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.css"
+    integrity="sha256-UKnpt7BTJ/EMgHTkcLW/43fpSTX2Qkb1Wgq+bbM8Gys=" crossorigin="anonymous">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#FF6266">
-    <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#FF6266">
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#FF6266">
+  <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#FF6266">
 
-    <meta http-equiv="Content-Security-Policy"
-          content="default-src 'self' cdn.jsdelivr.net utteranc.es; style-src 'unsafe-inline' 'self'; script-src 'unsafe-inline' 'self' cdn.jsdelivr.net utteranc.es">
+  <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self' cdn.jsdelivr.net utteranc.es google-analytics.com;
+      connect-src 'self' *.google-analytics.com *.doubleclick.net;
+      img-src 'self' *.google-analytics.com *.doubleclick.net;
+      frame-src *.youtube.com utteranc.es;
+      style-src 'unsafe-inline' 'self' *.jsdelivr.net;
+      script-src 'unsafe-inline' 'self' cdn.jsdelivr.net utteranc.es *.google-analytics.com;
+      ">
 </head>
+
 <body class="{{- ( or .Params.color $.Site.Params.ThemeColor ) -}}">
-{{ $container := cond ($.Site.Params.FullWidthTheme | default false) "container full" (cond ($.Site.Params.CenterTheme | default false) "container center" "container") }}
+  {{ $container := cond ($.Site.Params.FullWidthTheme | default false) "container full" (cond ($.Site.Params.CenterTheme
+  | default false) "container center" "container") }}
 
-<div class="{{- $container -}}{{- cond ($.Site.Params.oneHeadingSize | default true) " headings--one-size" "" }}">
+  <div class="{{- $container -}}{{- cond ($.Site.Params.oneHeadingSize | default true) " headings--one-size" "" }}">
 
-  {{ partial "header.html" . }}
+    {{ partial "header.html" . }}
 
     <div class="content">
-        {{ block "main" . }}
-        {{ end }}
+      {{ block "main" . }}
+      {{ end }}
     </div>
 
     {{ block "footer" . }}
     {{ partial "footer.html" . }}
     {{ end }}
-</div>
+  </div>
 
 </body>
+
 </html>

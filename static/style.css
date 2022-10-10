@@ -1,13 +1,16 @@
 :root {
   --secondary: #eaf388;
-}
-h1,
-h2 {
-  color: var(--accent);
+  --secondary2: #bf5dc1;
 }
 
-h3 {
+h1 {
+  color: var(--accent);
+}
+h2 {
   color: var(--secondary);
+}
+h3 {
+  color: var(--secondary2);
 }
 
 .post-content a {
@@ -35,6 +38,29 @@ figcaption {
   color: var(--color) !important;
 }
 
+.callout {
+  display: flex;
+  background: #bf5dc11f;
+  padding: 0.5rem;
+}
+
+.callout > .callout-emoji {
+  padding: 0.2rem;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.callout > p {
+  margin: 0 0 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
 .ox-hugo-toc.toc a {
   text-decoration: none;
 }
@@ -54,4 +80,21 @@ figcaption {
 .ox-hugo-toc.toc > ul > li > ul > li::before {
   content: '·';
   color: #ffa86a;
+}
+
+.yt-container {
+  width: 100%;
+  margin: auto;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.yt-container > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
 }

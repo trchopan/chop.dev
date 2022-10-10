@@ -14,6 +14,24 @@ images = "/ox-hugo/today-i-learned_20220203_111606.png"
 I started using Emacs about a week ago <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-24 Mon&gt; </span></span> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
 
+## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-10-07 Fri&gt;</span></span> {#entry}
+
+
+### Neovim plugin - vim-abolish {#neovim-plugin-vim-abolish}
+
+It really nice to switch cases using just simple key stroke.
+
+After install `vim-abolish`, put cursor at `snake_case` and press `crt` to turn it into `snakeCase`
+
+How awesome is that.
+
+Apart from the this Coercion feature (I still don't understand why they name case switching that). vim-abolish also can help with replacement. Try things like this
+
+```bash
+:Subvert/blog{,s}/post{,s}/g
+```
+
+
 ## Entry <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-15 Thu&gt;</span></span> {#entry}
 
 

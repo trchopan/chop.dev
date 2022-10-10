@@ -13,6 +13,23 @@
 
 I started using Emacs about a week ago <2022-01-24 Mon> . With such powerful tool I should begin the habit to write things down. It will improve my workflow and help me into a more organise mode.
 
+* Entry <2022-10-07 Fri>
+
+** Neovim plugin - vim-abolish
+
+It really nice to switch cases using just simple key stroke.
+
+After install =vim-abolish=, put cursor at ~snake_case~ and press ~crt~ to turn it into ~snakeCase~
+
+How awesome is that.
+
+Apart from the this Coercion feature (I still don't understand why they name case switching that). vim-abolish also can help with replacement. Try things like this
+
+#+begin_src bash
+:Subvert/blog{,s}/post{,s}/g
+#+end_src
+
+
 * Entry <2022-09-15 Thu>
 
 ** Xcode macOS upgrade

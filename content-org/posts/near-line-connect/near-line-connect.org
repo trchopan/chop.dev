@@ -118,7 +118,9 @@ Given the above goal we need to perform 2 steps:
 
 As mention above Near Protocol compile the  smart contract into wasm to execute them efficiently and correctly.
 
-The SDK to write smart contract is provided in ~AssemblyScript~ and ~Rust~. And we choose Rust to implement this part of the application for its correctness and safe memory management system during development.
+The SDK to write smart contract is provided in ~AssemblyScript~ and ~Rust~.
+
+And we choose Rust to implement this part of the application for its correctness and safe memory management system during development.
 
 (Which comes with a steep learning curve of a new language and system)
 
@@ -134,14 +136,14 @@ Which comes to some of problem of compatibility problems. We need to aware that 
 
 *** Compare standards
 
-| Standard | Note                                                                                                                                                                  |
-|----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| RSA      | Slower option. Almost always available                                                                                                                                |
-|----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ECDSA    | Better theoretical more security than RSA.                                                                                                                            |
-|          | 1/ However it is difficult to implement without any mistake. Most errors will compromise the security.                                                                |
-|          | 2/ USA Design: the curves standardized by NIST could have been tampered by NSA. The trustworthiness of those curves is not good enough for them to be used.           |
-|----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Standard | Note                                                                                                                                        |
+|----------+---------------------------------------------------------------------------------------------------------------------------------------------|
+| RSA      | Slower option. Almost always available                                                                                                      |
+|----------+---------------------------------------------------------------------------------------------------------------------------------------------|
+| ECDSA    | Better theoretical more security than RSA.                                                                                                  |
+|          | 1/ However it is difficult to implement without any mistake. Most errors will compromise the security.                                      |
+|          | 2/ USA Design: the curves standardized by NIST could have been tampered by NSA. The trustworthiness of those curves is not good enough for them to be used. |
+|----------+---------------------------------------------------------------------------------------------------------------------------------------------|
 | ED25519  | About the same safety as ECDSA for practical purpose. The standard has been designed to allow simpler implementation. German design, with an open process. No patent. |
 
 
