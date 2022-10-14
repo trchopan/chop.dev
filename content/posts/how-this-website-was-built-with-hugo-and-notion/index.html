@@ -1,20 +1,21 @@
 +++
 title = "How this website was built with Hugo and Notion"
 author = ["Chop Tr (chop.ink)"]
-description = "Continue on my last note building this website. I've move the process of my note website to notion."
+description = "Continue on my last note building this website. I've move the process of editing my website to Notion."
 date = 2022-10-10T00:00:00+07:00
 tags = ["devlog", "howto", "build", "website"]
 cover = "/posts/how-this-website-was-built-with-hugo-and-notion/cover.jpg"
 +++
-<html><head></head><body><h1 id="why-"><strong>Why?</strong></h1>
-<p>Editing on <span style="color: #E03E3E;">Emacs</span> was fun. Yeah, really fun using the Org mode. And Org Roam and everything. You can check out my last post about how I built this website here.</p>
+<html><head></head><body><h1 id="why-i-stop-using-emacs-"><strong>Why I stop using Emacs?</strong></h1>
+<p>Editing on <span style="color: #E03E3E;">Emacs</span> was fun. Yeah, it is really fun using the <span style="color: #E03E3E;">Org mode</span>, and <span style="color: #E03E3E;">Org Roam</span>. You can check out my last post about how I built this website here.</p>
 <p><a href="https://chop.ink/posts/how-this-website-was-built/" target="_blank">https://chop.ink/posts/how-this-website-was-built/</a></p>
-<p>I went through all the features that I had for this Website. Include my work flow to convert them from Org file to Markdown. And how I use Hugo to render all my posts to static and host it in Firebase.</p>
-<p>But like they say, good things must come to an end. Meh, sounds cheesy, I just put it in for fun. I didn’t stop using Hugo or Firebase or anything. Just replace a small part of the workflow.</p>
-<p>Thing is I had to go back to NeoVim because working with the Emacs system was not a good experience for me.</p>
-<p>To explain clearer, I use <a href="https://chop.ink/posts/doom.d/config/" target="_blank"><span style="color: #E03E3E;">Doom Emacs</span></a>, a pre-config Emacs distribution and framework. So everything setup was easy, but easy things come with side effects: Learning to config it was a bit confusing and hard, and took a long time to research. Because it was pre-built for you, and there are many things that can go wrong or break. I don’t know where to start when I would like to customize it.</p>
-<p>And emacs-lisp does not help with that. It’s a language that I would need some time to digest. I mean with all the parentheses does not help.</p>
-<p>So for the programming environment, I had to switch to <span style="color: #E03E3E;">NeoVim</span>. Disclaimer here, I've been using good old Vim (not the Neovim) for a long time before I switched to Emacs, so … you know. After Emacs, NeoVim was just easy.</p>
+<p>In that post, I went through all the features that I had for this Website. Include my work flow to convert files from Org mode to Markdown and export to HTML using <span style="color: #E03E3E;">ox-hugo</span> plugin. And how I use <span style="color: #E03E3E;">Hugo</span> to render all my posts to static and host it on <span style="color: #E03E3E;">Firebase</span>.</p>
+<p>Thing is I had to go back to <span style="color: #E03E3E;">NeoVim</span> because working with the Emacs system was not a good experience for me.</p>
+<p>To explain my situation clearer, I use <a href="https://chop.ink/posts/doom.d/config/" target="_blank"><span style="color: #E03E3E;">Doom Emacs</span></a>, a pre-config Emacs distribution and framework. So setting up everything was easy, but easy things come with side effects: Learning to config it was a bit confusing and hard, and took a long time to research. Because it was pre-built for you, and there are many things that can go wrong or break when I customize.</p>
+<p>Saying that, I had a working environment for coding and editing. So I had been using Emacs really fine for the last 8 or 9 months.</p>
+<p>But in the experience was not so comfortable. During my day today, I have many quirky stuff that I would like to customize to my own liking.</p>
+<p>And the language of Emacs was <span style="color: #E03E3E;">Lips</span>. Well, it does not help much . It’s a language that I would need some time to digest. I mean with all the parentheses does not help.</p>
+<p>So for the programming environment, I had to switch to NeoVim. Disclaimer here, I've been using good old Vim (not the Neovim) for a long time before I switched to Emacs, so … you know. After Emacs, NeoVim was just easy.</p>
 <p>In NeoVim, I got my hands on <span style="color: #E03E3E;">Lua</span>. It was much better than <span style="color: #E03E3E;">Lisp</span>. And everything went smoothly. The plugins are great and well maintained. I have such a great time being back in this environment.</p>
 
 <figure class="image center">
@@ -31,171 +32,45 @@ cover = "/posts/how-this-website-was-built-with-hugo-and-notion/cover.jpg"
 <figcaption>Notion logo</figcaption>
 </figure>
     
-<p>The thing is I built up some habits when I lived with Emacs for the last half year. It’s <span style="color: #E03E3E;">Org mode</span> and <span style="color: #E03E3E;">Org Roam</span>. I have all my notes kept in Org files, linked together. Like an interconnected mesh of information. If you know the term <strong>second brain</strong>, I have something like that in my Org folder.</p>
-<p>So last week, I decided to use Notion to replace these habits and note taking. The switch was smooth too. Notion has the back-linking feature that fills my requirement for an inter-linked note.</p>
-<p>They also have useful features like Custom View, Database Table, Properties, etc.</p>
+<p>The thing is I built up some habits when I lived with Emacs for the last half year. It’s Org mode and Org Roam. I have all my notes kept in Org files, linked together. Like an interconnected mesh of information. If you know the term <strong>second brain</strong>, I have something like that in my Org folder.</p>
+<p>So last week, I decided to use Notion to replace these habits and note taking. The switch was smooth. Notion has the back-linking feature that fills my requirement for an inter-linked note.</p>
+<p>They also have useful features like Custom View, Database Table, Editable Properties, etc.</p>
 <p>Things were better than I expected. Also noted that I’ve not tried other tools like <span style="color: #E03E3E;">Org Roam Research</span> or <span style="color: #E03E3E;">Obsidian</span>.</p>
 <p>The Notion API is also straightforward and easy to understand. For now Notion works for me and I’m happy using it.</p>
 <h2 id="the-switch">The switch</h2>
-<p>Since “the switch back to vim”, I’ve moved most of my programming tools and habits to Vim. But one thing that keeps me using Emacs is the project that manages this website. This website is made using Org-mode and exported to Markdown so Hugo can build it.</p>
-<p>If I make the switch and no longer use Emacs. This would need to be converted too. So I decided to investigate ways that I can edit and maintain my blog somewhere. And somehow pull the content as HTML or Markdown.</p>
+<p>Since “the switch back to vim”, I’ve moved most of my programming tools and habits to Vim. But one thing that keeps me using Emacs is the project that manages this website. I normally edit my posts using Org mode and export them to Markdown so Hugo can build it.</p>
+<p>If I make the switch and no longer use Emacs. This would need to be converted too. So I decided to investigate a way that I can edit and maintain my blog posts. And somehow pull the content as html or markdown.</p>
 <h1 id="how-">How?</h1>
 <p>Luckily, I found a tool to do that job:</p>
-<p><a href="https://github.com/mchlkucera/notion-to-html" target="_blank">https://github.com/mchlkucera/notion-to-html</a></p>
-<p>This is written in <span style="color: #E03E3E;">Typescript</span> and can convert any public Notion Page into html. Then I use some script to further process the html into more suitable format and components for my Hugo setup to produce a nice blog entry.</p>
-<p>In fact, this article's content is from my Notion page.</p>
+<p><a href="https://github.com/asnunes/notion-page-to-html" target="_blank">https://github.com/asnunes/notion-page-to-html</a></p>
+<p>This is written in Typescript and can convert any public Notion Page into html. Then I use some script to further process the html into more suitable components for my Hugo setup to produce a nice blog entry.</p>
+<p>In fact, this article's content is from my Notion page. You can visit the page here.</p>
 <p><a href="https://www.notion.so/choptran/How-this-website-was-built-with-from-Notion-9b8d4f433884440aaebd3b78778efcf8" target="_blank">https://www.notion.so/choptran/How-this-website-was-built-with-from-Notion-9b8d4f433884440aaebd3b78778efcf8</a></p>
-<h1 id="what-">What?</h1>
-<p>It’s not much code and not so complicated. So here is what I did.</p>
-<h2 id="notion-page-to-h-t-m-l">Notion Page to HTML</h2>
-<p>It starts with this `makePage` function.</p>
-<p>The library `notion-page-to-html` provides a simple tool to get the { title, cover, icon, html }. I only use title and html for further processing.</p>
-<pre><code class="language-typescript">const {title, html} = await NotionPageToHtml.convert(page, {bodyContentOnly: true});</code></pre>
-<h2 id="the-posts-path">The posts path</h2>
-<p>My plan is to have the page export to its own directory like this</p>
-<pre><code class="language-typescript">/content/posts/<post_id>/</post_id></code></pre>
-<p>post_id here is how-this-website-was-built . In kebab case.</p>
-<p>Well I need to have a kebabCase helper such as this.</p>
-<pre><code class="language-typescript">const kebabCase = (str: string, deli: string = '-') =&gt; {
-    return str
-        .replace(/\W+/g, ' ')
-        .split(/ |\B(?=[A-Z])/)
-        .map(word =&gt; word.toLowerCase())
-        .join(deli);
-};</code></pre>
-<p>The code is very simple: it takes in a string `str` and an optional delimiter `deli` then spit out the string in a kebab case. It can be a snake case if we change the deli to underscore.</p>
-<p>Oki, with the post_id sorted out we can identify its path by postPath. Which is just the concatenation of the given path with its id.</p>
-<p>The next code is straight forward, because I would run this command multiple times in case I would like to change the post. The default behavior is do not replace the existing one but if given the option, it will remove the existing and replace the content with it. It’s up to the user (me) to know when to replace.</p>
-<h2 id="front-matter-and-cover-image">Front Matter and Cover Image</h2>
-<p>Then the next part is adding in the metadata for the page, also known as Front Matter. For metadata I decided to put it in the top paragraph of the Notion Page then use the html parser to parse them.</p>
+<p>Scripting the tool for me was easy. Not much to explain.</p>
+<p>It is just a CLI to get the URL for the Notion Page and the exported path to put the post in.</p>
+<p>Then go through the HTML output from the <code>notion-page-to-html</code> and with each component like Image, Headers, Youtube, etc. I make some small changes accordingly.</p>
 
 <figure class="image center">
-<img src="/posts/how-this-website-was-built-with-hugo-and-notion/front-mater-and-cover-img-section-on-notion-page.jpg" alt="FrontMater and CoverImg section on Notion Page" style="max-width: 500px; width: 100%;">
-<figcaption>FrontMater and CoverImg section on Notion Page</figcaption>
+<img src="/posts/how-this-website-was-built-with-hugo-and-notion/2.jpg" alt="" style="max-width: 800px; width: 100%;">
+
 </figure>
     
-<p>Quick note on the html parser, I use cheerio. I have not used these tools a lot in the past, just picked the first popular one in the google list. As it is popular, I got a lot of help from the Stack Overflow.</p>
-<p>Anyway back to the parsing metadata, Because I need 2 things the metadata and the cover image, I decided to put them in 2 sections at the top of the page and name it: <code>FrontMatter</code> and <code>CoverImg</code>.</p>
-<p>Then this is the <code>parseFrontMatter</code> function that I used to detect and process them. Basically it goes through all the H1 tags and checks if it is <code>FrontMatter</code>, it picks up the text. If it is the <code>CoverImg</code>, it picks up the image data.</p>
-<pre><code class="language-typescript">const parseFrontMatter = (html: string) =&gt; {
-    const $ = cheerio.load(html);
-    let header = '';
-    let cover = '';
-    $('h1').each((_, c) =&gt; {
-        const currentEl = $(c);
-        const next = currentEl.next();
-        let remove = false;
+<h1 id="afterthought">Afterthought</h1>
+<p>Using this approach feels better than my previous setup. I can use tools to check spelling and correct my grammar when editing. Compared to before, the Emacs situation does not have these correction tools and I had to use my own level of English which is not so good to be honest.</p>
+<p>(Note here that I know that Emacs can be configured to have these tools but I give up after some tries to set them up).</p>
+<p>About the <code>notion-page-to-html</code>. Features like Table and Bookmarked Embed are not yet supported. But it is new and in active development so I hope they will have them in the future.</p>
+<p>There is a bug that formats the code block for 4 spaces indent. It produces the wrong formatting for these languages.</p>
+<p>Many languages indent with 4 spaces are affected by this, like Python, Rust, etc. I have dig into the code and provided a fix for this bug. Hopefully it will be merged soon into the main repository. For now I’m using my own fork.</p>
+<p>One more thing that I’m not comfortable with right now is the <code>Front Matter</code> information that I need for each post, like the publish Date, Description, Tags, etc. Right now I’m implementing a hacky way to pull this data. By putting it in a code block identified by a specific header.</p>
+<p><br>In the future, I would like to have information native to Notion to be pulled by the API. It will be a much better workflow. Something like this</p>
 
-        if (currentEl.text() === 'FrontMatter') {
-            header = next.text();
-            remove = true;
-        }
-
-        if (currentEl.text() === 'CoverImg') {
-            cover = next.find('img').first().attr('src') || '';
-            remove = true;
-        }
-
-        if (remove) {
-            currentEl.remove();
-            next.remove();
-        }
-    });
-    return {remainHtml: $('body').html() || '', header, cover};
-};</code></pre>
-<p>Another Quick note here, the tool <code>notion-page-to-html</code> automatically downloads the images and then puts them in base64 format and included inside the page.</p>
-<h2 id="image-processing">Image Processing</h2>
-<p>This brings me to the image processing part. The function is very well named, as you can guess, <code>processImage</code>.</p>
-<pre><code class="language-typescript">const decodeBase64Image = (dataString: string) =&gt; {
-    let matches = dataString.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
-    if (matches?.length !== 3) {
-        throw new Error('Invalid input string');
-    }
-    return {
-        type: matches[1],
-        data: Buffer.from(matches[2], 'base64'),
-    };
-};
-
-const processImage = (b64Data: string, path: string, name: string, width: number) =&gt; {
-    const output = decodeBase64Image(b64Data);
-    const tempFile = `./${name}.jpg`;
-    fs.writeFileSync(tempFile, output.data);
-    const cmd = `vipsthumbnail -s "${width}x&gt;" -o "tmp_%s.jpg[Q=85]" ${tempFile}`;
-    execSync(cmd);
-    fs.renameSync(`./tmp_${name}.jpg`, `${path}/${name}.jpg`);
-    fs.rmSync(tempFile);
-};</code></pre>
-<p>What it does is take in a base64 byte string, with a path, name of the file and the width of the image. Then use an image processing program called <code>vipsthumbnail</code> to first resize it to that width. Note that there is a <code>&gt;</code> operator in this command, which will tell it to only resize if the image is greater than that size otherwise don’t resize.</p>
-<p>In the second option <code>-o “tmp_%s.jpg[Q=85]”</code>, the Q here stands for quality. It will reduce the quality a bit to 85 percent the original to save some space.</p>
-<p>With all done, I move it to the correct path, given the parameters path and file name, using <code>fs.renameSync</code>.</p>
-<h2 id="front-matter-output">Front Matter output</h2>
-<p>All these I put into a variable named output and concat each of the results into it.</p>
-<p>The first one is the Front Matter and Cover explained above. Which needs to be in a block wrap by 2 lines of three plus sign <code>+++</code>.</p>
-<pre><code class="language-typescript">let out = '';
-    out += '+++\n';
-    out += `title = "${title}"\n`;
-    out += header + '\n';
-    if (cover) {
-        processImage(cover, postPath, 'cover', 500);
-        out += `cover = "/posts/${id}/cover.jpg"`;
-    }
-    out += '\n+++\n';</code></pre>
-<h2 id="parsing-the-some-specific-tags">Parsing the some specific tags</h2>
-<p>As some tags that do not fully match my Hugo project setup. I have some more processing that needs to be done with the remaining HTML.</p>
-<h3 id="the-images">The Images</h3>
-<p><code>parseImages</code> visits each <code>img</code> tag and processes the image the same way I described for the Cover image.</p>
-<p>A bit different is that these images will have its width size decided by the caption in the notion page. I wrap the intended size in double curly brackets like so <code>{{300}}</code>.</p>
-<p>Then for the final result I replace the caption and the alt text with the version without the curly brackets.</p>
-<p>I also modify the styling of the image inline by setting the <code>max-width</code> to the provided value.</p>
-<p>For Hugo, I set the class to <code>center</code> to make the image aligned correctly in the center.</p>
-<pre><code class="language-typescript">const processImage = (b64Data: string, path: string, name: string, width: number) =&gt; {
-    const output = decodeBase64Image(b64Data);
-    const tempFile = `./${name}.jpg`;
-    fs.writeFileSync(tempFile, output.data);
-    const cmd = `vipsthumbnail -s "${width}x&gt;" -o "tmp_%s.jpg[Q=85]" ${tempFile}`;
-    execSync(cmd);
-    fs.renameSync(`./tmp_${name}.jpg`, `${path}/${name}.jpg`);
-    fs.rmSync(tempFile);
-};</code></pre>
-<h3 id="the-youtube-iframe">The youtube iframe</h3>
-<p>To deal with the youtube <code>iframe</code>, I wrap them in a <code>yt-container</code> class for further processing by css.</p>
-<p>It is quite easy with setting up the container to be 16:9 ratio and putting the iframe inside.</p>
-<pre><code class="language-typescript">const parseYoutube = (html: string): string =&gt; {
-    const $ = cheerio.load(html);
-    const container = $('<div class="yt-container"></div>');
-    $('iframe[src*="youtube.com"]').wrap(container);
-    return $.html();
-};</code></pre>
-<h3 id="the-headers">The headers</h3>
-<p>Parsing the headers is just to add the <code>ids</code> attribute to them so in the rendered page it can be linked with a hash path.</p>
-<pre><code class="language-typescript">const parseHeaders = (html: string): string =&gt; {
-    const $ = cheerio.load(html);
-    $(':header').each((_, c) =&gt; {
-        const currentEl = $(c);
-        const id = kebabCase(currentEl.text());
-        currentEl.attr('id', id);
-    });
-    return $.html();
-};</code></pre>
-<h3 id="the-callout">The callout</h3>
-<p>Call out is a feature I’m not sure will use for my blog but it is included in Notion so I also process it.</p>
-<p>The library <code>notion-page-to-html</code> adds a background styling for this component so I need to remove it in my parsing code.</p>
-<pre><code class="language-typescript">const parseCallOut = (html: string) =&gt; {
-    const $ = cheerio.load(html);
-    $('.callout').attr('style', '');
-    return $.html();
-};</code></pre>
-<h2 id="finally">Finally</h2>
-<p>With everything parsed and nicely put in the <code>out</code> variable.</p>
-<p>The last bit was to write it to the <code>index.html</code> file in the postPath.</p>
-<p>Nice and easy. We’re almost done.</p>
-<p>In the <code>main</code> function. I just need to specify the page URL. The path to save the post. And the flag <code>replace</code> here to replace the current post of it already exists.</p>
-<p>I use <code>yargs</code> , a simple tool to parse my command line argument with just a feel lines of code. Everything is neat and ready.</p>
-<p>Then I can run this command</p>
-<pre><code class="language-bash">yarn main --path ../content/posts --page <page_id></page_id></code></pre>
-<p>To download and export the post into the content folder of Hugo. Effectively, convert it into a nice blog post.</p>
-<p>From now on, I will use this method to make new posts.</p>
-<p>Thank you for reading.</p>
-<p>See you next time.</p>
+<figure class="image center">
+<img src="/posts/how-this-website-was-built-with-hugo-and-notion/notion-properties-for-hugo-s-front-matter.jpg" alt="Notion properties for Hugo’s Front matter" style="max-width: 500px; width: 100%;">
+<figcaption>Notion properties for Hugo’s Front matter</figcaption>
+</figure>
+    
+<p>With this the information is structured and typed correctly. For example like Date type for Publish Date and boolean for Draft condition.</p>
+<p>I think I will spend some time with the <code>notion-page-to-html</code> code to implement it and make another PR.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>Well. This post is long enough, my new writing environment will be this combination of Notion and Hugo for now. Hope it will give me more motivation to write and produce more content and updates.</p>
 <p>Bye.</p></body></html>
