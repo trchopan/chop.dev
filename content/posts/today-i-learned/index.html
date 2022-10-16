@@ -1,0 +1,361 @@
++++
+title = "Today I Learned"
+author = ["Chop Tr (chop.ink)"]
+description = "I begin the habit of writing things down when I find something interesting. It will improve my workflow and help me into a more organized mode."
+date = 2022-10-14T00:00:00+07:00
+tags = ["today", "learn"]
+cover = "/posts/today-i-learned/cover.jpg"
++++
+<html><head></head><body><p>I begin the habit of writing things down when I find something interesting. It will improve my workflow and help me into a more organized mode.</p>
+<h2 id="entry-2022-10-14-fri-">Entry&nbsp;&lt;2022-10-14 Fri&gt;</h2>
+<h3 id="brew-upgrade-with-missing-xcode">brew upgrade with missing Xcode</h3>
+<p>Today I ran into another problem with Xcode and brew upgrade this help:</p>
+<p><a href="https://stackoverflow.com/questions/55939354/tool-xcodebuild-requires-xcode-but-active-developer-directory-library-devel" target="_blank">https://stackoverflow.com/questions/55939354/tool-xcodebuild-requires-xcode-but-active-developer-directory-library-devel</a></p>
+<pre><code class="language-plaintext">[ XCode &gt; Preferences &gt; Locations &gt; Command Line Tools ]</code></pre>
+<p>Then select Xcode in <code>Command Line Tools</code></p>
+<h2 id="entry-2022-10-07-fri-">Entry&nbsp;&lt;2022-10-07 Fri&gt;</h2>
+<h3 id="neovim-plugin-vim-abolish">Neovim plugin - vim-abolish</h3>
+<p>It really nice to switch cases using just simple key stroke.</p>
+<p>After install&nbsp;<code>vim-abolish</code>, put cursor at&nbsp;<code>snake_case</code>&nbsp;and press&nbsp;<code>crt</code>&nbsp;to turn it into&nbsp;<code>snakeCase</code></p>
+<p>How awesome is that.</p>
+<p>Apart from the this Coercion feature (I still don’t understand why they name case switching that). vim-abolish also can help with replacement. Try things like this</p>
+<pre><code class="language-bash">:Subvert/blog{,s}/post{,s}/g</code></pre>
+<h2 id="entry-2022-09-15-thu-">Entry&nbsp;&lt;2022-09-15 Thu&gt;</h2>
+<h3 id="xcode-mac-o-s-upgrade">Xcode macOS upgrade</h3>
+<p>After upgrade to the new version, most my binary got broken, unable to start due to linking.</p>
+<p>Includes: git, neovim, etc.</p>
+<p>Pretty much anything install by brew.</p>
+<p>The solution is I need to reinstall xcode and agree to the new Agreement for the new OS version.</p>
+<p>Using following commands:</p>
+<pre><code class="language-bash">xcode-select --install
+
+sudo xcode-select -switch /Library/Developer/CommandLineTools</code></pre>
+<h2 id="entry-2022-09-08-thu-">Entry&nbsp;&lt;2022-09-08 Thu&gt;</h2>
+<h3 id="un-greedy-regex-match">Un-greedy Regex match</h3>
+<p>Today I learned about regex Un-greedy match while dealing with a buggy parser.</p>
+<p>I had a org link parser for links</p>
+<pre><code class="language-plaintext">INPUT:
+This is a link [[https://example.com] [Example]] and [[https://another.com] [Another]]
+
+EXPECT OUTPUT:
+This is a link <a>Example</a> and <a>Another</a></code></pre>
+<h3 id="with-greedy-match">With greedy match</h3>
+<pre><code class="language-javascript">\[\[(.*)\] \[(.*)\]\]</code></pre>
+<p>I keep getting</p>
+<pre><code class="language-plaintext">This is a link Another</code></pre>
+<p>Tryout:&nbsp;<a href="https://regex101.com/r/7sQcoR/1" target="_blank">https://regex101.com/r/7sQcoR/1</a></p>
+<h3 id="turn-out-i-need-to-implement-the-un-greedy-match-to-get-the-expected-output-">Turn out I need to implement the un-greedy match to get the expected output.</h3>
+<pre><code class="language-javascript">\[\[(.*?)\] \[(.*?)\]\]</code></pre>
+<p>Tryout:&nbsp;<a href="https://regex101.com/r/fvx6fF/1" target="_blank">https://regex101.com/r/fvx6fF/1</a></p>
+<h2 id="entry-2022-08-21-sun-">Entry&nbsp;&lt;2022-08-21 Sun&gt;</h2>
+<h3 id="haskell-group-by-key">Haskell groupByKey</h3>
+<p>Haskell groupBy is not what I expected for&nbsp;<code>groupBy</code>&nbsp;that I normally use in&nbsp;<code>lodash</code>.</p>
+<p>It is actually scan the list and group when the predicate evaluate to&nbsp;<code>True</code>.</p>
+<p>So I google Stack Overflow a bit to come up with the&nbsp;<code>lodash</code>&nbsp;version:</p>
+<pre><code class="language-haskell">import qualified Data.Map as Map
+
+groupByKey :: Ord k =&gt; (v -&gt; k) -&gt; [v] -&gt; Map.Map k [v]
+groupByKey key as = Map.fromListWith (++) as'
+  where as' = map ((,) &lt;$&gt; key &lt;*&gt; (: [])) as
+
+main :: IO ()
+main = do
+  print $ groupByKey fst [(1, "hi"), (2, "ho"), (1, "hey"), (1, "yo")]
+
+
+-- OUTPUT: fromList [(1,[(1,"yo"),(1,"hey"),(1,"hi")]),(2,[(2,"lo")])]</code></pre>
+<h2 id="entry-2022-07-06-wed-">Entry&nbsp;&lt;2022-07-06 Wed&gt;</h2>
+<h3 id="yarn-s-e-l-f_-s-i-g-n-e-d_-c-e-r-t_-i-n_-c-h-a-i-n">Yarn SELF_SIGNED_CERT_IN_CHAIN</h3>
+<p><a href="https://github.com/yarnpkg/yarn/issues/892" target="_blank">https://github.com/yarnpkg/yarn/issues/892</a></p>
+<p>This is because Yarn reject invalid SSL certificate. Can be bypass by</p>
+<pre><code class="language-bash">NODE_TLS_REJECT_UNAUTHORIZED=0 yarn install</code></pre>
+<h2 id="entry-2022-06-30-thu-">Entry&nbsp;&lt;2022-06-30 Thu&gt;</h2>
+<h3 id="haskell-byte-string-cheat-sheet">Haskell ByteString Cheat sheet</h3>
+<pre><code class="language-haskell">import Data.ByteString.Lazy as BL
+import Data.ByteString as BS
+import Data.Text as TS
+import Data.Text.Lazy as TL
+import Data.ByteString.Lazy.UTF8 as BLU -- from utf8-string
+import Data.ByteString.UTF8 as BSU      -- from utf8-string
+import Data.Text.Encoding as TSE
+import Data.Text.Lazy.Encoding as TLE
+
+-- String &lt;-&gt; ByteString
+BLU.toString   :: BL.ByteString -&gt; String
+BLU.fromString :: String -&gt; BL.ByteString
+BSU.toString   :: BS.ByteString -&gt; String
+BSU.fromString :: String -&gt; BS.ByteString
+
+-- String &lt;-&gt; Text
+TL.unpack :: TL.Text -&gt; String
+TL.pack   :: String -&gt; TL.Text
+TS.unpack :: TS.Text -&gt; String
+TS.pack   :: String -&gt; TS.Text
+
+-- ByteString &lt;-&gt; Text
+TLE.encodeUtf8 :: TL.Text -&gt; BL.ByteString
+TLE.decodeUtf8 :: BL.ByteString -&gt; TL.Text
+TSE.encodeUtf8 :: TS.Text -&gt; BS.ByteString
+TSE.decodeUtf8 :: BS.ByteString -&gt; TS.Text
+
+-- Lazy &lt;-&gt; Strict
+BL.fromStrict :: BS.ByteString -&gt; BL.ByteString
+BL.toStrict   :: BL.ByteString -&gt; BS.ByteString
+TL.fromStrict :: TS.Text -&gt; TL.Text
+TL.toStrict   :: TL.Text -&gt; TS.Text</code></pre>
+<h2 id="entry-2022-06-02-thu-">Entry&nbsp;&lt;2022-06-02 Thu&gt;</h2>
+<h3 id="pi-hole-and-cloud-flare-handshake-invalid">Pi-hole and Cloud Flare handshake invalid</h3>
+<p>Today I had a weird bug in&nbsp;<code>scheduledblocks</code>&nbsp;. Turn out some how Cloud Flare reject the TSL connection from my Pi-Hole.</p>
+<p>Temporary disable Pi-hole and everything good. I need to investigation more.</p>
+<h2 id="entry-2022-04-13-wed-">Entry&nbsp;&lt;2022-04-13 Wed&gt;</h2>
+<h3 id="build-emacs-on-mac-o-s-with-m1">Build Emacs on MacOS with M1</h3>
+<p>Good news, now emacs 28.1 with&nbsp;<code>native-comp</code>&nbsp;can be run on Macbook with M1 chips. It needs to be built from source, I was able to build it using this repo&nbsp;<a href="https://github.com/d12frosted/homebrew-emacs-plus" target="_blank">https://github.com/d12frosted/homebrew-emacs-plus</a>. One bug took me an hour is the&nbsp;<code>gcc</code>&nbsp;and&nbsp;<code>libgccjit</code>&nbsp;test fail during build.</p>
+<p>If you see this smoke test fail</p>
+<pre><code class="language-plaintext">configure: error: Installed libgccjit has failed passing the smoke test.
+You can verify it yourself compiling:
+<https: gcc.gnu.org="" onlinedocs="" jit="" intro="" tutorial01.html="">.
+Please report the issue to your distribution.
+Here instructions on how to compile and install libgccjit from source:
+<https: gcc.gnu.org="" wiki="" jit="">.</https:></https:></code></pre>
+<p>It is because the MacOS was updated to new major version. While&nbsp;<code>gcc</code>&nbsp;and&nbsp;<code>libgccjit</code>&nbsp;was install by&nbsp;<code>homebrew</code>&nbsp;in previous MacOS version. An easy fix is to reinstall both of theem.</p>
+<pre><code class="language-bash">brew reinstall gcc libgccjit</code></pre>
+<h2 id="entry-2022-04-10-sun-">Entry&nbsp;&lt;2022-04-10 Sun&gt;</h2>
+<h3 id="tree-sitter-setup">Tree-sitter setup</h3>
+<p>First time success setup tree-sitter. Now my code looks much better.</p>
+<p><a href="https://hungyi.net/posts/use-emacs-tree-sitter-doom-emacs/" target="_blank">https://hungyi.net/posts/use-emacs-tree-sitter-doom-emacs/</a></p>
+<h2 id="entry-2022-04-06-wed-">Entry&nbsp;&lt;2022-04-06 Wed&gt;</h2>
+<h3 id="bug-in-rust-mode">Bug in rust-mode</h3>
+<p>In Doom Emacs, the config for rust has the option for&nbsp;<code>+lsp</code>&nbsp;for using&nbsp;<code>rust-analyzer</code>. Without, it will use racer which currently has some bugs of finding the correct tool and path for rust toolchain.</p>
+<pre><code class="language-lisp">:lang (rust +lsp)</code></pre>
+<h2 id="entry-2022-03-15-tue-">Entry&nbsp;&lt;2022-03-15 Tue&gt;</h2>
+<h3 id="good-source-of-data-for-economy-by-country">Good source of data for economy by country</h3>
+<p><a href="https://atlas.cid.harvard.edu/explore/?year=2014&amp;country=246&amp;redirected=true" target="_blank">https://atlas.cid.harvard.edu/explore/?year=2014&amp;country=246&amp;redirected=true</a></p>
+<h2 id="entry-2022-03-14-mon-">Entry&nbsp;&lt;2022-03-14 Mon&gt;</h2>
+<h3 id="problem-with-bluetooth">Problem with Bluetooth</h3>
+<p>Today my MacOS got bugged out of the Bluetooth. I cannot connect to any device. A quick search solve ti problem by reseting the settings. 2 files needs to be delete:</p>
+<pre><code class="language-plaintext">/Library/Preferences/com.apple.Bluetooth.plist
+
+~/Library/Preferences/ByHost/com.apple.Bluetooth.(uuid).plist</code></pre>
+<p>Restart MacOS and let it regenerate the Bluetooth settings.</p>
+<p>Then I need to re-pair all my devices but not many.</p>
+<h2 id="entry-2022-03-04-fri-">Entry&nbsp;&lt;2022-03-04 Fri&gt;</h2>
+<h3 id="begin-of-the-functional-journey">Begin of the functional journey</h3>
+<p>I decided to convert parts of the&nbsp;<code>mini-view-trader</code>&nbsp;app to functional. Also I will use&nbsp;<code>zod</code>&nbsp;for parsing. Let’s make some results 💪</p>
+<h2 id="entry-2022-03-02-wed-">Entry&nbsp;&lt;2022-03-02 Wed&gt;</h2>
+<h3 id="it-s-all-about-monads">It’s All about Monads</h3>
+<p>I found a great article that I keeps reference to while studying Haskell. Every time I read it Monad becomes more and more easier to understand.</p>
+<p><a href="https://wiki.haskell.org/All_About_Monads" target="_blank">https://wiki.haskell.org/All_About_Monads</a></p>
+<blockquote>“Monad” enters English from ancient Greek philosophy, where it could mean “almost everything”. But then it comes in again later from the philosopher Leibniz, for whom it meant “almost nothing” – an irreducible particle of perceptual reality. Can’t philosophy make up its mind? (No. Has it ever?) Neither philosophical sense will help you understand the role of monads in Haskell. Nor are mathematicians riding to your rescue. Consider the introduction to the definition of “monad” in category theory. It could pound the last nail in the coffin of your ambitions to understand what “monad” means in Haskell. A monad is “an endofunctor (a functor mapping a category to itself), together with two natural transformations required to fulfill certain coherence conditions.” (Wikipedia) Admit it: unless you’re fresh from studying abstract algebra, you just died a little inside.</blockquote>
+<h3 id="haskell-and-tensorflow">Haskell and Tensorflow</h3>
+<p>2 things in my learning list. Must have time to try my hands on.</p>
+<p><a href="https://mmhaskell.com/machine-learning" target="_blank">https://mmhaskell.com/machine-learning</a></p>
+<h2 id="entry-2022-02-26-sat-">Entry&nbsp;&lt;2022-02-26 Sat&gt;</h2>
+<h3 id="haskell-refactor">Haskell refactor</h3>
+<p>Today I refactor a bunch of http request code for the&nbsp;<a href="https://github.com/trchopan/scheduled-blocks" target="_blank">scheduled-blocks</a>&nbsp;project. Haskell continue to amaze me with such easy to read and clean looking code.</p>
+<pre><code class="language-haskell">handleEitherFailOrResult :: Either String p -&gt; p
+handleEitherFailOrResult e = do
+  case e of
+    Left  err -&gt; error $ printf "Failed to handle result. Error: %s\n" err
+    Right v   -&gt; v
+
+requestAndDecode :: (MonadIO m, FromJSON a) =&gt; Request -&gt; m a
+requestAndDecode request =
+  httpLBS request
+    &gt;&gt;= return
+    .   handleEitherFailOrResult
+    .   eitherDecode
+    .   getResponseBody</code></pre>
+<h2 id="entry-2022-02-25-fri-">Entry&nbsp;&lt;2022-02-25 Fri&gt;</h2>
+<h3 id="haskell-import-must-be-first">Haskell import must be first</h3>
+<p>The Haskell build tool -&nbsp;<code>cabal</code>&nbsp;- has a requirement to put the&nbsp;<code>import</code>&nbsp;as the first item. I’ve been struggle to understand why my build keep complaining package not found when I reorder the items 😓</p>
+
+<figure class="image center">
+<img src="/posts/today-i-learned/cabal-file.jpg" alt="cabal file" style="max-width: 450px; width: 100%;">
+<figcaption>cabal file</figcaption>
+</figure>
+    
+<h2 id="entry-2022-02-21-mon-">Entry&nbsp;&lt;2022-02-21 Mon&gt;</h2>
+<h3 id="haskell-cabal-external-libraries">Haskell Cabal external-libraries</h3>
+<p>I have been scratching my head all days for the cabal tool to work with the&nbsp;<code>external-libraries</code>&nbsp;flag as I need to connect&nbsp;<code>libsodium</code>&nbsp;to my current project (<code>scheduled-blocks</code>).</p>
+<p>Gone through a dozen of Stack Overflow questions but not thing works. I tried&nbsp;<code>LD_LIBRARY_PATH</code>,&nbsp;<code>LDFLAGS</code>, etc. Turn out for&nbsp;<code>MacOs</code>&nbsp;on M1 and&nbsp;<code>homebrew</code>, it is</p>
+<pre><code class="language-bash">export LIBRARY_PATH="/opt/homebrew/lib"</code></pre>
+<h2 id="entry-2022-02-20-sun-">Entry&nbsp;&lt;2022-02-20 Sun&gt;</h2>
+<h3 id="haskell-beauty-of-functional">Haskell beauty of Functional</h3>
+<p>I’ve been working on the&nbsp;<a href="https://github.com/trchopan/scheduled-blocks" target="_blank">scheduled-block</a>&nbsp;on and off for a week now. I even take sometime off work (don’t tell my boss) to tinker on it. The last couple of days, I’ve been struggle with the conversion of the seed function for verifying Cardano Slot Leader. Where we need 2 set of seed bytes, one from the Neutral Nonce and one from the Epoch Nonce, then combine them to make the seed.</p>
+<p>The Python looks like this</p>
+<pre><code class="language-python">def mkSeed(slot, eta0):
+    h = hashlib.blake2b(digest_size=32)
+    h.update(bytearray([0, 0, 0, 0, 0, 0, 0, 1]))  # neutral nonce
+    seedLbytes = h.digest()
+
+    h = hashlib.blake2b(digest_size=32)
+    h.update(slot.to_bytes(8, byteorder="big") + binascii.unhexlify(eta0))
+    slotToSeedBytes = h.digest()
+
+    seed = [x ^ slotToSeedBytes[i] for i, x in enumerate(seedLbytes)]
+    return bytes(seed)
+</code></pre>
+<p>I’ve been working hard on learning Haskell and the solution at the end was so elegant I was in awe when I have it.</p>
+<pre><code class="language-haskell">hashBlake2b :: BS.ByteString -&gt; Digest Blake2b_256
+hashBlake2b = hash
+
+seedLBytes :: Digest Blake2b_256
+seedLBytes = hashBlake2b neutral
+  where neutral = BA.pack [0, 0, 0, 0, 0, 0, 0, 1] :: ByteString
+
+slotToSeedBytes :: Int64 -&gt; ByteString -&gt; Digest Blake2b_256
+slotToSeedBytes slot nonce = hashBlake2b $ BS.append encodedSlot nonce
+  where encodedSlot = LBS.toStrict $ Binary.encode slot
+
+-- For every seedLBytes xor it with the slotSeedBytes
+mkSeed :: Digest Blake2b_256 -&gt; Digest Blake2b_256 -&gt; [Word8]
+mkSeed seedLBytes slotToSeedBytes = zipWith xor arrSeedLBytes arrSlotToSeedBytes
+ where
+  arrSeedLBytes      = B.unpack seedLBytes
+  arrSlotToSeedBytes = B.unpack slotToSeedBytes</code></pre>
+<p>Loving the Haskell journey even more &lt;3</p>
+<h2 id="entry-2022-02-18-fri-">Entry&nbsp;&lt;2022-02-18 Fri&gt;</h2>
+<h3 id="mark-jumping-in-emacs">Mark jumping in emacs</h3>
+<p>In&nbsp;<code>vim</code>, I was used to the marking jumping with&nbsp;<code>`</code>&nbsp;(back-tick) key. It awesome to jumping around marks in a buffer it help a lot during my workflow. But in Emacs - evil mode, it use&nbsp;<code>'</code>&nbsp;(single tick) key.</p>
+<h2 id="entry-2022-02-15-tue-">Entry&nbsp;&lt;2022-02-15 Tue&gt;</h2>
+<h3 id="syncthing">Syncthing</h3>
+<p><a href="https://docs.syncthing.net/" target="_blank">https://docs.syncthing.net/</a></p>
+<p>Found out this tool. It’s awesome to sync up multiple machine. Open source and developer friendly, You can ignores files just like&nbsp;<code>.gitignore</code></p>
+<h3 id="search-and-replace">Search and replace</h3>
+<p><a href="https://hungyi.net/posts/doom-emacs-search-replace-project/" target="_blank">https://hungyi.net/posts/doom-emacs-search-replace-project/</a></p>
+<p>Awesome post, Now my search and replace workflow is just a string replace.</p>
+
+<figure class="image center">
+<img src="/posts/today-i-learned/1.jpg" alt="" style="max-width: 800px; width: 100%;">
+
+</figure>
+    
+<p>Below is a copy of the original post.</p>
+<h3 id="-">&gt;</h3>
+<p>TL;DR:</p>
+<ul>
+<li>for ivy module users<p><code>SPC s p foo C-c C-e :%s/foo/bar/g RET Z Z</code></p></li>
+<li>for vertico module users<p><code>SPC s p foo C-; E C-c C-p :%s/foo/bar/g RET Z Z</code></p></li>
+</ul>
+<h2 id="entry-2022-02-13-sun-">Entry&nbsp;&lt;2022-02-13 Sun&gt;</h2>
+<h3 id="emacs-terminals">Emacs terminals</h3>
+<p>I tried the emacs terminals into my workflow but both the&nbsp;<code>eshell</code>&nbsp;and&nbsp;<code>vterm</code>&nbsp;did not work out for me.</p>
+<p>They feel very strange when using in combination with the evil mode. At first I was curious of editing the command by using normal vim keys, but there was a lot of bug while navigating between lines.</p>
+<p>=&gt; Switch back to the terminal app instead of Emacs.</p>
+<h3 id="npm-install-from-personal-repo">Npm install from personal repo</h3>
+<p>I’m using a public repo that ease the use of&nbsp;<code>cardano-cli</code>&nbsp;with Javascript but it has some bugs as the maintainer not update so often.</p>
+<p>I need to forked it and provide my own fix and learn to use my own version instead of the npm package.</p>
+<p>This Stack Overflow answer was the my solution:&nbsp;<a href="https://stackoverflow.com/questions/40528053/npm-install-and-build-of-forked-github-repo" target="_blank">LINK</a></p>
+<h2 id="entry-2022-02-12-sat-">Entry&nbsp;&lt;2022-02-12 Sat&gt;</h2>
+<h3 id="cardano-trace-block-fetch-decisions">Cardano TraceBlockFetchDecisions</h3>
+<p>One of my Cardano node missing the&nbsp;<code>cardano_node_metrics_connectedPeers_int</code>&nbsp;. The culprit was the config&nbsp;<code>TraceBlockFetchDecisions</code>.</p>
+<pre><code class="language-json">// mainnet-config.json
+"TraceBlockFetchDecisions": true</code></pre>
+<h2 id="entry-2022-02-10-thu-">Entry&nbsp;&lt;2022-02-10 Thu&gt;</h2>
+<h3 id="dired">Dired</h3>
+<p>Amazing experience with editable buffer using&nbsp;<code>C-x</code>&nbsp;<code>C-q</code>. When done just press&nbsp;<code>Z</code>&nbsp;<code>Z</code>&nbsp;to confirm or&nbsp;<code>Z</code>&nbsp;<code>Q</code>&nbsp;to discard the changes.</p>
+
+<figure class="image center">
+<img src="/posts/today-i-learned/2.jpg" alt="" style="max-width: 800px; width: 100%;">
+
+</figure>
+    
+<h2 id="entry-2022-02-09-wed-">Entry&nbsp;&lt;2022-02-09 Wed&gt;</h2>
+<h3 id="yew">Yew</h3>
+<p><a href="https://github.com/yewstack/yew" target="_blank">https://github.com/yewstack/yew</a></p>
+<p>Frontend built with Rust + WebAssembly.</p>
+<p>Yew is a good play tool for me to learn Rust. I will allocate some time to make a project with it.</p>
+<h2 id="entry-2022-02-08-tue-">Entry&nbsp;&lt;2022-02-08 Tue&gt;</h2>
+<h3 id="inquirer">Inquirer</h3>
+<p>Today I begin work on the Cardano Commands project. A tool to help me and the pool owner setup the pool securely by separate the authority into 2 part:</p>
+<ul>
+<li>Pool Operator: manage the setup and health of the pool. Example: cardano-cli, cardano-node version, Monitor Graphana, Calculate Block schedule, etc.</li>
+<li>Pool Owner: only one has access to the wallet key with the pledged ADA.</li>
+</ul>
+<p>During the development, I found out&nbsp;<a href="https://github.com/SBoudrias/Inquirer.js" target="_blank">Inquirer</a>&nbsp;. Very nice tool to make interactive console UX/UI.</p>
+<h2 id="entry-2022-02-05-sat-">Entry&nbsp;&lt;2022-02-05 Sat&gt;</h2>
+<h3 id="dev-docs-https-devdocs-io-">DevDocs&nbsp;<a href="https://devdocs.io/" target="_blank">https://devdocs.io/</a></h3>
+<p>This tool is awesome!!!</p>
+<blockquote>DevDocs combines multiple developer documentations in a clean and organized web UI with instant search, offline support, mobile version, dark theme, keyboard shortcuts, and more.</blockquote>
+<h2 id="entry-2022-02-04-fri-">Entry&nbsp;&lt;2022-02-04 Fri&gt;</h2>
+<h3 id="back-to-prism-j-s">Back to PrismJS</h3>
+<p>I figure out how to configure PrismJS for the Hugo theme. It actually a static files that I can replace with the PrismJS downloadable configuration.</p>
+<p>Just need to go to this pre-selected &gt;&gt;&nbsp;<a href="https://prismjs.com/download.html#themes=prism-tomorrow&amp;languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&amp;plugins=show-language+toolbar+copy-to-clipboard" target="_blank">Example</a>&nbsp;&lt;&lt;</p>
+<pre><code class="language-plaintext">https://prismjs.com/download.html#
+themes=prism-tomorrow&amp;
+languages=markup+css+clike+javascript+bash+dart+firestore-security-rules+go+go-module+graphql+handlebars+haskell+http+ignore+json+json5+jsonp+lisp+lua+markdown+markup-templating+python+jsx+tsx+regex+rust+sass+scss+shell-session+solidity+toml+typescript+typoscript+vim+yaml&amp;
+plugins=show-language+toolbar+copy-to-clipboard</code></pre>
+<p>Download the minified version and place it in the script tag to load PrismJS. Then let the theme handle the syntax highlight. Now my code block color is synced up with the theme color. Nice!</p>
+<h3 id="haskell-concurrency">Haskell Concurrency</h3>
+<p>I begin to study about Haskell Concurrency. It feels a lot like Go, but much safer. Loving the experience.</p>
+<h2 id="entry-2022-02-03-thu-">Entry&nbsp;&lt;2022-02-03 Thu&gt;</h2>
+<h3 id="improvement-of-my-english">Improvement of my English</h3>
+<p>I’m in the of the process of writing about the making my new website. It make me realize my English is… bad.</p>
+<p>There is a tool call&nbsp;<a href="https://hemingwayapp.com/" target="_blank">Hemingway App</a>&nbsp;(named after Ernest Hemingway). Which will grade your writing ‘Readability’. I’d use it from now to improve my writing.</p>
+<h2 id="entry-2022-02-02-wed-">Entry&nbsp;&lt;2022-02-02 Wed&gt;</h2>
+<h3 id="disqus-vs-utterances">Disqus vs Utterances</h3>
+<p>I got the comment section to work on&nbsp;<a href="https://chop.ink/" target="_blank">chop.ink</a>. I setup&nbsp;<a href="https://disqus.com/" target="_blank">Disqus</a>&nbsp;but find out there much better option:&nbsp;<a href="https://utteranc.es/" target="_blank">Utterances</a>. It based on Github issues and much suited for my site because it more developer oriented.</p>
+<p>I may use Disqus for my customers who would like some fine control over their site comments.</p>
+<h2 id="entry-2022-02-01-tue-">Entry&nbsp;&lt;2022-02-01 Tue&gt;</h2>
+<h3 id="remove-prism-j-s-no-support-for-emacs-lisp">Remove PrismJS - no support for emacs-lisp</h3>
+<p>Checking back on the website, I realized there was no syntax highlight for the code block. Then I spent the morning to find out PrismJS is the culprit. It does not have the syntax for&nbsp;<code>emacs-lisp</code>&nbsp;scripts. So I disabled it, Turn out Hugo already handled the syntax highlight 👍. It not perfect match with the current theme but it is OK to use.</p>
+<h3 id="a-mini-bug-in-miniview-trader">A mini bug in Miniview trader</h3>
+<p>I discovered a bug in the Miniview trader script. The MA calculation method will give wrong value when the length of result match the length of MA. Fix it by replacing the script with much simpler version. Lesson learned again and again: simplify everything.</p>
+<pre><code class="language-typescript">import {sum, last} from 'lodash';
+
+const getTechnicals = (data: {close: number}[]) =&gt; {
+  // Take off the last candle
+  const candles = data.slice(0, -1);
+
+  const calculateMa = (len: number) =&gt; {
+    const _candles =
+      len &gt; candles.length ? candles : candles.slice(candles.length - len);
+    const _maCloses = _candles.map(x =&gt; x.close);
+    return sum(_maCloses) / _maCloses.length;
+  };
+
+  return {
+    last: last(candles)!,
+    ma20: calculateMa(20),
+    ma55: calculateMa(55),
+    ma100: calculateMa(100),
+    ma200: calculateMa(200),
+    candles,
+  };
+};</code></pre>
+<h2 id="entry-2022-01-31-mon-">Entry&nbsp;&lt;2022-01-31 Mon&gt;</h2>
+<p>Today is a good day. With a lot of things todo, I still managed to buy the new domain and spin up the website at&nbsp;<a href="https://chop.ink/" target="_blank">https://chop.ink</a>&nbsp;. It will be my site to dump all these writing to.</p>
+<p>I started to learn Hugo. This tool is fast. I mean really really fast!!!</p>
+<p>A side note, tonight is Luna New year eve. Happy New Year, may luck and health come to all.</p>
+<h2 id="entry-2022-01-30-sun-">Entry&nbsp;&lt;2022-01-30 Sun&gt;</h2>
+<h3 id="mix-pitch-and-zen-mode">Mix pitch and Zen mode</h3>
+<p>Morning was more emacs setup. I solved the problem with&nbsp;<code>mix pitch mode</code>&nbsp;and fonts serif and improve&nbsp;<code>zen mode</code>&nbsp;editing.</p>
+<h3 id="jumping-keys-is-great-now-with-a-bit-of-configuration">Jumping keys is great now with a bit of configuration</h3>
+<p>I have the most awesome settings for avy-jumping keys. Most of the keys should be in the middle of key board, the difficult to reach should be the outer area.</p>
+
+<figure class="image center">
+<img src="/posts/today-i-learned/3.jpg" alt="" style="max-width: 800px; width: 100%;">
+
+</figure>
+    
+<h3 id="block-schedule-should-be-calculate-with-the-new-epoch-snapshot">Block schedule should be calculate with the new epoch snapshot</h3>
+<p>After chatting with Felix about his pool missing a block he had calculated. We realized that he used the old epoch sigma and stake to calculate the scheduled. Which make me nervous about the Cardano block scheduled for ARMADA pool at 18:20 next day. Luckily, after double checked using the&nbsp;<code>ScheduledBlocks</code>&nbsp;tool, I confirmed that it was correct and we did received the block.</p>
+<h2 id="entry-2022-01-29-sat-">Entry&nbsp;&lt;2022-01-29 Sat&gt;</h2>
+<h3 id="what-i-working-on">What I working on</h3>
+<p>Mostly I config emacs doom follow my neovim today.</p>
+<p>Nvim - treesitter cannot be install on my Raspberry Pi due to arch64 is not supported. Weird that they can be install with npm on my Macbook Air M1. I need to investigate more on this matter.</p>
+<p>I’m setting up the Cardano testnet on my Raspberry Pi to debug the setup script that I wrote very long time ago. It now does not work with Alonzo Tx format. I suspect that TK using the address to receive many meme coins, that mess up the Tx calculation.</p>
+<p>Update&nbsp;&lt;2022-01-31 Mon&gt;</p>
+<p>I knew why, need to check it out though. Must be because the version of&nbsp;<code>cardano-cli</code>&nbsp;/&nbsp;<code>cardano-node</code>&nbsp;I’m using on the secret node was old, I have not updated it for 5 months now.</p>
+<h3 id="emacs">Emacs</h3>
+<p><code>Zen-mode</code>&nbsp;is good. Give me focus on writing. Also the serif font face helps a bit.</p>
+<p>Remember to&nbsp;<code>zz</code>&nbsp;to center the screen when writing. Otherwise the word suggestion will go crazy.</p>
+<h2 id="entry-2022-01-27-thu-">Entry&nbsp;&lt;2022-01-27 Thu&gt;</h2>
+<p>My first day of writing in org mode</p>
+<p>Recap of what I learned during the journey of setting up Emacs:</p>
+<h3 id="doom-emacs-is-awesome">Doom emacs is awesome</h3>
+<p>All battery included. Tempting to do an Emacs from Scratch but it must comes later right now Doom Emacs is good enough.</p>
+<h3 id="setting-up-vue-conflict-and-old-package">Setting up Vue - conflict and old package</h3>
+<p>Setting up Vue was a pain because the old package&nbsp;<a href="https://github.com/AdamNiederer/vue-mode" target="_blank">vue-mode</a>&nbsp;&lt;= DO NOT USE this.</p>
+<p>Vue has a new language server named&nbsp;<a href="https://github.com/jadestrong/lsp-volar" target="_blank">Volar</a>&nbsp;&lt;= Use this instead.</p>
+<p></p></body></html>

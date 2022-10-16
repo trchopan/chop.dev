@@ -7,39 +7,40 @@ tags = ["devlog", "howto", "build", "website"]
 cover = "/posts/how-this-website-was-built-with-hugo-and-notion/cover.jpg"
 +++
 <html><head></head><body><h1 id="why-i-stop-using-emacs-"><strong>Why I stop using Emacs?</strong></h1>
-<p>Editing on <span style="color: #E03E3E;">Emacs</span> was fun. Yeah, it is really fun using the <span style="color: #E03E3E;">Org mode</span>, and <span style="color: #E03E3E;">Org Roam</span>. You can check out my last post about how I built this website here.</p>
+<p>Editing on <span style="color: #E03E3E;">Emacs</span> was fun. Yeah, really fun using the <span style="color: #E03E3E;">Org mode</span>. And Org Roam and other things. You can check out my last post about how I built this website here.</p>
 <p><a href="https://chop.ink/posts/how-this-website-was-built/" target="_blank">https://chop.ink/posts/how-this-website-was-built/</a></p>
-<p>In that post, I went through all the features that I had for this Website. Include my work flow to convert files from Org mode to Markdown and export to HTML using <span style="color: #E03E3E;">ox-hugo</span> plugin. And how I use <span style="color: #E03E3E;">Hugo</span> to render all my posts to static and host it on <span style="color: #E03E3E;">Firebase</span>.</p>
-<p>Thing is I had to go back to <span style="color: #E03E3E;">NeoVim</span> because working with the Emacs system was not a good experience for me.</p>
-<p>To explain my situation clearer, I use <a href="https://chop.ink/posts/doom.d/config/" target="_blank"><span style="color: #E03E3E;">Doom Emacs</span></a>, a pre-config Emacs distribution and framework. So setting up everything was easy, but easy things come with side effects: Learning to config it was a bit confusing and hard, and took a long time to research. Because it was pre-built for you, and there are many things that can go wrong or break when I customize.</p>
-<p>Saying that, I had a working environment for coding and editing. So I had been using Emacs really fine for the last 8 or 9 months.</p>
-<p>But in the experience was not so comfortable. During my day today, I have many quirky stuff that I would like to customize to my own liking.</p>
-<p>And the language of Emacs was <span style="color: #E03E3E;">Lips</span>. Well, it does not help much . It’s a language that I would need some time to digest. I mean with all the parentheses does not help.</p>
-<p>So for the programming environment, I had to switch to NeoVim. Disclaimer here, I've been using good old Vim (not the Neovim) for a long time before I switched to Emacs, so … you know. After Emacs, NeoVim was just easy.</p>
-<p>In NeoVim, I got my hands on <span style="color: #E03E3E;">Lua</span>. It was much better than <span style="color: #E03E3E;">Lisp</span>. And everything went smoothly. The plugins are great and well maintained. I have such a great time being back in this environment.</p>
+<p>In that post, I went through all the features that I had for this Website. Include my work flow to convert them from <span style="color: #E03E3E;">Org file</span> to <span style="color: #E03E3E;">Markdown</span>. And how I use <span style="color: #E03E3E;">Hugo</span> to render all my posts to static and host it on <span style="color: #E03E3E;">Firebase</span>.</p>
+<p>Thing is I have to go back to NeoVim because working with the Emacs system was not a good experience for me.</p>
+<h2 id="doom-emacs-and-lisp">Doom Emacs and Lisp</h2>
+<p>To explain my situation clearer, I use<a href="https://chop.ink/posts/doom.d/config/" target="_blank"> </a><span style="color: #E03E3E;"><a href="https://chop.ink/posts/doom.d/config/" target="_blank">Doom Emacs</a></span>, a pre-config Emacs distribution and framework. So setting up everything was easy, but easy things come with side effects: You don’t know the system well enough. Learning to config it was a bit confusing and hard, and it took a long time to research. Because it was pre-built, and there are many things that can go wrong or break. I don’t know where to start when I see a small thing that I’d like to customize.</p>
+<p>I know this point also applies to anyone who is new when trying their hands on a similar editor like Vim but I have another problem. Which is the Lisp language.</p>
+<p>Emacs' language is <span style="color: #E03E3E;">Lisp</span>. It does not help with that at all. It’s a language that I would need some time to digest. I mean with all the parentheses and functional programming. Even though I am very familiar with Haskell, Lisp is just another world.</p>
+<p>Saying that, I had a working environment for coding and editing working well on Emacs. So I had been using Emacs really fine for the last 8 or 9 months.</p>
+<p>But the experience was not so comfortable. During that time, I had a lot of quirky stuff that I would like to customize to my own liking but was unable to :(</p>
+<h2 id="neovim">Neovim</h2>
+<p>So for the real comfortable environment, I have to switch to <span style="color: #E03E3E;">Vim</span>. I've been using good old Vim - not the new hip Neovim but the good old Vim version 7 - for a long time before I switched to Emacs, so … You know, after Emacs, <span style="color: #E03E3E;">NeoVim</span> was just the obvious choice.</p>
+<p>In NeoVim, I got my hands on <span style="color: #E03E3E;">Lua language</span>. It was much better than Lisp. And everything went smoothly. The structure of the plugins is great. The customization is great. The plugins are really well maintained. I have such a great time being back in this environment.</p>
 
 <figure class="image center">
 <img src="/posts/how-this-website-was-built-with-hugo-and-notion/no-emacs-yes-neovim.jpg" alt="No Emacs, Yes Neovim" style="max-width: 500px; width: 100%;">
 <figcaption>No Emacs, Yes Neovim</figcaption>
 </figure>
     
-<p>Note: This is not about hating Emacs. I’m sure it is great for many people who are familiar with it and can customize it exactly the way they want. It just doesn't work for me because for me, it would take much more time and effort.</p>
+<p>Note: This is not about hating Emacs. It was a great tool, I love Dired, I loved Projectile, I loved Magit, and all great Emacs plugins. I’m sure many people are familiar with it, and can customize it exactly the way they want. It just doesn't work for me. Because for me, it would take much more time to learn and adapt.</p>
+<h2 id="the-switch">The switch</h2>
+<p>Since “the switch back to vim”, I’ve moved most of my programming tools and habits to Vim. But one thing that keeps me using Emacs is the project that manages my personal website. I normally edit my posts using Org mode and export them to Markdown so Hugo can build it.</p>
+<p>If I make the switch meaning no longer use Emacs. This would need to be converted too. So I decided to investigate a way that I can edit and maintain my blog posts. And somehow pull the content as HTML.</p>
 <h2 id="notion">Notion</h2>
-<p>Well, I have to mention Notion here.</p>
 
 <figure class="image center">
 <img src="/posts/how-this-website-was-built-with-hugo-and-notion/notion-logo.jpg" alt="Notion logo" style="max-width: 250px; width: 100%;">
 <figcaption>Notion logo</figcaption>
 </figure>
     
-<p>The thing is I built up some habits when I lived with Emacs for the last half year. It’s Org mode and Org Roam. I have all my notes kept in Org files, linked together. Like an interconnected mesh of information. If you know the term <strong>second brain</strong>, I have something like that in my Org folder.</p>
+<p>I built up some habits when I lived with Emacs for the last half year. It’s Org mode and Org Roam. I have all my notes kept in Org files, linked together. Like an interconnected mesh of information. If you know the term <strong>second brain</strong>, I have something like that in my Org folder.</p>
 <p>So last week, I decided to use Notion to replace these habits and note taking. The switch was smooth. Notion has the back-linking feature that fills my requirement for an inter-linked note.</p>
-<p>They also have useful features like Custom View, Database Table, Editable Properties, etc.</p>
-<p>Things were better than I expected. Also noted that I’ve not tried other tools like <span style="color: #E03E3E;">Org Roam Research</span> or <span style="color: #E03E3E;">Obsidian</span>.</p>
+<p>They also have useful features like Custom View, Database Table, Editable Properties, etc. Things were better than I expected.</p>
 <p>The Notion API is also straightforward and easy to understand. For now Notion works for me and I’m happy using it.</p>
-<h2 id="the-switch">The switch</h2>
-<p>Since “the switch back to vim”, I’ve moved most of my programming tools and habits to Vim. But one thing that keeps me using Emacs is the project that manages this website. I normally edit my posts using Org mode and export them to Markdown so Hugo can build it.</p>
-<p>If I make the switch and no longer use Emacs. This would need to be converted too. So I decided to investigate a way that I can edit and maintain my blog posts. And somehow pull the content as html or markdown.</p>
 <h1 id="how-">How?</h1>
 <p>Luckily, I found a tool to do that job:</p>
 <p><a href="https://github.com/asnunes/notion-page-to-html" target="_blank">https://github.com/asnunes/notion-page-to-html</a></p>
@@ -47,7 +48,7 @@ cover = "/posts/how-this-website-was-built-with-hugo-and-notion/cover.jpg"
 <p>In fact, this article's content is from my Notion page. You can visit the page here.</p>
 <p><a href="https://www.notion.so/choptran/How-this-website-was-built-with-from-Notion-9b8d4f433884440aaebd3b78778efcf8" target="_blank">https://www.notion.so/choptran/How-this-website-was-built-with-from-Notion-9b8d4f433884440aaebd3b78778efcf8</a></p>
 <p>Scripting the tool for me was easy. Not much to explain.</p>
-<p>It is just a CLI to get the URL for the Notion Page and the exported path to put the post in.</p>
+<p>It is just a CLI to get the URL for the Notion Page and export the post the the desired path.</p>
 <p>Then go through the HTML output from the <code>notion-page-to-html</code> and with each component like Image, Headers, Youtube, etc. I make some small changes accordingly.</p>
 
 <figure class="image center">
