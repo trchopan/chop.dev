@@ -10,7 +10,7 @@
 
 Hi, Nice to meet you.
 
-The name is Quang Tran ~aka Chop Tr~.
+My name is Quang Tran ~aka Chop Tr~.
 
 I am a full-stack software engineer based in Ho Chi Minh City, Vietnam.
 
@@ -45,7 +45,7 @@ I am a full-stack software engineer based in Ho Chi Minh City, Vietnam.
 This year, 2022, I am 33 years old. I have a beautiful wife and a lovely daughter.
 
 #+attr_html: :width 720
-[[~/Sync/chop-ink/content-org/about-me/my-family_20220209_222649.png]]
+[[./my-family_20220209_222649.png]]
 
 I love to travel with my wife. Every year we visit new places in Vietnam. We have never traveled outside Vietnam, but love to do it one day when Lina is a bit older and Covid-19 a bit under control.
 

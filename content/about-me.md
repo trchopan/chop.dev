@@ -10,7 +10,7 @@ images = "/choptr-avatar.jpg"
 
 Hi, Nice to meet you.
 
-The name is Quang Tran `aka Chop Tr`.
+My name is Quang Tran `aka Chop Tr`.
 
 I am a full-stack software engineer based in Ho Chi Minh City, Vietnam.
 
