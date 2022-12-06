@@ -1,6 +1,6 @@
 +++
 title = "Doom Emacs configuration"
-author = ["Chop Tr (chop.ink)"]
+author = ["Chop Tr (blog.chop.dev)"]
 description = "My configuration and note during the awesome journey of getting to know Emacs and Doom Emacs"
 date = 2022-01-26T00:00:00+07:00
 tags = ["doom", "emacs", "config"]
@@ -245,8 +245,8 @@ Everything from this point on is either in `~/.doom.d/config.el` for configurati
 Some functionality uses this to identify you, e.g. GPG configuration, email clients, file templates and snippets.
 
 ```emacs-lisp
-(setq user-full-name "Chop Tr (chop.ink)"
-      user-mail-address "chop@chop.ink")
+(setq user-full-name "Chop Tr (blog.chop.dev)"
+      user-mail-address "chop@blog.chop.dev")
 ```
 
 Doom exposes five (optional) variables for controlling fonts in Doom. Here are the three important ones:

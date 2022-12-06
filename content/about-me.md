@@ -1,6 +1,6 @@
 +++
 title = "About Me"
-author = ["Chop Tr (chop.ink)"]
+author = ["Chop Tr (blog.chop.dev)"]
 description = "Short introduction"
 tags = ["about", "me"]
 draft = false

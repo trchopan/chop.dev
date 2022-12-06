@@ -1,7 +1,7 @@
 languageCode = 'en-us'
 theme = "terminal"
-baseURL = 'https://chop.ink/'
-title = 'Welcome to Chop Ink'
+baseURL = 'https://blog.chop.dev/'
+title = 'Welcome to my Blog :: Chop Tr'
 googleAnalytics = 'G-XVVD1P3SQ0'
 
 
@@ -59,12 +59,12 @@ googleAnalytics = 'G-XVVD1P3SQ0'
   # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
   # do not include @
   creator = "choptr"
-  site = "https://chop.ink"
+  site = "https://blog.chop.dev"
 
 [languages]
   [languages.en]
     languageName = "English"
-    title = "chop.ink"
+    title = "chop.dev"
     subtitle = "A place for me to keep all my writing and configs"
     owner = "Chop Tr"
     keywords = "blog writting config files dotfiles"
@@ -78,7 +78,7 @@ googleAnalytics = 'G-XVVD1P3SQ0'
     missingBackButtonLabel = "Back to home page"
 
     [languages.en.params.logo]
-      logoText = "Chop.ink"
+      logoText = "Blog.chop.dev"
       logoHomeLink = "/"
 
     [languages.en.menu]

@@ -2,7 +2,7 @@
 #+hugo_tags: typescript monad programing design pattern
 
 #+title: Typescript Monad
-#+AUTHOR: Chop Tr (chop.ink)
+#+AUTHOR: Chop Tr (blog.chop.dev)
 #+DATE: <2022-08-15 Mon>
 #+DESCRIPTION: Tìm hiểu về monad qua Typescript
 

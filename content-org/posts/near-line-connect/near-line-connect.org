@@ -2,7 +2,7 @@
 #+hugo_tags: near line connect
 
 #+title: Near Line Connect
-#+AUTHOR: Chop Tr (chop.ink)
+#+AUTHOR: Chop Tr (blog.chop.dev)
 #+DATE: <2022-08-01 Mon>
 #+DESCRIPTION: Preparation for Line Presentation Workshop
 

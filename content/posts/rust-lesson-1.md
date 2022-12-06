@@ -1,6 +1,6 @@
 +++
 title = "Rust - 01 - Hello World"
-author = ["Chop Tr (chop.ink)"]
+author = ["Chop Tr (blog.chop.dev)"]
 description = "Hello world"
 tags = ["learning", "rust", "hello", "world"]
 draft = true

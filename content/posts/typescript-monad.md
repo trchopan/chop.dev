@@ -1,6 +1,6 @@
 +++
 title = "Typescript Monad"
-author = ["Chop Tr (chop.ink)"]
+author = ["Chop Tr (blog.chop.dev)"]
 description = "Tìm hiểu về monad qua Typescript"
 date = 2022-08-15T00:00:00+07:00
 tags = ["typescript", "monad", "programing", "design", "pattern"]

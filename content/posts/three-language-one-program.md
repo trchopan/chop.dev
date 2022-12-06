@@ -1,6 +1,6 @@
 +++
 title = "1 Program, 3 Languages"
-author = ["Chop Tr (chop.ink)"]
+author = ["Chop Tr (blog.chop.dev)"]
 description = "Same program written in 3 programming languages: Typescript, Haskell, Rust. Thereby experiencing environment and gaining new knowledge."
 date = 2022-03-22T00:00:00+07:00
 tags = ["haskell", "typescript", "rust", "programing"]

@@ -1,6 +1,6 @@
 +++
 title = "Comparative Concurrency with Haskell"
-author = ["Chop Tr (chop.ink)"]
+author = ["Chop Tr (blog.chop.dev)"]
 description = "A beautifully discussion about Haskell Concurrency written by Michael Snoyman, November 22, 2016."
 date = 2022-02-04T00:00:00+07:00
 tags = ["haskell", "concurrency"]
@@ -11,7 +11,7 @@ draft = false
 
 This is a blog post on [FPComplete.com](https://www.fpcomplete.com/) and I found it increadibly useful so I need to convert it to Emacs Org-mode to try out interactively
 
-[Org file](https://github.com/trchopan/chop.ink/blob/main/content-org/posts/concurrency-with-haskell.org)
+[Org file](https://github.com/trchopan/blog.chop.dev/blob/main/content-org/posts/concurrency-with-haskell.org)
 
 [Original](https://www.fpcomplete.com/blog/2016/11/comparative-concurrency-with-haskell/)
 

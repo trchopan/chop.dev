@@ -1,6 +1,6 @@
 +++
 title = "Near Line Connect Script"
-author = ["Chop Tr (chop.ink)"]
+author = ["Chop Tr (blog.chop.dev)"]
 description = "Preparation for Line Presentation Workshop Talk script"
 date = 2022-08-09T00:00:00+07:00
 tags = ["near", "line", "connect"]
