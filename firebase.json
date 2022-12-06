@@ -1,27 +1,10 @@
 {
   "hosting": {
-    "site": "chop-dev",
     "public": "public",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "headers": [
-      {
-        "source": "**/*.@(json|ico|css|jpg|jpeg|gif|png)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=86400"
-          }
-        ]
-      },
-      {
-        "source": "/prism.js",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=2592000"
-          }
-        ]
-      }
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
     ]
   }
 }
