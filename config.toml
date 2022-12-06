@@ -3,6 +3,7 @@ theme = "terminal"
 baseURL = 'https://blog.chop.dev/'
 title = 'Welcome to my Blog :: Chop Tr'
 googleAnalytics = 'G-XVVD1P3SQ0'
+enableRobotsTXT = true
 
 
 [markup.highlight]
