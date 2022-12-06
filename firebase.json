@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "chop-ink",
     "public": "public",
     "ignore": [
       "firebase.json",

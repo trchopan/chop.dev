@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "hermes-7b876"
-  }
+  },
+  "targets": {
+    "hermes-7b876": {
+      "hosting": {
+        "chop-ink": [
+          "hermes-7b876"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
