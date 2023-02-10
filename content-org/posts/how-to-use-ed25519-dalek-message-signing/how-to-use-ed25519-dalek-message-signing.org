@@ -2,7 +2,7 @@
 #+hugo_tags: ed25519 dalek message signing signature cryptography
 
 #+title: How To Use Ed25519 Dalek Message Signing
-#+AUTHOR: Chop Tr (blog.chop.dev)
+#+AUTHOR: Chop Tr (chop.dev)
 #+DATE: <2022-07-11 Mon>
 #+DESCRIPTION: Pure Rust example for using Edwards 25519 to sign and verify message
 

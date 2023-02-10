@@ -1,6 +1,6 @@
 +++
 title = "How This Website Was Built"
-author = ["Chop Tr (blog.chop.dev)"]
+author = ["Chop Tr (chop.dev)"]
 description = "New year. New website. New journey."
 date = 2022-02-02T00:00:00+07:00
 tags = ["howto", "build", "website"]
@@ -95,7 +95,7 @@ Below is my example setup for a post
 #+hugo_custom_front_matter: :images /ox-hugo/howto-build-website_20220203_134312.png
 
 #+TITLE: How This Website Was Built
-#+AUTHOR: Chop Tr (blog.chop.dev)
+#+AUTHOR: Chop Tr (chop.dev)
 #+DATE: <2022-02-02 Wed>
 #+DESCRIPTION: New year. New website. New journey.
 
@@ -158,7 +158,7 @@ mv "/tmp/$output" $2
 
 Everytime I need to insert a image I just have to copy the image or screen select it. The image is temporary saved in the clipboard. Then I call the command `org-insert-clipboard-image` to save it to selected directory and paste the path to current position of the cursor.
 
-My config for emacs for this feature is eplained more here: <https://blog.chop.dev/posts/doom.d/config/#insert-clipboard-image-into-org-file>
+My config for emacs for this feature is eplained more here: <https://chop.dev/posts/doom.d/config/#insert-clipboard-image-into-org-file>
 
 
 ### Source code highlight {#source-code-highlight}
@@ -185,10 +185,10 @@ Setting it up is in the `/layouts/partials/comments.html` file
 
 ```html
 <script src="https://utteranc.es/client.js"
-        repo="trchopan/blog.chop.dev"
+        repo="trchopan/chop.dev"
         issue-term="pathname"
         theme="gruvbox-dark"
-        crossorigin="blog.chop.dev"
+        crossorigin="chop.dev"
         async>
 </script>
 <style type="text/css"></style>

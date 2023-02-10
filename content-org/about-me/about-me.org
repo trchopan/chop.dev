@@ -5,7 +5,7 @@
 #+hugo_custom_front_matter: :images /choptr-avatar.jpg
 
 #+TITLE: About Me
-#+AUTHOR: Chop Tr (blog.chop.dev)
+#+AUTHOR: Chop Tr (chop.dev)
 #+DESCRIPTION: Short introduction
 
 Hi, Nice to meet you.

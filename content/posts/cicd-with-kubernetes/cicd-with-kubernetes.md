@@ -1,6 +1,6 @@
 +++
 title = "CICD with Kubernetes"
-author = ["Chop Tr (blog.chop.dev)"]
+author = ["Chop Tr (chop.dev)"]
 description = "Tiếp theo thực hành dựng cụm Kubernetes thì chạy các chương trình trên cụm cần 1 dây chuyền để tự động hóa và hệ thống hóa các chuỗi. Video này mình sử dụng Circle CI và ArgoCD để dựng lên một chuỗi CICD. Phục vụ cho việc release các ứng dụng do mình tự quản lý."
 date = 2023-01-20T00:00:00+07:00
 tags = ["kubernetes", "cicd", "argocd", "circleci"]

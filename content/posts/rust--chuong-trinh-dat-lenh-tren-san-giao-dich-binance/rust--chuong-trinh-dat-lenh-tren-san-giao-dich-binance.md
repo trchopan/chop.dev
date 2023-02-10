@@ -1,6 +1,6 @@
 +++
 title = "Rust: Chương trình đặt lệnh trên sàn giao dịch Binance"
-author = ["Chop Tr (blog.chop.dev)"]
+author = ["Chop Tr (chop.dev)"]
 description = "Lập trình với các sàn giao dịch là một trong những kiến thức miền khá là hữu dụng của một lập trình viên. Năm vừa rồi thì mình có cơ hội lập trình cho một dự án nhỏ với một nhóm trading ở Vietnam. Video này demo một chương trình cơ bản thực hiện việc đặt lệnh và kiểm tra tài khoản trên sàn giao dịch tiền điện tử Binance."
 date = 2023-02-08T00:00:00+07:00
 tags = ["rust", "clap", "binance", "programming", "trading"]

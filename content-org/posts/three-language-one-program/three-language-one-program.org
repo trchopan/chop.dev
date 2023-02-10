@@ -4,7 +4,7 @@
 #+hugo_custom_front_matter: :images /ox-hugo/one-program-three-language_20220324_215135.png
 
 #+TITLE: 1 Program, 3 Languages
-#+AUTHOR: Chop Tr (blog.chop.dev)
+#+AUTHOR: Chop Tr (chop.dev)
 #+DATE: <2022-03-22 Tue>
 #+DESCRIPTION: Same program written in 3 programming languages: Typescript, Haskell, Rust. Thereby experiencing environment and gaining new knowledge.
 

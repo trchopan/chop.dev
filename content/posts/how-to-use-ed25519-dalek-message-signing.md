@@ -1,6 +1,6 @@
 +++
 title = "How To Use Ed25519 Dalek Message Signing"
-author = ["Chop Tr (blog.chop.dev)"]
+author = ["Chop Tr (chop.dev)"]
 description = "Pure Rust example for using Edwards 25519 to sign and verify message"
 date = 2022-07-11T00:00:00+07:00
 tags = ["ed25519", "dalek", "message", "signing", "signature", "cryptography"]

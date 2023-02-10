@@ -1,6 +1,6 @@
 +++
 title = "How To Structure App study note"
-author = ["Chop Tr (blog.chop.dev)"]
+author = ["Chop Tr (chop.dev)"]
 description = "How To Structure App study note"
 date = 2022-04-24T00:00:00+07:00
 tags = ["howto", "structure", "app"]

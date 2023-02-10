@@ -4,7 +4,7 @@
 #+hugo_custom_front_matter: :images /ox-hugo/scheduled-block-script_20220301_234604.png
 
 #+TITLE: Học haskell qua code scheduled-blocks video script
-#+AUTHOR: Chop Tr (blog.chop.dev)
+#+AUTHOR: Chop Tr (chop.dev)
 #+DATE: <2022-03-01 Tue>
 #+DESCRIPTION: Đây là một chương trình viết lại của một repo khác cũng đã thực hiện việc tính toán block slot leader trên blockchain Cardano. Source gốc viết bằng Python. Mình quyết định mục tiêu sẽ là convert hết các Chức năng và Công thức của repo đó thành Haskell, phục vụ việc học ngôn ngữ này.
 
@@ -247,7 +247,7 @@ main = hspec $ do
 
 Mình sẽ đi qua tài liệu mà mình viết khi chuẩn bị các thông số. (Tài liệu này đc viết bằng tiếng Anh để bất kỳ ai cũng có thể tái thực hiện các bước nếu muốn).
 
-https://blog.chop.dev/posts/test-procedure-for-scheduled-blocks/
+https://chop.dev/posts/test-procedure-for-scheduled-blocks/
 
 
 * Nối tất cả lại với nhau

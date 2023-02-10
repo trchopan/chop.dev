@@ -4,7 +4,7 @@
 #+hugo_custom_front_matter: :images /ox-hugo/today-i-learned_20220203_111606.png
 
 #+TITLE: Today I Learned
-#+AUTHOR: Chop Tr (blog.chop.dev)
+#+AUTHOR: Chop Tr (chop.dev)
 #+DATE: <2022-08-21 Sun>
 #+DESCRIPTION: It is good to keep a note of things I learned during the day
 
@@ -527,7 +527,7 @@ There is a tool call [[https://hemingwayapp.com/][Hemingway App]] (named after E
 
 ** Disqus vs Utterances
 
-I got the comment section to work on [[https://blog.chop.dev][blog.chop.dev]]. I setup [[https://disqus.com][Disqus]] but find out there much better option: [[https://utteranc.es/][Utterances]]. It based on Github issues and much suited for my site because it more developer oriented.
+I got the comment section to work on [[https://chop.dev][chop.dev]]. I setup [[https://disqus.com][Disqus]] but find out there much better option: [[https://utteranc.es/][Utterances]]. It based on Github issues and much suited for my site because it more developer oriented.
 
 I may use Disqus for my customers who would like some fine control over their site comments.
 
@@ -570,7 +570,7 @@ const getTechnicals = (data: {close: number}[]) => {
 
 * Entry <2022-01-31 Mon>
 
-Today is a good day. With a lot of things todo, I still managed to buy the new domain and spin up the website at https://blog.chop.dev . It will be my site to dump all these writing to.
+Today is a good day. With a lot of things todo, I still managed to buy the new domain and spin up the website at https://chop.dev . It will be my site to dump all these writing to.
 
 I started to learn Hugo. This tool is fast. I mean really really fast!!!
 

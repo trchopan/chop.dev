@@ -1,6 +1,6 @@
 languageCode = 'en-us'
 theme = "terminal"
-baseURL = 'https://blog.chop.dev/'
+baseURL = 'https://chop.dev/'
 title = 'Welcome to my Blog :: Chop Tr'
 googleAnalytics = 'G-XVVD1P3SQ0'
 enableRobotsTXT = true
@@ -60,7 +60,7 @@ enableRobotsTXT = true
   # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
   # do not include @
   creator = "choptr"
-  site = "https://blog.chop.dev"
+  site = "https://chop.dev"
 
 [languages]
   [languages.en]
@@ -79,7 +79,7 @@ enableRobotsTXT = true
     missingBackButtonLabel = "Back to home page"
 
     [languages.en.params.logo]
-      logoText = "Blog.chop.dev"
+      logoText = "chop.dev"
       logoHomeLink = "/"
 
     [languages.en.menu]

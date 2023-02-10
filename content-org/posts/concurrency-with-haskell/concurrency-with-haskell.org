@@ -2,7 +2,7 @@
 #+hugo_tags: haskell concurrency
 
 #+TITLE: Comparative Concurrency with Haskell
-#+AUTHOR: Chop Tr (blog.chop.dev)
+#+AUTHOR: Chop Tr (chop.dev)
 #+DATE: <2022-02-04 Fri>
 #+DESCRIPTION: A beautifully discussion about Haskell Concurrency written by Michael Snoyman, November 22, 2016.
 
@@ -10,7 +10,7 @@
 
 This is a blog post on [[https://www.fpcomplete.com/][FPComplete.com]] and I found it increadibly useful so I need to convert it to Emacs Org-mode to try out interactively
 
-[[https://github.com/trchopan/blog.chop.dev/blob/main/content-org/posts/concurrency-with-haskell.org][Org file]]
+[[https://github.com/trchopan/chop.dev/blob/main/content-org/posts/concurrency-with-haskell.org][Org file]]
 
 [[https://www.fpcomplete.com/blog/2016/11/comparative-concurrency-with-haskell/][Original]]
 

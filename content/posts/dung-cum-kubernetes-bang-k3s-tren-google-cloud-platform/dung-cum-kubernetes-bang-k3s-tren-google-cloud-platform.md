@@ -1,6 +1,6 @@
 +++
 title = "Dựng cụm Kubernetes bằng K3s trên Google Cloud Platform"
-author = ["Chop Tr (blog.chop.dev)"]
+author = ["Chop Tr (chop.dev)"]
 description = "Ở nhà có 2 cái máy Raspberry Pi không xài nên mình quyết định học lại Kubernetes để deploy một số workload hiện đang quản lý. Trước tiên là sử dụng các VM miễn phí trên GCP để thực hành. Đợt này là cơ hội tốt vì hiện đang có chương trình miễn phí cho các VM chạy arm64."
 date = 2023-01-07T00:00:00+07:00
 tags = ["kubernetes", "cicd", "argocd", "circleci"]
