@@ -8,13 +8,11 @@ draft = false
 cover = "/posts/rust--chuong-trinh-dat-lenh-tren-san-giao-dich-binance/rust--chuong-trinh-dat-lenh-tren-san-giao-dich-binance-0.jpg"
 +++
 
-# Rust: Chương trình đặt lệnh trên sàn giao dịch Binance
-
-## Video
+# Video
 
 [https://www.youtube.com/watch?v=gqHsMtzrKaY](https://www.youtube.com/watch?v%3DgqHsMtzrKaY)
 
-## Intro
+# Intro
 
 Hi. Xin chào các bạn. Chop trở lại với 1 video mới. Video lần này là về lập trình Rust.
 
@@ -49,9 +47,9 @@ Trong video này chúng ta sẽ demo được các tác vụ lập trình sau:
 - Xử lý cấu trúc thông tin trả về cũng như thông tin truyền lên API
 - Xử lý mã hoá các lệnh gọi sử dụng HMAC SHA256 (việc xử lý mã hoá này khá phổ biến, mình sẽ đề cập kỹ hơn khi đề cập đến nó trong phần tiếp theo khi đi qua document)
 
-## Preparations
+# Preparations
 
-### Document
+## Document
 
 Ok. Thì để chuẩn bị cho việc thi công code. Chúng ta sẽ phải nghiên cứu các tài liệu Document trước.
 
@@ -127,7 +125,7 @@ Trong này thì có nhiều trường bắt buộc hơn. Đầu tiên là symbol
 
 Ở đây thì mình demo kiểu order là MARKET thôi là gửi lệnh mua hoặc bán với giá hiện tại. Ngoài Market Order thì sẽ có nhiều loại nữa như Limit, Stop Loss, Take Profit, v.v Các bạn có thể tìm hiểu sâu hơn về các lệnh này và trading sau ha.
 
-### Test Account
+## Test Account
 
 Ok giờ thì chúng ta sẽ đi qua phần lấy API key và Secret key để bắt đầu code thử nghiệm việc thao tác với Binance API.
 
@@ -141,11 +139,11 @@ Trong này thì nó Authenticate với tài khoản Github nên các bạn bắt
 
 Sau khi kết nối tài Khoản Github và Binance Testnet thì các bạn có thể nhấn vào "Generate HMAC_SHA256 Key" để tạo một bộ key. Cho nó một cái mô tả ngắn xong nhấn "Generate" là xong. Giữ kỹ 2 cái keys này lại chúng ta sẽ dùng nó để giao tiếp với Binance API.
 
-## Code
+# Code
 
 Rồi chúng ta sẽ bắt đầu code thôi. Thì đầu tiên sẽ khởi tạo một project Rust mới mình gọi là binance-rs ha. Code trong này mình sẽ upload lên github các bạn có thể clone về để tự thử nghiệm. Link thì chắc sẽ thêm vào trong description sau.
 
-### Clap - CLI argument
+## Clap - CLI argument
 
 Thì để xử lý các tác vụ như đặt ra ở trên. Chúng ta sẽ thực hiện 1 cái CLI app là app ở dạng Command Line Interface để demo cách vận hành ha. Khi đã demo được cách vận hành thì việc phát triển thêm để trở thành 1 UI app hay một con bot tự động đặt lệnh là việc không khó. Thêm 1 cái layer lên trên cái Proof of Concept này thôi.
 
@@ -163,7 +161,7 @@ Chúng ta sẽ dùng feature derive để config clap ha.
 
 Có đường dẫn config file rồi thì chúng sẽ phải parse cái config file. Là đọc nội dung và xử lý nội dung thành một kiểu struct để sử dụng.
 
-### Config
+## Config
 
 Ở đây mình sẽ đọc ra các config cho chương trình trong một toml file. Thì để setup, Rust có một crate nữa tên là config luôn.
 
@@ -191,7 +189,7 @@ Ok thì với struct trên chúng ta sẽ dùng 1 cái file config như sau.
 
 Ok và quay lại main function. Chúng ta sẽ lắp nó vào bằng Args::parse() sau đó chúng ta sẽ có cái config_path. Rồi dùng config builder, add_source cho nó là cái config_path, xong build rồi try_deserialize() nó thành AppConfig ha.
 
-### Logging
+## Logging
 
 Ok tới đây thì chúng ta cần debug xem ở các thông tin truyền vào chương trình có nhận được chính xác không.
 
@@ -207,7 +205,7 @@ Ok và log ra thử config có đúng như mong muốn không.
 
 Ok mọi việc ổn.
 
-### Domain structs
+## Domain structs
 
 Giờ mình sẽ chuẩn bị các struct để handle các kiểu dữ liệu. Các struct này sẽ mình sẽ sắp xếp vào một cái module là domain ha.
 
@@ -251,7 +249,7 @@ Order side và order type mình sẽ đưa ra 2 cái enum riêng ha. Ở đây x
 
 Ok vậy là xong. Chúng ta có thể bắt đầu sử dụng các struct này để xử lý các tác vụ rồi.
 
-### Infrastructure Repository
+## Infrastructure Repository
 
 Chúng ta sẽ qua cái layer tiếp theo, bên trên layer domain. Là infrastructure
 
@@ -316,7 +314,7 @@ Nếu mọi việc ổn thì sẽ nhận về 1 cái account object và mình s�
 
 Cuối cùng là trả về result Ok wrap cái account lại thôi.
 
-### Connect repository with main
+## Connect repository with main
 
 Bây giờ thì chúng ta có thể nối repository BinanceRepo này với main.rs
 
@@ -340,7 +338,7 @@ Ok và chúng ta sẽ thử trường hợp API error để xem chương trình 
 
 Và thử chạy lại chương trình. Và như dự đoán khi request lỗi chúng ta sẽ nhận về message Error request cùng status và nội dung trong response trả về.
 
-### More implementation and refactor
+## More implementation and refactor
 
 Ok quay lại BinanceRepo thì chúng ta sẽ tiếp tục implement các request còn lại để xử lý các subdomain GetPrice GetOrders và MakeOrder.
 
@@ -388,7 +386,7 @@ Ok Chúng ta có thể chạy chương trình để thử các feature mới nà
 
 Rồi thử get all orders ha. Ok, ổn đây là các lệnh mà mình đã đặt với symbol BTCUSDT ha. Và thử với ETHUSDT chưa có lệnh nào thì chương trình sẽ trả về Empty orders.
 
-### Make market order
+## Make market order
 
 Ok tác vụ cuối cùng chúng ta sẽ xử lý đó là NewOrder - là tạo order mới ha.
 
@@ -432,7 +430,7 @@ Ok kiểm tra lại account thì chúng ta sẽ mất đi cục ETH đó và qua
 
 Số tiền USDT có trong tài khoản cũng thay đổi do giao dịch mua bán. Thì nếu giá lên trong lúc chúng ta Mua và bán thì lời giá xuống thì lỗ. Và ngược lại thôi.
 
-## Conclusion
+# Conclusion
 
 Ok, và vậy là mình đã demo được các tác vụ xử lý các thao tác trên sàn giao dịch Binance sử dụng API và lập trình sử dụng ngôn ngữ Rust.
 

@@ -8,13 +8,11 @@ draft = false
 cover = "/posts/rust--lap-trinh-api-webhook/rust--lap-trinh-api-webhook-2.jpg"
 +++
 
-# Rust: Lập trình API webhook
-
-## Video
+# Video
 
 [https://www.youtube.com/watch?v=25sW0Pel_xQ](https://www.youtube.com/watch?v%3D25sW0Pel_xQ)
 
-## Intro
+# Intro
 
 Hi. Xin chào các bạn. Chop trở lại với 1 video mới. Video lần này là về lập trình Rust.
 
@@ -26,7 +24,7 @@ Chắc không cần đi qua mấy cái so sánh vì có khá nhiều tài liệu
 
 Và cách Rust phát hiện ra lỗi cấu trúc trước cả khi compile chương trình và chỉ ra chính xác chỗ nào nhờ vào bộ rust-analyzer cực mạnh. Và Borrow Checker đảm bảo việc sử dụng memory an toàn và hiệu quả.
 
-## Mục đích video
+# Mục đích video
 
 Ok promote Rust một hồi vậy chắc đủ rồi, quay lại mục đích chính của Video thì lần này mình code live 1 chương trình Rust xài cá nhân thôi.
 
@@ -54,7 +52,7 @@ Thì qua video này chắc sẽ demo được các tác vụ sau:
 - Xây dựng Server để handle cái webhook call đó và xử lý dữ liệu data.
 - Thao tác với Telegram bot. Xử lý các API call để gửi message bằng bot.
 
-## Khảo sát nghiên cứu webhook dùng Postman
+# Khảo sát nghiên cứu webhook dùng Postman
 
 Thì bước đầu là xem xét cái Plex webhook đó ha. Với webhook nào cũng vậy đầu tiên là nghiên cứu cái data đính kèm với cái callback là gì. Và công cụ để mình nghiên cứu nhanh cho tác vụ này là Postman. 
 
@@ -84,7 +82,7 @@ Với app này thì nó sẽ đoán các kiểu dữ liệu dựa trên cục da
 
 Với các code được generate ra này thì lát nữa mình có thể copy vào code Rust thôi mà không cần gõ tay lại.
 
-## Dựng server để nhận callback dùng Axum
+# Dựng server để nhận callback dùng Axum
 
 Tiếp theo chúng ta sẽ bắt đầu code con server để nhận cái callback trên ha.
 
@@ -143,7 +141,7 @@ cargo run – –addr 127.0.0.1:5500 –chat-id 123 –bot-token abc
 
 là chúng ta sẽ bind con server ở cổng 5500 thay vì cổng 3000 như lúc nãy.
 
-## Telegram API
+# Telegram API
 
 Và tiếp theo thì chúng ta sẽ xử lý tiếp tới Telegram service. Ở đây mình cấu trúc cái app hơi hướng theo kiểu MVC chút. Xài service - model và controller ha, với thằng Controller thì mình sẽ gọi nó là Application.
 
@@ -227,7 +225,7 @@ Quay lại file main.rs thì chúng ta sẽ dùng function new để khởi tạ
 
 Thì để đính kèm service này với app của chúng ta thì sẽ dùng hàm with_state này và truyền vào object telegram_svc thôi. Vậy là xong, chút nữa chúng ta sẽ dùng cấu trúc Extractor của axum để trích xuất service này ra.
 
-## PlexWebhookEvent struct
+# PlexWebhookEvent struct
 
 Tiếp theo chúng ta sẽ xử lý về models. Setup module này cũng như setup service thôi, chúng ta sẽ tạo file mod.rs trong thư mục models rồi gắn nó vào lib.rs.
 
@@ -235,7 +233,7 @@ Ok thì để xử lý cục dữ liệu mà Plex gởi về chúng ta sẽ chu�
 
 Rồi tới đây thì chúng ta sẽ cần 1 crate nữa là serde. Lại dùng cargo add serde để thêm vào thôi, thêm feature là derive nữa ha. Và sẵn đây mình sẽ thêm crate serde_json luôn, sắp tới mình sẽ sử dụng để parse cái data của Plex ra.
 
-## Application layer - Handler
+# Application layer - Handler
 
 Ok và file này đã hoàn chỉnh. Chúng ta sẽ tiếp tục qua module applications là cái layer cuối cùng. Trong này nó sẽ là nơi nối với framework để xử lý request gửi đến con server này.
 
@@ -259,7 +257,7 @@ Ok vậy là xong Application Handler. Chúng ta nối nó vào main app là xon
 
 Để route cho endpoint này là /plex và kiểu request là post rồi truyền vào cái handler vừa mới tạo plex_webhook.
 
-## Serve and test with ngrok
+# Serve and test with ngrok
 
 Ok vậy là xong, chúng ta có thể chạy cargo run để serve cái server để có cái endpoint cho Plex gởi webhook callback vào.
 
@@ -283,7 +281,7 @@ Sau đó thử lên Plex nhấn play 1 phim bất kì. Nếu mọi việc đều
 
 Ok rồi message đã được gởi về Telegam thành công với nội dung title phim và nội dung phim nè.
 
-## Conclusion
+# Conclusion
 
 Ngon lành, vậy là chúng ta đã code thành công 1 cái server endpoint để xử lý Webhook của Plex sử dụng Rust Framework Axum.
 

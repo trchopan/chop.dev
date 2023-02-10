@@ -12,7 +12,7 @@ cover = "/posts/dung-cum-kubernetes-bang-k3s-tren-google-cloud-platform/dung-cum
 
 [https://www.youtube.com/watch?v=x5AsksInSHc](https://www.youtube.com/watch?v%3Dx5AsksInSHc)
 
-# Script
+# Intro
 
 Xin chào các bạn. Chop quay lại với video mới. Video lần này là về DevOps. Một mảng khá hay trong career path của mình. Mình thì đụng DevOps cũng không nhiều lắm vì nghề chính là làm là lập trình viên, là coder thôi.
 
@@ -24,7 +24,7 @@ Trước thì mình cũng có làm việc với Kubernetes một thời gian, c�
 
 Anyway, thì hôm nay áp dụng các kiến thức của 3 năm trước vào setup dựng lên hệ thống Kubernetes xem còn smooth như trước không ha.
 
-## Introduction to Kubernetes
+# Introduction to Kubernetes
 
 Ok thì Kubernetes là gì?
 
@@ -75,7 +75,7 @@ Như các bạn có thể hình dung, là tới một lúc nào đó thì scalin
 
 Và nếu là 1 kỹ sư fullstack thì mảng kiến thức này cũng là công cụ không thể thiếu trong gói đồ nghề.
 
-## K3s distribution
+# K3s distribution
 
 Ok thì bây giờ mình sẽ thực hiện việc setup lên 1 cụm Kubernetes ha.
 
@@ -95,7 +95,7 @@ Tài liệu cho K3s thì ở link này [https://docs.k3s.io/architecture](https:
 
 Architecture có 2 kiểu:
 
-### 1/ Là kiểu HA - là High Availability
+## 1/ Là kiểu HA - là High Availability
 
 ### 
 
@@ -109,7 +109,7 @@ Ok, và để nói chuyện với Server thì chúng ta sử dụng phần mềm
 
 Các giao tiếp bên ngoài, được ký hiệu ở đây là External Traffic, cũng sẽ thông qua 1 cái Load Balancer để giao tiếp với các con Agents.
 
-### 2/ Là kiểu Single server setup
+## 2/ Là kiểu Single server setup
 
 
 
@@ -505,7 +505,7 @@ Và đây là kết quả. Cũng OK serve được khoản <n> requests/sec. Là
 
 Cái này là đang benchmark trên 1 cái endpoint, 1 con agent thôi. Để improve thêm thì chúng ta làm 1 cái Load Balancer bên trên nữa để Load Balance giữa các con Agent với nhau sẽ cải thiện thêm tốc độ Requests/sec đó. Mà đó là một excercise thêm ha, trong video này sẽ không demo. Gợi ý là có thể sử dụng Nginx, traefik.io, hay Caddy.
 
-## Conclusion
+# Conclusion
 
 Ok, và thế là chúng ta có 1 cụm kubernetes để xài, để vọc, để học. Quá đã luôn.
 

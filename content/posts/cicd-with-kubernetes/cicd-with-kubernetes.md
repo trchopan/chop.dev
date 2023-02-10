@@ -8,13 +8,11 @@ draft = false
 cover = "/posts/cicd-with-kubernetes/cicd-with-kubernetes-2.jpg"
 +++
 
-# CICD with Kubernetes
-
-## Video
+# Video
 
 [https://www.youtube.com/watch?v=82I7Z367CNw](https://www.youtube.com/watch?v%3D82I7Z367CNw)
 
-## Intro
+# Intro
 
 Hi. Xin chào. Chop trở lại với video về DevOps. Thì video lần này là tiếp theo video trước mình setup 1 cái cụm kubernetes bằng k3s - link này ha.
 
