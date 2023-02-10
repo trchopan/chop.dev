@@ -1,0 +1,13 @@
+
+released: []
+
+drafts:
+  - title: "Rust: Lập trình API webhook"
+    link: https://docs.google.com/document/d/e/2PACX-1vSkBR_aWbWZNGiRiYdx6nWXmjvuGOqddWLVYIk3HwyOdHSQ-TFSkevOQs8yAbmxZZYdTsXniYIEifcV/pub
+  - title: "Rust: Chương trình đặt lệnh trên sàn giao dịch Binance"
+    link: https://docs.google.com/document/d/e/2PACX-1vRiFPXXjXZLB3p5n31VtIr8yAGV8GpfZpc6qcKqT0PsNXXYDNsO84gQDOigE41HJpH_k6fPErOnswbz/pub
+  - title: Dựng cụm Kubernetes bằng K3s trên Google Cloud Platform
+    link: https://docs.google.com/document/d/e/2PACX-1vT3Fzhte3BSjKv_RO6P8VA8rm9NedrDEZSeEdI81rWgpGT-RIqCFJmN93XrQy4yIFhZCXN1R2G2GqEd/pub
+  - title: CICD with Kubernetes
+    link: https://docs.google.com/document/d/e/2PACX-1vQX6ekVKAITa2PUkzy2fHSwmaqBVVOLNju5MboEuJUUc77lv_P1xCthNnQZiVjoauWfTROa0-h_N8qb/pub
+
