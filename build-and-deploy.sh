@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-hugo && sh preprocess-img.sh && firebase deploy
+rm -rf public && \
+hugo --minify && \
+deno run --allow-read --allow-run --allow-write preprocess-img.ts && \
+firebase deploy
+

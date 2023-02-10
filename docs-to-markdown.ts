@@ -1,3 +1,5 @@
+// deno run --allow-read --allow-net --allow-run --allow-write docs-to-markdown.ts
+
 import * as Colors from 'https://deno.land/std@0.177.0/fmt/colors.ts'
 import yaml from 'https://cdn.skypack.dev/yaml@v2.2.1'
 import {normalize} from 'https://cdn.jsdelivr.net/gh/motss/deno_mod@v0.10.0/normalize_diacritics/mod.ts'
