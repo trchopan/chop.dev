@@ -1,6 +1,6 @@
 #/bin/bash
 
-cd public/ox-hugo
+cd public
 
 for i in $(find . -type f -regex ".*[jpg,png]" -not -regex ".*tmp.*");
 do 
