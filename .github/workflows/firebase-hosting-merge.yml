@@ -21,6 +21,12 @@ jobs:
       - name: Build
         run: hugo --minify
 
+      - name: Install vips
+        run: sudo apt install libvips libvips-tools
+
+      - name: Process images
+        run: sh ./process-img.sh
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
