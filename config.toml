@@ -1,6 +1,6 @@
 languageCode = 'en-us'
 theme = "terminal"
-baseURL = 'https://chop.dev/'
+baseURL = 'https://chop.dev'
 title = 'Welcome to my Blog :: Chop Tr'
 googleAnalytics = 'G-XVVD1P3SQ0'
 enableRobotsTXT = true
