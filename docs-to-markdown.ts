@@ -59,7 +59,7 @@ for (const a of posts.drafts) {
 
     // Download images from googleusercontent
     const googleImages: string[] = [
-        ...(outStr.match(new RegExp(/https.*?googleusercontent.com\/[\w_-]*/g)) || []),
+        ...(outStr.match(new RegExp(/https.*?googleusercontent.com\/[\/\.?=&\w_-]*/g)) || []),
         ...(outStr.match(new RegExp(/https.*?ytimg.com\/[\/\.?=&\w_-]*/g)) || []),
     ]
     const downloads = Object.entries(googleImages).map(([index, link]) => ({

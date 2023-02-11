@@ -5,12 +5,12 @@ description = "Tiếp theo thực hành dựng cụm Kubernetes thì chạy các
 date = 2023-01-20T00:00:00+07:00
 tags = ["kubernetes", "cicd", "argocd", "circleci"]
 draft = false
-cover = "/posts/cicd-with-kubernetes/cicd-with-kubernetes-2.jpg"
+cover = "/posts/cicd-with-kubernetes/cicd-with-kubernetes-0.jpg"
 +++
 
 # Video
 
-[https://www.youtube.com/watch?v=82I7Z367CNw](https://www.youtube.com/watch?v%3D82I7Z367CNw)
+[https://www.youtube.com/watch?v=82I7Z367CNw](https://www.youtube.com/watch?v=82I7Z367CNw)
 
 # Intro
 
@@ -26,7 +26,7 @@ Còn Triển khai liên tục - CD - là việc đưa các chương trình đã 
 
 Để hình dung rõ hơn quá trình này thì các bạn có thể liên tưởng tới một công ty ha. Để vận hành 1 công ty thì các bạn phải thực hiện việc lên kế hoạch nghiên cứu và phát triển thực hiện các Nghiệp vụ của công ty.
 
-Lập trình cũng vậy và nó y hệt sơ đồ này thôi sẽ có các bước:![](/posts/cicd-with-kubernetes/cicd-with-kubernetes-0.jpg)
+Lập trình cũng vậy và nó y hệt sơ đồ này thôi sẽ có các bước:![](/posts/cicd-with-kubernetes/cicd-with-kubernetes-1.jpg)
 
 - Plan: Là đưa ra các yêu cầu kỹ thuật, các requirement về chương trình sắp phải làm. Một số nơi còn gọi là specification. Các yêu cầu này sẽ đến từ các bộ phận lên kế hoạch như Project Planner hoặc công ty nhỏ thì có thể đến trực tiếp từ Ban giám đốc luôn.
 - Code: Là bước thực thi hay thi công. Các đoạn code các chương trình được tạo ra để thoả mãn các yêu cầu trong cái Requirement của Plan kia.
@@ -60,7 +60,7 @@ ArgoCD là được xây dựng cho Kubernetes thôi và theo thiết kế là �
 
 Tổng thể dây chuyển CICD của mình sẽ theo sơ đồ sau:
 
-![](/posts/cicd-with-kubernetes/cicd-with-kubernetes-1.jpg)
+![](/posts/cicd-with-kubernetes/cicd-with-kubernetes-2.jpg)
 
 Business Code của mình sẽ được host trên Github repository.
 

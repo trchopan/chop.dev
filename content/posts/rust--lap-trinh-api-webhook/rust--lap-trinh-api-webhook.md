@@ -5,12 +5,12 @@ description = "Rust là ngôn ngữ yêu thích của mình. Vừa rồi thì c�
 date = 2023-02-01T00:00:00+07:00
 tags = ["rust", "axum", "framework", "api", "programming"]
 draft = false
-cover = "/posts/rust--lap-trinh-api-webhook/rust--lap-trinh-api-webhook-2.jpg"
+cover = "/posts/rust--lap-trinh-api-webhook/rust--lap-trinh-api-webhook-0.jpg"
 +++
 
 # Video
 
-[https://www.youtube.com/watch?v=25sW0Pel_xQ](https://www.youtube.com/watch?v%3D25sW0Pel_xQ)
+[https://www.youtube.com/watch?v=25sW0Pel_xQ](https://www.youtube.com/watch?v=25sW0Pel_xQ)
 
 # Intro
 
@@ -30,7 +30,7 @@ Ok promote Rust một hồi vậy chắc đủ rồi, quay lại mục đích ch
 
 Sự là nhà có cái server media xài Plex để stream video. Với con server này thì đi đâu mình cũng có kho phim kế bên mà không cần bị bó buộc bởi các dịch vụ Streaming như Netflix hay Apple. Sau khi bị tụi nó thu tiền 5 7 USD / tháng đau quá mà không có mấy cái phim mình ưa thích. Thì mình quyết định xắn tay áo lên tự xử con server này luôn, chạy trên con Raspberry Pi ở nhà tốn điện chút nhưng chắc không quá 10k / tháng.
 
-![](/posts/rust--lap-trinh-api-webhook/rust--lap-trinh-api-webhook-0.jpg)
+![](/posts/rust--lap-trinh-api-webhook/rust--lap-trinh-api-webhook-1.jpg)
 
 [https://www.rapidtables.com/calc/electric/electricity-calculator.html](https://www.rapidtables.com/calc/electric/electricity-calculator.html)
 
@@ -149,7 +149,7 @@ Ok, thì quay lại cái Telegram Service là để xử lý các tác vụ liê
 
 Với Telegram API thì các bạn có thể tham khảo link sau.
 
-[https://core.telegram.org/bots/api#sendmessage](https://core.telegram.org/bots/api%23sendmessage)
+[https://core.telegram.org/bots/api#sendmessage](https://core.telegram.org/bots/api#sendmessage)
 
 Mình chỉ sử dụng 2 API cho demo này là getUpdates và sendmessage.
 
@@ -165,7 +165,7 @@ Xong đặt 1 cái id cho nó ví dụ là demo_plex_bot.
 
 Ok vậy là xong, bác BotFather đã tạo cho chúng ta 1 con bot và cho 1 cái token để dùng với TelegramAPI.
 
-![](/posts/rust--lap-trinh-api-webhook/rust--lap-trinh-api-webhook-1.jpg)
+![](/posts/rust--lap-trinh-api-webhook/rust--lap-trinh-api-webhook-2.jpg)
 
 Rồi lưu ý cái token này ha. Chúng ta sẽ sử dụng nó làm token để thao tác với TelegamAPI
 

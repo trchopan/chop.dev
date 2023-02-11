@@ -5,12 +5,12 @@ description = "Ở nhà có 2 cái máy Raspberry Pi không xài nên mình quy�
 date = 2023-01-07T00:00:00+07:00
 tags = ["kubernetes", "cicd", "argocd", "circleci"]
 draft = false
-cover = "/posts/dung-cum-kubernetes-bang-k3s-tren-google-cloud-platform/dung-cum-kubernetes-bang-k3s-tren-google-cloud-platform-2.jpg"
+cover = "/posts/dung-cum-kubernetes-bang-k3s-tren-google-cloud-platform/dung-cum-kubernetes-bang-k3s-tren-google-cloud-platform-0.jpg"
 +++
 
 # Video
 
-[https://www.youtube.com/watch?v=x5AsksInSHc](https://www.youtube.com/watch?v%3Dx5AsksInSHc)
+[https://www.youtube.com/watch?v=x5AsksInSHc](https://www.youtube.com/watch?v=x5AsksInSHc)
 
 # Intro
 
@@ -113,7 +113,7 @@ Các giao tiếp bên ngoài, được ký hiệu ở đây là External Traffic
 
 
 
-![](/posts/dung-cum-kubernetes-bang-k3s-tren-google-cloud-platform/dung-cum-kubernetes-bang-k3s-tren-google-cloud-platform-0.jpg)
+![](/posts/dung-cum-kubernetes-bang-k3s-tren-google-cloud-platform/dung-cum-kubernetes-bang-k3s-tren-google-cloud-platform-1.jpg)
 
 Kiểu này thì không HA nhưng mà phù hợp với 1 cụm Kubernetes nhỏ để học và không phức tạp quá để setup.
 
@@ -127,13 +127,13 @@ Ok để bắt đầu thì chúng ta cần 4 con VM. Và chúng ta sẽ sử d�
 
 Các bạn có thể tham khảo thêm tại đây:
 
-[https://cloud.google.com/compute/docs/general-purpose-machines#t2a_machines](https://cloud.google.com/compute/docs/general-purpose-machines%23t2a_machines)
+[https://cloud.google.com/compute/docs/general-purpose-machines#t2a_machines](https://cloud.google.com/compute/docs/general-purpose-machines#t2a_machines)
 
 Lưu ý là chương trình miễn phí này chỉ có hiệu lực tới tháng 4 2023, nên nếu các bạn làm theo sau tháng 4 thì chắc sẽ bị tính phí. Hoặc các bạn có thể sử dụng các Cloud khác ha. Thao tác cũng tương tự thôi, sẽ không khác nhau mấy. Kể cả làm trên Raspberry Pi cũng đc ha. Sau khi thử nghiệm tutorial này ổn với khi mà cái promotion của GCP hết hiệu lực mình sẽ dời tất cả infra này về Raspberry Pi thôi.
 
 Việc tạo VM thì các bạn đầu tiên là tạo Project trên GCP xong vào cái tab [Compute Engine] này.
 
-![](/posts/dung-cum-kubernetes-bang-k3s-tren-google-cloud-platform/dung-cum-kubernetes-bang-k3s-tren-google-cloud-platform-1.jpg)
+![](/posts/dung-cum-kubernetes-bang-k3s-tren-google-cloud-platform/dung-cum-kubernetes-bang-k3s-tren-google-cloud-platform-2.jpg)
 
 
 

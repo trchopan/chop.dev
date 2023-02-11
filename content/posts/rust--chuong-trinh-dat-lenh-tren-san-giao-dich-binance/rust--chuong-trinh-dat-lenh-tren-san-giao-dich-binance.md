@@ -10,7 +10,7 @@ cover = "/posts/rust--chuong-trinh-dat-lenh-tren-san-giao-dich-binance/rust--chu
 
 # Video
 
-[https://www.youtube.com/watch?v=gqHsMtzrKaY](https://www.youtube.com/watch?v%3DgqHsMtzrKaY)
+[https://www.youtube.com/watch?v=gqHsMtzrKaY](https://www.youtube.com/watch?v=gqHsMtzrKaY)
 
 # Intro
 
