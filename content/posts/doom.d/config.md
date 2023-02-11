@@ -35,6 +35,11 @@ images = "/ox-hugo/demo-doom_20220131_154814.png"
 
 {{< figure src="/ox-hugo/demo-doom_20220131_154814.png" width="600" >}}
 
+## Intro
+
+Inspired by Haruki Murakami's "What I Talk About When I Talk About Running". Well I was reading this book when writing this.
+
+and many of the `Emacs` configs out there. Here are my personal journal of how I setup my Emacs environment for writing and coding.
 
 ## Init.el {#init-dot-el}
 

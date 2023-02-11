@@ -11,8 +11,8 @@ h1 {
   font-size: 1.5rem !important;
 }
 h2 {
-  color: var(--accent);
-  font-size: 1.4rem !important;
+  color: #ff8631;
+  font-size: 1.3rem !important;
 }
 h3 {
   color: var(--secondary);
@@ -107,4 +107,10 @@ figcaption {
   right: 0;
   width: 100% !important;
   height: 100% !important;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
 }

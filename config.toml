@@ -84,9 +84,9 @@ enableRobotsTXT = true
 
     [languages.en.menu]
       [[languages.en.menu.main]]
-        identifier = "today-i-learned"
-        name = "Today I Learned"
-        url = "/posts/today-i-learned"
+        identifier = "porfolio"
+        name = "Projects"
+        url = "/porfolio/porfolio"
       [[languages.en.menu.main]]
         identifier = "doom-config"
         name = "Doom Emacs config"
