@@ -2,6 +2,10 @@
   --secondary: #eaf388;
 }
 
+body {
+  font-family: 'Play', sans-serif;
+}
+
 h1 {
   color: var(--accent);
   font-size: 1.5rem !important;
