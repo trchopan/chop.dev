@@ -73,8 +73,11 @@ for (const a of posts.drafts) {
         outStr = outStr.replaceAll(image.link, image.articleReplace)
     }
 
-    // Cleanup double quote
-    outStr = outStr.replaceAll('”', '"').replaceAll('“', '"').replaceAll(' ', ' ')
+    outStr = outStr
+        // Cleanup the unexpected characters from Docs
+        .replaceAll('”', '"')
+        .replaceAll('“', '"')
+        .replaceAll(' ', ' ') // These are actually 2 diferent character for space
 
     await Deno.writeTextFile(`./content/posts/${title}/${title}.md`, outStr)
 }
