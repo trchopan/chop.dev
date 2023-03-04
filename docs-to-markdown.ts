@@ -58,11 +58,12 @@ for (const a of posts.drafts) {
     await Deno.mkdir(postPath, {recursive: true})
 
     // Download images from googleusercontent
-    const googleImages: string[] = [
+    const downloadImages: string[] = [
         ...(outStr.match(new RegExp(/https.*?googleusercontent.com\/[\/\.?=&\w_-]*/g)) || []),
         ...(outStr.match(new RegExp(/https.*?ytimg.com\/[\/\.?=&\w_-]*/g)) || []),
+        ...(outStr.match(new RegExp(/https.*?ibb.co\/[\/\.?=&\w_-]*/g)) || []),
     ]
-    const downloads = Object.entries(googleImages).map(([index, link]) => ({
+    const downloads = Object.entries(downloadImages).map(([index, link]) => ({
         link,
         path: `${postPath}/${title}-${index}.jpg`,
         articleReplace: `/posts/${title}/${title}-${index}.jpg`,
@@ -73,7 +74,7 @@ for (const a of posts.drafts) {
     }
 
     // Cleanup double quote
-    outStr = outStr.replaceAll('”', '"').replaceAll('“', '"')
+    outStr = outStr.replaceAll('”', '"').replaceAll('“', '"').replaceAll(' ', ' ')
 
     await Deno.writeTextFile(`./content/posts/${title}/${title}.md`, outStr)
 }
