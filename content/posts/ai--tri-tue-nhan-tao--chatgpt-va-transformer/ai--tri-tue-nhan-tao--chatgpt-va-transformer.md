@@ -2,7 +2,7 @@
 title = "AI: Trí tuệ nhân tạo, ChatGPT và Transformer"
 author = ["Chop Tr (chop.dev)"]
 description = "AI là một lĩnh vực mà mình cũng mới bắt đầu nghiên cứu đào sâu cho công việc hiện tại thôi. Mới tìm hiểu qua nó trong tháng vừa rồi thì thấy có nhiều điều thú vị trong việc tích hợp nó vào các hệ thống mà mình đang làm."
-date = 2023-04-07T00:00:00+07:00
+date = 2023-04-23T00:00:00+07:00
 tags = ["ai", "openai", "tutorial", "chatgpt", "text", "generation", "chatbot", "intelligent", "document"]
 draft = false
 cover = "/posts/ai--tri-tue-nhan-tao--chatgpt-va-transformer/ai--tri-tue-nhan-tao--chatgpt-va-transformer-7.jpg"
