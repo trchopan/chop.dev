@@ -3,23 +3,19 @@ title = "Projects"
 author = ["Chop Tr (chop.dev)"]
 description = "These are the projects I worked on over the years as a software engineer. I was mainly lead in coding as well as system design. Some of the projects I am still actively maintaining."
 date = 2023-01-01T00:00:00+07:00
-tags = ["porfolio", "projects", "showcase"]
+tags = ["projects", "showcase"]
 draft = false
 +++
 
-[https://porfolio.chop.dev/](https://porfolio.chop.dev/)
+If you like 3D things, visit here for my fancy projects site written with threejs 😝!
 
-Visit here for my fancy threejs site, I'm just a novice with threejs 😝.
-
-WARNING: It takes sometime to load.
-
-Otherwise here are projects I worked on over the years as a software engineer.
+[https://projects.chop.dev/](https://projects.chop.dev/)
 
 # Cardano Globe
 
 <div style="text-align: center">
 <video loop autoplay muted>
-  <source src="/porfolio/cardano-globe.mp4" type="video/mp4">
+  <source src="/projects/cardano-globe.mp4" type="video/mp4">
 </video>
 </div>
 
@@ -54,7 +50,7 @@ The live block production is taken from pool
 
 <div style="text-align: center">
 <video loop autoplay muted>
-  <source src="/porfolio/near-line-connect.mp4" type="video/mp4">
+  <source src="/projects/near-line-connect.mp4" type="video/mp4">
 </video>
 </div>
 
@@ -89,7 +85,7 @@ We prove a concept of connecting Line members with Near blockchain and allow the
 
 <div style="text-align: center">
 <video loop autoplay muted>
-  <source src="/porfolio/mini-view-trader.mp4" type="video/mp4">
+  <source src="/projects/mini-view-trader.mp4" type="video/mp4">
 </video>
 </div>
 
@@ -121,7 +117,7 @@ The bot using Firebase Cloud Function to run scheduled jobs to check and sync th
 
 <div style="text-align: center">
 <video loop autoplay muted>
-  <source src="/porfolio/cardano-commands.mp4" type="video/mp4">
+  <source src="/projects/cardano-commands.mp4" type="video/mp4">
 </video>
 </div>
 
@@ -153,7 +149,7 @@ During my setups, the part where I need to manage the keys was the most confusin
 
 <div style="text-align: center">
 <video loop autoplay muted>
-  <source src="/porfolio/scheduled-blocks.mp4" type="video/mp4">
+  <source src="/projects/scheduled-blocks.mp4" type="video/mp4">
 </video>
 </div>
 
@@ -184,7 +180,7 @@ This is a rewritten in Haskell of the ScheduledBlocks in Python.
 
 <div style="text-align: center">
 <video loop autoplay muted>
-  <source src="/porfolio/web-scalpel.mp4" type="video/mp4">
+  <source src="/projects/web-scalpel.mp4" type="video/mp4">
 </video>
 </div>
 
@@ -215,7 +211,7 @@ The data is present as a grid view so I can checkout the best prices for each pr
 
 <div style="text-align: center">
 <video loop autoplay muted>
-  <source src="/porfolio/chess-bevy.mp4" type="video/mp4">
+  <source src="/projects/chess-bevy.mp4" type="video/mp4">
 </video>
 </div>
 
@@ -242,7 +238,7 @@ I made this Chess game using Bevy Engine in Rust to try out my skill.
 
 <div style="text-align: center">
 <video loop autoplay muted>
-  <source src="/porfolio/firebase-auth.mp4" type="video/mp4">
+  <source src="/projects/firebase-auth.mp4" type="video/mp4">
 </video>
 </div>
 
