@@ -1,6 +1,6 @@
-import * as Colors from 'https://deno.land/std@0.177.0/fmt/colors.ts'
-import * as path from 'https://deno.land/std@0.97.0/path/mod.ts'
-import _ from 'https://cdn.skypack.dev/lodash@v4.17.15'
+import * as Colors from 'https://deno.land/std@0.177.0/fmt/colors.ts';
+import * as path from 'https://deno.land/std@0.97.0/path/mod.ts';
+import _ from 'https://cdn.skypack.dev/lodash@v4.17.15';
 
 // # #/bin/bash
 // #
@@ -15,40 +15,43 @@ import _ from 'https://cdn.skypack.dev/lodash@v4.17.15'
 // # done;
 
 async function getNames(currentPath: string) {
-    const names: string[] = []
+    const names: string[] = [];
 
     for await (const dirEntry of Deno.readDir(currentPath)) {
-        const entryPath = `${currentPath}/${dirEntry.name}`
-        names.push(entryPath)
+        const entryPath = `${currentPath}/${dirEntry.name}`;
+        names.push(entryPath);
 
         if (dirEntry.isDirectory) {
-            names.push(await getNames(entryPath))
+            names.push(await getNames(entryPath));
         }
     }
 
-    return names
+    return names;
 }
 
+/**
+ * Convert the file to jpg by vipsthumbnail with quality reduced Q=75
+ */
 const process = async (path: string) => {
     const process = await Deno.run({
         cmd: ['vipsthumbnail', '-s', '1024x>', '-o', '%s_tmp.jpg[Q=75]', path],
         stdout: 'piped',
         stderr: 'piped',
-    })
-    const errStr = new TextDecoder().decode(await process.stderrOutput())
-    process.close()
+    });
+    const errStr = new TextDecoder().decode(await process.stderrOutput());
+    process.close();
     if (errStr) {
-        console.log('Error processing image', path)
-        console.log(errStr)
+        console.log('Error processing image', path);
+        console.log(errStr);
     }
-}
+};
 
-const filepaths = await getNames('public/ox-hugo')
-const orgFiles = filepaths.filter(x => !x.includes('_tmp'))
+const filepaths = await getNames('public/ox-hugo');
+const orgFiles = filepaths.filter(x => !x.includes('_tmp'));
 
-const queue = orgFiles.map(x => process(x))
+const queue = orgFiles.map(x => process(x));
 for (const chunk of _.chunk(queue, 10)) {
-    await Promise.all(chunk)
+    await Promise.all(chunk);
 }
 
 const replaceList: {convertedPath: string; originPath: string}[] = await Promise.all(
@@ -57,35 +60,35 @@ const replaceList: {convertedPath: string; originPath: string}[] = await Promise
             base: origin.name + '_tmp' + '.jpg',
             ext: '.jpg',
             name: origin.name + '_tmp',
-        })
+        });
 
-        const originPath = path.format(origin)
-        const originStat = await Deno.stat(originPath)
-        const convertedPath = path.format(converted)
-        const convertedStat = await Deno.stat(convertedPath)
+        const originPath = path.format(origin);
+        const originStat = await Deno.stat(originPath);
+        const convertedPath = path.format(converted);
+        const convertedStat = await Deno.stat(convertedPath);
 
-        console.log(Colors.blue('Origin'), originPath)
-        console.log(Colors.red('Converted'), convertedPath)
+        console.log(Colors.blue('Origin'), originPath);
+        console.log(Colors.red('Converted'), convertedPath);
         console.log(
             Colors.green('Size'),
             convertedStat.size,
             originStat.size,
             Colors.green('Change'),
             convertedStat.size / originStat.size
-        )
+        );
 
-        console.log('---')
+        console.log('---');
 
         return {
             convertedPath,
             originPath,
-        }
+        };
     })
-)
+);
 
 await Promise.all(
     replaceList.map(async ({convertedPath, originPath}) => {
-        await Deno.copyFile(convertedPath, originPath)
-        await Deno.remove(convertedPath)
+        await Deno.copyFile(convertedPath, originPath);
+        await Deno.remove(convertedPath);
     })
-)
+);
