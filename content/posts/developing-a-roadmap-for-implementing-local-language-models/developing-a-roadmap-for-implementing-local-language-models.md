@@ -5,7 +5,7 @@ description = "As the potential of AI becomes increasingly recognized, there is 
 date = 2023-07-29T00:00:00+07:00
 tags = ["AI technology", "Large Language Models", "System development process", "Implementation roadmap", "Organizations", "AI utilization", "System effectiveness", "Considerations", "Roadmap development", "On Premise"]
 draft = false
-cover = "/posts/developing-a-roadmap-for-implementing-local-language-models/developing-a-roadmap-for-implementing-local-language-models-2.jpg"
+cover = "/posts/developing-a-roadmap-for-implementing-local-language-models/developing-a-roadmap-for-implementing-local-language-models-3.jpg"
 +++
 
 
@@ -36,13 +36,9 @@ Firstly, it offers more control and privacy over the data and models used. By ho
 
 Secondly, running Local LLMs can improve the speed and efficiency of AI applications. By eliminating the need to send data to external servers for processing, organizations can reduce latency. This is crucial for applications that require quick responses, such as customer support chatbots or recommendation systems.
 
-However, there are several obstacles that need to be overcome in order to develop a system for running Local LLMs. One of the main challenges is the computational resources required to train and host these models. LLMs with billions or trillions of parameters require significant computing power and storage capacity. organizations would need to invest in high-performance hardware or cloud infrastructure to support such models.
-
-Another challenge is the expertise and knowledge required to deploy and maintain Local LLMs. Training and fine-tuning these models can be a complex task that requires expertise in machine learning and natural language processing. Additionally, organizations would need to have a team of data scientists and engineers who can continuously update and optimize the models to ensure their performance.
-
 The document aims to explore the process of running Local LLMs (Local Language Model) on private hardware. To accomplish this, the objective is divided into several steps that can be completed within a few months. Each step is accompanied by potential obstacles that should be addressed and assessed before moving on to the next step.
 
-By breaking down the objective into manageable steps, the document provides a structured approach to implementing Local LLMs on private hardware. This approach allows for a systematic evaluation of potential challenges and ensures that they are resolved before progressing further. Ultimately, this method aims to facilitate the successful implementation of Local LLMs on private hardware within a reasonable timeframe.
+By breaking down the goal into manageable steps, the document provides a structured approach to implementing Local LLMs on private hardware. This approach allows for a systematic evaluation of potential challenges and ensures that they are resolved before progressing further. Ultimately, this method aims to facilitate the successful implementation of Local LLMs on private hardware within a reasonable timeframe.
 
 # The plan
 
@@ -62,8 +58,8 @@ There are 2 options:
 
 |Machine|Cost|
 |-|-|
-|PC i9 13900K | 32GB RAM | VGA RTX 4060 8GB | SSD 512GB NVMe|$1,428|
-|PC i7 13700K | 32GB RAM | VGA RTX 3060 12GB | SSD 512GB|$1,105|
+|PC i9 13900K / 32GB RAM / VGA RTX 4060 8GB / SSD 512GB NVMe|$1,428|
+|PC i7 13700K / 32GB RAM / VGA RTX 3060 12GB / SSD 512GB|$1,105|
 
 
 
@@ -92,7 +88,7 @@ Cons:
 
 Pros:
 
-- Lower cost, pay per use
+- Lower recurrent cost, pay per use
 - Not require much setup in term of hardware
 
 Cons:
@@ -103,7 +99,9 @@ Cons:
 
 Budget to use Cloud Provided GPU to save starting cost. Develop a working environment that is resilient, can be easily set up and torn down multiple times.
 
-Then we can move the setup into `on-premises`.
+Then we can move the setup into `On-premise`.
+
+![](/posts/developing-a-roadmap-for-implementing-local-language-models/developing-a-roadmap-for-implementing-local-language-models-1.jpg)
 
 ### Objective
 
@@ -143,11 +141,17 @@ It needs to perform tasks such as:
 - Formatted output (JSON, Python REPL, etc.)
 - Code Generation
 
+
+
 At this step, we also interest in the strength and weakness of each models for a given domain like:
 
 - Multiple languages
 - General knowledge like Math, Science, Law, etc.
 - Logical thinking and Reasoning
+
+
+
+To streamline the automation process and effectively utilize multiple Language Models (LLMs), we will implement MLOps practices.
 
 ## 3- Build application
 
@@ -157,7 +161,7 @@ Once the requirements are gathered, the next step is to design and program a wor
 
 Lastly, the modules need to be interconnected to create a cohesive process that enhances the users' work and aids them in achieving their final goals. The application should serve as a valuable tool that streamlines their tasks and facilitates their overall productivity.
 
-![](/posts/developing-a-roadmap-for-implementing-local-language-models/developing-a-roadmap-for-implementing-local-language-models-1.jpg)
+![](/posts/developing-a-roadmap-for-implementing-local-language-models/developing-a-roadmap-for-implementing-local-language-models-2.jpg)
 
 ### Objective
 
