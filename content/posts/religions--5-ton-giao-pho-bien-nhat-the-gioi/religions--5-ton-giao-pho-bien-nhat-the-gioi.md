@@ -22,7 +22,9 @@ Thì thực ra lập trình viên căn bản là nghề xây dựng, tạo nên 
 
 Việc học hỏi nhiều hệ thống khác nhau là một sở thích cá nhân của mình. Từ hệ thống vận hành công ty đến hệ thống tổ chức của một quốc gia. Tất cả đều góp phần vào sự nghiệp lập trình viên của mình.
 
-Video này mình tập hợp lại kiến thức về tôn giáo và các hệ thống tín ngưỡng như một tài liệu cho bản thân và qua đó chia sẻ hiểu biết của mình.
+Tôn giáo là một hệ thống khá hay và thú vị. Bên cạnh hệ thống khoa học công nghệ, chính trị. Nó là một phần không thể thiếu của sự hình thành lên cộng đồng loài người.
+
+Video này mình tập hợp lại kiến thức về tôn giáo và các hệ thống tín ngưỡng như một tài liệu cho bản thân và qua đó chia sẻ kiến thức.
 
 Video này lấy nguồn từ 1 video trên kênh TED-ed. Tên là The five major world religions - được thực hiện bởi bác John Bellaimey.
 

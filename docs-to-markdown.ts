@@ -58,6 +58,7 @@ for (const a of posts.drafts) {
         ...(outStr.match(new RegExp(/https.*?googleusercontent.com\/[\/\.?=&\w_-]*/g)) || []),
         ...(outStr.match(new RegExp(/https.*?ytimg.com\/[\/\.?=&\w_-]*/g)) || []),
         ...(outStr.match(new RegExp(/https.*?ibb.co\/[\/\.?=&\w_-]*/g)) || []),
+        ...(outStr.match(new RegExp(/https.*?imgur.com\/[\/\.?=&\w_-]*/g)) || []),
     ];
     const downloads = Object.entries(downloadImages).map(([index, link]) => ({
         link,
