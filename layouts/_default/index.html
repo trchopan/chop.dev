@@ -34,6 +34,18 @@
           <span class="mdi mdi-send"></span>
         </a>
       </div>
+      <div style="padding-top: 20px;">
+        <style>
+            .bmc-btn {
+                scale: 0.8;
+            }
+            .bmc-btn-text {
+                font-family: Play !important;
+                width: unset !important;
+            }
+        </style>
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="chop.dev" data-color="#FF5F5F" data-emoji=""  data-font="Poppins" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+      </div>
     </div>
     {{ end }}
     {{ $paginator := .Paginate (where $PageContext.RegularPages "Type" $contentTypeName) }}

@@ -38,9 +38,11 @@
       connect-src 'self' *.google-analytics.com *.doubleclick.net;
       img-src 'self' *.google-analytics.com *.doubleclick.net;
       frame-src *.youtube.com utteranc.es;
-      style-src 'unsafe-inline' 'self' *.jsdelivr.net;
-      script-src 'unsafe-inline' 'self' cdn.jsdelivr.net utteranc.es *.google-analytics.com;
+      style-src 'unsafe-inline' 'self' *.jsdelivr.net fonts.googleapis.com fonts.gstatic.com;
+            script-src 'unsafe-inline' 'self' cdn.jsdelivr.net utteranc.es *.google-analytics.com *.buymeacoffee.com;
       ">
+  {{ block "head" . }}
+  {{ end }}
 </head>
 
 <body class="{{- ( or .Params.color $.Site.Params.ThemeColor ) -}}">
