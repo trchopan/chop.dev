@@ -66,9 +66,9 @@ enableRobotsTXT = true
   [languages.en]
     languageName = "English"
     title = "chop.dev"
-    subtitle = "A place for me to keep all my writing and configs"
+    subtitle = "Hi, my name is Chop Tran. This is a place for me to keep all of my writings."
     owner = "Chop Tr"
-    keywords = "blog writting config files dotfiles"
+    keywords = "developer programming blog writing configuration files dotfiles"
     copyright = "choptr"
     menuMore = "Show more"
     readMore = "Read more"
