@@ -44,7 +44,7 @@ I am a full-stack software engineer based in Ho Chi Minh City, Vietnam.
 
 This year, 2022, I am 33 years old. I have a beautiful wife and a lovely daughter.
 
-{{< figure src="/ox-hugo/my-family_20220209_222649.png" width="720" >}}
+{{< figure src="/ox-hugo/photo_2024-06-28_12-23-18.jpg" width="720" >}}
 
 I love to travel with my wife. Every year we visit new places in Vietnam. We have never traveled outside Vietnam, but love to do it one day when Lina is a bit older and Covid-19 a bit under control.
 
