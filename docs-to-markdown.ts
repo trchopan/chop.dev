@@ -3,6 +3,7 @@
 import * as Colors from 'https://deno.land/std@0.177.0/fmt/colors.ts';
 import yaml from 'https://cdn.skypack.dev/yaml@v2.2.1';
 import {normalize} from 'https://cdn.jsdelivr.net/gh/motss/deno_mod@v0.10.0/normalize_diacritics/mod.ts';
+import {download} from 'https://deno.land/x/download@v2.0.2/mod.ts';
 
 interface PostInfo {
     title: string;
@@ -20,20 +21,12 @@ const posts: Posts = yaml.parse(fileContent);
 // Download the image link using wget to a pathPrefix
 // NOTE: the directory and path must already exist
 const downloadLinksToPost = async (link: string, outPath: string) => {
-    const process = await Deno.run({
-        cmd: ['wget', link, `-O${outPath}`],
-        stdout: 'piped',
-        stderr: 'piped',
-    });
-    const outStr = new TextDecoder().decode(await process.output());
-    const errStr = new TextDecoder().decode(await process.stderrOutput());
-    process.close();
-    console.log(outStr, errStr);
+    await download(link, {dir: outPath});
 };
 
 const processWithDocsToMarkdown = async (link: string) => {
     const resp = await fetch('https://docs-to-markdown.chop.dev', {
-        method: "POST",
+        method: 'POST',
         headers: {accept: 'application/json'},
         body: JSON.stringify({url: link}),
     });
@@ -44,7 +37,7 @@ for (const a of posts.drafts) {
     let outStr = await processWithDocsToMarkdown(a.link);
     console.log('>>>', outStr);
 
-    let title: String = await normalize(a.title);
+    let title: string = await normalize(a.title);
     title = title.toLowerCase().replace(/[^a-z0-9]/g, '-');
 
     console.log(Colors.yellow('Writing:'), Colors.red(title));
@@ -62,11 +55,12 @@ for (const a of posts.drafts) {
     ];
     const downloads = Object.entries(downloadImages).map(([index, link]) => ({
         link,
-        path: `${postPath}/${title}-${index}.jpg`,
+        path: `${title}-${index}.jpg`,
         articleReplace: `/posts/${title}/${title}-${index}.jpg`,
     }));
     for (const image of downloads) {
         await downloadLinksToPost(image.link, image.path);
+        await download(image.link, {dir: postPath, file: image.path});
         outStr = outStr.replaceAll(image.link, image.articleReplace);
     }
 
