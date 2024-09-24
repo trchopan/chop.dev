@@ -1,12 +1,11 @@
 +++
 title = "About Me"
 author = ["Chop Tr (chop.dev)"]
-summary = "Short introduction"
+summary = "Hi, Nice to meet you.\nMy name is Quang Tran `aka Chop Tr`.\nI am a full-stack software engineer based in Ho Chi Minh City, Vietnam."
 tags = ["about me"]
 draft = false
 cover = "img/choptr-avatar.jpg"
 images = ["img/choptr-avatar.jpg"]
-layout = "simple"
 +++
 
 Hi, Nice to meet you.
@@ -45,17 +44,17 @@ I am a full-stack software engineer based in Ho Chi Minh City, Vietnam.
 
 This year, 2024, I am 35 years old. I have a beautiful wife and a lovely daughter.
 
-<figure class="max-w-5xl">
+<figure style="max-width: 500px">
     <img src="./photo_2024-06-28_12-23-18.jpg" alt="">
 </figure>
 
 I love to travel with my wife and my daughter. We had a great time in Singapore recently.
 
-I love watching movies and contemplate the philosophy aspect of the art.
+I love watching movies. Few of my favorite directors are Denis Villeneuve, Christopher Nolan, Stanley Kubrick, Peter Jackson, Ridley Scott, Tim Burton, M. Night Shyamalan, Guy Ritchie, Quentin Tarantino and of course fan of the studio A24.
 
 I have a Raspberry Pi and use Jellyfin as media server.
 
-I run a Cardano relay on AWS.
+I run a Cardano Blockchain stake pool relay on AWS.
 
 I play Chess at 900 rating.
 

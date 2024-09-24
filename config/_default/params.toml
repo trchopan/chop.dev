@@ -32,7 +32,7 @@ giteaDefaultServer = "https://git.fsfe.org"
 forgejoDefaultServer = "https://v8.next.forgejo.org"
 
 [header]
-  layout = "basic" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
+  layout = "fixed-gradient" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
 
 [footer]
   showMenu = true
@@ -42,8 +42,8 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
   showScrollToTop = true
 
 [homepage]
-  layout = "profile" # valid options: page, profile, hero, card, background, custom
-  #homepageImage = "IMAGE.jpg" # used in: hero, and card
+  layout = "background" # valid options: page, profile, hero, card, background, custom
+  homepageImage = "img/background.jpeg" # used in: hero, and card
   showRecent = true
   showRecentItems = 9
   showMoreLink = true
@@ -84,12 +84,12 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
   showZenMode = false
 
 [list]
-  showHero = false
-  # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
-  showSummary = false
+  showSummary = true
   showViews = false
   showLikes = false
   showTableOfContents = false
@@ -148,11 +148,11 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
   # enableTrackEvent = true
 
 [buymeacoffee]
-  # identifier = ""
-  # globalWidget = true
-  # globalWidgetMessage = "Hello"
-  # globalWidgetColor = "#FFDD00"
-  # globalWidgetPosition = "Right"
+  identifier = "chop.dev"
+  globalWidget = true
+  globalWidgetMessage = ""
+  globalWidgetColor = "#FFDD00"
+  globalWidgetPosition = "Right"
 
 [verification]
   # google = ""
