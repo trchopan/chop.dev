@@ -1,7 +1,7 @@
 +++
 title = "Success: Google For Startup Accelerator AI First SG 2024"
 author = ["Chop Tr (chop.dev)"]
-summary = "Mộn năm và thành công mới"
+summary = "Một năm và thành công mới"
 date = 2024-09-19T00:00:00+07:00
 tags = ["chop.dev", "channel update", "google", "startup", "developer experience"]
 draft = false
