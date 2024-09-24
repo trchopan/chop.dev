@@ -16,9 +16,14 @@
   weight = 10
 
 [[main]]
+  name = "Projects"
+  url = "https://projects.chop.dev/"
+  weight = 20
+
+[[main]]
   name = "About Me"
   pageRef = "about-me"
-  weight = 20
+  weight = 30
 
 #[[main]]
 #  name = "example sub-menu 1"
