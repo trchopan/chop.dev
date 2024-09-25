@@ -12,6 +12,14 @@ jobs:
         steps:
             - uses: actions/checkout@v4
 
+            - uses: actions/checkout@v4
+              with:
+                repository: nunocoracao/blowfish.git
+                ref: main
+                fetch-depth: 1
+                submodules: true
+                path: themes/blowfish
+
             - name: Build revealjs
               run: sh scripts/build-revealjs.sh
 
