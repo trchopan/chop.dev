@@ -1,0 +1,106 @@
+<head>
+  <meta charset="utf-8" />
+  {{ with .Site.Language.Params.htmlCode | default .Site.LanguageCode }}
+  <meta http-equiv="content-language" content="{{ . }}" />
+  {{ end }}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  {{/* Title */}}
+  {{ if .IsHome -}}
+  <title>{{ .Site.Title | emojify }}</title>
+  <meta name="title" content="{{ .Site.Title | emojify }}" />
+  {{- else -}}
+  <title>{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}</title>
+  <meta name="title" content="{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}" />
+  {{- end }}
+  {{/* Metadata */}}
+  {{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description -}}
+  <meta name="description" content="{{ . }}" />
+  {{- end }}
+  {{ with  .Params.Tags | default .Site.Params.keywords -}}
+  <meta name="keywords" content="{{ range . }}{{ . }}, {{ end -}}" />
+  {{- end }}
+  {{ with .Site.Params.robots }}
+  <meta name="robots" content="{{ . }}" />
+  {{ end }}
+  {{ with .Params.robots }}
+  <meta name="robots" content="{{ . }}" />
+  {{ end }}
+  <link rel="canonical" href="{{ .Permalink }}" />
+  {{/* Icons */}}
+  {{ if templates.Exists "partials/favicons.html" }}
+  {{ partialCached "favicons.html" .Site }}
+  {{ else }}
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}" />
+  <link rel="manifest" href="{{ "site.webmanifest" | relURL }}" />
+  {{ end }}
+  {{/* Site Verification */}}
+  {{ with .Site.Params.verification.google }}
+  <meta name="google-site-verification" content="{{ . }}" />
+  {{ end }}
+  {{ with .Site.Params.verification.bing }}
+  <meta name="msvalidate.01" content="{{ . }}" />
+  {{ end }}
+  {{ with .Site.Params.verification.pinterest }}
+  <meta name="p:domain_verify" content="{{ . }}" />
+  {{ end }}
+  {{ with .Site.Params.verification.yandex }}
+  <meta name="yandex-verification" content="{{ . }}" />
+  {{ end }}
+  {{/* Social */}}
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
+  {{/* Schema */}}
+  {{ partial "schema.html" . }}
+  {{/* Me */}}
+  {{ with .Site.Params.Author.name }}
+  <meta name="author" content="{{ . }}" />{{ end }}
+  {{ with .Site.Params.Author.links }}
+  {{ range $links := . }}
+  {{ range $name, $url := $links }}
+  <link href="{{ $url }}" rel="me" />{{ end }}
+  {{ end }}
+  {{ end }}
+  {{/* Vendor */}}
+  {{ partial "vendor.html" . }}
+  {{/* Analytics */}}
+  {{ partial "analytics/main.html" .Site }}
+  {{/* Extend head - eg. for custom analytics scripts, etc. */}}
+  {{ if templates.Exists "partials/extend-head.html" }}
+  {{ partialCached "extend-head.html" .Site }}
+  {{ end }}
+  <meta name="theme-color"/>
+  {{/* Firebase */}}
+  {{ with $.Site.Params.firebase }}
+  {{ if isset $.Site.Params "firebase" }}
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script>
+
+  const firebaseConfig = {
+      apiKey: {{ $.Site.Params.firebase.apiKey }},
+      authDomain: {{ $.Site.Params.firebase.apiKey }},
+      projectId: {{ $.Site.Params.firebase.projectId }},
+      storageBucket: {{ $.Site.Params.firebase.storageBucket }},
+      messagingSenderId: {{ $.Site.Params.firebase.messagingSenderId }},
+      appId: {{ $.Site.Params.firebase.appId }},
+      measurementId: {{ $.Site.Params.firebase.measurementId }}
+  };
+
+  var app = firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore();
+  var auth = firebase.auth();
+
+  </script>
+  {{ end }}
+  {{ end }}
+  <link rel="stylesheet" href="/revealjs/dist/reset.css" />
+  <link rel="stylesheet" href="/revealjs/dist/reveal.css" />
+  <link rel="stylesheet" href="/revealjs/dist/theme/blood.css" />
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="/revealjs/plugin/highlight/monokai.css" />
+</head>

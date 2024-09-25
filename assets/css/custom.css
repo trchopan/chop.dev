@@ -1,0 +1,13 @@
+@font-face {
+    font-family: font;
+    src: url('/fonts/Play/Play-Regular.ttf');
+}
+
+html {
+    font-family: font;
+    font-size: 13pt;
+}
+
+.toc #TOCView > div {
+    max-width: 320px;
+}
