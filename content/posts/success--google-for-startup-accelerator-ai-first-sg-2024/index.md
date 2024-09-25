@@ -1,17 +1,17 @@
 +++
 title = "Success: Google For Startup Accelerator AI First SG 2024"
 author = ["Chop Tr (chop.dev)"]
-summary = "Một năm và thành công mới"
-date = 2024-09-19T00:00:00+07:00
+summary = ""
+date = 2024-09-19T07:00:00Z
 tags = ["chop.dev", "channel update", "google", "startup", "developer experience"]
 draft = false
 +++
 
-## Video
+# Video
 
 
 
-## Intro
+# Intro
 
 Xin chào các bạn! Chop đã trở lại với một video mới. Lâu lắm rồi mới có dịp cập nhật, cũng đã hơn một năm rồi.
 
@@ -24,6 +24,10 @@ Kể nhanh thì mình đã học thêm Elixir và trải nghiệm BEAM - Erlang 
 Nhưng video này mình sẽ dành cho thành công lớn nhất của mình trong năm nay là được tham gia và hoàn thành chương trình Startup Accelerator của Google.
 
 Chương trình này mình tham gia cùng 1 team startup và vừa được Google duyệt tài trợ trong 2 năm tới. Đây là thực sự là một cột mốc quan trọng trong sự nghiệp của mình.
+
+![](./success--google-for-startup-accelerator-ai-first-sg-2024-0.jpg)
+
+
 
 Chương trình mình tham gia có tên là Google For Startup Accelerator: AI First SG, được tổ chức bởi Google Singapore.
 
@@ -41,7 +45,7 @@ Chương trình mà nhóm mình phát triển thu thập thông tin từ các ng
 
 Video này mình sẽ chia sẻ về trải nghiệm tham gia chương trình Accelerator của Google và việc phát hành sản phẩm MarkGen.ai trong 3 tháng vừa qua.
 
-## Google For Startup Accelerator - AI First SG
+# Google For Startup Accelerator - AI First SG
 
 Chương trình Accelerator của Google này có tên đầy đủ là: Google for Startup Accelerator - AI First Singapore.
 

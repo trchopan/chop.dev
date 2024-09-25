@@ -9,7 +9,7 @@ draft = false
 
 ## Video
 
-[https://www.youtube.com/watch?v=GsuHaL_aK60](https://www.youtube.com/watch?v=GsuHaL_aK60)
+{{< youtubeLite id="GsuHaL_aK60" label="Rust: Lập trình chạy độc lập - Concurrency Programming" >}}
 
 ## Intro
 
@@ -27,7 +27,7 @@ Nên việc học để lập trình xử lý song song nhiều tác vụ là m�
 
 Và cá nhân mình cảm thấy rất thú vị khi tìm hiểu thêm về mảng này. Mặc dù đụng tới nó không nhiều trong công việc hằng ngày nhưng mà khi cần cũng là một công cụ không thể thiếu trong bộ đồ nghề.
 
-Ví dụ thì như vừa rồi mình có thực hiện một chương trình tính block scheduler cho blockchain Cardano. Chương trình có 1 cái bottleneck là thực hiện việc tính toán các block theo kiểu tuần tự. 
+Ví dụ thì như vừa rồi mình có thực hiện một chương trình tính block scheduler cho blockchain Cardano. Chương trình có 1 cái bottleneck là thực hiện việc tính toán các block theo kiểu tuần tự.
 
 Nên việc tính toán chỉ sử dụng 1 core CPU thôi. Thì mình hiện có tham gia cải tiến và kết quả áp dụng concurrency thì giảm thời gian tính toán xuống còn 1/5.
 
@@ -69,7 +69,7 @@ Thì mining đơn giản vậy thôi. Chúng ta sẽ thử viết 1 chương tr�
 
 Ok thì workload chương trình của chúng ta sẽ đơn giản thôi. Hash 1 cái block liên tục sử dụng thuật toán SHA256.
 
-Chúng ta sẽ hash thử trên tập hợp nhỏ nonce là 5 triệu thôi thay vì thử hết 4 tỷ mấy possibility. 
+Chúng ta sẽ hash thử trên tập hợp nhỏ nonce là 5 triệu thôi thay vì thử hết 4 tỷ mấy possibility.
 
 Thử hết 4 tỷ nonce đó thì máy Macbook M1 của mình mất tới 22 tiếng lận. nên thôi thí nghiệm với 5 triệu số thôi.
 
@@ -143,7 +143,7 @@ Thì để nhận kết quả của các worker, chúng ta sẽ dùng hàm recei
 
 Cuối cùng thì chúng ta sẽ spawn worker mới để tiếp tục loop đến hết cái kho nonce kia.
 
- Và cuối cùng cũng giống như sample_0 chúng ta sẽ println ra thời gian mà chương trình xử lý. 
+Và cuối cùng cũng giống như sample_0 chúng ta sẽ println ra thời gian mà chương trình xử lý.
 
 Ok thì chúng ta thử chạy chương trình này. cargo run --example sample_1
 
@@ -233,11 +233,10 @@ Xử lý càng nhiều tác vụ cùng lúc càng tốt. Thì chương trình ch
 
 Và không những chương trình máy tính mà cách thức thiết kế hệ thống cũng vậy. Hầu hết đang hướng sang hướng phi tập trung.
 
-Mình cũng rất thích thú đào sâu thêm về các chương trình dạng này. Và trải nghiệm nó qua ngôn ngữ Rust mới hiểu được tại sao Rust được xem là ngôn ngữ được ưa thích. 
+Mình cũng rất thích thú đào sâu thêm về các chương trình dạng này. Và trải nghiệm nó qua ngôn ngữ Rust mới hiểu được tại sao Rust được xem là ngôn ngữ được ưa thích.
 
 Cách sử dụng nó với lập trình concurrency trực quan hơn và an toàn hơn các ngôn ngữ khác nhiều.
 
-Anyway sắp tới mình sẽ áp dụng Rust vào một vài dự án khá thú vị. Trong đó sẽ dùng một số công cụ mới được phát triển gần đây tận dụng lợi thế của Rust. Một trong những công cụ đó là Surreal Db. Sẽ chia sẻ trải nghiệm này qua những Video sau ha. 
+Anyway sắp tới mình sẽ áp dụng Rust vào một vài dự án khá thú vị. Trong đó sẽ dùng một số công cụ mới được phát triển gần đây tận dụng lợi thế của Rust. Một trong những công cụ đó là Surreal Db. Sẽ chia sẻ trải nghiệm này qua những Video sau ha.
 
 Cảm ơn các bạn đã theo dõi tới đây. Xin chào và hẹn gặp lại. Chop out!
-

@@ -5,12 +5,11 @@ summary = "Trong video trước mình có đi tìm hiểu qua và trình bày v�
 date = 2023-07-05T00:00:00+07:00
 tags = ["ai", "openai", "chatgpt", "prompting", "engineer", "application", "information", "document", "extractor", "video", "script", "chain of thought", "cot", "react", "reasoning and action"]
 draft = false
-cover = "./ai--so-luoc-ve-cac-phuong-phap-prompting-va-ung-dung-ai-vao-workflow/ai--so-luoc-ve-cac-phuong-phap-prompting-va-ung-dung-ai-vao-workflow-9.jpg"
 +++
 
 ## Video
 
-[https://www.youtube.com/watch?v=Rj0T4bPRGFM](https://www.youtube.com/watch?v=Rj0T4bPRGFM)
+{{< youtubeLite id="Rj0T4bPRGFM" label="AI: Sơ lược về các phương pháp Prompting và Ứng dụng AI vào workflow" >}}
 
 ## Intro
 
@@ -32,7 +31,7 @@ Prompting là một phương pháp được sử dụng trong lĩnh vực trí t
 
 Prompting có thể được coi như một dạng gợi ý hoặc hướng dẫn cho hệ thống AI, giúp nó tạo ra các câu trả lời phù hợp với mục đích của người dùng.
 
-Kỹ thuật này thường được sử dụng trong các lĩnh vực xử lý ngôn ngữ tự nhiên. Nhưng nó không bị giới hạn chỉ sử dụng cho các LLM. 
+Kỹ thuật này thường được sử dụng trong các lĩnh vực xử lý ngôn ngữ tự nhiên. Nhưng nó không bị giới hạn chỉ sử dụng cho các LLM.
 
 Các ứng dụng về hình ảnh như với Stable Diffusion cũng cần thiết kế các câu prompt để đạt được các hình ảnh đẹp.
 
@@ -76,7 +75,7 @@ xuất bản tháng 10/2022
 
 Đầu tiên là Zero-Shot prompting.
 
-Mô hình này thêm một câu prompt duy nhất như "Let's think step by step" sau câu hỏi để tạo điều kiện trigger cho chuỗi suy luận trong LLMs. 
+Mô hình này thêm một câu prompt duy nhất như "Let's think step by step" sau câu hỏi để tạo điều kiện trigger cho chuỗi suy luận trong LLMs.
 
 Khi được trigger bằng câu này thì AI nó sẽ xử lý bằng cách hoàn thành câu bằng một chuỗi suy luận.
 
@@ -108,7 +107,7 @@ Trong tài liệu này thì có trình bày một phương pháp prompting CoT n
 
 Phương pháp này xây dựng các mẫu prompt với câu hỏi và chuỗi lý luận một cách tự động. Auto-CoT bao gồm hai giai đoạn chính: phân cụm câu hỏi và lấy mẫu câu.
 
-Giai đoạn phân cụm câu hỏi liên quan đến việc chia các câu hỏi của tập dữ liệu thành một số cụm nhỏ. Mục đích của giai đoạn này là nhóm các câu hỏi có cùng chủ đề hoặc nội dung tương tự lại với nhau. Việc phân cụm câu hỏi giúp  tự động tạo và tổ chức cấu trúc mẫu câu.
+Giai đoạn phân cụm câu hỏi liên quan đến việc chia các câu hỏi của tập dữ liệu thành một số cụm nhỏ. Mục đích của giai đoạn này là nhóm các câu hỏi có cùng chủ đề hoặc nội dung tương tự lại với nhau. Việc phân cụm câu hỏi giúp tự động tạo và tổ chức cấu trúc mẫu câu.
 
 Tiếp theo để sử dụng thì là lấy mẫu liên quan đến câu hỏi của người dùng từ mỗi cụm và tạo ra chuỗi lý luận. Và sử dụng Zero-Shot-CoT ở trên với trigger "Let's think step by step" để làm mẫu.
 
@@ -168,7 +167,7 @@ Chiến lược PS+ có thể được tùy chỉnh để giải quyết các v�
 
 Các bạn có thể hình dung xa hơn về việc extract thông tin trong vấn đề của người dùng. Như giải quyết các trường hợp liên quan đến thông tin hợp đồng.
 
-Cần extract thông tin về các bên hoàn cảnh đang được nói tới  v.v
+Cần extract thông tin về các bên hoàn cảnh đang được nói tới v.v
 
 Ok thì phương pháp này tìm hiểu vậy thôi chứ cũng hơi cutting edge. Mình chưa nhúng tay thử thực tế nên không dám chém xa.
 
@@ -310,7 +309,7 @@ Thử ha!
 
 ```
 Thì đầu tiên Prompting là gì?
-Prompting là 
+Prompting là
 ```
 
 Hit Extend!
@@ -367,4 +366,3 @@ Và nên hiểu là những ai chịu trải nghiệm qua thử các level 2 3 4
 Cảm ơn các bạn đã theo dõi tới đây. Xin chào và hẹn gặp lại.
 
 Chop out!
-

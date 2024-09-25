@@ -7,6 +7,10 @@ tags = ["media pipe", "tech share"]
 draft = false
 +++
 
+## Slides
+
+[Slides](/slides/tech-share--media-pipe/)
+
 ## Introduction (2 minutes)
 
 **Welcome and Speaker Introduction**
