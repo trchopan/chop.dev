@@ -21,11 +21,11 @@ const downLoadPost = async (location: string, link: string) => {
     let title: string = await normalize(fm.attrs.title);
     title = title.toLowerCase().replace(/[^a-z0-9]/g, '-');
 
-    console.log(Colors.yellow('Writing:'), Colors.red(title));
-    console.log('Content\n', outStr.slice(0, 500));
-
     const postPath = `${location}/${title}`;
     await Deno.mkdir(postPath, {recursive: true});
+
+    console.log(Colors.yellow('Writing:'), Colors.red(postPath));
+    console.log('Content\n', outStr.slice(0, 500));
 
     // match images
     const foundImages: string[] = [
