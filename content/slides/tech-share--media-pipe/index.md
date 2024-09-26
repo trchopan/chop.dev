@@ -1,7 +1,7 @@
 +++
 title = "Tech Share: Using MediaPipe in Web Applications"
 author = ["Chop Tr (chop.dev)", "dummy@example.com"]
-summary = "A tech sharing session in LINE Corporation for Front-End Team"
+summary = "A tech sharing session in LINE Corporation for Front-End Team."
 date = 2024-09-22T00:00:00+07:00
 tags = ["media pipe", "tech share"]
 draft = false
