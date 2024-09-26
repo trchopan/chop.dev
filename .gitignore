@@ -3,6 +3,9 @@
 *.log
 tmp/
 
+themes/blowfish
+static/revealjs
+
 ### Hugo ###
 # Generated files by hugo
 /public/
