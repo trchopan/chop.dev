@@ -2,7 +2,7 @@
 
 DEST=static/revealjs/
 
-wget https://github.com/hakimel/reveal.js/archive/master.zip -O revealjs.zip
+wget -q https://github.com/hakimel/reveal.js/archive/master.zip -O revealjs.zip
 
 unzip revealjs.zip
 
