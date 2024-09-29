@@ -1,4 +1,5 @@
 // deno run --allow-net --allow-write docs-to-markdown.ts location link
+// Ex: deno run --allow-net --allow-write docs-to-markdown.ts content/posts https://docs.google.com/document/d/<id>
 
 import * as Colors from 'https://deno.land/std@0.177.0/fmt/colors.ts';
 import {normalize} from 'https://cdn.jsdelivr.net/gh/motss/deno_mod@v0.10.0/normalize_diacritics/mod.ts';

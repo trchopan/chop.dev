@@ -1,17 +1,33 @@
 +++
 title = "Success: Google For Startup Accelerator AI First SG 2024"
 author = ["Chop Tr (chop.dev)"]
-summary = ""
+summary = "Chop đã trở lại sau hơn một năm vắng bóng với một video mới, cập nhật về những trải nghiệm và dự án trong năm qua. Chia sẻ thành công lớn nhất của anh trong năm nay: tham gia và hoàn thành chương trình Google For Startup Accelerator: AI First SG tại Singapore. Chương trình này giúp nhóm startup của anh, với sản phẩm MarkGen.ai, nhận được tài trợ từ Google trong hai năm tới."
 date = 2024-09-19T07:00:00Z
 tags = ["chop.dev", "channel update", "google", "startup", "developer experience"]
 draft = false
 +++
 
-# Video
+## Video
 
+{{< youtubeLite id="hAjoUUPdt7M" label="Success: Google For Startup Accelerator AI First SG 2024" >}}
 
+## Slides
 
-# Intro
+[Slides](/slides/success--google-for-startup-accelerator-ai-first-sg-2024/)
+
+## Prelude
+
+Helu helu.
+
+Phần này mình record sau khi làm xong video. Muốn đề cập nhanh về video này thôi.
+
+Là Video này mình dùng GenAI để present. Có khá nhiều lỗi về hình ảnh.
+
+Nhưng nhìn chung thì các hình gen ra cũng diễn đạt được ý mà mình đang trình bày.
+
+Chủ yếu video này như là proof of concept cho dây chuyền pipeline làm video bằng AI của mình nên sẽ có nhiều chi tiết chưa hoàn hảo. Tương lai sẽ cải thiện nhiều hơn.
+
+## Intro
 
 Xin chào các bạn! Chop đã trở lại với một video mới. Lâu lắm rồi mới có dịp cập nhật, cũng đã hơn một năm rồi.
 
@@ -26,8 +42,6 @@ Nhưng video này mình sẽ dành cho thành công lớn nhất của mình tro
 Chương trình này mình tham gia cùng 1 team startup và vừa được Google duyệt tài trợ trong 2 năm tới. Đây là thực sự là một cột mốc quan trọng trong sự nghiệp của mình.
 
 ![](./success--google-for-startup-accelerator-ai-first-sg-2024-0.jpg)
-
-
 
 Chương trình mình tham gia có tên là Google For Startup Accelerator: AI First SG, được tổ chức bởi Google Singapore.
 
@@ -45,7 +59,7 @@ Chương trình mà nhóm mình phát triển thu thập thông tin từ các ng
 
 Video này mình sẽ chia sẻ về trải nghiệm tham gia chương trình Accelerator của Google và việc phát hành sản phẩm MarkGen.ai trong 3 tháng vừa qua.
 
-# Google For Startup Accelerator - AI First SG
+## Google For Startup Accelerator - AI First SG
 
 Chương trình Accelerator của Google này có tên đầy đủ là: Google for Startup Accelerator - AI First Singapore.
 
@@ -69,13 +83,13 @@ Google thiết kế chương trình này như một chu kỳ phát triển phầ
 
 Mục tiêu là hoàn thành sản phẩm trong vòng 3 tháng (tháng 6, 7, 8) và phát hành vào tháng 9.
 
-## Alpha
+### Alpha
 
 Phase Alpha là start lên ý tưởng, draft ra idea, nghiên cứu sản phẩm và làm Proof of Concept đồ.
 
 Chủ yếu ở phase này là các buổi meetings để catch up với các bạn supporter do Google phân công take care cho nhóm và catch up với các mentors của nhóm.
 
-Thì như mình đề cập ở trên các mentor đều là  chuyên gia ngành, sẵn sàng chia sẻ kiến thức và có thể book lịch với họ bất kỳ lúc nào.
+Thì như mình đề cập ở trên các mentor đều là chuyên gia ngành, sẵn sàng chia sẻ kiến thức và có thể book lịch với họ bất kỳ lúc nào.
 
 Trải nghiệm thấy như được đi học đại học lại vậy. Được lên lớp nghe giảng xong về làm bài tập và làm việc với các anh chị trợ giảng. Có vấn đề hay ý tưởng gì thì cứ thoải mái trao đổi với các giáo sư.
 
@@ -111,7 +125,7 @@ Mindset là sẽ được sponsor toàn bộ tài nguyên sẽ được Google t
 
 Tiếp theo là qua giai đoạn Beta.
 
-## Beta
+### Beta
 
 Beta phase thực hiện chủ yếu trong tháng 7 đầu tháng 8. Là giai đoạn mà mình dev nhiều nhất trong năm nay.
 
@@ -137,7 +151,7 @@ Mỗi section được handle bởi một con AI agent, được thiết kế ch
 
 Cuối tháng 8, team mình bắt đầu giai đoạn cuối cùng - Phase Release.
 
-## Release
+### Release
 
 Phase Release bắt đầu vào tháng 8 và kéo dài đến đầu tháng 9, là giai đoạn quyết định của cả dự án MarkGen.ai. Đây là lúc team phải hoàn thiện sản phẩm, kiểm thử và đảm bảo rằng mọi thứ hoạt động trơn tru trước khi ra mắt chính thức.
 
@@ -163,9 +177,11 @@ Khoản chi phí này sẽ là nguồn kinh phí quan trọng trong thời gian 
 
 Thì với sponsor về mặt infra như vậy thì bước tiếp theo của team sẽ là tập trung vào hoàn thiện sản phẩm và đẩy mạnh nó đến tay người dùng thôi. Hiện tại sẽ tập vào các firm tài chính và ngân hàng ở Singapore và Mỹ. Leverage các mối quan hệ của anh CEO trước.
 
+## Conclusion
+
 Aniway,
 
-Nhìn lại hành trình tham gia Google For Startup Accelerator - AI First SG, mình thấy đây thực sự là một trải nghiệm quý báu. 
+Nhìn lại hành trình tham gia Google For Startup Accelerator - AI First SG, mình thấy đây thực sự là một trải nghiệm quý báu.
 
 Ngoài những kiến thức và kinh nghiệm chuyên môn tích lũy được mình còn có thêm nhiều mối quan hệ và networking trong ngành.
 
@@ -182,5 +198,3 @@ Ok thì đó là kế hoạch sắp tới định làm thôi. Cũng sẽ cố d�
 Cảm ơn các bạn đã theo dõi tới đây.
 
 Xin chào và hẹn gặp lại. Chop out!
-
-

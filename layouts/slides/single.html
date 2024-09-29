@@ -1,7 +1,13 @@
 {{ define "main" }}
 <section data-markdown>
-  <textarea data-template>
+    <textarea data-template>
     {{ .RawContent }}
   </textarea>
 </section>
+<style>
+    :root {
+        --r-main-font: monospace;
+        --r-heading-font: monospace;
+    }
+</style>
 {{ end }}
