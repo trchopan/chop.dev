@@ -21,6 +21,7 @@ wget -q "https://github.com/nunocoracao/blowfish/archive/refs/tags/v$BLOWFISH_VE
 
 unzip blowfish.zip
 
+mkdir -p themes
 mv blowfish-* themes/blowfish
 rm blowfish.zip
 
