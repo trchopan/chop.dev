@@ -12,7 +12,7 @@ jobs:
         steps:
             - uses: actions/checkout@v4
 
-            - name: Build build dependencies
+            - name: Build dependencies
               run: sh scripts/build-deps.sh
 
             - name: Run Hugo
