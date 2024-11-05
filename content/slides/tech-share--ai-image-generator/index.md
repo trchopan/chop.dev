@@ -1,9 +1,9 @@
 +++
-title = "Tech Share: Using MediaPipe in Web Applications"
+title = "Tech Share: AI Image Generator"
 author = ["Chop Tr (chop.dev)"]
-summary = "A tech sharing session in LINE Corporation for Front-End Team."
-date = 2024-09-22T00:00:00+07:00
-tags = ["media pipe", "tech share"]
+summary = "A tech sharing session in LINE Corporation for Front-End Team about AI Image Generator."
+date = 2024-11-05T00:00:00+07:00
+tags = ["ai", "image", "generator", "tech share", "stable diffusion", "comfyui"]
 draft = false
 +++
 
