@@ -1,6 +1,6 @@
 +++
 title = "Success: Google For Startup Accelerator AI First SG 2024"
-author = ["Chop Tr (chop.dev)", "dummy@example.com"]
+author = ["Chop Tr (chop.dev)"]
 summary = "Chop đã trở lại sau hơn một năm vắng bóng với một video mới, cập nhật về những trải nghiệm và dự án trong năm qua. Chia sẻ thành công lớn nhất của anh trong năm nay: tham gia và hoàn thành chương trình Google For Startup Accelerator: AI First SG tại Singapore. Chương trình này giúp nhóm startup của anh, với sản phẩm MarkGen.ai, nhận được tài trợ từ Google trong hai năm tới."
 date = 2024-09-19T07:00:00Z
 tags = ["chop.dev", "channel update", "google", "startup", "developer experience"]

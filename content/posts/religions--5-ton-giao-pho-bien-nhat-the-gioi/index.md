@@ -2,14 +2,13 @@
 title = "Religions: 5 tôn giáo phổ biến nhất thế giới"
 author = ["Chop Tr (chop.dev)"]
 summary = "Trong mọi thời đại trong lịch sử con người đã tự hỏi, Chúng ta đến từ đâu? Mục đích của chúng ta trong thế giới là gì? Chuyện gì xảy ra với chúng ta sau khi chết? Tôn giáo là những hệ thống tín ngưỡng được phát triển và tiến hóa theo thời gian nhằm để giải đáp những bí ẩn vĩnh cửu này của con người."
-date = 2023-08-12T00:00:00+07:00
+date = 2023-08-12T00:00:00-07:00
 tags = ["religion", "belief systems", "human existence", "faith"]
 draft = false
+google_doc = "https://docs.google.com/document/d/1HN89Pei0T88HiW-kQIsnqg4CwAs_gs7aPrh7dPgCKkg/edit"
 +++
 
 ## Video
-
-
 
 ## Intro
 
@@ -27,7 +26,7 @@ Video này mình tập hợp lại kiến thức về tôn giáo và các hệ t
 
 Video này lấy nguồn từ 1 video trên kênh TED-ed. Tên là The five major world religions - được thực hiện bởi bác John Bellaimey.
 
-Link thì mình sẽ để trong description ha.
+[The five major world religions - John Bellaimey](https://www.youtube.com/watch?v=m6dCxo7t_aE)
 
 ## Prelude
 
@@ -119,7 +118,7 @@ Câu chuyện của đạo Phật bắt đầu với một hoàng tử trẻ tê
 
 Vào đêm mà nữ hoàng Maya thụ thai ông, bà mơ thấy một con voi trắng đi vào bên cạnh bà.
 
-Mười tháng sau đó, thì hoàng tử Siddartha ra đời. Có cuộc sống hoàng cung hoa giàu có.
+Mười tháng sau đó, thì hoàng tử Siddhartha ra đời. Có cuộc sống hoàng cung hoa giàu có.
 
 Khi trưởng thành, trong một lần rời khỏi cung đình ông ngạc nhiên chứng kiến cuộc sống đau khổ. Cuộc sống mà những năm sống trong cung đình được giấu kính khỏi ông.
 
@@ -203,11 +202,11 @@ Từ "Muslim" để chỉ Người theo Đạo hồi, còn có ý nghĩa là ng�
 
 Có 5 nhiệm vụ quan trọng nhất của một người Hồi Giáo, còn được gọi là 5 trụ cột:
 
-- Nhiệm vụ Shahada, Người Hồi Giáo phải công khai thừa nhận chỉ có duy nhất 1 vị Chúa Allah, và Muhammad là vị truyền tin cuối cùng của Ngài.
-- Nhiệm vụ Salat,  yêu cầu Người Hồi giáo phải cầu nguyện 5 lần mỗi ngày, hướng về Mecca
-- Nhiệm vụ Zakat, mỗi người Hồi Giáo phải đóng góp 2 đến 3% giá trị tài sản của họ cho người nghèo.
-- Nhiệm vụ Sawm, Họ nhịn ăn nguyên ngày cho đến khi trời tối trong tháng Ramadan theo lịch của họ để tăng cường ý chí và niềm tin vào Chúa Trời.
-- Và nhiệm cuối cùng là Haji, một lần trong đời, mỗi Người Hồi Giáo phải thực hiện việc hành hương đến thành phố Mecca, đứng trước Chúa để được Ngài phán xét.
+-   Nhiệm vụ Shahada, Người Hồi Giáo phải công khai thừa nhận chỉ có duy nhất 1 vị Chúa Allah, và Muhammad là vị truyền tin cuối cùng của Ngài.
+-   Nhiệm vụ Salat, yêu cầu Người Hồi giáo phải cầu nguyện 5 lần mỗi ngày, hướng về Mecca
+-   Nhiệm vụ Zakat, mỗi người Hồi Giáo phải đóng góp 2 đến 3% giá trị tài sản của họ cho người nghèo.
+-   Nhiệm vụ Sawm, Họ nhịn ăn nguyên ngày cho đến khi trời tối trong tháng Ramadan theo lịch của họ để tăng cường ý chí và niềm tin vào Chúa Trời.
+-   Và nhiệm cuối cùng là Haji, một lần trong đời, mỗi Người Hồi Giáo phải thực hiện việc hành hương đến thành phố Mecca, đứng trước Chúa để được Ngài phán xét.
 
 Những lời dạy của Chúa được Muhammad thu thập lại trong 23 năm và được ghi chép vào kinh Quran.
 
@@ -221,21 +220,19 @@ Hồi giáo là tôn giáo lớn thứ 2 thế giới, có hơn 1.5 tỷ ngườ
 
 Thì vừa rồi là 5 tôn giáo lớn nhất thế giới hiện tại. Nhìn chung thì tôn giáo là một khía cạnh văn hoá.
 
-Nó là một hệ thống xây dựng dựa trên niềm tin của con người. Trên sự hấp dẫn của việc tìm kiếm ý nghĩa của sự tồn tại của mỗi cá nhân. Hay đi vào khai thác giải thích cho cái chết, đau khổ hay nỗi sợ hãi.
-
-Hệ thống này khá hay và thú vị. Nếu tìm hiểu thêm các bạn sẽ thấy sự đan xen nhau trong những câu chuyện.
-
-Với mình liên tưởng thì nó như những dòng code trong chương trình vận hành của lịch sử con người vậy.
-
-Hiểu thêm được về các tôn giáo này giúp mình có một góc nhìn khá thú vị về thế giới. Về các triết lý cho cuộc sống bản thân cũng như cho công việc.
+Nó là một hệ thống xây dựng dựa trên niềm tin của con người. Trên sự hấp dẫn của việc tìm kiếm ý nghĩa của sự tồn tại của mỗi cá nhân. Hay đi vào khai thác giải thích cho cái chết, đau khổ hay những sợ hãi trong cuộc sống.
 
 Cá nhân mình thì có một vài thói quen được đút kết dựa trên các tìm hiểu trên:
 
-- Luôn hiểu luật nhân quả tất cả mọi hành động đang làm là kết quả của quá khứ và là tiền đề cho tương lai.
-- Câu trả lời không nằm trong 2 thái cực của vấn đề. Hiểu rõ để lựa chọn, cân bằng mọi thứ mới là khôn ngoan. Làm việc nhiều trong thế giới công nghệ các bạn sẽ nghe qua câu nói: There are no solution, only trade offs.
-- Ngoài ra mình thường đóng góp cho các quỹ từ thiện tuỳ vào thu nhập của tháng.
-- Và Mỗi tháng cũng dành ra một ngày fasting, nhịn đói, để rèn luyện ý chí.
+-   Luôn hiểu luật nhân quả tất cả mọi hành động đang làm là kết quả của quá khứ và là tiền đề cho tương lai.
+-   Câu trả lời không nằm trong 2 thái cực của vấn đề. Hiểu rõ để lựa chọn, cân bằng mọi thứ mới là khôn ngoan. Làm việc nhiều trong thế giới công nghệ các bạn sẽ nghe qua câu nói: There are no solution, only trade offs.
+-   Đóng góp cho các quỹ từ thiện hàng tháng.
+-   Mỗi tháng dành ra một ngày fasting, nhịn đói, để rèn luyện ý chí.
 
-Ok thì video chia sẽ cũng đã dài.
+Nhìn chung hệ thống tôn giáo khá hay và thú vị. Nếu tìm hiểu thêm các bạn sẽ thấy sự đan xen nhau trong những câu chuyện.
+
+Với mình liên tưởng thì nó như những dòng code trong chương trình vận hành xã hội vậy.
+
+Hiểu thêm được về các tôn giáo này giúp mình có một góc nhìn khá thú vị về thế giới. Về các triết lý cho cuộc sống bản thân cũng như cho công việc.
 
 Cảm ơn các bạn đã theo dõi tới đây. Xin chào và hẹn gặp lại. Chop out.
