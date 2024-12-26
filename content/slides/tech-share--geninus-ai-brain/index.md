@@ -59,7 +59,7 @@ Tech Share: Genius AI Brain
 - Improves the accuracy and quality of AI output.
 - Focus on collaboration with domain experts
 
-![experts interaction](./image6.png) <!-- .element: width="60%" -->
+![experts interaction](./image6.png) <!-- .element: width="40%" -->
 
 ---
 

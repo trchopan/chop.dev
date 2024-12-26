@@ -107,10 +107,9 @@ innovation, collaboration, and performance
 
 We will move to the topic of Large Language Models, or LLMs.
 
-As our team are all aware of these models and their capabilities. Today, I will
-just briefly introduce them. I rather say mention without going in to the
-details. The main focus is on how to use them by Prompting Strategy and
-Database integration.
+As our team are all aware of these models and their capabilities. So today I
+will just briefly introduce them. The main focus is on how to use them by
+Prompting Strategy and Database integration.
 
 **Introduction to LLMs**
 
