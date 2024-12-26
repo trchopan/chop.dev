@@ -21,13 +21,13 @@
   weight = 20
 
 [[main]]
-  name = "About Me"
-  pageRef = "about-me"
+  name = "Slides"
+  pageRef = "slides"
   weight = 30
 
 [[main]]
-  name = "Slides"
-  pageRef = "slides"
+  name = "About Me"
+  pageRef = "about-me"
   weight = 40
 
 #[[main]]
