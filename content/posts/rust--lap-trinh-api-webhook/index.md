@@ -3,7 +3,7 @@ title = "Rust: Lập trình API webhook"
 author = ["Chop Tr (chop.dev)"]
 summary = "Rust là ngôn ngữ yêu thích của mình. Vừa rồi thì có phát triển 1 cái Webhook endpoint cho cá nhân sử dụng. Tích hợp Plex và TelegramAPI để gửi tin nhắn thông báo. Video sử dụng một số công cụ thường sử dụng trong lập trình như: Postman, Ngrok."
 date = 2023-02-01T00:00:00+07:00
-tags = ["rust", "axum", "framework", "api", "programming"]
+tags = ["rust", "axum", "framework", "api", "programing"]
 draft = false
 +++
 

@@ -59,7 +59,7 @@ To start up I would like to lay out some questions that everyone would have when
 
 -   Should I just use a framework?
 
--   What's the programming paradigm should I follow?
+-   What's the programing paradigm should I follow?
 
 ## Good Structure Goals {#good-structure-goals}
 
@@ -512,7 +512,7 @@ Back to the questions above. Like everything in life, the answer is `"it depends
 
 -   Should I just use a framework? - Yes, frameworks can provide you with good example. How you using or applying them will grow your knowledge.
 
--   What's the programming paradigm should I follow? It depends on the task you woule like to solve. As demonstrate above. If it is to encapsulate logic, make everything simple and independent, Object Oriented is the way to go. If you need to focus on the Input and Output, handle stream of events and correctness between actions, Functional Programing is a great way to handle.
+-   What's the programing paradigm should I follow? It depends on the task you woule like to solve. As demonstrate above. If it is to encapsulate logic, make everything simple and independent, Object Oriented is the way to go. If you need to focus on the Input and Output, handle stream of events and correctness between actions, Functional Programing is a great way to handle.
 
 <img src="./albert-einstein_20220420_160854.png" width="450" />
 

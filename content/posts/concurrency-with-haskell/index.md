@@ -424,7 +424,7 @@ As you can see, Haskell offers many tools for advanced concurrency. At the most 
 
 We've only just barely scratched the surface of what you can do with Haskell. If you're interested in learning more, please [check out our Haskell Syllabus](https://www.fpcomplete.com/haskell-syllabus) for a recommended learning route. There's also lots of content on the [haskell-lang get started page](https://haskell-lang.org/get-started). And if you want to learn more about concurrency, check out the [async tutorial](https://haskell-lang.org/library/async).
 
-FP Complete also provides corporate and group webinar training sessions. Please [check out our training page](https://www.fpcomplete.com/training) for more information, or see our [consulting page](https://www.fpcomplete.com/consulting) for how we can help your team succeed with devops and functional programming.
+FP Complete also provides corporate and group webinar training sessions. Please [check out our training page](https://www.fpcomplete.com/training) for more information, or see our [consulting page](https://www.fpcomplete.com/consulting) for how we can help your team succeed with devops and functional programing.
 
 
 ## Advanced questions {#advanced-questions}

@@ -1,15 +1,15 @@
 +++
-title = "Rust: Lập trình chạy độc lập - Concurrency Programming"
+title = "Rust: Lập trình chạy độc lập - Concurrency Programing"
 author = ["Chop Tr (chop.dev)"]
 summary = "Lập trình concurrency với Rust là một trải nghiệm khá thú vị. Trong video này mình ví dụ thử xử lý một tác vụ đơn giản là Hashing, áp dụng trong Blockchain Mining, để xem chương trình được tối ưu như thế nào khi sử dụng hết tất cả tài nguyên CPU."
 date = 2023-03-04T00:00:00+07:00
-tags = ["rust", "concurrency", "programming", "strategy", "hashing"]
+tags = ["rust", "concurrency", "programing", "strategy", "hashing"]
 draft = false
 +++
 
 ## Video
 
-{{< youtubeLite id="GsuHaL_aK60" label="Rust: Lập trình chạy độc lập - Concurrency Programming" >}}
+{{< youtubeLite id="GsuHaL_aK60" label="Rust: Lập trình chạy độc lập - Concurrency Programing" >}}
 
 ## Intro
 

@@ -37,7 +37,7 @@ I've been using Neovim for the past 5 years. It was a journey for me to finally 
 
 ### How did I end up with Neovim?
 
-I've tried a few text editors over the years. I used Eclipse during my school year to edit Java and do some Android Programming.
+I've tried a few text editors over the years. I used Eclipse during my school year to edit Java and do some Android Programing.
 
 I use Atom after that to do a little bit of web and python scripting.
 
@@ -73,7 +73,7 @@ So I was immediately sold to the idea of an editor that can make me fast. Make m
 
 Then the rest is history I guess. I spend time learning Vim, learning how to configure editors to the way I like. I turned it into a game and it was really fun.
 
-Along the way I also picked up Emacs. I spent 6 months with Emacs as my main editor and use it extensively with all the programming and workflow management.
+Along the way I also picked up Emacs. I spent 6 months with Emacs as my main editor and use it extensively with all the programing and workflow management.
 
 But eventually I changed back to Vim. This time I use Neovim instead of vanilla Vim.
 
@@ -109,7 +109,7 @@ So Neovim was created as a fork of Neovim. It keeps the original philosophy of e
 
 Implement new architecture for plugins system, make it become more modular and introduce the support for Lua language as its main language for plugins.
 
-Both Neovim and Vim support all the programming languages.
+Both Neovim and Vim support all the programing languages.
 
 For Neovim, it is built in with great support for Language Server Protocol, For Vim you have to configure them a little bit with plugins.
 
@@ -189,7 +189,7 @@ Git Preview is just : gp
 
 ![](/posts/my-journey-configuring-editors--featuring-vim-neovim-/my-journey-configuring-editors--featuring-vim-neovim--5.jpg)
 
-Let's see some programming language features.
+Let's see some programing language features.
 
 Go to Reference is: gr
 
@@ -253,7 +253,7 @@ Neovim can support many languages through LSP - Language Server Protocol.
 
 Like I said before due to time limited I would not cover how to configure it all up.
 
-I just want to mention that spending time doing so gives me a good understanding of programming languages.
+I just want to mention that spending time doing so gives me a good understanding of programing languages.
 
 OK I have a question for you to think about, what is the difference between definition and reference? <pause>
 
@@ -265,7 +265,7 @@ Well, for me, I learned about them when I actually did the LSP configuration for
 
 ### AST
 
-Another knowledge I gained during configuring Neovim is AST - Abstract Syntax Tree or Syntax Tree for short. It is a technique that is used widely in all language processing tasks, not just programming languages.
+Another knowledge I gained during configuring Neovim is AST - Abstract Syntax Tree or Syntax Tree for short. It is a technique that is used widely in all language processing tasks, not just programing languages.
 
 It is what helps the editor to highlight the text and give you the beautiful colorscheme you have on a developer screen.
 
@@ -341,9 +341,9 @@ Ok so what should you take away from this talk. Well, I hope that I can inspire 
 
 Do not be satisfied with your current working environment. Try out new tools, new techniques to approach things.
 
-As a Frontend Dev, try a new framework, try a new programming paradigm, like Functional programming.
+As a Frontend Dev, try a new framework, try a new programing paradigm, like Functional programing.
 
-As a programmer, try out a new programming language. New technology like new Database, New development stack like kubernetes, serverless, or build your own homelab etc.
+As a programmer, try out a new programing language. New technology like new Database, New development stack like kubernetes, serverless, or build your own homelab etc.
 
 Another thing is do not let the hardship discourage you from exploring.
 

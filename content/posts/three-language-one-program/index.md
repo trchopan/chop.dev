@@ -1,7 +1,7 @@
 +++
 title = "Try out Typescript, Haskell and Rust"
 author = ["Chop Tr (chop.dev)"]
-summary = "Same program written in 3 programming languages: Typescript, Haskell, Rust. Thereby experiencing environment and gaining new knowledge."
+summary = "Same program written in 3 programing languages: Typescript, Haskell, Rust. Thereby experiencing environment and gaining new knowledge."
 date = 2022-03-22T00:00:00+07:00
 tags = ["haskell", "typescript", "rust", "programing"]
 draft = false
