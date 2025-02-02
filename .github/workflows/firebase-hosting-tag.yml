@@ -18,9 +18,9 @@ jobs:
             - name: Run Hugo
               uses: crazy-max/ghaction-hugo@v3
               with:
-                version: v0.131.0
+                version: v0.143.0
                 extended: true
-                args: --cleanDestinationDir --minify --verbose
+                args: --cleanDestinationDir --minify --logLevel info
 
             - uses: FirebaseExtended/action-hosting-deploy@v0
               with:
