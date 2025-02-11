@@ -7,11 +7,11 @@ tags = ["elixir", "programing", "learning", "yt.chop.dev", "youtube", "translati
 draft = false
 +++
 
-# Elixir: YtChopDev demo with Livebook
+Link: [yt.chop.dev](https://yt.chop.dev)
 
 ## Video
 
-
+[https://www.youtube.com/watch?v=feb7fJceCjI](https://www.youtube.com/watch?v=feb7fJceCjI)
 
 ## Intro
 
@@ -500,7 +500,7 @@ end
 
 Và như vậy là xong function để concat audio files.
 
-Lưu ý chỗ đường dẫn đến ffmpeg,  mình sử dụng Mac và dùng homebrew để chạy. Nếu các bạn sử dụng OS khác, Windows hay Linux, thì đường dẫn sẽ khác ha.
+Lưu ý chỗ đường dẫn đến ffmpeg, mình sử dụng Mac và dùng homebrew để chạy. Nếu các bạn sử dụng OS khác, Windows hay Linux, thì đường dẫn sẽ khác ha.
 
 OK và như vậy có thể chạy lệnh để process text to speech, combine audio files rồi.
 
@@ -579,7 +579,7 @@ defmodule AudioVideoMatcher do
     transcript_raw
     |> String.split("\n")
     |> Enum.at(0)
-    |> then(fn line -> 
+    |> then(fn line ->
       [min, sec] = String.split(line, ":")
       {min, _} = Integer.parse(min)
       {sec, _} = Integer.parse(sec)
@@ -625,7 +625,7 @@ OK đủ số liệu rồi mình làm một function để thực hiện việc 
     audio_length = get_media_play_length(audio_file)
     audio_length / (video_length - start_delay)
   end
-``` 
+```
 
 Công thức cũng đơn giản ha
 
