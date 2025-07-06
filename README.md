@@ -13,3 +13,9 @@ Find me around the web:
 [telegram](https://t.me/choptran)
 
 [youtube](https://www.youtube.com/c/ChopTRAN)
+
+## Development
+
+```
+hugo server -D
+```

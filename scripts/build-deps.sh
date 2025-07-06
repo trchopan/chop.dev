@@ -15,7 +15,7 @@ ls $REVEALJS_DEST
 rm -r reveal.js-master
 rm revealjs.zip
 
-BLOWFISH_VERSION=2.77.1
+BLOWFISH_VERSION=2.87.0
 
 wget -q "https://github.com/nunocoracao/blowfish/archive/refs/tags/v$BLOWFISH_VERSION.zip" -O blowfish.zip
 
