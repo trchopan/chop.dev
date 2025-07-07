@@ -1,7 +1,7 @@
 +++
 title = "Tech Share: Open ID connect"
 author = ["Chop Tr (chop.dev)"]
-summary = "lalala"
+summary = "Introduction about OAuth 2.0 and OpenID Connect"
 date = 2025-07-06T00:00:00+07:00
 tags = ["oidc", "open-id-connect", "authentication", "tech-share"]
 draft = false
