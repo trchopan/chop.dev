@@ -11,3 +11,7 @@ html {
 .toc #TOCView > div {
     max-width: 320px;
 }
+
+.mermaid {
+    background: white;
+}
