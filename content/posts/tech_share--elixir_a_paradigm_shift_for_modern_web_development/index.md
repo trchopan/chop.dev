@@ -9,7 +9,7 @@ draft = false
 
 ## Slides
 
-TBD
+[Slides](/slides/tech_share--elixir_a_paradigm_shift_for_modern_web_development/)
 
 ## Introduction: Why Elixir?
 
@@ -243,7 +243,6 @@ Demo:
 
 - Ash Resource and Domain
 - Ash Admin
--
 
 Ref: [Ash Framework](https://ash-hq.org/)
 
