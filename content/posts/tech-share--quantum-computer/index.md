@@ -178,9 +178,6 @@ Before we dive deeper into how quantum computers actually work, I want to share
 an analogy that helps explain what quantum computers are really trying to
 solve.
 
-Reference: [Quantum Computers, explained with
-MKBHD](https://www.youtube.com/watch?v=e3fz3dqhN44)
-
 Think about **math**. Computers were created to help us solve mathematical
 problems.
 
