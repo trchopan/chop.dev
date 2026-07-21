@@ -1,10 +1,14 @@
-// deno run --allow-net --allow-write docs-to-markdown.ts location link
-// Ex: deno run --allow-net --allow-write docs-to-markdown.ts content/posts https://docs.google.com/document/d/<id>
+// bun run scripts/docs-to-markdown.ts location link
+// Ex: bun run scripts/docs-to-markdown.ts content/posts https://docs.google.com/document/d/<id>
 
-import * as Colors from 'https://deno.land/std@0.177.0/fmt/colors.ts';
-import {normalize} from 'https://cdn.jsdelivr.net/gh/motss/deno_mod@v0.10.0/normalize_diacritics/mod.ts';
-import {download} from 'https://deno.land/x/download@v2.0.2/mod.ts';
-import {extractToml} from 'jsr:@std/front-matter';
+import {mkdir} from 'node:fs/promises';
+
+const normalize = (value: string) =>
+    value
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replaceAll('đ', 'd')
+        .replaceAll('Đ', 'D');
 
 const downloadGDocsToMarkdown = async (link: string) => {
     const resp = await fetch('https://docs-to-markdown.chop.dev', {
@@ -17,15 +21,18 @@ const downloadGDocsToMarkdown = async (link: string) => {
 
 const downLoadPost = async (location: string, link: string) => {
     let outStr = await downloadGDocsToMarkdown(link);
-    const fm = extractToml(outStr);
+    const titleMatch = outStr.match(/^title\s*=\s*"([^"]+)"/m);
+    if (!titleMatch) {
+        throw new Error('The converted document does not contain a title');
+    }
 
-    let title: string = await normalize(fm.attrs.title);
+    let title = normalize(titleMatch[1]);
     title = title.toLowerCase().replace(/[^a-z0-9]/g, '-');
 
     const postPath = `${location}/${title}`;
-    await Deno.mkdir(postPath, {recursive: true});
+    await mkdir(postPath, {recursive: true});
 
-    console.log(Colors.yellow('Writing:'), Colors.red(postPath));
+    console.log('Writing:', postPath);
     console.log('Content\n', outStr.slice(0, 500));
 
     // match images
@@ -41,7 +48,11 @@ const downLoadPost = async (location: string, link: string) => {
         articleReplace: `./${title}-${index}.jpg`,
     }));
     for (const image of downloads) {
-        await download(image.link, {dir: postPath, file: image.path});
+        const response = await fetch(image.link);
+        if (!response.ok) {
+            throw new Error(`Failed to download ${image.link}: ${response.status}`);
+        }
+        await Bun.write(`${postPath}/${image.path}`, await response.arrayBuffer());
         outStr = outStr.replaceAll(image.link, image.articleReplace);
     }
 
@@ -51,9 +62,13 @@ const downLoadPost = async (location: string, link: string) => {
         .replaceAll('“', '"')
         .replaceAll(' ', ' '); // These are actually 2 diferent character for space
 
-    await Deno.writeTextFile(`${postPath}/index.md`, outStr);
+    await Bun.write(`${postPath}/index.md`, outStr);
 };
 
 if (import.meta.main) {
-    downLoadPost(Deno.args[0], Deno.args[1]);
+    const [location, link] = Bun.argv.slice(2);
+    if (!location || !link) {
+        throw new Error('Usage: bun run scripts/docs-to-markdown.ts <location> <link>');
+    }
+    await downLoadPost(location, link);
 }

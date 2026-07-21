@@ -9,5 +9,27 @@
         --r-main-font: monospace;
         --r-heading-font: monospace;
     }
+
+    .reveal .slides section.content-left {
+        box-sizing: border-box;
+        padding-left: 3vw;
+        text-align: left;
+    }
+
+    .reveal .slides section.content-left > * {
+        max-width: 46%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    @media (max-width: 700px) {
+        .reveal .slides section.content-left {
+            padding-left: 0;
+        }
+
+        .reveal .slides section.content-left > * {
+            max-width: 100%;
+        }
+    }
 </style>
 {{ end }}
