@@ -5,7 +5,7 @@ summary = "AI is becoming a companion in how we work, think, communicate, and ma
 tags = ["ai", "productivity", "workflow", "thinking"]
 date = 2026-07-10T00:00:00+07:00
 draft = false
-cover = ""
+cover = "cover.png"
 +++
 
 ## 1/
@@ -19,6 +19,8 @@ OK style của mình thì nhanh gọn, đi thẳng vấn đề. Nên mình sẽ 
 Vâng, đơn giản vậy thôi.
 
 Đồng hành trong công việc, trong cuộc sống, trong giao tiếp, bàn luận, giải quyết vấn đề, và trong cả cách chúng ta suy nghĩ.
+
+![](./ai-companion-01.png)
 
 Trong team mình thì mình vẫn hay đùa: "Anh em chờ đi, tương lai tụi mình sẽ đem AI ra chơi như đấu Pokemon vậy."
 
@@ -60,6 +62,8 @@ Companion có nghĩa là từ nay mình không còn suy nghĩ, làm việc và r
 
 Và đây mới là thay đổi lớn nhất: AI không còn chỉ là thứ mình dùng. Nó bắt đầu trở thành thứ mình nói chuyện cùng.
 
+![](./ai-companion-02.png)
+
 ## 3/
 
 Nhưng nói AI là companion nghe hơi abstract đúng không?
@@ -78,6 +82,8 @@ Bây giờ mình có thể nói với AI:
 
 Và nó trở thành một teammate để mình cùng debug, chứ không chỉ là một cái máy nhả code.
 
+![](./ai-companion-03.png)
+
 Tất nhiên teammate này không phải lúc nào cũng giỏi. Có lúc nó viết một đoạn code nhìn rất chuyên nghiệp, chạy rất tự tin, và sai từ dòng đầu tiên. Nhưng ít nhất mình có một đứa để cùng bắt đầu suy nghĩ.
 
 Layer thứ hai là trong chính cách mình suy nghĩ.
@@ -90,6 +96,8 @@ Bây giờ mình có thể đưa ý tưởng đó cho AI và hỏi:
 
 Nó giống như một second brain. Hoặc chính xác hơn, giống như một đứa bạn rất hay cãi nhưng lúc nào cũng online.
 
+![](./ai-companion-04.png)
+
 Layer thứ ba là trong giao tiếp.
 
 Hai người đang tranh luận. Một người nói: "Tao thấy solution này tốt hơn."
@@ -99,6 +107,8 @@ Người kia nói: "Không, AI của tao phân tích là solution kia tốt hơn
 Vậy là cuộc tranh luận không còn chỉ có hai người nữa. Nó có thêm những AI đứng phía sau, mỗi đứa đại diện cho một cách nhìn, một bộ dữ liệu, và đôi khi là một sự tự tin rất lớn.
 
 AI trở thành một kiểu trọng tài, một cố vấn, thậm chí là một đồng minh trong các cuộc nói chuyện hàng ngày.
+
+![](./ai-companion-05.png)
 
 Và layer cuối cùng là trong những quyết định cá nhân.
 
@@ -122,6 +132,8 @@ Nghe giống Pokemon đúng không? Mỗi người có một con Pokemon riêng,
 
 Nhưng nếu nhìn kỹ hơn thì cuộc đấu này có ít nhất ba level.
 
+![](./ai-companion-06.png)
+
 Level đầu tiên là model đấu với model.
 
 GPT đấu với Claude, Claude đấu với Gemini. Đứa nào reasoning tốt hơn? Đứa nào code sạch hơn? Đứa nào hiểu context nhanh hơn? Đứa nào bớt tự tin khi nó đang nói bậy hơn?
@@ -138,6 +150,8 @@ Khi đó AI không chỉ giúp một người code nhanh hơn. Nó thay đổi t
 
 Tương lai không chỉ là developer giỏi đấu với developer dở, mà là developer biết leverage AI đấu với developer không biết leverage AI.
 
+![](./ai-companion-07.png)
+
 Level thứ ba là cá nhân đấu với cá nhân.
 
 Mỗi người sẽ có một AI stack riêng. Một workflow riêng. Một bộ prompt, một cách kiểm tra output, một cách lưu context, và một cách biến những thứ đó thành kết quả.
@@ -150,6 +164,8 @@ Người thứ hai đưa vào context của cả hệ thống, nói rõ constrai
 
 Trên giấy, cả hai đều đang "dùng AI". Nhưng thực tế, họ đang chơi ở hai league khác nhau.
 
+![](./ai-companion-08.png)
+
 Lợi thế không nằm ở việc mình có access vào model nào, vì ngày càng nhiều người sẽ có access vào gần như tất cả các model tốt.
 
 Lợi thế nằm ở việc mình biết giao việc gì cho AI, cung cấp context nào, hỏi tiếp câu gì, và quan trọng nhất: biết kiểm tra kết quả của nó.
@@ -161,6 +177,8 @@ Vậy câu hỏi không còn là: "Mình có nên dùng AI không?"
 Câu hỏi là: "Mình muốn xây companion của mình như thế nào?"
 
 Vì nếu AI sẽ đi cùng mình trong công việc, suy nghĩ và các quyết định, thì việc dùng nó một cách ngẫu hứng sẽ không đủ nữa. Mình cần một cách làm việc có chủ đích.
+
+![](./ai-companion-09.png)
 
 ## 5/
 
@@ -198,6 +216,8 @@ Cho nên AI có thể là người đưa lời khuyên tốt nhất trong phòng
 
 Đó là ranh giới mình phải giữ: dùng AI để mở rộng khả năng suy nghĩ, chứ không dùng nó để từ bỏ việc suy nghĩ; dùng nó để có thêm góc nhìn, chứ không dùng nó để trốn khỏi trách nhiệm quyết định.
 
+![](./ai-companion-10.png)
+
 Làm được ba việc này, mình sẽ không chỉ có một công cụ AI để mở lên khi cần. Mình sẽ có một companion thật sự: cùng làm, cùng cãi, cùng kiểm tra, nhưng cuối cùng mình vẫn là người cầm lái.
 
 ## 6/
@@ -221,6 +241,8 @@ Cho nó đủ quyền để giúp mình làm tốt hơn.
 Nhưng nhớ một điều: nó không bao giờ sống thay mình. Chính bản thân chúng ta vẫn phải trau dồi và phát triển.
 
 AI bản chất không phải là phép cộng mà là phép nhân. Nếu bạn giỏi, nó sẽ giúp bạn đi xa hơn rất nhanh. Nếu bạn hời hợt hay suy nghĩ tiêu cực, nó cũng sẽ khuếch đại sự hời hợt và tiêu cực đó.
+
+![](./ai-companion-11.png)
 
 Vì câu hỏi không phải là: "AI có thay đổi cuộc sống của bạn không?"
 
