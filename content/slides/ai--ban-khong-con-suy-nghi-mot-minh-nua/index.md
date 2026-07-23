@@ -21,6 +21,15 @@ Note:
 
 ---
 
+<!-- .slide: data-background-image="./pokemon-01.png" data-background-opacity="0.6" -->
+
+> "Anh em chờ đi, tương lai tụi mình sẽ đem AI ra chơi như đấu Pokemon vậy."
+
+Note:
+**AI Image Prompt:** A human protagonist facing several abstract luminous AI companions like distinct Pokemon partners in a playful but thoughtful arena, each companion with a different visual character and capability, symbolism of people using AI to debate, solve problems, and compete in work and life, wide 16:9 editorial composition, figures and glowing companions on the right with negative space on the left, dark charcoal background with warm amber and subtle teal light, energetic and imaginative mood, no text, letters, logos, watermarks, readable UI, or generic humanoid robot.
+
+---
+
 <!-- .slide: class="content-left" data-background-image="./ai-companion-02.png" data-background-opacity="0.5" -->
 #### AI KHÔNG CÒN LÀ CÁI <span style="color: #ffb347;">TOOL</span>
 

@@ -20,7 +20,7 @@ Vâng, đơn giản vậy thôi.
 
 Đồng hành trong công việc, trong cuộc sống, trong giao tiếp, bàn luận, giải quyết vấn đề, và trong cả cách chúng ta suy nghĩ.
 
-![](./ai-companion-01.png)
+![AI trở thành những Pokemon đồng hành, được con người sử dụng để tranh luận, giải quyết vấn đề và thi đấu trong công việc lẫn cuộc sống.](./pokemon-01.png)
 
 Trong team mình thì mình vẫn hay đùa: "Anh em chờ đi, tương lai tụi mình sẽ đem AI ra chơi như đấu Pokemon vậy."
 
@@ -30,31 +30,29 @@ OK. Có ai hình dung được không?
 
 Chúng ta sẽ dùng AI để "đấu" với nhau. Đấu trong ngoặc kép nhe.
 
-Từ đầu nguồn thì đấu xem đứa nào có model ngon nhất: OpenAI, Anthropic hay Google.
+Từ đầu nguồn thì các ông lớn như OpenAI, Anthropic hay Google đấu xem ông nào có model tốt nhất.
 
 Level công ty thì đấu xem team nào xài AI hiệu quả nhất.
 
-Level đồng nghiệp thì đem AI ra cãi xem tao code `for loop` performance vẫn ngon như mày code iterator, v.v.
+Level đồng nghiệp thì đem AI ra cãi xem tao code algorithm của tao dễ áp dụng và performance hơn code của mày.
 
-Chưa hết nhé. Về nhà thì đem AI ra đấu với mấy đứa bạn, từ chuyện ông Mỹ, ông Iran ngứa gì mà đánh quài, tới chuyện sao mày mua xe điện chi vậy, xài xe xăng là yên tâm, blabla.
+Chưa hết. Về nhà thì đem AI ra đấu với mấy đứa bạn, từ chuyện ông Mỹ, ông Iran ngứa gì mà đánh quài, tới chuyện sao mày mua xe điện chi vậy, xài xe xăng là yên tâm xe xăng không bao giờ bị thay thế được, blabla.
 
-Trong tất cả những cuộc giao tiếp này, AI đang creep vào từ từ. Có thể chúng ta chưa để ý, nhưng nó đã bắt đầu rồi.
+Trong tất cả những cuộc giao tiếp này, AI đang creep vào từ từ. Có thể bạn chưa để ý, nhưng nó đã bắt đầu rồi.
 
 ## 2/
 
 Vậy thì tại sao AI lại có thể chen vào nhiều thứ như vậy?
 
-Vì mình vẫn đang nhìn nó như một cái tool.
+Nhiều bạn ngạc nhiên vì điều này vì vẫn nghĩ nó là tool, là công cụ để xài nhưng mà ko phải như vậy.
 
-Trước giờ tool là gì? Là thứ mình lấy ra dùng khi cần. Cần tìm thông tin thì mở Google. Cần lưu code thì mở Git. Cần hỏi một câu gì đó thì vào Stack Overflow. Dùng xong thì đóng lại, rất rõ ràng.
+Tool là gì? Là thứ mình lấy ra dùng khi cần. Cần tìm thông tin thì mở Google. Cần lưu code thì mở Git. Cần hỏi một câu gì đó thì vào Stack Overflow. Dùng xong thì đóng lại, rất rõ ràng.
 
-Nhưng AI không giống vậy.
+Nhưng AI không giống vậy. Mình nhìn AI như internet hơn, một thứ có mức ảnh hưởng lớn hơn công cụ nhiều.
 
 AI không chỉ đưa cho mình một kết quả. Nó có thể hỏi ngược lại, phản biện lại, đưa ra một hướng khác, thậm chí làm mình nghi ngờ cách mình đang suy nghĩ.
 
-Ủa, vậy thì nó đâu còn là cái búa để mình cầm lên rồi đập nữa.
-
-Nó giống như một người đứng kế bên và hỏi: "Ủa, sao mày làm vậy?"
+Nó không còn là cái búa để mình cầm lên rồi đập nữa. Nó giống như một người đứng kế bên và hỏi: "Ủa, sao mày làm vậy?"
 
 Đương nhiên, người đứng kế bên này đôi lúc cũng nói bậy. AI có thể trả lời rất tự tin nhưng hoàn toàn sai. Cho nên companion không có nghĩa là giao hết quyền quyết định cho nó.
 
@@ -62,7 +60,7 @@ Companion có nghĩa là từ nay mình không còn suy nghĩ, làm việc và r
 
 Và đây mới là thay đổi lớn nhất: AI không còn chỉ là thứ mình dùng. Nó bắt đầu trở thành thứ mình nói chuyện cùng.
 
-![](./ai-companion-02.png)
+![AI không còn chỉ là công cụ; nó đứng bên cạnh, phản biện, đặt câu hỏi và tạo thêm một đối tượng để con người đối thoại.](./ai-companion-02.png)
 
 ## 3/
 
@@ -82,7 +80,7 @@ Bây giờ mình có thể nói với AI:
 
 Và nó trở thành một teammate để mình cùng debug, chứ không chỉ là một cái máy nhả code.
 
-![](./ai-companion-03.png)
+![AI trở thành teammate hỗ trợ lập trình viên debug, brainstorm và tìm nguyên nhân lỗi thay vì chỉ đơn giản nhả ra những đoạn code.](./ai-companion-03.png)
 
 Tất nhiên teammate này không phải lúc nào cũng giỏi. Có lúc nó viết một đoạn code nhìn rất chuyên nghiệp, chạy rất tự tin, và sai từ dòng đầu tiên. Nhưng ít nhất mình có một đứa để cùng bắt đầu suy nghĩ.
 
@@ -96,7 +94,7 @@ Bây giờ mình có thể đưa ý tưởng đó cho AI và hỏi:
 
 Nó giống như một second brain. Hoặc chính xác hơn, giống như một đứa bạn rất hay cãi nhưng lúc nào cũng online.
 
-![](./ai-companion-04.png)
+![AI hoạt động như một second brain luôn online, sẵn sàng phản biện ý tưởng và chỉ ra những assumption nguy hiểm trong suy nghĩ.](./ai-companion-04.png)
 
 Layer thứ ba là trong giao tiếp.
 
@@ -108,7 +106,7 @@ Vậy là cuộc tranh luận không còn chỉ có hai người nữa. Nó có 
 
 AI trở thành một kiểu trọng tài, một cố vấn, thậm chí là một đồng minh trong các cuộc nói chuyện hàng ngày.
 
-![](./ai-companion-05.png)
+![Trong tranh luận, mỗi người có thể mang theo một AI riêng, tạo thêm nhiều góc nhìn, dữ liệu và cố vấn phía sau cuộc nói chuyện.](./ai-companion-05.png)
 
 Và layer cuối cùng là trong những quyết định cá nhân.
 
@@ -132,7 +130,7 @@ Nghe giống Pokemon đúng không? Mỗi người có một con Pokemon riêng,
 
 Nhưng nếu nhìn kỹ hơn thì cuộc đấu này có ít nhất ba level.
 
-![](./ai-companion-06.png)
+![Các model AI cạnh tranh như những Pokemon, mỗi model có điểm mạnh riêng và phù hợp với từng loại trận đấu cụ thể.](./ai-companion-06.png)
 
 Level đầu tiên là model đấu với model.
 
@@ -150,7 +148,7 @@ Khi đó AI không chỉ giúp một người code nhanh hơn. Nó thay đổi t
 
 Tương lai không chỉ là developer giỏi đấu với developer dở, mà là developer biết leverage AI đấu với developer không biết leverage AI.
 
-![](./ai-companion-07.png)
+![Những team biết leverage AI sẽ phân tích requirement, review design, tìm edge case và vận hành nhanh hơn các team khác.](./ai-companion-07.png)
 
 Level thứ ba là cá nhân đấu với cá nhân.
 
@@ -164,7 +162,7 @@ Người thứ hai đưa vào context của cả hệ thống, nói rõ constrai
 
 Trên giấy, cả hai đều đang "dùng AI". Nhưng thực tế, họ đang chơi ở hai league khác nhau.
 
-![](./ai-companion-08.png)
+![Hai cá nhân cùng dùng AI nhưng khác biệt về context, prompt, workflow và khả năng kiểm tra output khiến họ chơi ở hai league.](./ai-companion-08.png)
 
 Lợi thế không nằm ở việc mình có access vào model nào, vì ngày càng nhiều người sẽ có access vào gần như tất cả các model tốt.
 
@@ -178,7 +176,7 @@ Câu hỏi là: "Mình muốn xây companion của mình như thế nào?"
 
 Vì nếu AI sẽ đi cùng mình trong công việc, suy nghĩ và các quyết định, thì việc dùng nó một cách ngẫu hứng sẽ không đủ nữa. Mình cần một cách làm việc có chủ đích.
 
-![](./ai-companion-09.png)
+![Xây dựng companion AI cần một workflow có chủ đích, biết giao việc, cung cấp context, kiểm tra kết quả và lựa chọn thời điểm phù hợp.](./ai-companion-09.png)
 
 ## 5/
 
@@ -216,7 +214,7 @@ Cho nên AI có thể là người đưa lời khuyên tốt nhất trong phòng
 
 Đó là ranh giới mình phải giữ: dùng AI để mở rộng khả năng suy nghĩ, chứ không dùng nó để từ bỏ việc suy nghĩ; dùng nó để có thêm góc nhìn, chứ không dùng nó để trốn khỏi trách nhiệm quyết định.
 
-![](./ai-companion-10.png)
+![AI có thể cùng làm, cùng cãi và cùng kiểm tra, nhưng con người vẫn phải giữ quyền quyết định và chịu trách nhiệm cuối cùng.](./ai-companion-10.png)
 
 Làm được ba việc này, mình sẽ không chỉ có một công cụ AI để mở lên khi cần. Mình sẽ có một companion thật sự: cùng làm, cùng cãi, cùng kiểm tra, nhưng cuối cùng mình vẫn là người cầm lái.
 
@@ -242,7 +240,7 @@ Nhưng nhớ một điều: nó không bao giờ sống thay mình. Chính bản
 
 AI bản chất không phải là phép cộng mà là phép nhân. Nếu bạn giỏi, nó sẽ giúp bạn đi xa hơn rất nhanh. Nếu bạn hời hợt hay suy nghĩ tiêu cực, nó cũng sẽ khuếch đại sự hời hợt và tiêu cực đó.
 
-![](./ai-companion-11.png)
+![AI khuếch đại năng lực, sự hời hợt hoặc tiêu cực của con người, nhưng không thể sống thay hay thay thế trách nhiệm phát triển bản thân.](./ai-companion-11.png)
 
 Vì câu hỏi không phải là: "AI có thay đổi cuộc sống của bạn không?"
 
