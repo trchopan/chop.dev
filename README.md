@@ -22,6 +22,9 @@ hugo server -D
 
 ## Publishing
 
+See [RELEASING.md](RELEASING.md) for the complete release and rollback
+runbook.
+
 Open a pull request for every content or code change. CI builds the site and
 validates slide content before the pull request can be merged.
 
