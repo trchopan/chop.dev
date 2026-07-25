@@ -50,8 +50,12 @@ if (slides.length === 0) {
 }
 
 const promptCount = (index.match(/\*\*AI Image Prompt:\*\*/g) ?? []).length;
-if (promptCount !== slides.length) {
-    errors.push(`expected one AI Image Prompt per slide, found ${promptCount} for ${slides.length} slides`);
+if (promptCount > slides.length) {
+    errors.push(`found more AI Image Prompts than slides: ${promptCount} for ${slides.length} slides`);
+} else if (promptCount === 0) {
+    warnings.push('no AI Image Prompt metadata found; legacy decks are allowed');
+} else if (promptCount < slides.length) {
+    warnings.push(`AI Image Prompt metadata is partial: ${promptCount} for ${slides.length} slides`);
 }
 
 const imageReferences = [

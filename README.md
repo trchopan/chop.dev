@@ -19,3 +19,18 @@ Find me around the web:
 ```
 hugo server -D
 ```
+
+## Publishing
+
+Open a pull request for every content or code change. CI builds the site and
+validates slide content before the pull request can be merged.
+
+Merging to `main` builds the same site again and deploys it to Firebase
+Hosting. Production deployment does not use release tags. To redeploy `main`
+or roll back to a known commit, run **Deploy to Firebase Hosting** manually
+from the GitHub Actions tab and provide its full 40-character commit SHA in
+the `ref` field.
+
+The production workflow requires the `FIREBASE_SERVICE_ACCOUNT_HERMES_7B876`
+repository secret. Configure `production` as a protected environment and
+require the CI check on the `main` branch before merging.
